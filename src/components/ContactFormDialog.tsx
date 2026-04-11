@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactFormDialogProps {
   open: boolean;
@@ -16,7 +17,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -34,17 +35,23 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       return;
     }
 
-    const subject = encodeURIComponent("Nouvelle demande pilote WAFY");
-    const body = encodeURIComponent(
-      `Nom : ${name}\nPromoteur : ${company}\nEmail : ${email}\nTéléphone : ${phone}\n\nMessage :\n${message || "—"}`
-    );
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name, company, email, phone, message },
+      });
 
-    window.open(`mailto:hello@wafypro.ma?subject=${subject}&body=${body}`, "_self");
+      if (error) throw error;
+      if (data && !data.success) throw new Error(data.error);
 
-    toast({ title: "Redirection vers votre messagerie…", description: "Merci pour votre intérêt !" });
-    setIsSubmitting(false);
-    onOpenChange(false);
-    form.reset();
+      toast({ title: "Demande envoyée !", description: "Nous vous recontactons sous 24h." });
+      onOpenChange(false);
+      form.reset();
+    } catch (err) {
+      console.error("Email send error:", err);
+      toast({ title: "Erreur lors de l'envoi", description: "Veuillez réessayer ou nous contacter directement.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,7 +95,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
           <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
             <Send className="mr-2 w-4 h-4" />
-            Envoyer ma demande
+            {isSubmitting ? "Envoi en cours…" : "Envoyer ma demande"}
           </Button>
         </form>
       </DialogContent>
