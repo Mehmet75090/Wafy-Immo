@@ -46,7 +46,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            Votre commercial IA sur WhatsApp, disponible 24h/24. WAFY engage vos prospects, 
+            Le co-pilote IA qui prépare le terrain pour vos commerciaux, 24h/24. WAFY engage vos prospects, 
             qualifie leur projet et pousse la fiche lead scorée directement dans votre CRM. 
             Relances, rappels, prises de RDV : tout est automatique.
           </motion.p>
