@@ -14,8 +14,8 @@ const features = [
   },
   {
     icon: Plug,
-    title: "Connexion MCP — vos outils connectés",
-    desc: "Grâce au protocole MCP, connectez WAFY à votre CRM, agenda, ERP, emailing ou tout autre outil métier en quelques clics.",
+    title: "Connecté à vos outils",
+    desc: "Votre CRM, agenda, emailing, ERP : WAFY s'y branche automatiquement. Vos leads qualifiés arrivent directement là où vos équipes travaillent déjà.",
   },
   {
     icon: Workflow,
