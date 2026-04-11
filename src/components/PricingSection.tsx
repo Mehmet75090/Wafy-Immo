@@ -69,7 +69,7 @@ const PricingSection = () => (
         {plans.map((plan, i) => (
           <motion.div
             key={plan.name}
-            className={`relative rounded-2xl p-8 border transition-all duration-300 ${
+            className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 ${
               plan.highlight
                 ? "border-primary shadow-xl bg-card scale-[1.02]"
                 : "border-border bg-card hover:border-primary/30"
