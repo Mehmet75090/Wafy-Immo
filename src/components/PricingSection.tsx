@@ -65,38 +65,7 @@ const PricingSection = () => (
         <p className="text-muted-foreground">Abonnement mensuel</p>
       </motion.div>
 
-      {/* Pilote offer */}
-      <motion.div
-        className="mb-12 max-w-2xl mx-auto rounded-2xl p-6 sm:p-8 border-2 border-dashed border-primary/40 bg-primary/5"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg">🧪</span>
-          <h3 className="font-bold text-lg">Offre PILOTE — Testez sans risque</h3>
-        </div>
-        <p className="text-sm text-muted-foreground mb-5">
-          Paiement uniquement au résultat, sans abonnement. Idéal pour valider WAFY sur un premier programme.
-        </p>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-6">
-          <div className="p-4 rounded-xl bg-card border border-border">
-            <div className="text-xs text-muted-foreground mb-1">Lead tiède</div>
-            <div className="text-xl font-extrabold text-primary mb-1">150 MAD</div>
-            <p className="text-xs text-muted-foreground">Lead qualifié par l'IA : budget, projet, timeline identifiés. Prêt à être contacté par votre commercial.</p>
-          </div>
-          <div className="p-4 rounded-xl bg-card border border-border">
-            <div className="text-xs text-muted-foreground mb-1">Lead chaud</div>
-            <div className="text-xl font-extrabold text-primary mb-1">350 MAD</div>
-            <p className="text-xs text-muted-foreground">Lead qualifié + RDV confirmé ou demande de rappel. Votre commercial n'a plus qu'à closer.</p>
-          </div>
-        </div>
-
-        <Button variant="hero" className="w-full" asChild>
-          <a href="#cta">Démarrer le pilote</a>
-        </Button>
-      </motion.div>
 
       {/* Subscription plans */}
       <div className="grid md:grid-cols-3 gap-6">
