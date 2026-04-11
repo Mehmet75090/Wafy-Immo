@@ -49,8 +49,9 @@ const ComparisonSection = () => (
         <p className="text-muted-foreground">WhatsApp sans IA = expérience dégradée</p>
       </motion.div>
 
+      {/* Desktop: Table */}
       <motion.div
-        className="overflow-x-auto rounded-2xl border border-border"
+        className="hidden md:block overflow-x-auto rounded-2xl border border-border"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -88,6 +89,45 @@ const ComparisonSection = () => (
           </tbody>
         </table>
       </motion.div>
+
+      {/* Mobile: Cards */}
+      <div className="md:hidden space-y-6">
+        {rows.map((r, i) => (
+          <motion.div
+            key={i}
+            className="rounded-2xl border border-border bg-card overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08 }}
+          >
+            <div className="p-4 bg-muted font-semibold text-sm">{r.label}</div>
+            <div className="divide-y divide-border">
+              <div className="p-4 flex items-start gap-3">
+                <X className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs font-medium text-muted-foreground mb-0.5">Agence classique</div>
+                  <div className="text-sm">{r.classic}</div>
+                </div>
+              </div>
+              <div className="p-4 flex items-start gap-3">
+                <Minus className="w-4 h-4 text-destructive shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs font-medium text-destructive/70 mb-0.5">WhatsApp + humain</div>
+                  <div className="text-sm text-destructive/80">{r.human}</div>
+                </div>
+              </div>
+              <div className="p-4 flex items-start gap-3 bg-primary/5">
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <div className="text-xs font-medium text-primary mb-0.5">Co-pilote WAFY IA</div>
+                  <div className="text-sm font-bold text-primary">{r.wafy}</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </section>
 );

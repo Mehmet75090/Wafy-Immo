@@ -4,7 +4,7 @@ import { MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
 
 const benefits = [
   "Qualifiez 100% de vos leads automatiquement",
-  "Connectez votre CRM en quelques clics via MCP",
+  "Connectez votre CRM en quelques clics",
   "Créez des rappels et relances sans effort",
   "Concentrez-vous sur les leads qui convertissent",
 ];

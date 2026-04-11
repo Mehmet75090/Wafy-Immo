@@ -86,7 +86,7 @@ const SimulatorSection = () => {
               bestOption === "abonnement" ? "border-secondary bg-wafy-green-light" : "border-border bg-background"
             }`}>
               <div className="text-sm text-muted-foreground mb-1">Option 1 — Abonnement</div>
-              <div className="text-3xl font-extrabold mb-1">
+              <div className="text-2xl sm:text-3xl font-extrabold mb-1">
                 {results.abonnement.toLocaleString("fr-FR")} MAD
               </div>
               <div className="text-sm text-muted-foreground">Plan Business</div>
@@ -97,7 +97,7 @@ const SimulatorSection = () => {
               bestOption === "parlead" ? "border-secondary bg-wafy-green-light" : "border-border bg-background"
             }`}>
               <div className="text-sm text-muted-foreground mb-1">Option 2 — Par lead</div>
-              <div className="text-3xl font-extrabold mb-1">
+              <div className="text-2xl sm:text-3xl font-extrabold mb-1">
                 {results.parLead.toLocaleString("fr-FR")} MAD
               </div>
               <div className="text-sm text-muted-foreground">
