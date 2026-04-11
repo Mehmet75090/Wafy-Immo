@@ -68,7 +68,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
           <div className="space-y-2">
             <Label htmlFor="company">Nom du promoteur *</Label>
-            <Input id="company" name="company" placeholder="Ex : Groupe Addoha" required maxLength={100} />
+            <Input id="company" name="company" required maxLength={100} />
           </div>
 
           <div className="space-y-2">
