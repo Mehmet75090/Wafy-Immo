@@ -72,39 +72,28 @@ const PricingSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2">
           <span className="text-lg">🧪</span>
-          <h3 className="font-bold text-lg">PILOTE — Testez sans risque</h3>
+          <h3 className="font-bold text-lg">Offre PILOTE — Testez sans risque</h3>
         </div>
-        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-5">
-          <span><strong className="text-foreground">Durée :</strong> 1 à 2 mois</span>
-          <span><strong className="text-foreground">Volume :</strong> Jusqu'à 200 conversations</span>
+        <p className="text-sm text-muted-foreground mb-5">
+          Paiement uniquement au résultat, sans abonnement. Idéal pour valider WAFY sur un premier programme.
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <div className="p-4 rounded-xl bg-card border border-border">
+            <div className="text-xs text-muted-foreground mb-1">Lead tiède</div>
+            <div className="text-xl font-extrabold text-primary mb-1">150 MAD</div>
+            <p className="text-xs text-muted-foreground">Lead qualifié par l'IA : budget, projet, timeline identifiés. Prêt à être contacté par votre commercial.</p>
+          </div>
+          <div className="p-4 rounded-xl bg-card border border-border">
+            <div className="text-xs text-muted-foreground mb-1">Lead chaud</div>
+            <div className="text-xl font-extrabold text-primary mb-1">350 MAD</div>
+            <p className="text-xs text-muted-foreground">Lead qualifié + RDV confirmé ou demande de rappel. Votre commercial n'a plus qu'à closer.</p>
+          </div>
         </div>
-        <ul className="space-y-2.5 mb-6">
-          {[
-            { text: "Qualification conversationnelle IA", included: true },
-            { text: "Scoring automatique", included: true },
-            { text: "Fiche lead enrichie dans CRM", included: true },
-            { text: "Reporting basique", included: true },
-            { text: "Relances WhatsApp automatiques", included: false },
-            { text: "Prise de RDV automatique", included: false },
-          ].map((f) => (
-            <li key={f.text} className="flex items-center gap-2 text-sm">
-              {f.included ? (
-                <Check className="w-4 h-4 text-secondary" />
-              ) : (
-                <X className="w-4 h-4 text-muted-foreground/40" />
-              )}
-              <span className={f.included ? "" : "text-muted-foreground/50 line-through"}>
-                {f.text}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <div className="text-sm font-semibold">
-          <span className="text-primary">150 MAD</span> / lead tiède — <span className="text-primary">350 MAD</span> / lead chaud
-        </div>
-        <Button variant="hero" className="w-full mt-6" asChild>
+
+        <Button variant="hero" className="w-full" asChild>
           <a href="#cta">Démarrer le pilote</a>
         </Button>
       </motion.div>
