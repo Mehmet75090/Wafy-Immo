@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/75 to-foreground/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/55 to-transparent" />
       </div>
 
       {/* Nav */}
