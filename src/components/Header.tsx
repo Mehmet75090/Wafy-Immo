@@ -13,7 +13,7 @@ const Header = ({ onOpenForm }: HeaderProps) => (
         <img src={logo} alt="WAFY PRO" className="h-10 md:h-12" />
         <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">Immobilier</span>
       </a>
-      <Button variant="hero" size="lg" onClick={onOpenForm}>
+      <Button variant="hero" size="lg" className="hidden md:inline-flex" onClick={onOpenForm}>
         Demander une démo <ArrowRight className="ml-1" />
       </Button>
     </nav>
