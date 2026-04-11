@@ -29,7 +29,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-green-500/20 px-4 py-1.5 text-sm font-medium text-green-400 mb-6">
+            <span className="inline-flex items-center gap-2 rounded-full bg-secondary/20 px-4 py-1.5 text-sm font-medium text-secondary mb-6">
               <MessageCircle className="w-4 h-4" /> Agent IA sur WhatsApp · 24/7
             </span>
           </motion.div>
