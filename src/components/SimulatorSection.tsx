@@ -5,18 +5,27 @@ import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
 
 const wafyPlans = [
   { name: "Pilote", price: 0, perLeadTiede: 150, perLeadChaud: 350, isPerLead: true, maxConv: 200 },
-  { name: "Essentiel", price: 8000, perLeadTiede: 0, perLeadChaud: 0, isPerLead: false, maxConv: 300 },
-  { name: "Business", price: 15000, perLeadTiede: 0, perLeadChaud: 0, isPerLead: false, maxConv: 1500 },
-  { name: "Premium", price: 22000, perLeadTiede: 0, perLeadChaud: 0, isPerLead: false, maxConv: 3000 },
+  { name: "Essentiel", price: 8000, isPerLead: false, maxConv: 300 },
+  { name: "Business", price: 15000, isPerLead: false, maxConv: 1500 },
+  { name: "Premium", price: 22000, isPerLead: false, maxConv: 3000 },
 ];
 
-const AGENT_COST = 7700;
 const LEADS_PER_AGENT = 375;
+
+function getBestPlan(leads: number) {
+  // Find cheapest plan that fits the volume
+  for (let i = 0; i < wafyPlans.length; i++) {
+    if (leads <= wafyPlans[i].maxConv) return i;
+  }
+  return wafyPlans.length - 1; // Premium if exceeds all
+}
 
 const SimulatorSection = () => {
   const [totalLeads, setTotalLeads] = useState(500);
-  const [selectedPlan, setSelectedPlan] = useState(2); // Business by default
+  const [agentSalary, setAgentSalary] = useState(7700);
   const [hotPercent, setHotPercent] = useState(30);
+
+  const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
 
   const results = useMemo(() => {
     const plan = wafyPlans[selectedPlan];
@@ -25,14 +34,14 @@ const SimulatorSection = () => {
 
     // Human cost
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
-    const humanCost = agentsNeeded * AGENT_COST;
+    const humanCost = agentsNeeded * agentSalary;
     const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
     const humanLeadsPerDay = agentsNeeded * 25;
 
     // WAFY cost
     let wafyCost: number;
     if (plan.isPerLead) {
-      wafyCost = warmLeads * plan.perLeadTiede + hotLeads * plan.perLeadChaud;
+      wafyCost = warmLeads * (plan as typeof wafyPlans[0]).perLeadTiede + hotLeads * (plan as typeof wafyPlans[0]).perLeadChaud;
     } else {
       wafyCost = plan.price;
     }
@@ -52,44 +61,38 @@ const SimulatorSection = () => {
       savingsPercent,
       planName: plan.name,
     };
-  }, [totalLeads, selectedPlan, hotPercent]);
+  }, [totalLeads, selectedPlan, hotPercent, agentSalary]);
 
   const comparisonRows = [
     {
       label: "Coût mensuel",
       human: `${results.humanCost.toLocaleString("fr-FR")} MAD`,
       wafy: `${results.wafyCost.toLocaleString("fr-FR")} MAD`,
-      icon: TrendingDown,
     },
     {
       label: "Coût / lead",
       human: `${results.humanCostPerLead} MAD`,
       wafy: `${results.wafyCostPerLead} MAD`,
-      icon: FileCheck,
     },
     {
       label: "Leads traités / jour",
       human: `~${results.humanLeadsPerDay} / ${results.agentsNeeded} agent${results.agentsNeeded > 1 ? "s" : ""}`,
       wafy: "Illimité",
-      icon: Zap,
     },
     {
       label: "Disponibilité",
       human: "Lun-Ven, 9h-18h",
       wafy: "24h/24, 7j/7",
-      icon: Clock,
     },
     {
       label: "Temps de réponse",
       human: "10 min à 24h",
       wafy: "Instantané",
-      icon: Zap,
     },
     {
       label: "Qualité fiche lead",
       human: "Variable",
       wafy: "Standardisée + scorée",
-      icon: FileCheck,
     },
   ];
 
@@ -131,6 +134,21 @@ const SimulatorSection = () => {
               />
             </div>
 
+            <div>
+              <div className="flex justify-between mb-3">
+                <span className="text-sm font-medium">Salaire net d'un agent de qualification</span>
+                <span className="text-sm font-bold text-primary">{agentSalary.toLocaleString("fr-FR")} MAD</span>
+              </div>
+              <Slider
+                value={[agentSalary]}
+                onValueChange={([v]) => setAgentSalary(v)}
+                min={4000}
+                max={15000}
+                step={500}
+                className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
+              />
+            </div>
+
             {wafyPlans[selectedPlan].isPerLead && (
               <div>
                 <div className="flex justify-between mb-3">
@@ -148,46 +166,34 @@ const SimulatorSection = () => {
               </div>
             )}
 
-            <div>
-              <span className="text-sm font-medium block mb-3">Formule WAFY</span>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {wafyPlans.map((plan, i) => (
-                  <button
-                    key={plan.name}
-                    onClick={() => setSelectedPlan(i)}
-                    className={`px-3 py-2.5 rounded-xl text-sm font-semibold border-2 transition-all ${
-                      selectedPlan === i
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-border bg-background text-muted-foreground hover:border-primary/30"
-                    }`}
-                  >
-                    {plan.name}
-                  </button>
-                ))}
+            {/* Auto-selected plan + agents info */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex-1 flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/20 text-sm">
+                <Bot className="w-4 h-4 text-primary shrink-0" />
+                <span>
+                  Formule recommandée : <strong className="text-primary">{results.planName}</strong>
+                </span>
               </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-muted text-sm text-muted-foreground">
-              <User className="w-4 h-4 shrink-0" />
-              <span>
-                Agents nécessaires pour {totalLeads} leads : <strong className="text-foreground">{results.agentsNeeded} agent{results.agentsNeeded > 1 ? "s" : ""}</strong> (base ~375 leads/agent)
-              </span>
+              <div className="flex-1 flex items-center gap-3 p-3 rounded-xl bg-muted text-sm text-muted-foreground">
+                <User className="w-4 h-4 shrink-0" />
+                <span>
+                  <strong className="text-foreground">{results.agentsNeeded} agent{results.agentsNeeded > 1 ? "s" : ""}</strong> nécessaire{results.agentsNeeded > 1 ? "s" : ""}
+                </span>
+              </div>
             </div>
           </div>
 
           {/* Comparison table */}
           <div className="rounded-xl border border-border overflow-hidden mb-8">
-            {/* Header */}
             <div className="grid grid-cols-3 text-sm font-semibold">
               <div className="p-3 sm:p-4 bg-muted" />
               <div className="p-3 sm:p-4 bg-muted/80 text-center flex items-center justify-center gap-1.5">
                 <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent</span> humain
               </div>
               <div className="p-3 sm:p-4 bg-primary/10 text-center flex items-center justify-center gap-1.5">
-                <Bot className="w-4 h-4 text-primary" /> WAFY
+                <Bot className="w-4 h-4 text-primary" /> WAFY <span className="hidden sm:inline">{results.planName}</span>
               </div>
             </div>
-            {/* Rows */}
             {comparisonRows.map((row, i) => (
               <div key={i} className="grid grid-cols-3 text-sm border-t border-border">
                 <div className="p-3 sm:p-4 font-medium bg-card">{row.label}</div>
