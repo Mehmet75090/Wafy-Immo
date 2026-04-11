@@ -59,7 +59,7 @@ const HeroSection = () => {
           >
             <Button variant="hero" size="lg" className="px-8 py-6" asChild>
               <a href="#cta">
-                <MessageCircle className="mr-2" /> Tester gratuitement
+                <MessageCircle className="mr-2" /> Demander une démo
               </a>
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6" asChild>

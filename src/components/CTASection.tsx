@@ -41,7 +41,7 @@ const CTASection = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="cta" size="lg" className="px-10 py-7" asChild>
             <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2" /> Tester gratuitement
+              <MessageCircle className="mr-2" /> Démarrer le pilote
             </a>
           </Button>
           <Button variant="hero-outline" size="lg" className="px-10 py-7" asChild>
