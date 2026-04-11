@@ -29,8 +29,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 text-sm font-medium text-accent mb-6">
-              <Zap className="w-4 h-4" /> Qualification Leads 24/7
+            <span className="inline-flex items-center gap-2 rounded-full bg-green-500/20 px-4 py-1.5 text-sm font-medium text-green-400 mb-6">
+              <MessageCircle className="w-4 h-4" /> Agent IA sur WhatsApp · 24/7
             </span>
           </motion.div>
 
@@ -40,9 +40,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            L'agent IA qui{" "}
-            <span className="text-gradient">qualifie vos leads</span>{" "}
-            immobiliers 24h/24
+            L'agent IA{" "}
+            <span className="text-gradient">WhatsApp</span> qui{" "}
+            qualifie vos leads immobiliers 24h/24
           </motion.h1>
 
           <motion.p
@@ -52,6 +52,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             WAFY qualifie, score et transmet vos leads automatiquement via WhatsApp. 
+            Connectez aussi vos outils favoris grâce au protocole MCP.
             Zéro lead perdu, zéro temps perdu.
           </motion.p>
 

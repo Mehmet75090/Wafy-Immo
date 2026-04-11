@@ -1,26 +1,31 @@
 import { motion } from "framer-motion";
-import { Bot, Plug, Workflow, BarChart3 } from "lucide-react";
+import { Bot, Plug, Workflow, BarChart3, MessageCircle } from "lucide-react";
 
 const features = [
   {
+    icon: MessageCircle,
+    title: "WhatsApp natif",
+    desc: "WAFY converse directement avec vos leads sur WhatsApp — le canal préféré de vos prospects immobiliers.",
+  },
+  {
     icon: Bot,
     title: "Qualification automatique",
-    desc: "IA conversationnelle qui qualifie chaque lead en temps réel (budget, projet, délai)",
+    desc: "IA conversationnelle qui qualifie chaque lead en temps réel (budget, projet, délai, localisation).",
   },
   {
     icon: Plug,
-    title: "Connexion MCP native",
-    desc: "Protocole MCP pour connecter WAFY directement à votre CRM, WhatsApp, agenda...",
+    title: "Connexion MCP — vos outils connectés",
+    desc: "Grâce au protocole MCP, connectez WAFY à votre CRM, agenda, ERP, emailing ou tout autre outil métier en quelques clics.",
   },
   {
     icon: Workflow,
     title: "Workflows automatisés",
-    desc: "Rappels, relances, scoring et priorisation sans intervention manuelle",
+    desc: "Rappels, relances, scoring et priorisation sans intervention manuelle.",
   },
   {
     icon: BarChart3,
     title: "Dashboard & Analytics",
-    desc: "Suivi des performances, taux de conversion et ROI en temps réel",
+    desc: "Suivi des performances, taux de conversion et ROI en temps réel.",
   },
 ];
 
