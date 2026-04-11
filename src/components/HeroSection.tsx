@@ -65,7 +65,7 @@ const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
               <MessageCircle className="mr-2" /> Demander une démo
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6" asChild>
-              <a href="#simulator">WAFY vs humain</a>
+              <a href="#simulator">Comparer les coûts</a>
             </Button>
           </motion.div>
 
