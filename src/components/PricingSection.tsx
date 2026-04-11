@@ -62,9 +62,54 @@ const PricingSection = () => (
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
           Grille <span className="text-gradient">tarifaire</span>
         </h2>
-        <p className="text-muted-foreground">Option 1 : Abonnement mensuel</p>
+        <p className="text-muted-foreground">Abonnement mensuel</p>
       </motion.div>
 
+      {/* Pilote offer */}
+      <motion.div
+        className="mb-12 max-w-2xl mx-auto rounded-2xl p-6 sm:p-8 border-2 border-dashed border-primary/40 bg-primary/5"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-lg">🧪</span>
+          <h3 className="font-bold text-lg">PILOTE — Testez sans risque</h3>
+        </div>
+        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-5">
+          <span><strong className="text-foreground">Durée :</strong> 1 à 2 mois</span>
+          <span><strong className="text-foreground">Volume :</strong> Jusqu'à 200 conversations</span>
+        </div>
+        <ul className="space-y-2.5 mb-6">
+          {[
+            { text: "Qualification conversationnelle IA", included: true },
+            { text: "Scoring automatique", included: true },
+            { text: "Fiche lead enrichie dans CRM", included: true },
+            { text: "Reporting basique", included: true },
+            { text: "Relances WhatsApp automatiques", included: false },
+            { text: "Prise de RDV automatique", included: false },
+          ].map((f) => (
+            <li key={f.text} className="flex items-center gap-2 text-sm">
+              {f.included ? (
+                <Check className="w-4 h-4 text-secondary" />
+              ) : (
+                <X className="w-4 h-4 text-muted-foreground/40" />
+              )}
+              <span className={f.included ? "" : "text-muted-foreground/50 line-through"}>
+                {f.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <div className="text-sm font-semibold">
+          <span className="text-primary">150 MAD</span> / lead tiède — <span className="text-primary">350 MAD</span> / lead chaud
+        </div>
+        <Button variant="hero" className="w-full mt-6" asChild>
+          <a href="#cta">Démarrer le pilote</a>
+        </Button>
+      </motion.div>
+
+      {/* Subscription plans */}
       <div className="grid md:grid-cols-3 gap-6">
         {plans.map((plan, i) => (
           <motion.div
@@ -114,7 +159,6 @@ const PricingSection = () => (
           </motion.div>
         ))}
       </div>
-
     </div>
   </section>
 );
