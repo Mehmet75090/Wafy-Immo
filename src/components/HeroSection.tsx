@@ -13,13 +13,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/55 to-transparent" />
       </div>
 
-      {/* Nav */}
-      <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 py-5">
-        <img src={logo} alt="WAFY PRO" className="h-10 md:h-12" />
-        <Button variant="hero" size="lg" asChild>
-          <a href="#cta">Essai gratuit <ArrowRight className="ml-1" /></a>
-        </Button>
-      </nav>
+      {/* Spacer for fixed nav */}
+      <div className="h-[72px]" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-24">
