@@ -51,6 +51,20 @@ const CTASection = () => (
           </Button>
         </div>
 
+        {/* Pilote offer */}
+        <div className="mt-10 p-5 sm:p-6 rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 max-w-lg mx-auto">
+          <div className="flex items-center gap-2 mb-2">
+            <span>🧪</span>
+            <h3 className="text-sm font-bold text-primary-foreground">Pas encore convaincu ?</h3>
+          </div>
+          <p className="text-xs text-primary-foreground/60 mb-1">
+            Démarrez avec l'offre <strong className="text-primary">Pilote</strong> : payez uniquement au résultat, sans abonnement.
+          </p>
+          <p className="text-xs text-primary-foreground/40">
+            Lead tiède : 150 MAD · Lead chaud : 350 MAD
+          </p>
+        </div>
+
         <p className="text-primary-foreground/40 text-sm mt-6">
           Setup offert pour les 10 premiers promoteurs. Sans engagement.
         </p>
