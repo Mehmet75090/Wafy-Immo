@@ -67,23 +67,6 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          <motion.div
-            className="mt-10 flex gap-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-          >
-            {[
-              { val: "70%", label: "temps commercial économisé" },
-              { val: "100%", label: "leads traités" },
-              { val: "<5min", label: "temps de réponse" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-2xl md:text-3xl font-extrabold text-primary">{s.val}</div>
-                <div className="text-xs text-white/70 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
     </section>
