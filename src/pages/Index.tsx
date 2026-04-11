@@ -7,6 +7,7 @@ import ComparisonSection from "@/components/ComparisonSection";
 import DashboardSection from "@/components/DashboardSection";
 import SimulatorSection from "@/components/SimulatorSection";
 import PricingSection from "@/components/PricingSection";
+import PilotSection from "@/components/PilotSection";
 import CTASection from "@/components/CTASection";
 import FooterSection from "@/components/FooterSection";
 
@@ -21,6 +22,7 @@ const Index = () => (
     <DashboardSection />
     <SimulatorSection />
     <PricingSection />
+    <PilotSection />
     <CTASection />
     <FooterSection />
   </main>
