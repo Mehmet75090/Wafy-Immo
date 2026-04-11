@@ -4,7 +4,11 @@ import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 import { MessageCircle, Zap, ArrowRight } from "lucide-react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onOpenForm?: () => void;
+}
+
+const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
@@ -57,10 +61,8 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
           >
-            <Button variant="hero" size="lg" className="px-8 py-6" asChild>
-              <a href="#cta">
-                <MessageCircle className="mr-2" /> Demander une démo
-              </a>
+            <Button variant="hero" size="lg" className="px-8 py-6" onClick={onOpenForm}>
+              <MessageCircle className="mr-2" /> Demander une démo
             </Button>
             <Button variant="hero-outline" size="lg" className="px-8 py-6" asChild>
               <a href="#simulator">Simuler mon économie</a>

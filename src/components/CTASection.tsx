@@ -8,7 +8,11 @@ const benefits = [
   "Mise en place rapide, sans engagement",
 ];
 
-const CTASection = () => (
+interface CTASectionProps {
+  onOpenForm?: () => void;
+}
+
+const CTASection = ({ onOpenForm }: CTASectionProps) => (
   <section className="section-padding bg-wafy-dark-gradient relative overflow-hidden" id="cta">
     <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-primary/10 blur-3xl -translate-y-1/2 translate-x-1/2" />
     <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-primary/10 blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -43,10 +47,8 @@ const CTASection = () => (
         </ul>
 
         <div className="flex justify-center">
-          <Button variant="cta" size="lg" className="px-10 py-7" asChild>
-            <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2" /> Démarrer le pilote
-            </a>
+          <Button variant="cta" size="lg" className="px-10 py-7" onClick={onOpenForm}>
+            <MessageCircle className="mr-2" /> Démarrer le pilote
           </Button>
         </div>
       </motion.div>
