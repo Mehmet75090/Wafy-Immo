@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
+import { MessageCircle, CheckCircle2 } from "lucide-react";
 
 const benefits = [
   "Aucun abonnement, payez uniquement au résultat",
-  "Lead tiède : 150 MAD · Lead chaud : 350 MAD",
+  "Frais de setup offerts",
   "Mise en place rapide, sans engagement",
 ];
 
@@ -42,15 +42,10 @@ const CTASection = () => (
           ))}
         </ul>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Button variant="cta" size="lg" className="px-10 py-7" asChild>
             <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2" /> Démarrer le pilote
-            </a>
-          </Button>
-          <Button variant="hero-outline" size="lg" className="px-10 py-7" asChild>
-            <a href="mailto:contact@wafypro.com">
-              Demander une démo <ArrowRight className="ml-2" />
             </a>
           </Button>
         </div>
