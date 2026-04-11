@@ -115,27 +115,6 @@ const PricingSection = () => (
         ))}
       </div>
 
-      {/* Per-lead option */}
-      <motion.div
-        className="mt-16 p-8 rounded-2xl border border-border bg-card"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-xl font-bold mb-4">Option 2 : Paiement par lead</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-background border border-border">
-            <div className="text-sm text-muted-foreground mb-1">Lead Tiède</div>
-            <div className="text-2xl font-extrabold mb-1">150 <span className="text-sm font-normal text-muted-foreground">MAD HT / lead qualifié</span></div>
-            <p className="text-sm text-muted-foreground">Lead qualifié avec intention d'achat (scoré, fiche complète)</p>
-          </div>
-          <div className="p-6 rounded-xl bg-background border border-border">
-            <div className="text-sm text-muted-foreground mb-1">Lead Chaud</div>
-            <div className="text-2xl font-extrabold mb-1">350 <span className="text-sm font-normal text-muted-foreground">MAD HT / lead qualifié</span></div>
-            <p className="text-sm text-muted-foreground">Lead qualifié + RDV ou demande de rappel confirmé</p>
-          </div>
-        </div>
-      </motion.div>
     </div>
   </section>
 );
