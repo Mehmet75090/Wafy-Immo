@@ -71,7 +71,7 @@ const ComparisonSection = () => (
               </th>
               <th className="p-4 text-center bg-primary/10 font-semibold">
                 <div className="flex items-center justify-center gap-1">
-                  <Check className="w-4 h-4 text-primary" /> Co-pilote WAFY
+                  <Check className="w-4 h-4 text-primary" /> Co-pilote WAFY IA
                 </div>
               </th>
             </tr>
