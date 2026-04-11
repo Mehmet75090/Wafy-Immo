@@ -24,10 +24,11 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     const formData = new FormData(form);
     const name = (formData.get("name") as string).trim();
     const email = (formData.get("email") as string).trim();
+    const company = (formData.get("company") as string).trim();
     const phone = (formData.get("phone") as string).trim();
     const message = (formData.get("message") as string).trim();
 
-    if (!name || !email || !phone) {
+    if (!name || !company || !email || !phone) {
       toast({ title: "Veuillez remplir tous les champs obligatoires.", variant: "destructive" });
       setIsSubmitting(false);
       return;
@@ -35,7 +36,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
     const subject = encodeURIComponent("Nouvelle demande pilote WAFY");
     const body = encodeURIComponent(
-      `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\n\nMessage :\n${message || "—"}`
+      `Nom : ${name}\nPromoteur : ${company}\nEmail : ${email}\nTéléphone : ${phone}\n\nMessage :\n${message || "—"}`
     );
 
     window.open(`mailto:hello@wafypro.ma?subject=${subject}&body=${body}`, "_self");
