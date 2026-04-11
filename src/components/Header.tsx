@@ -9,7 +9,7 @@ const Header = () => (
         <img src={logo} alt="WAFY PRO" className="h-10 md:h-12" />
       </a>
       <Button variant="hero" size="lg" asChild>
-        <a href="#cta">Essai gratuit <ArrowRight className="ml-1" /></a>
+        <a href="#cta">Demander une démo <ArrowRight className="ml-1" /></a>
       </Button>
     </nav>
   </header>
