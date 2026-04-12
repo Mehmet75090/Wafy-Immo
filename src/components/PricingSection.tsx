@@ -8,6 +8,10 @@ const plans = [
     price: "8 000",
     period: "/mois",
     conv: "Jusqu'à 300 conv./mois",
+    estimation: {
+      leads: "≈ 75 à 105 leads qualifiés",
+      rdv: "≈ 30 à 45 RDV potentiels",
+    },
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -23,6 +27,10 @@ const plans = [
     price: "15 000",
     period: "/mois",
     conv: "Jusqu'à 1 500 conv./mois",
+    estimation: {
+      leads: "≈ 375 à 525 leads qualifiés",
+      rdv: "≈ 150 à 225 RDV potentiels",
+    },
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -38,6 +46,10 @@ const plans = [
     price: "22 000",
     period: "/mois",
     conv: "Jusqu'à 3 000 conv./mois",
+    estimation: {
+      leads: "≈ 750 à 1 050 leads qualifiés",
+      rdv: "≈ 300 à 450 RDV potentiels",
+    },
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -65,16 +77,13 @@ const PricingSection = () => (
         <p className="text-muted-foreground">Abonnement mensuel</p>
       </motion.div>
 
-
-
-      {/* Subscription plans */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-6 items-start">
         {plans.map((plan, i) => (
           <motion.div
             key={plan.name}
             className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 ${
               plan.highlight
-                ? "border-primary shadow-xl bg-card scale-[1.02]"
+                ? "border-primary border-2 shadow-xl bg-card md:scale-[1.03]"
                 : "border-border bg-card hover:border-primary/30"
             }`}
             initial={{ opacity: 0, y: 30 }}
@@ -89,10 +98,19 @@ const PricingSection = () => (
             )}
             <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
             <p className="text-xs text-muted-foreground mb-4">{plan.conv}</p>
-            <div className="mb-6">
-              <span className="text-3xl font-extrabold">{plan.price}</span>
+            <div className="mb-4">
+              <span className={`text-3xl font-extrabold ${plan.highlight ? "text-primary" : ""}`}>
+                {plan.price}
+              </span>
               <span className="text-muted-foreground text-sm"> MAD{plan.period}</span>
             </div>
+
+            {/* Estimation block */}
+            <div className="rounded-lg border border-accent-foreground/20 bg-accent p-3 mb-6 text-[13px] space-y-1">
+              <p className="font-semibold text-accent-foreground">{plan.estimation.leads}</p>
+              <p className="text-accent-foreground/80">{plan.estimation.rdv}</p>
+            </div>
+
             <ul className="space-y-3 mb-8">
               {plan.features.map((f) => (
                 <li key={f.text} className="flex items-center gap-2 text-sm">
@@ -117,6 +135,10 @@ const PricingSection = () => (
           </motion.div>
         ))}
       </div>
+
+      <p className="text-center text-xs text-muted-foreground mt-8">
+        * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
+      </p>
     </div>
   </section>
 );
