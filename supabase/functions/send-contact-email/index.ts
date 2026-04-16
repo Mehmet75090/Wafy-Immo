@@ -55,7 +55,7 @@ Deno.serve(async (req) => {
         'X-Connection-Api-Key': RESEND_API_KEY,
       },
       body: JSON.stringify({
-        from: 'WAFY PRO <onboarding@resend.dev>',
+        from: 'WAFY PRO <hello@wafypro.ma>',
         to: ['hello@wafypro.ma'],
         reply_to: email,
         subject: `Nouvelle demande pilote – ${company}`,
