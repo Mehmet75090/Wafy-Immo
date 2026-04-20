@@ -79,7 +79,7 @@ const plans = [
   },
 ];
 
-const formatMAD = (n: number) => n.toLocaleString("fr-FR");
+
 
 const PricingSection = () => {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
