@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ANNUAL_DISCOUNT = 0.35;
+const ANNUAL_DISCOUNT = 0.55;
 
 type Currency = "MAD" | "EUR" | "USD";
 
@@ -101,7 +101,7 @@ const PricingSection = () => {
           </h2>
           <p className="text-muted-foreground">
             Choisissez votre rythme — économisez{" "}
-            <span className="font-bold text-primary">35%</span> en annuel
+            <span className="font-bold text-primary">55%</span> en annuel
           </p>
         </motion.div>
 
@@ -182,7 +182,7 @@ const PricingSection = () => {
                 {isAnnual && (
                   <div className="absolute -top-3 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-extrabold shadow-md">
                     <Sparkles className="w-3 h-3" />
-                    -35%
+                    -55%
                   </div>
                 )}
 
