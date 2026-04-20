@@ -99,20 +99,11 @@ const PricingSection = () => {
             </button>
             <button
               onClick={() => setBilling("annual")}
-              className={`relative z-10 px-5 py-2 text-sm font-semibold rounded-full transition-colors flex items-center gap-2 ${
+              className={`relative z-10 px-5 py-2 text-sm font-semibold rounded-full transition-colors ${
                 isAnnual ? "text-primary-foreground" : "text-muted-foreground"
               }`}
             >
               Annuel
-              <span
-                className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                  isAnnual
-                    ? "bg-primary-foreground/20 text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground"
-                }`}
-              >
-                -35%
-              </span>
             </button>
             <div
               className={`absolute top-1 bottom-1 rounded-full bg-wafy-gradient transition-all duration-300 ${
