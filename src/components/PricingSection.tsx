@@ -187,22 +187,22 @@ const PricingSection = () => {
                 <div className="mb-4 min-h-[80px]">
                   {isAnnual && (
                     <div className="text-sm text-muted-foreground line-through mb-1">
-                      {formatMAD(monthlyPrice)} MAD
+                      {formatPrice(monthlyPrice, currency)}
                     </div>
                   )}
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-3xl sm:text-4xl font-extrabold ${
                         plan.highlight || isAnnual ? "text-primary" : ""
                       }`}
                     >
-                      {formatMAD(displayPrice)}
+                      {formatPrice(displayPrice, currency)}
                     </span>
-                    <span className="text-muted-foreground text-sm"> MAD/mois</span>
+                    <span className="text-muted-foreground text-sm">/mois</span>
                   </div>
                   {isAnnual && (
                     <div className="text-xs font-semibold text-secondary mt-1">
-                      Économisez {formatMAD(annualSavings)} MAD / an
+                      Économisez {formatPrice(annualSavings, currency)} / an
                     </div>
                   )}
                   {!isAnnual && (
