@@ -5,6 +5,23 @@ import { Button } from "@/components/ui/button";
 
 const ANNUAL_DISCOUNT = 0.35;
 
+type Currency = "MAD" | "EUR" | "USD";
+
+const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after" }> = {
+  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after" },
+  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after" },
+  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before" },
+};
+
+const formatPrice = (madAmount: number, currency: Currency) => {
+  const { rate, symbol, locale, position } = CURRENCIES[currency];
+  const converted = madAmount * rate;
+  // Round MAD to nearest unit, EUR/USD to nearest 10 for cleaner display
+  const rounded = currency === "MAD" ? Math.round(converted) : Math.round(converted / 10) * 10;
+  const formatted = rounded.toLocaleString(locale);
+  return position === "before" ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
+};
+
 const plans = [
   {
     name: "ESSENTIEL",
@@ -62,11 +79,13 @@ const plans = [
   },
 ];
 
-const formatMAD = (n: number) => n.toLocaleString("fr-FR");
+
 
 const PricingSection = () => {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  const [currency, setCurrency] = useState<Currency>("MAD");
   const isAnnual = billing === "annual";
+  const currencyList: Currency[] = ["MAD", "EUR", "USD"];
 
   return (
     <section className="section-padding" id="pricing">
@@ -86,8 +105,8 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        {/* Billing toggle */}
-        <div className="flex justify-center mb-12">
+        {/* Billing toggle + Currency selector */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
           <div className="relative inline-flex items-center p-1 rounded-full bg-muted border border-border">
             <button
               onClick={() => setBilling("monthly")}
@@ -110,6 +129,22 @@ const PricingSection = () => {
                 isAnnual ? "left-[calc(50%+2px)] right-1" : "left-1 right-[calc(50%+2px)]"
               }`}
             />
+          </div>
+
+          <div className="inline-flex items-center p-1 rounded-full bg-muted border border-border">
+            {currencyList.map((c) => (
+              <button
+                key={c}
+                onClick={() => setCurrency(c)}
+                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
+                  currency === c
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -152,22 +187,22 @@ const PricingSection = () => {
                 <div className="mb-4 min-h-[80px]">
                   {isAnnual && (
                     <div className="text-sm text-muted-foreground line-through mb-1">
-                      {formatMAD(monthlyPrice)} MAD
+                      {formatPrice(monthlyPrice, currency)}
                     </div>
                   )}
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-3xl sm:text-4xl font-extrabold ${
                         plan.highlight || isAnnual ? "text-primary" : ""
                       }`}
                     >
-                      {formatMAD(displayPrice)}
+                      {formatPrice(displayPrice, currency)}
                     </span>
-                    <span className="text-muted-foreground text-sm"> MAD/mois</span>
+                    <span className="text-muted-foreground text-sm">/mois</span>
                   </div>
                   {isAnnual && (
                     <div className="text-xs font-semibold text-secondary mt-1">
-                      Économisez {formatMAD(annualSavings)} MAD / an
+                      Économisez {formatPrice(annualSavings, currency)} / an
                     </div>
                   )}
                   {!isAnnual && (
