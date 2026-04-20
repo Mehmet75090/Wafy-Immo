@@ -7,10 +7,10 @@ const ANNUAL_DISCOUNT = 0.35;
 
 type Currency = "MAD" | "EUR" | "USD";
 
-const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after" }> = {
-  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after" },
-  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after" },
-  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before" },
+const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after"; flag: string; label: string }> = {
+  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after", flag: "🇲🇦", label: "Maroc" },
+  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after", flag: "🇪🇺", label: "Euro" },
+  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before", flag: "🇺🇸", label: "Dollar" },
 };
 
 const formatPrice = (madAmount: number, currency: Currency) => {
@@ -131,18 +131,23 @@ const PricingSection = () => {
             />
           </div>
 
-          <div className="inline-flex items-center p-1 rounded-full bg-muted border border-border">
+          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-muted border border-border">
             {currencyList.map((c) => (
               <button
                 key={c}
                 onClick={() => setCurrency(c)}
-                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
+                title={CURRENCIES[c].label}
+                aria-label={`Afficher en ${CURRENCIES[c].label}`}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all ${
                   currency === c
-                    ? "bg-primary text-primary-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-background shadow-sm ring-2 ring-primary/40 scale-105"
+                    : "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
                 }`}
               >
-                {c}
+                <span className="text-xl leading-none">{CURRENCIES[c].flag}</span>
+                <span className={`text-xs font-bold ${currency === c ? "text-foreground" : "text-muted-foreground"}`}>
+                  {c}
+                </span>
               </button>
             ))}
           </div>
