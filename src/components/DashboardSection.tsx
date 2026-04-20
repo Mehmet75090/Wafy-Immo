@@ -79,7 +79,7 @@ const DashboardSection = () => (
         <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-border bg-card">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-secondary" />
-            <span className="text-sm font-semibold">WAFY Dashboard</span>
+            <span className="text-sm font-semibold">Wafy Immo Dashboard</span>
           </div>
           <span className="text-xs text-muted-foreground">Dernière mise à jour : il y a 2 min</span>
         </div>

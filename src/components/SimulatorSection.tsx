@@ -106,7 +106,7 @@ const SimulatorSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            Simulateur : <span className="text-gradient">humain vs WAFY</span>
+            Simulateur : <span className="text-gradient">humain vs Wafy Immo</span>
           </h2>
           <p className="text-muted-foreground">Jouez avec les curseurs pour voir le point de bascule</p>
         </motion.div>
@@ -191,7 +191,7 @@ const SimulatorSection = () => {
                 <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent</span> humain
               </div>
               <div className="p-3 sm:p-4 bg-primary/10 text-center flex items-center justify-center gap-1.5">
-                <Bot className="w-4 h-4 text-primary" /> WAFY <span className="hidden sm:inline">{results.planName}</span>
+                <Bot className="w-4 h-4 text-primary" /> Wafy Immo <span className="hidden sm:inline">{results.planName}</span>
               </div>
             </div>
             {comparisonRows.map((row, i) => (
@@ -206,7 +206,7 @@ const SimulatorSection = () => {
           {/* Savings */}
           {results.savings > 0 ? (
             <div className="p-5 rounded-xl border-2 border-secondary bg-secondary/5 text-center">
-              <div className="text-sm text-muted-foreground mb-1">Économie avec WAFY</div>
+              <div className="text-sm text-muted-foreground mb-1">Économie avec Wafy Immo</div>
               <div className="text-3xl sm:text-4xl font-extrabold text-secondary">
                 {results.savings.toLocaleString("fr-FR")} MAD<span className="text-lg font-bold"> / mois</span>
               </div>
@@ -217,14 +217,14 @@ const SimulatorSection = () => {
           ) : (
             <div className="p-5 rounded-xl border border-border bg-background text-center">
               <div className="text-sm text-muted-foreground">
-                Pour ce volume, le coût est similaire — mais WAFY répond instantanément, 24h/24.
+                Pour ce volume, le coût est similaire — mais Wafy Immo répond instantanément, 24h/24.
               </div>
             </div>
           )}
 
           {/* Punchline */}
           <p className="text-center mt-8 text-sm sm:text-base font-semibold text-foreground leading-relaxed">
-            Avec WAFY, <span className="text-primary">divisez votre coût de qualification par 2</span> — et vos leads sont traités en <span className="text-primary">30 secondes</span> au lieu de 24h.
+            Avec Wafy Immo, <span className="text-primary">divisez votre coût de qualification par 2</span> — et vos leads sont traités en <span className="text-primary">30 secondes</span> au lieu de 24h.
           </p>
         </motion.div>
       </div>

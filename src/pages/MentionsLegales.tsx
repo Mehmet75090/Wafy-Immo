@@ -23,7 +23,7 @@ const MentionsLegales = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
         <nav className="flex items-center justify-between px-6 md:px-12 py-4">
           <Link to="/" className="flex flex-col items-center">
-            <img src={logo} alt="WAFY PRO" className="h-10 md:h-12" />
+            <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
             <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">
               Immobilier
             </span>
@@ -41,13 +41,13 @@ const MentionsLegales = () => {
         <div className="container mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Mentions légales</h1>
           <p className="text-muted-foreground mb-12">
-            Informations légales relatives à l'éditeur et à l'hébergeur du site WafyPro.
+            Informations légales relatives à l'éditeur et à l'hébergeur du site Wafy Immo.
           </p>
 
           <Section title="Éditeur du site">
             <dl>
               <Row label="Raison sociale" value="BIRDEV" />
-              <Row label="Marque" value="WafyPro" />
+              <Row label="Marque" value="Wafy Immo" />
               <Row label="Forme juridique" value="SARL à Associé Unique (SARL AU)" />
               <Row label="Capital social" value="10 000 MAD" />
               <Row label="Numéro RC" value="486725 — Tribunal de Commerce de Casablanca" />
@@ -83,7 +83,7 @@ const MentionsLegales = () => {
           </Section>
 
           <Section title="Hébergement">
-            <p>Le site WAFY est hébergé par :</p>
+            <p>Le site Wafy Immo est hébergé par :</p>
             <div className="bg-card border border-border rounded-lg p-6 mt-2">
               <p className="font-semibold text-foreground mb-2">Nindohost</p>
               <address className="not-italic">
@@ -110,7 +110,7 @@ const MentionsLegales = () => {
               autorisation écrite préalable de BIRDEV.
             </p>
             <p>
-              La marque WafyPro et son logo sont des marques déposées de BIRDEV. Toute utilisation non
+              La marque Wafy Immo et son logo sont des marques déposées de BIRDEV. Toute utilisation non
               autorisée de ces marques est strictement interdite.
             </p>
           </Section>

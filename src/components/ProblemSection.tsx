@@ -35,7 +35,7 @@ const ProblemSection = () => (
           Le problème dans <span className="text-gradient">l'immobilier</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Vos commerciaux perdent du temps, vos leads s'évaporent. WAFY change la donne.
+          Vos commerciaux perdent du temps, vos leads s'évaporent. Wafy Immo change la donne.
         </p>
       </motion.div>
 
@@ -65,7 +65,7 @@ const ProblemSection = () => (
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        → WAFY résout ces problèmes en automatisant la qualification et le suivi.
+        → Wafy Immo résout ces problèmes en automatisant la qualification et le suivi.
       </motion.p>
     </div>
   </section>
