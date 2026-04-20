@@ -5,6 +5,23 @@ import { Button } from "@/components/ui/button";
 
 const ANNUAL_DISCOUNT = 0.35;
 
+type Currency = "MAD" | "EUR" | "USD";
+
+const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after" }> = {
+  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after" },
+  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after" },
+  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before" },
+};
+
+const formatPrice = (madAmount: number, currency: Currency) => {
+  const { rate, symbol, locale, position } = CURRENCIES[currency];
+  const converted = madAmount * rate;
+  // Round MAD to nearest unit, EUR/USD to nearest 10 for cleaner display
+  const rounded = currency === "MAD" ? Math.round(converted) : Math.round(converted / 10) * 10;
+  const formatted = rounded.toLocaleString(locale);
+  return position === "before" ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
+};
+
 const plans = [
   {
     name: "ESSENTIEL",
