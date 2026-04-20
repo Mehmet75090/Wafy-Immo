@@ -83,7 +83,9 @@ const plans = [
 
 const PricingSection = () => {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  const [currency, setCurrency] = useState<Currency>("MAD");
   const isAnnual = billing === "annual";
+  const currencyList: Currency[] = ["MAD", "EUR", "USD"];
 
   return (
     <section className="section-padding" id="pricing">
