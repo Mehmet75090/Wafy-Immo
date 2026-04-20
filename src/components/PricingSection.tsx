@@ -105,8 +105,8 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        {/* Billing toggle */}
-        <div className="flex justify-center mb-12">
+        {/* Billing toggle + Currency selector */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
           <div className="relative inline-flex items-center p-1 rounded-full bg-muted border border-border">
             <button
               onClick={() => setBilling("monthly")}
@@ -129,6 +129,22 @@ const PricingSection = () => {
                 isAnnual ? "left-[calc(50%+2px)] right-1" : "left-1 right-[calc(50%+2px)]"
               }`}
             />
+          </div>
+
+          <div className="inline-flex items-center p-1 rounded-full bg-muted border border-border">
+            {currencyList.map((c) => (
+              <button
+                key={c}
+                onClick={() => setCurrency(c)}
+                className={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
+                  currency === c
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
           </div>
         </div>
 
