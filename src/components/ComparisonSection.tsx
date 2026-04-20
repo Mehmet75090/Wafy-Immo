@@ -44,7 +44,7 @@ const ComparisonSection = () => (
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Pourquoi <span className="text-gradient">WAFY Immo</span> ?
+          Pourquoi <span className="text-gradient">Wafy Immo</span> ?
         </h2>
         <p className="text-muted-foreground">WhatsApp sans IA = expérience dégradée</p>
       </motion.div>
@@ -72,7 +72,7 @@ const ComparisonSection = () => (
               </th>
               <th className="p-4 text-center bg-primary/10 font-semibold">
                 <div className="flex items-center justify-center gap-1">
-                  <Check className="w-4 h-4 text-primary" /> Co-pilote WAFY IA
+                  <Check className="w-4 h-4 text-primary" /> Co-pilote Wafy Immo IA
                 </div>
               </th>
             </tr>
@@ -120,7 +120,7 @@ const ComparisonSection = () => (
               <div className="p-4 flex items-start gap-3 bg-primary/5">
                 <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-xs font-medium text-primary mb-0.5">Co-pilote WAFY IA</div>
+                  <div className="text-xs font-medium text-primary mb-0.5">Co-pilote Wafy Immo IA</div>
                   <div className="text-sm font-bold text-primary">{r.wafy}</div>
                 </div>
               </div>

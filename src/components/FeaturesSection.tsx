@@ -5,7 +5,7 @@ const features = [
   {
     icon: MessageCircle,
     title: "WhatsApp natif",
-    desc: "WAFY converse directement avec vos leads sur WhatsApp — le canal préféré de vos prospects immobiliers.",
+    desc: "Wafy Immo converse directement avec vos leads sur WhatsApp — le canal préféré de vos prospects immobiliers.",
   },
   {
     icon: Bot,
@@ -15,7 +15,7 @@ const features = [
   {
     icon: Plug,
     title: "Connecté à vos outils",
-    desc: "Votre CRM, agenda, emailing, ERP : WAFY s'y branche automatiquement. Vos leads qualifiés arrivent directement là où vos équipes travaillent déjà.",
+    desc: "Votre CRM, agenda, emailing, ERP : Wafy Immo s'y branche automatiquement. Vos leads qualifiés arrivent directement là où vos équipes travaillent déjà.",
   },
   {
     icon: Workflow,
@@ -39,7 +39,7 @@ const FeaturesSection = () => (
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          WAFY : votre agent IA de <span className="text-gradient">qualification</span>
+          Wafy Immo : votre agent IA de <span className="text-gradient">qualification</span>
         </h2>
       </motion.div>
 

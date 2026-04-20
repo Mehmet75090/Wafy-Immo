@@ -9,7 +9,7 @@ const steps = [
   {
     num: "2",
     title: "Le prospect clique et arrive sur WhatsApp",
-    desc: "Instantanément le bot WAFY prend en charge la conversation.",
+    desc: "Instantanément le bot Wafy Immo prend en charge la conversation.",
   },
   {
     num: "3",
