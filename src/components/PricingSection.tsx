@@ -7,10 +7,10 @@ const ANNUAL_DISCOUNT = 0.35;
 
 type Currency = "MAD" | "EUR" | "USD";
 
-const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after" }> = {
-  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after" },
-  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after" },
-  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before" },
+const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after"; flag: string; label: string }> = {
+  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after", flag: "🇲🇦", label: "Maroc" },
+  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after", flag: "🇪🇺", label: "Euro" },
+  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before", flag: "🇺🇸", label: "Dollar" },
 };
 
 const formatPrice = (madAmount: number, currency: Currency) => {
