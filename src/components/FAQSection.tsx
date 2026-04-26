@@ -78,6 +78,145 @@ const faqs = [
       </div>
     ),
   },
+  {
+    q: "Comment choisir mon plan ?",
+    a: (
+      <div className="space-y-4">
+        <p>
+          Le bon plan dépend du volume de conversations entrantes que vous gérez chaque mois
+          (formulaires, WhatsApp, Messenger, etc.).
+        </p>
+        <div className="overflow-hidden rounded-lg border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-muted/60">
+              <tr className="text-left text-foreground">
+                <th className="px-3 py-2 font-semibold">Plan</th>
+                <th className="px-3 py-2 font-semibold">Volume</th>
+                <th className="px-3 py-2 font-semibold">Mensuel</th>
+                <th className="px-3 py-2 font-semibold">Annuel /mois</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Essentiel</td>
+                <td className="px-3 py-2">≤ 300 conv./mois</td>
+                <td className="px-3 py-2">5 500 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">3 600 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Business</td>
+                <td className="px-3 py-2">≤ 1 500 conv./mois</td>
+                <td className="px-3 py-2">10 500 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">6 750 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
+                <td className="px-3 py-2">≤ 3 000 conv./mois</td>
+                <td className="px-3 py-2">15 000 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">9 900 MAD</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ul className="space-y-1.5 text-sm">
+          <li>
+            👉 <span className="font-semibold text-foreground">Essentiel</span> — agence en
+            démarrage ou petit volume de leads.
+          </li>
+          <li>
+            👉 <span className="font-semibold text-foreground">Business</span> — choix le plus
+            courant : qualification + relances WhatsApp + RDV automatique.
+          </li>
+          <li>
+            👉 <span className="font-semibold text-foreground">Premium</span> — gros volume,
+            multi-programmes, reporting avancé avec recommandations.
+          </li>
+        </ul>
+        <p className="text-sm italic">
+          Pas sûr ? Notre équipe vous aide à dimensionner en 15 minutes — sans engagement.
+        </p>
+      </div>
+    ),
+  },
+  {
+    q: "Que se passe-t-il si je dépasse mon quota de conversations ?",
+    a: (
+      <div className="space-y-4">
+        <p>
+          Votre service ne s'arrête pas. Vous recevez une alerte et vous pouvez acheter un pack
+          supplémentaire à la volée :
+        </p>
+        <div className="overflow-hidden rounded-lg border border-border">
+          <table className="w-full text-sm">
+            <thead className="bg-muted/60">
+              <tr className="text-left text-foreground">
+                <th className="px-3 py-2 font-semibold">Pack</th>
+                <th className="px-3 py-2 font-semibold">Conversations</th>
+                <th className="px-3 py-2 font-semibold">Prix</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border">
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack S</td>
+                <td className="px-3 py-2">+100 conv.</td>
+                <td className="px-3 py-2">1 400 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack M</td>
+                <td className="px-3 py-2">+300 conv.</td>
+                <td className="px-3 py-2">3 600 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack L</td>
+                <td className="px-3 py-2">+500 conv.</td>
+                <td className="px-3 py-2">5 500 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack XL</td>
+                <td className="px-3 py-2">+1 000 conv.</td>
+                <td className="px-3 py-2">9 000 MAD</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm">
+          💡 <span className="font-semibold text-foreground">Bon à savoir :</span> si vous
+          achetez un pack M ou L deux mois consécutifs, l'upgrade vers le plan supérieur est
+          souvent plus économique. Notre équipe vous préviendra avant que vous surpayiez.
+        </p>
+      </div>
+    ),
+  },
+  {
+    q: "Puis-je changer de plan en cours d'année ?",
+    a: (
+      <div className="space-y-3">
+        <p>
+          <span className="font-semibold text-foreground">
+            Vous pouvez upgrader à tout moment.
+          </span>{" "}
+          Voici ce que ça coûte selon votre plan actuel :
+        </p>
+        <ul className="space-y-2">
+          <li>
+            <span className="font-semibold text-foreground">Essentiel → Business :</span>{" "}
+            différence de 3 150 MAD/mois, proratisée sur les mois restants.
+          </li>
+          <li>
+            <span className="font-semibold text-foreground">Business → Premium :</span>{" "}
+            différence de 3 150 MAD/mois, proratisée sur les mois restants.
+          </li>
+          <li>
+            <span className="font-semibold text-foreground">Essentiel → Premium :</span>{" "}
+            différence de 6 300 MAD/mois, proratisée sur les mois restants.
+          </li>
+        </ul>
+        <p className="text-sm italic">
+          Le downgrade s'applique uniquement au renouvellement annuel.
+        </p>
+      </div>
+    ),
+  },
 ];
 
 const FAQSection = () => {
