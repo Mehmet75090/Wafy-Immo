@@ -191,7 +191,7 @@ const PricingSection = () => {
                 {isAnnual && (
                   <div className="absolute -top-3 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-extrabold shadow-md">
                     <Sparkles className="w-3 h-3" />
-                    -55%
+                    -{discountPercent}%
                   </div>
                 )}
 
