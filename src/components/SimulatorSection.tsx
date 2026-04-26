@@ -121,7 +121,7 @@ const SimulatorSection = () => {
           <div className="space-y-7 mb-10">
             <div>
               <div className="flex justify-between mb-3">
-                <span className="text-sm font-medium">Leads qualifiés / mois</span>
+                <span className="text-sm font-medium">Leads à qualifier / mois</span>
                 <span className="text-sm font-bold text-primary">{totalLeads}</span>
               </div>
               <Slider
