@@ -131,24 +131,28 @@ const PricingSection = () => {
             />
           </div>
 
-          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-muted border border-border">
-            {currencyList.map((c) => (
-              <button
-                key={c}
-                onClick={() => setCurrency(c)}
-                title={CURRENCIES[c].label}
-                aria-label={`Afficher en ${CURRENCIES[c].label}`}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all ${
-                  currency === c
-                    ? "bg-background shadow-sm ring-2 ring-primary/40 scale-105"
-                    : "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
-                }`}
-              >
-                <span className="text-xl leading-none">{CURRENCIES[c].flag}</span>
-                <span className={`text-xs font-bold ${currency === c ? "text-foreground" : "text-muted-foreground"}`}>
-                  {c}
-                </span>
-              </button>
+          <div className="inline-flex items-center gap-3 text-sm">
+            {currencyList.map((c, idx) => (
+              <span key={c} className="flex items-center gap-3">
+                <button
+                  onClick={() => setCurrency(c)}
+                  title={CURRENCIES[c].label}
+                  aria-label={`Afficher en ${CURRENCIES[c].label}`}
+                  className={`flex items-center gap-1.5 transition-all ${
+                    currency === c
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground/60 hover:text-foreground"
+                  }`}
+                >
+                  <span className={`text-base leading-none transition-all ${currency === c ? "" : "grayscale opacity-60"}`}>
+                    {CURRENCIES[c].flag}
+                  </span>
+                  <span className="text-xs tracking-wide">{c}</span>
+                </button>
+                {idx < currencyList.length - 1 && (
+                  <span className="text-muted-foreground/30">·</span>
+                )}
+              </span>
             ))}
           </div>
         </div>
