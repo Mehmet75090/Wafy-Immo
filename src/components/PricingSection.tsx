@@ -259,6 +259,7 @@ const PricingSection = () => {
         </div>
 
         <p className="text-center text-xs text-muted-foreground mt-8">
+          Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
           {isAnnual && " Tarifs annuels affichés en équivalent mensuel, facturés annuellement."}
         </p>
