@@ -63,8 +63,8 @@ const plans = [
   },
   {
     name: "PREMIUM",
-    price: 22000,
-    annualDiscount: DEFAULT_ANNUAL_DISCOUNT,
+    price: 21860,
+    annualDiscount: 0.45,
     conv: "Jusqu'à 3 000 conv./mois",
     estimation: {
       leads: "≈ 750 à 1 050 leads qualifiés",
