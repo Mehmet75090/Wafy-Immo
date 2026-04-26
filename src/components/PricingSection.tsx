@@ -104,7 +104,7 @@ const PricingSection = () => {
           </h2>
           <p className="text-muted-foreground">
             Choisissez votre rythme — jusqu'à{" "}
-            <span className="font-bold text-primary">-55%</span> en annuel
+            <span className="font-bold text-primary">-35%</span> en annuel
           </p>
         </motion.div>
 
