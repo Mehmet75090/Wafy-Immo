@@ -103,8 +103,8 @@ const PricingSection = () => {
             Grille <span className="text-gradient">tarifaire</span>
           </h2>
           <p className="text-muted-foreground">
-            Choisissez votre rythme — économisez{" "}
-            <span className="font-bold text-primary">55%</span> en annuel
+            Choisissez votre rythme — jusqu'à{" "}
+            <span className="font-bold text-primary">-55%</span> en annuel
           </p>
         </motion.div>
 
