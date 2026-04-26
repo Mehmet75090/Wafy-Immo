@@ -9,6 +9,7 @@ import DashboardSection from "@/components/DashboardSection";
 import SimulatorSection from "@/components/SimulatorSection";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import FooterSection from "@/components/FooterSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 
@@ -26,6 +27,7 @@ const Index = () => {
       <DashboardSection />
       <SimulatorSection />
       <PricingSection />
+      <FAQSection />
       <CTASection onOpenForm={() => setFormOpen(true)} />
       <FooterSection />
       <ContactFormDialog open={formOpen} onOpenChange={setFormOpen} />
