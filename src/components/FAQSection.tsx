@@ -41,18 +41,15 @@ const faqs = [
           </span>
         </p>
         <p>
-          <span className="font-semibold text-foreground">Condition requise :</span> votre CRM
-          doit faire partie des solutions compatibles. Nous intégrons actuellement :
+          Wafy Immo s'intègre aux CRMs disposant d'une API ouverte. Les CRMs avec{" "}
+          <span className="font-semibold text-foreground">serveur MCP natif</span> (HubSpot,
+          Salesforce, NetSuite…) sont connectés en quelques heures. Pour les autres (Navision,
+          Cegid, Geciomo…), notre équipe réalise l'intégration sur mesure —{" "}
+          <span className="font-semibold text-foreground">incluse dans le setup</span>.
         </p>
-        <ul className="space-y-1 pl-1">
-          <li>✅ Navision</li>
-          <li>✅ Geciomo</li>
-          <li>✅ Cegid</li>
-          <li>✅ (et d'autres — contactez-nous pour vérifier la compatibilité de votre outil)</li>
-        </ul>
         <p className="text-sm">
-          💡 Vous n'avez pas encore de CRM ou le vôtre n'est pas compatible ? Parlez-en à notre
-          équipe, on vous oriente vers une solution adaptée.
+          💡 Vous n'avez pas encore de CRM ou vous voulez vérifier la compatibilité du vôtre ?
+          Parlez-en à notre équipe, on vous oriente vers une solution adaptée.
         </p>
       </div>
     ),
