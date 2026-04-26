@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ANNUAL_DISCOUNT = 0.55;
+const DEFAULT_ANNUAL_DISCOUNT = 0.55;
 
 type Currency = "MAD" | "EUR" | "USD";
 
@@ -25,7 +25,8 @@ const formatPrice = (madAmount: number, currency: Currency) => {
 const plans = [
   {
     name: "ESSENTIEL",
-    price: 8000,
+    price: 5538,
+    annualDiscount: 0.35,
     conv: "Jusqu'à 300 conv./mois",
     estimation: {
       leads: "≈ 75 à 105 leads qualifiés",
@@ -43,7 +44,8 @@ const plans = [
   },
   {
     name: "BUSINESS",
-    price: 15000,
+    price: 10385,
+    annualDiscount: 0.35,
     conv: "Jusqu'à 1 500 conv./mois",
     estimation: {
       leads: "≈ 375 à 525 leads qualifiés",
@@ -62,6 +64,7 @@ const plans = [
   {
     name: "PREMIUM",
     price: 22000,
+    annualDiscount: DEFAULT_ANNUAL_DISCOUNT,
     conv: "Jusqu'à 3 000 conv./mois",
     estimation: {
       leads: "≈ 750 à 1 050 leads qualifiés",
@@ -100,8 +103,8 @@ const PricingSection = () => {
             Grille <span className="text-gradient">tarifaire</span>
           </h2>
           <p className="text-muted-foreground">
-            Choisissez votre rythme — économisez{" "}
-            <span className="font-bold text-primary">55%</span> en annuel
+            Choisissez votre rythme — jusqu'à{" "}
+            <span className="font-bold text-primary">-55%</span> en annuel
           </p>
         </motion.div>
 
@@ -160,7 +163,9 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {plans.map((plan, i) => {
             const monthlyPrice = plan.price;
-            const discountedMonthly = Math.round(plan.price * (1 - ANNUAL_DISCOUNT));
+            const planDiscount = plan.annualDiscount;
+            const discountPercent = Math.round(planDiscount * 100);
+            const discountedMonthly = Math.round(plan.price * (1 - planDiscount));
             const annualSavings = (monthlyPrice - discountedMonthly) * 12;
             const displayPrice = isAnnual ? discountedMonthly : monthlyPrice;
 
@@ -186,7 +191,7 @@ const PricingSection = () => {
                 {isAnnual && (
                   <div className="absolute -top-3 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-extrabold shadow-md">
                     <Sparkles className="w-3 h-3" />
-                    -55%
+                    -{discountPercent}%
                   </div>
                 )}
 
