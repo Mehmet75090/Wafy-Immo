@@ -44,7 +44,7 @@ const faqs = [
           Wafy Immo s'intègre aux CRMs disposant d'une API ouverte. Les CRMs avec{" "}
           <span className="font-semibold text-foreground">serveur MCP natif</span> (HubSpot,
           Salesforce, NetSuite…) sont connectés en quelques heures. Pour les autres (Navision,
-          Cegid, Geciomo…), notre équipe réalise l'intégration sur mesure —{" "}
+          Cegid, Gecimmo…), notre équipe réalise l'intégration sur mesure —{" "}
           <span className="font-semibold text-foreground">incluse dans le setup</span>.
         </p>
         <p className="text-sm">
