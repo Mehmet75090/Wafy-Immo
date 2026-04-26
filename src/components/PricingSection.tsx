@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ANNUAL_DISCOUNT = 0.55;
+const DEFAULT_ANNUAL_DISCOUNT = 0.55;
 
 type Currency = "MAD" | "EUR" | "USD";
 
@@ -25,7 +25,8 @@ const formatPrice = (madAmount: number, currency: Currency) => {
 const plans = [
   {
     name: "ESSENTIEL",
-    price: 8000,
+    price: 5538,
+    annualDiscount: 0.35,
     conv: "Jusqu'à 300 conv./mois",
     estimation: {
       leads: "≈ 75 à 105 leads qualifiés",
@@ -43,7 +44,8 @@ const plans = [
   },
   {
     name: "BUSINESS",
-    price: 15000,
+    price: 10385,
+    annualDiscount: 0.35,
     conv: "Jusqu'à 1 500 conv./mois",
     estimation: {
       leads: "≈ 375 à 525 leads qualifiés",
@@ -62,6 +64,7 @@ const plans = [
   {
     name: "PREMIUM",
     price: 22000,
+    annualDiscount: DEFAULT_ANNUAL_DISCOUNT,
     conv: "Jusqu'à 3 000 conv./mois",
     estimation: {
       leads: "≈ 750 à 1 050 leads qualifiés",
