@@ -163,7 +163,9 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {plans.map((plan, i) => {
             const monthlyPrice = plan.price;
-            const discountedMonthly = Math.round(plan.price * (1 - ANNUAL_DISCOUNT));
+            const planDiscount = plan.annualDiscount;
+            const discountPercent = Math.round(planDiscount * 100);
+            const discountedMonthly = Math.round(plan.price * (1 - planDiscount));
             const annualSavings = (monthlyPrice - discountedMonthly) * 12;
             const displayPrice = isAnnual ? discountedMonthly : monthlyPrice;
 
