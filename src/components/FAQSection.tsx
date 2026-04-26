@@ -24,7 +24,7 @@ const faqs = [
           souhaitez pas gérer la partie technique.
         </p>
         <p className="text-sm italic">
-          Dans les deux cas, l'assistant IA fonctionne de la même manière. C'est juste une
+          Dans les deux cas, Wafy Immo fonctionne de la même manière. C'est juste une
           question de qui tient le volant côté Meta.
         </p>
       </div>
