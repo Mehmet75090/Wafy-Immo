@@ -120,8 +120,8 @@ const faqs = [
         </div>
         <ul className="space-y-1.5 text-sm">
           <li>
-            👉 <span className="font-semibold text-foreground">Essentiel</span> — agence en
-            démarrage ou petit volume de leads.
+            👉 <span className="font-semibold text-foreground">Essentiel</span> — campagne sur
+            1 petit projet immo en démarrage ou petit volume de leads.
           </li>
           <li>
             👉 <span className="font-semibold text-foreground">Business</span> — choix le plus
