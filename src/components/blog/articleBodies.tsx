@@ -418,3 +418,105 @@ export const Immo2026Body = () => (
     </p>
   </>
 );
+
+export const HumainPilierBody = () => (
+  <>
+    <p>
+      Si l'intelligence artificielle s'installe durablement dans le paysage immobilier, son
+      adoption par le grand public révèle un paradoxe fascinant. Entre promesses d'efficacité
+      et besoin viscéral de contact humain, le secteur cherche encore son point d'équilibre.
+      Une enquête récente menée par <strong>Immonot</strong> apporte un éclairage précieux
+      sur cette transition.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Un usage encore périphérique</h2>
+    <p>
+      Malgré la multiplication des outils (estimations automatisées, visites virtuelles,
+      algorithmes de recherche), <strong>65 % des Français</strong> déclarent n'avoir jamais
+      utilisé l'IA pour leur projet immobilier. Lorsqu'ils franchissent le pas, les usages
+      restent ciblés :
+    </p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>
+        <strong>Visites virtuelles :</strong> 14 %
+      </li>
+      <li>
+        <strong>Estimation automatisée :</strong> 11 %
+      </li>
+      <li>
+        <strong>Recherche par algorithmes :</strong> 8 %
+      </li>
+    </ul>
+    <p>
+      L'IA est perçue comme une aide pratique, mais elle ne déclenche pas encore un réflexe
+      systématique.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le facteur humain : un frein ou une exigence ?
+    </h2>
+    <p>
+      La réticence principale ne porte pas sur la technologie elle-même, mais sur ce qu'elle
+      pourrait remplacer. <strong>L'absence de contact humain</strong> arrive en tête des
+      freins cités (33 %), suivie par le manque de confiance dans les algorithmes et la peur
+      des erreurs.
+    </p>
+
+    <h3 className="text-xl font-bold mt-8 mb-2">
+      Le domaine juridique : zone de haute prudence
+    </h3>
+    <p>
+      C'est sur les sujets sensibles (sécurisation de transaction, succession) que la
+      défiance est la plus forte. Si <strong>40 % des sondés</strong> accepteraient de poser
+      une question juridique à une IA, c'est à une condition non négociable : que la réponse
+      soit <strong>validée par un expert humain</strong>.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le notaire : pilier de confiance à l'ère numérique
+    </h2>
+    <p>
+      Loin de rendre les professions réglementées obsolètes, l'IA semble renforcer leur
+      importance. <strong>47 % des Français</strong> jugent le notaire « indispensable » pour
+      les années à venir.
+    </p>
+    <p>
+      Cependant, l'IA n'est pas rejetée. Au contraire, <strong>87 % des répondants</strong> y
+      voient un outil d'appui pour :
+    </p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>Accroître la performance des offices.</li>
+      <li>Améliorer la réactivité et la disponibilité.</li>
+      <li>
+        Automatiser les tâches répétitives (pré-analyse de documents, génération de
+        courriers).
+      </li>
+    </ul>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Vers une complémentarité intelligente
+    </h2>
+    <p>
+      L'enjeu de demain n'est pas la <strong>substitution</strong> de l'humain par la
+      machine, mais l'organisation de leur <strong>complémentarité</strong>. En confiant le
+      traitement des données et les tâches administratives à l'IA, les professionnels de
+      l'immobilier et du notariat se redonnent les moyens d'exercer leur cœur de métier : le
+      conseil, l'arbitrage et l'accompagnement humain.
+    </p>
+    <p>
+      En résumé, l'IA ne remplace pas l'expert ; elle le <strong>renforce</strong> en lui
+      libérant le temps nécessaire pour gérer la complexité émotionnelle et juridique d'un
+      projet de vie.
+    </p>
+
+    <p className="text-sm italic text-muted-foreground border-l-4 border-primary/40 pl-4 mt-10">
+      Source : d'après l'article de Christian Capitaine, publié sur Immonot le 7 mai 2025.
+    </p>
+
+    <p>
+      L'IA vous intéresse mais vous craignez de perdre le lien avec vos clients ? Nos
+      solutions d'automatisation intelligente permettent de <strong>replacer l'humain</strong>{" "}
+      au centre de votre stratégie.
+    </p>
+  </>
+);
