@@ -27,10 +27,10 @@ const plans = [
     name: "ESSENTIEL",
     price: 5500,
     annualDiscount: 1 - 3600 / 5500,
-    conv: "Jusqu'à 600 leads / mois",
+    conv: "Jusqu'à 600 conversations / mois",
     estimation: {
-      leads: "≈ 600 leads qualifiés",
-      rdv: "Taux de conversion cible 10% (≈ 60 RDV potentiels)",
+      leads: "≈ 90 leads qualifiés (15% des conversations)",
+      rdv: "Taux de conversion cible 10% (≈ 9 RDV potentiels)",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -46,10 +46,10 @@ const plans = [
     name: "BUSINESS",
     price: 10500,
     annualDiscount: 1 - 6750 / 10500,
-    conv: "Jusqu'à 2 000 leads / mois",
+    conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
-      leads: "≈ 2 000 leads qualifiés",
-      rdv: "Taux de conversion cible 10% (≈ 200 RDV potentiels)",
+      leads: "≈ 300 leads qualifiés (15% des conversations)",
+      rdv: "Taux de conversion cible 10% (≈ 30 RDV potentiels)",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -65,10 +65,10 @@ const plans = [
     name: "PREMIUM",
     price: 15000,
     annualDiscount: 1 - 9900 / 15000,
-    conv: "Jusqu'à 5 000 leads / mois",
+    conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
-      leads: "≈ 5 000 leads qualifiés",
-      rdv: "Taux de conversion cible 10% (≈ 500 RDV potentiels)",
+      leads: "≈ 750 leads qualifiés (15% des conversations)",
+      rdv: "Taux de conversion cible 10% (≈ 75 RDV potentiels)",
     },
     features: [
       { text: "Qualification IA", included: true },
