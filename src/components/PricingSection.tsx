@@ -29,7 +29,7 @@ const plans = [
     annualDiscount: 1 - 3600 / 5500,
     conv: "Jusqu'à 600 conversations / mois",
     estimation: {
-      leads: "≈ 90 leads qualifiés (15% des conversations)",
+      leads: "≈ 90 leads qualifiés",
       rdv: "Taux de conversion cible 10% (≈ 9 RDV potentiels)",
     },
     features: [
@@ -48,7 +48,7 @@ const plans = [
     annualDiscount: 1 - 6750 / 10500,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
-      leads: "≈ 300 leads qualifiés (15% des conversations)",
+      leads: "≈ 300 leads qualifiés",
       rdv: "Taux de conversion cible 10% (≈ 30 RDV potentiels)",
     },
     features: [
@@ -67,7 +67,7 @@ const plans = [
     annualDiscount: 1 - 9900 / 15000,
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
-      leads: "≈ 750 leads qualifiés (15% des conversations)",
+      leads: "≈ 750 leads qualifiés",
       rdv: "Taux de conversion cible 10% (≈ 75 RDV potentiels)",
     },
     features: [
