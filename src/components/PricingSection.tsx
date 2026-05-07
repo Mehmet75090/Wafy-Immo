@@ -86,9 +86,8 @@ const plans = [
 
 const PricingSection = () => {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
-  const [currency, setCurrency] = useState<Currency>("MAD");
+  const currency: Currency = "MAD";
   const isAnnual = billing === "annual";
-  const currencyList: Currency[] = ["MAD", "EUR", "USD"];
 
   return (
     <section className="section-padding" id="pricing">
@@ -108,8 +107,8 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        {/* Billing toggle + Currency selector */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+        {/* Billing toggle */}
+        <div className="flex justify-center items-center mb-12">
           <div className="relative inline-flex items-center p-1 rounded-full bg-muted border border-border">
             <button
               onClick={() => setBilling("monthly")}
@@ -132,31 +131,6 @@ const PricingSection = () => {
                 isAnnual ? "left-[calc(50%+2px)] right-1" : "left-1 right-[calc(50%+2px)]"
               }`}
             />
-          </div>
-
-          <div className="inline-flex items-center gap-3 text-sm">
-            {currencyList.map((c, idx) => (
-              <span key={c} className="flex items-center gap-3">
-                <button
-                  onClick={() => setCurrency(c)}
-                  title={CURRENCIES[c].label}
-                  aria-label={`Afficher en ${CURRENCIES[c].label}`}
-                  className={`flex items-center gap-1.5 transition-all ${
-                    currency === c
-                      ? "text-foreground font-semibold"
-                      : "text-muted-foreground/60 hover:text-foreground"
-                  }`}
-                >
-                  <span className={`text-base leading-none transition-all ${currency === c ? "" : "grayscale opacity-60"}`}>
-                    {CURRENCIES[c].flag}
-                  </span>
-                  <span className="text-xs tracking-wide">{c}</span>
-                </button>
-                {idx < currencyList.length - 1 && (
-                  <span className="text-muted-foreground/30">·</span>
-                )}
-              </span>
-            ))}
           </div>
         </div>
 
