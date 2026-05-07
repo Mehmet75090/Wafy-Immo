@@ -6,7 +6,7 @@ import FooterSection from "@/components/FooterSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
-import { AgentIABody, ForcesVenteBody } from "@/components/blog/articleBodies";
+import { AgentIABody, ForcesVenteBody, Immo2026Body } from "@/components/blog/articleBodies";
 
 const BlogPost = () => {
   const { slug } = useParams();
