@@ -4,6 +4,7 @@ import imgHybride from "@/assets/blog-equipe-hybride.jpg";
 import coverForcesVente from "@/assets/blog-ia-forces-vente.jpg";
 import imgManagerCoach from "@/assets/blog-manager-coach.jpg";
 import coverImmo2026 from "@/assets/blog-immobilier-2026.jpg";
+import coverHumain from "@/assets/blog-ia-humain-immobilier.jpg";
 import portraitClemenceGrille from "@/assets/clemence-grille.png";
 
 export interface BlogPost {
@@ -18,6 +19,25 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ia-immobilier-humain-pilier-confiance",
+    title: "IA et Immobilier : Pourquoi l'humain reste le pilier de la confiance",
+    description:
+      "Adoption de l'IA chez les Français, rôle du notaire, complémentarité humain-machine : analyse d'une enquête Immonot sur l'IA dans l'immobilier.",
+    date: "2026-05-07",
+    readingMinutes: 5,
+    cover: coverHumain,
+    coverAlt:
+      "Professionnelle de l'immobilier serrant la main de sa cliente dans un bureau chaleureux",
+    keywords: [
+      "IA immobilier",
+      "notaire IA",
+      "confiance immobilier",
+      "Immonot",
+      "transformation digitale immobilier",
+      "expertise humaine",
+    ],
+  },
   {
     slug: "immobilier-2026-agent-sans-ia",
     title: "Immobilier 2026 : Pourquoi l'agent « sans IA » perdra la course au mandat",
