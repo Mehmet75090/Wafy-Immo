@@ -127,7 +127,7 @@ const SimulatorSection = () => {
               <Slider
                 value={[totalLeads]}
                 onValueChange={([v]) => setTotalLeads(v)}
-                min={50}
+                min={500}
                 max={3000}
                 step={50}
                 className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
