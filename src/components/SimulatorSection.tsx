@@ -10,7 +10,8 @@ const wafyPlans = [
   { name: "Premium", price: 22000, isPerLead: false, maxConv: 3000 },
 ];
 
-const LEADS_PER_AGENT = 375;
+const LEADS_PER_AGENT = 600;
+const LEAD_STEPS = [600, 1500, 2500, 3500, 4500, 5000];
 
 function getBestPlan(leads: number) {
   // Find cheapest plan that fits the volume
@@ -21,7 +22,7 @@ function getBestPlan(leads: number) {
 }
 
 const SimulatorSection = () => {
-  const [totalLeads, setTotalLeads] = useState(500);
+  const [totalLeads, setTotalLeads] = useState(600);
   const [agentSalary, setAgentSalary] = useState(7700);
   const [hotPercent, setHotPercent] = useState(30);
 
@@ -36,7 +37,7 @@ const SimulatorSection = () => {
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
     const humanCost = agentsNeeded * agentSalary;
     const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
-    const humanLeadsPerDay = agentsNeeded * 25;
+    const humanLeadsPerDay = agentsNeeded * 30;
 
     // WAFY cost
     let wafyCost: number;
@@ -125,11 +126,11 @@ const SimulatorSection = () => {
                 <span className="text-sm font-bold text-primary">{totalLeads}</span>
               </div>
               <Slider
-                value={[totalLeads]}
-                onValueChange={([v]) => setTotalLeads(v)}
-                min={500}
-                max={3000}
-                step={50}
+                value={[LEAD_STEPS.indexOf(totalLeads)]}
+                onValueChange={([v]) => setTotalLeads(LEAD_STEPS[v])}
+                min={0}
+                max={LEAD_STEPS.length - 1}
+                step={1}
                 className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
               />
             </div>
