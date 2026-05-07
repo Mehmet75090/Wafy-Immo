@@ -26,7 +26,7 @@ const plans = [
   {
     name: "ESSENTIEL",
     price: 5500,
-    annualDiscount: 1 - 3600 / 5500,
+    annualDiscount: 1 - 3900 / 5500,
     conv: "Jusqu'à 600 conversations / mois",
     estimation: {
       leads: "Estimation : 90 leads qualifiés",
@@ -44,7 +44,7 @@ const plans = [
   {
     name: "BUSINESS",
     price: 10500,
-    annualDiscount: 1 - 6750 / 10500,
+    annualDiscount: 1 - 6900 / 10500,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
       leads: "Estimation : 300 leads qualifiés",
