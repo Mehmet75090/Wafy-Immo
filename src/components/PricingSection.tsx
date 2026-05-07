@@ -68,7 +68,7 @@ const plans = [
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
       leads: "≈ 750 leads qualifiés",
-      rdv: "Taux de conversion cible 3% (≈ 22 RDV potentiels)",
+      rdv: "≈ 150 RDV potentiels",
     },
     features: [
       { text: "Qualification IA", included: true },
