@@ -29,8 +29,7 @@ const plans = [
     annualDiscount: 1 - 3600 / 5500,
     conv: "Jusqu'à 600 conversations / mois",
     estimation: {
-      leads: "≈ 90 leads qualifiés",
-      rdv: "Taux de conversion cible 3% (≈ 3 RDV potentiels)",
+      leads: "Estimation : 90 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -48,8 +47,7 @@ const plans = [
     annualDiscount: 1 - 6750 / 10500,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
-      leads: "≈ 300 leads qualifiés",
-      rdv: "Taux de conversion cible 3% (≈ 9 RDV potentiels)",
+      leads: "Estimation : 300 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -67,8 +65,7 @@ const plans = [
     annualDiscount: 1 - 9900 / 15000,
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
-      leads: "≈ 750 leads qualifiés",
-      rdv: "≈ 150 RDV potentiels",
+      leads: "Estimation : 750 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -203,7 +200,6 @@ const PricingSection = () => {
                 {/* Estimation block */}
                 <div className="rounded-lg border border-accent-foreground/20 bg-accent p-3 mb-6 text-[13px] space-y-1">
                   <p className="font-semibold text-accent-foreground">{plan.estimation.leads}</p>
-                  <p className="text-accent-foreground/80">{plan.estimation.rdv}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8">
