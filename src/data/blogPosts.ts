@@ -2,6 +2,7 @@ import coverAgentIA from "@/assets/blog-agent-ia-commercial.jpg";
 import imgFunnel from "@/assets/blog-qualification-funnel.jpg";
 import imgHybride from "@/assets/blog-equipe-hybride.jpg";
 import coverForcesVente from "@/assets/blog-ia-forces-vente.jpg";
+import imgManagerCoach from "@/assets/blog-manager-coach.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -61,4 +62,5 @@ export const blogPosts: BlogPost[] = [
 export const blogAssets = {
   funnel: imgFunnel,
   hybride: imgHybride,
+  managerCoach: imgManagerCoach,
 };
