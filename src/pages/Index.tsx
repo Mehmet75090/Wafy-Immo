@@ -10,6 +10,7 @@ import SimulatorSection from "@/components/SimulatorSection";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import FooterSection from "@/components/FooterSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 
