@@ -24,10 +24,6 @@ const CTASection = ({ onOpenForm }: CTASectionProps) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
-          🧪 Offre Pilote
-        </span>
-
         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-primary-foreground leading-tight">
           Pas encore convaincu ?<br />
           <span className="text-gradient">Testez sans risque</span>
