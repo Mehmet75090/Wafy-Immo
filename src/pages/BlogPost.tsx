@@ -11,6 +11,7 @@ import {
   ForcesVenteBody,
   Immo2026Body,
   HumainPilierBody,
+  CopiloteAgenceBody,
 } from "@/components/blog/articleBodies";
 
 const BlogPost = () => {
@@ -130,6 +131,7 @@ const BlogPost = () => {
             {post.slug === "ia-forces-de-vente-etude-de-cas" && <ForcesVenteBody />}
             {post.slug === "immobilier-2026-agent-sans-ia" && <Immo2026Body />}
             {post.slug === "ia-immobilier-humain-pilier-confiance" && <HumainPilierBody />}
+            {post.slug === "ia-immobilier-copilote-agence" && <CopiloteAgenceBody />}
           </div>
 
           <aside className="mt-16 rounded-2xl border border-primary/30 bg-accent/40 p-8 text-center">

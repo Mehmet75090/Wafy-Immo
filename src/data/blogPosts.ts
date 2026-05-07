@@ -5,6 +5,7 @@ import coverForcesVente from "@/assets/blog-ia-forces-vente.jpg";
 import imgManagerCoach from "@/assets/blog-manager-coach.jpg";
 import coverImmo2026 from "@/assets/blog-immobilier-2026.jpg";
 import coverHumain from "@/assets/blog-ia-humain-immobilier.jpg";
+import coverCopilote from "@/assets/blog-ia-copilote-agence.jpg";
 import portraitClemenceGrille from "@/assets/clemence-grille.png";
 
 export interface BlogPost {
@@ -19,6 +20,25 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ia-immobilier-copilote-agence",
+    title: "L'IA en Immobilier : Votre nouveau copilote pour booster votre agence",
+    description:
+      "Estimation, marketing, gestion locative, relation client 24/7 : comment l'IA devient le copilote indispensable des agences immobilières.",
+    date: "2026-05-07",
+    readingMinutes: 5,
+    cover: coverCopilote,
+    coverAlt:
+      "Agente immobilière utilisant un dashboard IA dans une agence moderne avec overlays de données",
+    keywords: [
+      "IA agence immobilière",
+      "copilote IA",
+      "estimation immobilière IA",
+      "home staging virtuel",
+      "chatbot immobilier",
+      "gestion locative IA",
+    ],
+  },
   {
     slug: "ia-immobilier-humain-pilier-confiance",
     title: "IA et Immobilier : Pourquoi l'humain reste le pilier de la confiance",

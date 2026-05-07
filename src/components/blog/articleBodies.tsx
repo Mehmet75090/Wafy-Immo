@@ -520,3 +520,95 @@ export const HumainPilierBody = () => (
     </p>
   </>
 );
+
+export const CopiloteAgenceBody = () => (
+  <>
+    <p>
+      L'intelligence artificielle n'est plus une option, c'est une <strong>révolution</strong>.
+      D'ici 2028, le secteur de l'IA devrait <strong>quadrupler</strong> son chiffre
+      d'affaires mondial. Pourtant, en France, seulement <strong>7 % des entreprises
+      immobilières</strong> ont sauté le pas. Si vous faites partie des 93 % restants, il est
+      temps de transformer votre agence en machine de guerre numérique.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      1. L'estimation : la fin du « doigt mouillé »
+    </h2>
+    <p>
+      L'IA ne se base pas sur l'intuition, mais sur l'analyse de millions de données
+      (localisation, infrastructures, transactions passées).
+    </p>
+    <p>
+      <strong>La punchline :</strong> une évaluation ultra-précise, révisable tous les 3 mois
+      sans effort, pour rester au plus près du marché.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">2. Un marketing « clic and go »</h2>
+    <p>Fini les descriptions banales et les photos ternes.</p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>
+        <strong>Le texte :</strong> des annonces percutantes rédigées par IA en quelques
+        secondes.
+      </li>
+      <li>
+        <strong>L'image :</strong> retouche photo instantanée et home staging virtuel pour
+        aider vos clients à se projeter, même dans un bien « dans son jus ».
+      </li>
+    </ul>
+    <p>
+      <strong>Verdict :</strong> un investissement minime pour une satisfaction client
+      maximale.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      3. Un quotidien simplifié (enfin !)
+    </h2>
+    <p>L'IA est une véritable assistante de direction pour votre agence :</p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>
+        <strong>Agendas intelligents :</strong> optimisation des temps de trajet et de visite.
+      </li>
+      <li>
+        <strong>Gestion locative :</strong> vérification automatique de la conformité des
+        dossiers et détection des risques d'impayés.
+      </li>
+      <li>
+        <strong>Relation client 24/7 :</strong> un chatbot répond à vos prospects à toute
+        heure, qualifie les leads et programme les visites pendant que vous dormez.
+      </li>
+    </ul>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Les défis de demain : données et compétences
+    </h2>
+    <p>Adopter l'IA, c'est aussi être responsable. Deux points non négociables :</p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>
+        <strong>RGPD :</strong> la protection des données de vos clients doit rester votre
+        priorité.
+      </li>
+      <li>
+        <strong>Formation :</strong> l'outil est puissant, mais c'est votre expertise humaine
+        qui reste la clé pour interpréter les données et conseiller vos clients.
+      </li>
+    </ul>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      L'IA : copilote, pas remplaçante
+    </h2>
+    <p>
+      Ne vous y trompez pas : l'IA ne va pas voler votre métier, elle va lui{" "}
+      <strong>redonner ses lettres de noblesse</strong>. En automatisant le chronophage, vous
+      redevenez ce que vous n'auriez jamais dû cesser d'être : un conseiller stratégique et
+      un accompagnateur de projets de vie.
+    </p>
+    <p>
+      <strong>L'info à retenir :</strong> ceux qui ne s'y mettront pas risquent d'y laisser
+      des plumes. L'IA est le minimum requis pour rester dans la course.
+    </p>
+
+    <p className="text-sm italic text-muted-foreground border-l-4 border-primary/40 pl-4 mt-10">
+      Source : d'après l'article de l'équipe Garantme, publié le 14 avril 2025.
+    </p>
+  </>
+);
