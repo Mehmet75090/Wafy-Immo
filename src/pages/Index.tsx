@@ -28,6 +28,7 @@ const Index = () => {
       <DashboardSection />
       <SimulatorSection />
       <PricingSection />
+      <BlogPreviewSection />
       <FAQSection />
       <CTASection onOpenForm={() => setFormOpen(true)} />
       <FooterSection />
