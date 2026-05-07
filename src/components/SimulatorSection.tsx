@@ -225,7 +225,7 @@ const SimulatorSection = () => {
 
           {/* Punchline */}
           <p className="text-center mt-8 text-sm sm:text-base font-semibold text-foreground leading-relaxed">
-            Avec Wafy Immo, <span className="text-primary">divisez votre coût de qualification par 2</span> — et vos leads sont traités en <span className="text-primary">30 secondes</span> au lieu de 24h.
+            Avec Wafy Immo, vos leads sont traités en <span className="text-primary">30 secondes</span> au lieu de 24h.
           </p>
         </motion.div>
       </div>
