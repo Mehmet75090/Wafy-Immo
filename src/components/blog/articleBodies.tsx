@@ -304,3 +304,117 @@ export const ForcesVenteBody = () => (
     </p>
   </>
 );
+
+export const Immo2026Body = () => (
+  <>
+    <p>
+      En 2026, la question n'est plus de savoir s'il faut utiliser l'intelligence
+      artificielle, mais si l'on peut encore se permettre de <strong>s'en passer</strong>.
+      Dans un marché immobilier où la réactivité et la précision sont devenues des exigences
+      absolues, l'agent qui travaille exclusivement « à l'ancienne » prend un risque
+      majeur : celui de devenir invisible et moins compétitif.
+    </p>
+    <p>
+      Aujourd'hui, près de <strong>65 % des professionnels du secteur</strong> intègrent déjà
+      l'IA dans leur quotidien. Ce qui était hier un gadget est devenu aujourd'hui un{" "}
+      <strong>levier business indispensable</strong>.
+    </p>
+
+    <figure className="my-10 flex flex-col items-center">
+      <img
+        src={blogAssets.clemenceGrille}
+        alt="Clémence Grille, Orisha Real Estate"
+        width={400}
+        height={400}
+        loading="lazy"
+        className="w-48 h-48 object-cover rounded-full border-4 border-primary/20 shadow-lg"
+      />
+      <figcaption className="mt-4 text-center">
+        <span className="block text-base font-semibold text-foreground">Clémence Grille</span>
+        <span className="block text-sm text-muted-foreground">Orisha Real Estate</span>
+      </figcaption>
+    </figure>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      L'agent augmenté : trois piliers pour faire la différence
+    </h2>
+
+    <h3 className="text-xl font-bold mt-8 mb-2">1. La réactivité comme standard</h3>
+    <p>
+      Les clients (acheteurs comme vendeurs) n'acceptent plus les délais d'attente. L'IA
+      permet désormais de traiter les demandes 24h/24, de qualifier les leads instantanément
+      et de maintenir un CRM à jour sans effort manuel.
+    </p>
+    <p>
+      <strong>Le bénéfice :</strong> moins de déperdition de contacts et plus de rendez-vous
+      physiques obtenus.
+    </p>
+
+    <h3 className="text-xl font-bold mt-8 mb-2">2. La data contre l'intuition</h3>
+    <p>
+      L'estimation « au feeling » est terminée. Face à des clients ultra-informés qui
+      challengent chaque chiffre, l'agent doit rassurer par la donnée. Les modèles d'IA
+      croisent désormais l'historique des prix, les tendances locales et les signaux faibles
+      du marché.
+    </p>
+    <p>
+      <strong>Le bénéfice :</strong> un argumentaire imparable qui renforce la confiance et
+      sécurise la prise de mandat.
+    </p>
+
+    <h3 className="text-xl font-bold mt-8 mb-2">
+      3. La visibilité par la production de contenu
+    </h3>
+    <p>
+      Pour exister, un agent doit produire massivement : photos optimisées, annonces
+      attractives, newsletters et posts sur les réseaux sociaux. L'IA permet de générer ces
+      contenus de haute qualité en un temps record.
+    </p>
+    <p>
+      <strong>Le bénéfice :</strong> une présence constante dans le flux d'informations de
+      ses prospects, là où l'agent manuel finit par disparaître.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Un nouveau rôle pour l'humain
+    </h2>
+    <p>
+      L'IA ne remplace pas l'agent immobilier, elle le <strong>repositionne</strong>. En
+      automatisant les tâches répétitives et chronophages, elle lui permet de se concentrer
+      sur sa véritable valeur ajoutée :
+    </p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>
+        <strong>Analyste :</strong> pour interpréter les données de marché.
+      </li>
+      <li>
+        <strong>Conseiller :</strong> grâce au temps libéré pour l'écoute client.
+      </li>
+      <li>
+        <strong>Négociateur :</strong> armé d'arguments plus solides et factuels.
+      </li>
+    </ul>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Le risque de l'immobilisme</h2>
+    <p>
+      Refuser d'embrasser ces outils en 2026, c'est accepter de répondre moins vite, de
+      produire moins et d'offrir une expérience client dégradée. En résumé : c'est{" "}
+      <strong>laisser le mandat à un concurrent mieux équipé</strong>.
+    </p>
+    <p>
+      L'IA ne remplace pas les agents, mais elle donne des « super-pouvoirs » à ceux qui
+      l'utilisent, laissant les autres courir derrière une course déjà perdue.
+    </p>
+
+    <p className="text-sm italic text-muted-foreground border-l-4 border-primary/40 pl-4 mt-10">
+      Source : d'après la chronique de Clémence Grille (Orisha Real Estate) pour le JDN
+      (Journal du Net), publiée en décembre 2025.
+    </p>
+
+    <p>
+      Vous souhaitez transformer votre approche commerciale et intégrer ces outils à votre
+      quotidien ? Wafy Immo vous accompagne pour devenir, vous aussi, un{" "}
+      <strong>agent augmenté</strong>.
+    </p>
+  </>
+);
