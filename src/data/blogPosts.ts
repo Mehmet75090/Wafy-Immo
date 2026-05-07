@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     title: "L'IA en Immobilier : Votre nouveau copilote pour booster votre agence",
     description:
       "Estimation, marketing, gestion locative, relation client 24/7 : comment l'IA devient le copilote indispensable des agences immobilières.",
-    date: "2026-05-07",
+    date: "DATE_PLACEHOLDER",
     readingMinutes: 5,
     cover: coverCopilote,
     coverAlt:
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     title: "IA et Immobilier : Pourquoi l'humain reste le pilier de la confiance",
     description:
       "Adoption de l'IA chez les Français, rôle du notaire, complémentarité humain-machine : analyse d'une enquête Immonot sur l'IA dans l'immobilier.",
-    date: "2026-05-07",
+    date: "DATE_PLACEHOLDER",
     readingMinutes: 5,
     cover: coverHumain,
     coverAlt:
@@ -63,7 +63,7 @@ export const blogPosts: BlogPost[] = [
     title: "Immobilier 2026 : Pourquoi l'agent « sans IA » perdra la course au mandat",
     description:
       "Réactivité, data et contenu : pourquoi l'IA est devenue indispensable aux agents immobiliers en 2026 — analyse inspirée de la chronique de Clémence Grille (Orisha Real Estate).",
-    date: "2026-05-07",
+    date: "DATE_PLACEHOLDER",
     readingMinutes: 6,
     cover: coverImmo2026,
     coverAlt:
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
       "Étude de cas : Comment l'IA transforme concrètement la performance des forces de vente",
     description:
       "Comment l'IA augmente — sans remplacer — les commerciaux, avec un retour d'expérience réel chez Forvis Mazars et un plan d'action pour vos équipes.",
-    date: "2026-05-07",
+    date: "DATE_PLACEHOLDER",
     readingMinutes: 7,
     cover: coverForcesVente,
     coverAlt:
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     title: "L'Agent IA Commercial : Transformez vos prospects en opportunités qualifiées",
     description:
       "Comment un agent IA commercial qualifie vos leads, structure les données et booste votre taux de conversion sans déshumaniser la vente.",
-    date: "2026-05-07",
+    date: "DATE_PLACEHOLDER",
     readingMinutes: 6,
     cover: coverAgentIA,
     coverAlt: "Commerciale avec casque audio en appel avec un prospect devant son CRM",
