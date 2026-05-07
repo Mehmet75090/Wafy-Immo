@@ -3,6 +3,8 @@ import imgFunnel from "@/assets/blog-qualification-funnel.jpg";
 import imgHybride from "@/assets/blog-equipe-hybride.jpg";
 import coverForcesVente from "@/assets/blog-ia-forces-vente.jpg";
 import imgManagerCoach from "@/assets/blog-manager-coach.jpg";
+import coverImmo2026 from "@/assets/blog-immobilier-2026.jpg";
+import portraitClemenceGrille from "@/assets/clemence-grille.png";
 
 export interface BlogPost {
   slug: string;
@@ -16,6 +18,26 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "immobilier-2026-agent-sans-ia",
+    title: "Immobilier 2026 : Pourquoi l'agent « sans IA » perdra la course au mandat",
+    description:
+      "Réactivité, data et contenu : pourquoi l'IA est devenue indispensable aux agents immobiliers en 2026 — analyse inspirée de la chronique de Clémence Grille (Orisha Real Estate).",
+    date: "2026-05-07",
+    readingMinutes: 6,
+    cover: coverImmo2026,
+    coverAlt:
+      "Agent immobilier présentant un dashboard IA sur tablette à un couple devant une maison moderne",
+    keywords: [
+      "IA immobilier",
+      "agent immobilier 2026",
+      "transformation digitale immobilier",
+      "Clémence Grille",
+      "Orisha Real Estate",
+      "prise de mandat",
+      "CRM immobilier",
+    ],
+  },
   {
     slug: "ia-forces-de-vente-etude-de-cas",
     title:
@@ -45,8 +67,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-07",
     readingMinutes: 6,
     cover: coverAgentIA,
-    coverAlt:
-      "Commerciale avec casque audio en appel avec un prospect devant son CRM",
+    coverAlt: "Commerciale avec casque audio en appel avec un prospect devant son CRM",
     keywords: [
       "agent IA commercial",
       "qualification de leads",
@@ -63,4 +84,5 @@ export const blogAssets = {
   funnel: imgFunnel,
   hybride: imgHybride,
   managerCoach: imgManagerCoach,
+  clemenceGrille: portraitClemenceGrille,
 };
