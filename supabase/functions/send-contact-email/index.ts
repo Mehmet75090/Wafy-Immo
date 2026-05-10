@@ -47,6 +47,35 @@ Deno.serve(async (req) => {
       </table>
     `
 
+    // Push to Monday (non-blocking failure)
+    try {
+      const MONDAY_API_TOKEN = Deno.env.get('MONDAY_API_TOKEN')
+      if (MONDAY_API_TOKEN) {
+        const phoneDigits = Number(phone.replace(/\D/g, '')) || 0
+        const columnValues = {
+          text_mm37st80: name,
+          numeric_mm3762q1: phoneDigits,
+          text_mm37ctzv: email,
+          text_mm37gq6m: message || '',
+        }
+        const mondayQuery = `mutation ($board: ID!, $item: String!, $cols: JSON!) { create_item(board_id: $board, item_name: $item, column_values: $cols) { id } }`
+        const mondayRes = await fetch('https://api.monday.com/v2', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': MONDAY_API_TOKEN, 'API-Version': '2023-10' },
+          body: JSON.stringify({
+            query: mondayQuery,
+            variables: { board: '5096175875', item: company, cols: JSON.stringify(columnValues) },
+          }),
+        })
+        const mondayData = await mondayRes.json()
+        if (!mondayRes.ok || mondayData.errors) {
+          console.error('Monday API error:', JSON.stringify(mondayData))
+        }
+      }
+    } catch (mondayErr) {
+      console.error('Monday push failed:', mondayErr)
+    }
+
     const response = await fetch(`${GATEWAY_URL}/emails`, {
       method: 'POST',
       headers: {
