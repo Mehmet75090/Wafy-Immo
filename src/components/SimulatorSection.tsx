@@ -39,7 +39,7 @@ const SimulatorSection = () => {
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
     const humanCost = agentsNeeded * agentSalary;
     const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
-    const humanLeadsPerDay = agentsNeeded * 108;
+    const humanLeadsPerDay = agentsNeeded * 48;
 
     // WAFY cost
     let wafyCost: number;
