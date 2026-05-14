@@ -7,16 +7,26 @@ import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   useEffect(() => {
-    document.title = "Blog Wafy Immo — Insights IA, vente & immobilier";
+    const title = "Blog Wafy Immo — Insights IA, vente & immobilier";
     const desc =
       "Articles, guides et analyses sur l'IA commerciale, la qualification de leads et l'automatisation pour les promoteurs immobiliers.";
-    let meta = document.querySelector('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement("meta");
-      meta.setAttribute("name", "description");
-      document.head.appendChild(meta);
-    }
-    meta.setAttribute("content", desc);
+    const url = `${window.location.origin}/blog`;
+    document.title = title;
+
+    const setMeta = (selector: string, attr: string, name: string, content: string) => {
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+    setMeta('meta[name="description"]', "name", "description", desc);
+    setMeta('meta[property="og:title"]', "property", "og:title", title);
+    setMeta('meta[property="og:description"]', "property", "og:description", desc);
+    setMeta('meta[property="og:url"]', "property", "og:url", url);
+    setMeta('meta[property="og:type"]', "property", "og:type", "website");
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
@@ -24,7 +34,31 @@ const Blog = () => {
       canonical.setAttribute("rel", "canonical");
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute("href", `${window.location.origin}/blog`);
+    canonical.setAttribute("href", url);
+
+    const ldId = "blog-list-jsonld";
+    document.getElementById(ldId)?.remove();
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = ldId;
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: title,
+      description: desc,
+      url,
+      hasPart: blogPosts.map((p) => ({
+        "@type": "BlogPosting",
+        headline: p.title,
+        description: p.description,
+        datePublished: p.date,
+        url: `${window.location.origin}/blog/${p.slug}`,
+      })),
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById(ldId)?.remove();
+    };
   }, []);
 
   return (
