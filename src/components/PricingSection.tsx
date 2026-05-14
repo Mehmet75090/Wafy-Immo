@@ -208,9 +208,9 @@ const PricingSection = () => {
                       {f.included ? (
                         <Check className="w-4 h-4 text-secondary" />
                       ) : (
-                        <X className="w-4 h-4 text-muted-foreground/40" />
+                        <X className="w-4 h-4 text-muted-foreground" />
                       )}
-                      <span className={f.included ? "" : "text-muted-foreground/50 line-through"}>
+                      <span className={f.included ? "" : "text-muted-foreground line-through"}>
                         {f.text}
                       </span>
                     </li>
