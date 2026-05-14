@@ -39,7 +39,7 @@ const FeaturesSection = () => (
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Wafy Immo : votre agent IA de <span className="text-gradient">qualification</span>
+          Wafy Immo : votre assistant Wafy Immo de <span className="text-gradient">qualification</span>
         </h2>
       </motion.div>
 

@@ -101,15 +101,15 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "agent-ia-commercial-qualification-leads",
-    title: "L'Agent IA Commercial : Transformez vos prospects en opportunités qualifiées",
+    title: "Wafy Immo Commercial : Transformez vos prospects en opportunités qualifiées",
     description:
-      "Comment un agent IA commercial qualifie vos leads, structure les données et booste votre taux de conversion sans déshumaniser la vente.",
+      "Comment Wafy Immo commercial qualifie vos leads, structure les données et booste votre taux de conversion sans déshumaniser la vente.",
     date: "2025-04-01",
     readingMinutes: 6,
     cover: coverAgentIA,
     coverAlt: "Commerciale avec casque audio en appel avec un prospect devant son CRM",
     keywords: [
-      "agent IA commercial",
+      "Wafy Immo commercial",
       "qualification de leads",
       "scoring de leads",
       "automatisation commerciale",

@@ -182,13 +182,13 @@ const faqs = [
     a: (
       <div className="space-y-3">
         <p>
-          Ce sont les deux mécaniques que votre agent IA utilise pour engager vos prospects —
+          Ce sont les deux mécaniques que votre assistant Wafy Immo utilise pour engager vos prospects —
           et elles n'ont pas le même coût car elles ne mobilisent pas les mêmes ressources
           techniques.
         </p>
         <p>
           <span className="font-semibold text-foreground">🗣️ Une conversation</span>, c'est un
-          échange ouvert avec un prospect entrant : il vous écrit, l'agent IA comprend sa
+          échange ouvert avec un prospect entrant : il vous écrit, Wafy Immo comprend sa
           demande, le qualifie, répond à ses questions, propose un RDV. Le nombre de messages
           échangés est illimité tant que la discussion est active. C'est ce qui coûte le plus
           cher car ça mobilise de l'intelligence artificielle en temps réel (LLM).
