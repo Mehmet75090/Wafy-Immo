@@ -136,7 +136,7 @@ const faqs = [
     ),
   },
   {
-    q: "Que se passe-t-il si je dépasse mon quota de conversations ?",
+    q: "Que se passe-t-il si je dépasse mes quotas ?",
     a: (
       <div className="space-y-4">
         <p>
@@ -148,37 +148,30 @@ const faqs = [
             <thead className="bg-muted/60">
               <tr className="text-left text-foreground">
                 <th className="px-3 py-2 font-semibold">Pack</th>
-                <th className="px-3 py-2 font-semibold">Conversations</th>
-                <th className="px-3 py-2 font-semibold">Prix</th>
+                <th className="px-3 py-2 font-semibold">Volume</th>
+                <th className="px-3 py-2 font-semibold">Prix unitaire</th>
+                <th className="px-3 py-2 font-semibold">Prix du pack</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Pack S</td>
-                <td className="px-3 py-2">+100 conv.</td>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack Relances</td>
+                <td className="px-3 py-2">+1 000 relances</td>
+                <td className="px-3 py-2">0,52 MAD / relance</td>
+                <td className="px-3 py-2">520 MAD</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack Conversations</td>
+                <td className="px-3 py-2">+1 000 conversations</td>
+                <td className="px-3 py-2">1,40 MAD / conversation</td>
                 <td className="px-3 py-2">1 400 MAD</td>
-              </tr>
-              <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Pack M</td>
-                <td className="px-3 py-2">+300 conv.</td>
-                <td className="px-3 py-2">3 600 MAD</td>
-              </tr>
-              <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Pack L</td>
-                <td className="px-3 py-2">+500 conv.</td>
-                <td className="px-3 py-2">5 500 MAD</td>
-              </tr>
-              <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Pack XL</td>
-                <td className="px-3 py-2">+1 000 conv.</td>
-                <td className="px-3 py-2">9 000 MAD</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-sm">
           💡 <span className="font-semibold text-foreground">Bon à savoir :</span> si vous
-          achetez un pack M ou L deux mois consécutifs, l'upgrade vers le plan supérieur est
+          dépassez régulièrement vos quotas, l'upgrade vers le plan supérieur est
           souvent plus économique. Notre équipe vous préviendra avant que vous surpayiez.
         </p>
       </div>
