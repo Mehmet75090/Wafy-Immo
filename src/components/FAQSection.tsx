@@ -185,6 +185,38 @@ const faqs = [
     ),
   },
   {
+    q: "C'est quoi la différence entre une « conversation » et une « relance » ?",
+    a: (
+      <div className="space-y-3">
+        <p>
+          Ce sont les deux mécaniques que votre agent IA utilise pour engager vos prospects —
+          et elles n'ont pas le même coût car elles ne mobilisent pas les mêmes ressources
+          techniques.
+        </p>
+        <p>
+          <span className="font-semibold text-foreground">🗣️ Une conversation</span>, c'est un
+          échange ouvert avec un prospect entrant : il vous écrit, l'agent IA comprend sa
+          demande, le qualifie, répond à ses questions, propose un RDV. Le nombre de messages
+          échangés est illimité tant que la discussion est active. C'est ce qui coûte le plus
+          cher car ça mobilise de l'intelligence artificielle en temps réel (LLM).
+        </p>
+        <p>
+          <span className="font-semibold text-foreground">📩 Une relance</span>, c'est un
+          message sortant automatique envoyé à un prospect qui n'a pas répondu ou pas avancé
+          dans son parcours. Par exemple : J+1 « Avez-vous pu consulter la brochure ? », J+3
+          « Souhaitez-vous qu'on programme une visite ? », J+7 « Dernière proposition avant
+          clôture du dossier ». Ce sont des messages basés sur des templates WhatsApp
+          pré-validés par Meta — d'où un coût beaucoup plus faible (environ 3× moins cher
+          qu'une conversation).
+        </p>
+        <p className="font-semibold text-foreground">
+          En clair : les conversations transforment les leads chauds, les relances réveillent
+          les leads tièdes.
+        </p>
+      </div>
+    ),
+  },
+  {
     q: "Puis-je changer de plan en cours d'année ?",
     a: (
       <div className="space-y-3">
