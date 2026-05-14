@@ -1,0 +1,19 @@
+# Wafy Immo
+
+> Co-pilote IA WhatsApp pour promoteurs immobiliers au Maroc : qualifie, score et transmet automatiquement vos leads à vos commerciaux, 24h/24.
+
+Wafy Immo est une marque de BIRDEV (Casablanca). L'assistant engage les prospects entrants sur WhatsApp, qualifie leur projet immobilier, programme les rendez-vous et pousse une fiche scorée directement dans le CRM du promoteur. Plans Essentiel, Business et Premium en facturation mensuelle ou annuelle.
+
+## Pages
+
+- [Accueil](/): Présentation, fonctionnalités, simulateur de coût, tarifs et démo.
+- [Blog](/blog): Insights IA, vente et immobilier.
+- [Mentions légales](/mentions-legales): Éditeur, hébergeur et informations légales.
+
+## Articles
+
+- [L'IA en immobilier : votre nouveau copilote pour booster votre agence](/blog/ia-immobilier-copilote-agence)
+- [IA et immobilier : pourquoi l'humain reste le pilier de la confiance](/blog/ia-immobilier-humain-pilier-confiance)
+- [Immobilier 2026 : pourquoi l'agent « sans IA » perdra la course au mandat](/blog/immobilier-2026-agent-sans-ia)
+- [Étude de cas : comment l'IA transforme la performance des forces de vente](/blog/ia-forces-de-vente-etude-de-cas)
+- [Wafy Immo Commercial : transformez vos prospects en opportunités qualifiées](/blog/agent-ia-commercial-qualification-leads)
