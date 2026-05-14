@@ -10,7 +10,9 @@ const wafyPlans = [
   { name: "Premium", price: 9900, isPerLead: false, maxConv: 5000 },
 ];
 
-const LEADS_PER_AGENT = 600;
+// Capacité d'un agent : ~5 min / appel (incl. hors scope), 9h/j, 5j/semaine
+// = 108 appels/jour × ~22 jours ouvrés ≈ 2 376 leads/mois
+const LEADS_PER_AGENT = 2376;
 const LEAD_STEPS = [600, 1500, 2500, 3500, 4500, 5000];
 
 function getBestPlan(leads: number) {
@@ -37,7 +39,7 @@ const SimulatorSection = () => {
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
     const humanCost = agentsNeeded * agentSalary;
     const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
-    const humanLeadsPerDay = agentsNeeded * 30;
+    const humanLeadsPerDay = agentsNeeded * 108;
 
     // WAFY cost
     let wafyCost: number;
