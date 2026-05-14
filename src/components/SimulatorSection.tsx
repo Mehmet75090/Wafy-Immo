@@ -25,7 +25,7 @@ function getBestPlan(leads: number) {
 
 const SimulatorSection = () => {
   const [totalLeads, setTotalLeads] = useState(600);
-  const [agentSalary, setAgentSalary] = useState(7700);
+  const [agentSalary, setAgentSalary] = useState(11000);
   const [hotPercent, setHotPercent] = useState(30);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
@@ -139,14 +139,14 @@ const SimulatorSection = () => {
 
             <div>
               <div className="flex justify-between mb-3">
-                <span className="text-sm font-medium">Salaire net d'un agent de qualification</span>
+                <span className="text-sm font-medium">Coût employeur d'un agent (brut chargé)</span>
                 <span className="text-sm font-bold text-primary">{agentSalary.toLocaleString("fr-FR")} MAD</span>
               </div>
               <Slider
                 value={[agentSalary]}
                 onValueChange={([v]) => setAgentSalary(v)}
-                min={4000}
-                max={15000}
+                min={6000}
+                max={20000}
                 step={500}
                 className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
               />
