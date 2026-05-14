@@ -25,7 +25,7 @@ function getBestPlan(leads: number) {
 
 const SimulatorSection = () => {
   const [totalLeads, setTotalLeads] = useState(600);
-  const [agentSalary, setAgentSalary] = useState(11000);
+  const [agentSalary, setAgentSalary] = useState(6000);
   const [hotPercent, setHotPercent] = useState(30);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
