@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -18,6 +19,66 @@ const Row = ({ label, value }: { label: string; value: React.ReactNode }) => (
 );
 
 const MentionsLegales = () => {
+  useEffect(() => {
+    const title = "Mentions légales — Wafy Immo (BIRDEV, Casablanca)";
+    const desc =
+      "Mentions légales du site Wafy Immo : éditeur BIRDEV (RC 486725, ICE 002673969000034), siège à Casablanca, hébergeur Nindohost.";
+    const url = `${window.location.origin}/mentions-legales`;
+    document.title = title;
+
+    const setMeta = (selector: string, attr: string, name: string, content: string) => {
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+    setMeta('meta[name="description"]', "name", "description", desc);
+    setMeta('meta[property="og:title"]', "property", "og:title", title);
+    setMeta('meta[property="og:description"]', "property", "og:description", desc);
+    setMeta('meta[property="og:url"]', "property", "og:url", url);
+    setMeta('meta[property="og:type"]', "property", "og:type", "website");
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", url);
+
+    const ldId = "legal-jsonld";
+    document.getElementById(ldId)?.remove();
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = ldId;
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Wafy Immo",
+      legalName: "BIRDEV SARL AU",
+      url: `${window.location.origin}/`,
+      telephone: "+212708231845",
+      email: "hello@wafypro.ma",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "67 Rue Aziz Bellal, 2ème Étage, Bureau N°3, Maarif",
+        addressLocality: "Casablanca",
+        addressCountry: "MA",
+      },
+      identifier: [
+        { "@type": "PropertyValue", name: "RC", value: "486725" },
+        { "@type": "PropertyValue", name: "ICE", value: "002673969000034" },
+      ],
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById(ldId)?.remove();
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-background">
       <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
