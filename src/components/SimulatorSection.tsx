@@ -139,7 +139,7 @@ const SimulatorSection = () => {
 
             <div>
               <div className="flex justify-between mb-3">
-                <span className="text-sm font-medium">Coût employeur d'un agent (brut chargé)</span>
+                <span className="text-sm font-medium">Coût employeur d'un agent humain recruté (brut chargé)</span>
                 <span className="text-sm font-bold text-primary">{agentSalary.toLocaleString("fr-FR")} MAD</span>
               </div>
               <Slider
