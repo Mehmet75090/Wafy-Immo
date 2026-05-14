@@ -191,7 +191,7 @@ const SimulatorSection = () => {
             <div className="grid grid-cols-3 text-sm font-semibold">
               <div className="p-3 sm:p-4 bg-muted" />
               <div className="p-3 sm:p-4 bg-muted/80 text-center flex items-center justify-center gap-1.5">
-                <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent</span> humain
+                <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent humain</span> recruté
               </div>
               <div className="p-3 sm:p-4 bg-primary/10 text-center flex items-center justify-center gap-1.5">
                 <Bot className="w-4 h-4 text-primary" /> Wafy Immo <span className="hidden sm:inline">{results.planName}</span>
