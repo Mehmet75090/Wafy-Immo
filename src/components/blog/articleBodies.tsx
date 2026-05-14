@@ -7,7 +7,7 @@ export const AgentIABody = () => (
       mais de savoir les <strong>traiter</strong>. Le véritable enjeu réside dans la
       réactivité : identifier les opportunités sérieuses, structurer l'information et éviter
       que les équipes ne s'épuisent sur des demandes peu pertinentes. C'est ici qu'un{" "}
-      <strong>agent IA</strong> devient un levier de croissance stratégique.
+      <strong>Wafy Immo</strong> devient un levier de croissance stratégique.
     </p>
 
     <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
@@ -50,10 +50,10 @@ export const AgentIABody = () => (
     </figure>
 
     <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
-      Ce qu'un agent IA apporte concrètement à votre tunnel de vente
+      Ce qu'Wafy Immo apporte concrètement à votre tunnel de vente
     </h2>
     <p>
-      Contrairement à un simple outil d'automatisation rigide, l'agent IA utilise le
+      Contrairement à un simple outil d'automatisation rigide, Wafy Immo utilise le
       raisonnement pour apporter une valeur ajoutée à chaque étape :
     </p>
 
@@ -136,7 +136,7 @@ export const AgentIABody = () => (
     <figure className="my-10 rounded-2xl overflow-hidden border border-border">
       <img
         src={blogAssets.hybride}
-        alt="Équipe commerciale hybride : humain et agent IA collaborant"
+        alt="Équipe commerciale hybride : humain et Wafy Immo collaborant"
         width={1024}
         height={576}
         loading="lazy"
@@ -148,7 +148,7 @@ export const AgentIABody = () => (
       Conclusion : Vers une équipe commerciale hybride
     </h2>
     <p>
-      L'agent IA commercial n'est pas une promesse futuriste, c'est une{" "}
+      Wafy Immo commercial n'est pas une promesse futuriste, c'est une{" "}
       <strong>brique de compétitivité</strong>. En automatisant le tri et la qualification,
       vous permettez à vos équipes de se concentrer sur l'essentiel : la relation humaine et
       la conclusion des ventes.
@@ -298,7 +298,7 @@ export const ForcesVenteBody = () => (
       ce qui compte vraiment : le closing.
     </p>
     <p>
-      Vous voulez franchir une étape supplémentaire et déployer un agent IA sur mesure pour
+      Vous voulez franchir une étape supplémentaire et déployer Wafy Immo sur mesure pour
       vos équipes ? Parlons-en — on vous montre comment passer de la théorie à un système
       opérationnel en quelques semaines.
     </p>

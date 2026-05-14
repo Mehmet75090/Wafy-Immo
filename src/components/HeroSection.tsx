@@ -29,7 +29,7 @@ const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 px-5 py-2 text-sm font-semibold text-primary-foreground mb-6">
-              <MessageCircle className="w-4 h-4 text-primary" /> Agent IA sur WhatsApp · 24/7
+              <MessageCircle className="w-4 h-4 text-primary" /> Wafy Immo sur WhatsApp · 24/7
             </span>
           </motion.div>
 
@@ -39,7 +39,7 @@ const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            L'agent IA{" "}
+            Wafy Immo{" "}
             <span className="text-gradient">WhatsApp</span> qui{" "}
             qualifie vos leads immobiliers 24h/24
           </motion.h1>

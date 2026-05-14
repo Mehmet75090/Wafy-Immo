@@ -136,7 +136,7 @@ const BlogPost = () => {
 
           <aside className="mt-16 rounded-2xl border border-primary/30 bg-accent/40 p-8 text-center">
             <h3 className="text-2xl font-bold mb-3">
-              Prêt à tester un agent IA sur vos leads ?
+              Prêt à tester Wafy Immo sur vos leads ?
             </h3>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
               On vous montre, en 20 minutes, comment Wafy Immo qualifie vos prospects 24/7 et
