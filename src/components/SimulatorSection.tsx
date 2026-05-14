@@ -145,8 +145,8 @@ const SimulatorSection = () => {
               <Slider
                 value={[agentSalary]}
                 onValueChange={([v]) => setAgentSalary(v)}
-                min={6000}
-                max={20000}
+                min={4000}
+                max={8000}
                 step={500}
                 className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
               />
