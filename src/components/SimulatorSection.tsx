@@ -25,7 +25,7 @@ function getBestPlan(leads: number) {
 
 const SimulatorSection = () => {
   const [totalLeads, setTotalLeads] = useState(600);
-  const [agentSalary, setAgentSalary] = useState(11000);
+  const [agentSalary, setAgentSalary] = useState(6000);
   const [hotPercent, setHotPercent] = useState(30);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
@@ -139,14 +139,14 @@ const SimulatorSection = () => {
 
             <div>
               <div className="flex justify-between mb-3">
-                <span className="text-sm font-medium">Coût employeur d'un agent (brut chargé)</span>
+                <span className="text-sm font-medium">Coût employeur d'un agent humain recruté (brut chargé)</span>
                 <span className="text-sm font-bold text-primary">{agentSalary.toLocaleString("fr-FR")} MAD</span>
               </div>
               <Slider
                 value={[agentSalary]}
                 onValueChange={([v]) => setAgentSalary(v)}
-                min={6000}
-                max={20000}
+                min={4000}
+                max={8000}
                 step={500}
                 className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
               />
@@ -191,7 +191,7 @@ const SimulatorSection = () => {
             <div className="grid grid-cols-3 text-sm font-semibold">
               <div className="p-3 sm:p-4 bg-muted" />
               <div className="p-3 sm:p-4 bg-muted/80 text-center flex items-center justify-center gap-1.5">
-                <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent</span> humain
+                <User className="w-4 h-4 text-muted-foreground" /> <span className="hidden sm:inline">Agent humain</span> recruté
               </div>
               <div className="p-3 sm:p-4 bg-primary/10 text-center flex items-center justify-center gap-1.5">
                 <Bot className="w-4 h-4 text-primary" /> Wafy Immo <span className="hidden sm:inline">{results.planName}</span>
