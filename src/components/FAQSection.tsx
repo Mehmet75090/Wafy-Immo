@@ -178,6 +178,27 @@ const faqs = [
     ),
   },
   {
+    q: "Les packs d'extension sont-ils disponibles sur tous les plans ?",
+    a: (
+      <div className="space-y-3">
+        <p>
+          <span className="font-semibold text-foreground">Non.</span> Les packs
+          Conversations et Relances sont réservés aux plans{" "}
+          <span className="font-semibold text-foreground">Business</span> et{" "}
+          <span className="font-semibold text-foreground">Premium</span>, qui sont
+          conçus pour absorber des volumes élevés et inclure les fonctionnalités
+          de relance automatique.
+        </p>
+        <p>
+          Si vous êtes sur le plan Essentiel et que vous approchez régulièrement
+          votre quota de 300 conversations/mois, c'est généralement le signe
+          qu'il est temps de passer au plan Business — vous y gagnerez en volume,
+          en fonctionnalités (relances + RDV auto), et en coût par conversation.
+        </p>
+      </div>
+    ),
+  },
+  {
     q: "C'est quoi la différence entre une « conversation » et une « relance » ?",
     a: (
       <div className="space-y-3">
