@@ -81,6 +81,12 @@ const VoiceBubble = ({
       a.pause();
       setPlaying(false);
     } else {
+      document.querySelectorAll("audio").forEach((el) => {
+        if (el !== a) {
+          el.pause();
+          el.currentTime = 0;
+        }
+      });
       a.play();
       setPlaying(true);
     }
