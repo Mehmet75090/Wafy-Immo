@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 const args = [
   {
     icon: Mic,
-    title: "Le canal préféré des Marocains",
+    title: "Plus rapide, plus fluide, plus humain",
     text: "Le vocal est le réflexe naturel sur WhatsApp. Répondre en texte uniquement, c'est imposer un effort à vos prospects.",
   },
   {
