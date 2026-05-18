@@ -143,80 +143,38 @@ const VoiceSection = () => (
           viewport={{ once: true }}
           className="space-y-6"
         >
-          {[args[0]].map((a, i) => (
-            <div key={i} className="p-6 rounded-2xl bg-card border border-border">
-              <a.icon className="w-7 h-7 text-primary mb-3" />
-              <h3 className="font-bold mb-2">{a.title}</h3>
-              <p className="text-sm text-muted-foreground">{a.text}</p>
-            </div>
-          ))}
-          <div className="hidden lg:block p-6 rounded-2xl bg-card border border-border">
-            <args[1].icon className="w-7 h-7 text-primary mb-3" />
-            <h3 className="font-bold mb-2">{args[1].title}</h3>
-            <p className="text-sm text-muted-foreground">{args[1].text}</p>
-          </div>
-        </motion.div>
-
-        {/* WhatsApp mock */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="lg:col-span-1 mx-auto w-full max-w-sm"
-        >
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-border bg-[#0b141a]">
-            {/* Header */}
-            <div className="bg-[#202c33] px-4 py-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                W
+          {[args[0], args[1]].map((a, i) => {
+            const Icon = a.icon;
+            return (
+              <div
+                key={i}
+                className={`p-6 rounded-2xl bg-card border border-border ${
+                  i === 1 ? "hidden lg:block" : ""
+                }`}
+              >
+                <Icon className="w-7 h-7 text-primary mb-3" />
+                <h3 className="font-bold mb-2">{a.title}</h3>
+                <p className="text-sm text-muted-foreground">{a.text}</p>
               </div>
-              <div>
-                <div className="text-white text-sm font-semibold">Wafy Immo</div>
-                <div className="text-white/60 text-[11px]">en ligne</div>
-              </div>
-            </div>
-            {/* Conversation */}
-            <div
-              className="p-4 min-h-[280px]"
-              style={{
-                backgroundColor: "#0b141a",
-                backgroundImage:
-                  "radial-gradient(circle at 20% 10%, rgba(255,255,255,0.03) 0, transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 0, transparent 40%)",
-              }}
-            >
-              <VoiceBubble
-                src="/audio/message-client.ogg"
-                side="right"
-                label="Prospect"
-                time="14:21"
-              />
-              <VoiceBubble
-                src="/audio/message-wafy-bot.ogg"
-                side="left"
-                label="Wafy Immo"
-                time="14:21"
-              />
-            </div>
-          </div>
+            );
+          })}
         </motion.div>
-
-        {/* Right arg */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <div className="lg:hidden p-6 rounded-2xl bg-card border border-border">
-            <args[1].icon className="w-7 h-7 text-primary mb-3" />
-            <h3 className="font-bold mb-2">{args[1].title}</h3>
-            <p className="text-sm text-muted-foreground">{args[1].text}</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-card border border-border">
-            <args[2].icon className="w-7 h-7 text-primary mb-3" />
-            <h3 className="font-bold mb-2">{args[2].title}</h3>
-            <p className="text-sm text-muted-foreground">{args[2].text}</p>
-          </div>
+...
+          {[args[1], args[2]].map((a, i) => {
+            const Icon = a.icon;
+            return (
+              <div
+                key={i}
+                className={`p-6 rounded-2xl bg-card border border-border ${
+                  i === 0 ? "lg:hidden" : ""
+                }`}
+              >
+                <Icon className="w-7 h-7 text-primary mb-3" />
+                <h3 className="font-bold mb-2">{a.title}</h3>
+                <p className="text-sm text-muted-foreground">{a.text}</p>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </div>
