@@ -189,6 +189,10 @@ const VoiceSection = () => (
               <VoiceBubble src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
             </div>
           </div>
+          <p className="text-center text-xs text-muted-foreground mt-3 flex items-center justify-center gap-1.5">
+            <Play className="w-3 h-3 fill-primary text-primary" />
+            Cliquez sur les vocaux pour écouter la conversation
+          </p>
         </motion.div>
 
         {/* Right arg */}
