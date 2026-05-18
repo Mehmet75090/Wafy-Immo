@@ -167,25 +167,25 @@ const VoiceSection = () => (
           viewport={{ once: true }}
           className="mx-auto w-full max-w-sm"
         >
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-border bg-[#0b141a]">
-            <div className="bg-[#202c33] px-4 py-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+          <div className="rounded-3xl overflow-hidden shadow-2xl border border-border">
+            <div className="bg-[#075e54] px-4 py-3 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold">
                 W
               </div>
               <div>
                 <div className="text-white text-sm font-semibold">Wafy Immo</div>
-                <div className="text-white/60 text-[11px]">en ligne</div>
+                <div className="text-white/80 text-[11px]">en ligne</div>
               </div>
             </div>
             <div
               className="p-4 min-h-[280px]"
               style={{
-                backgroundColor: "#0b141a",
+                backgroundColor: "#e5ddd5",
                 backgroundImage:
-                  "radial-gradient(circle at 20% 10%, rgba(255,255,255,0.03) 0, transparent 40%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 0, transparent 40%)",
+                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='%23d9d2c8' fill-opacity='0.5'><circle cx='10' cy='10' r='1.5'/><circle cx='40' cy='25' r='1.5'/><circle cx='20' cy='45' r='1.5'/><circle cx='50' cy='50' r='1.5'/></g></svg>\")",
               }}
             >
-              <VoiceBubble src="/audio/message-client.ogg" side="right" label="Prospect" time="14:21" />
+              <VoiceBubble src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
               <VoiceBubble src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
             </div>
           </div>
