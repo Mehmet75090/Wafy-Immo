@@ -25,11 +25,15 @@ const VoiceBubble = ({
   side,
   label,
   time,
+  id,
+  nextId,
 }: {
   src: string;
   side: "left" | "right";
   label: string;
   time: string;
+  id?: string;
+  nextId?: string;
 }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -49,16 +53,26 @@ const VoiceBubble = ({
       setPlaying(false);
       setProgress(0);
       setCurrent(0);
+      if (nextId) {
+        const next = document.getElementById(nextId) as HTMLAudioElement | null;
+        next?.play().catch(() => {});
+      }
     };
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
     a.addEventListener("timeupdate", onTime);
     a.addEventListener("loadedmetadata", onLoaded);
     a.addEventListener("ended", onEnd);
+    a.addEventListener("play", onPlay);
+    a.addEventListener("pause", onPause);
     return () => {
       a.removeEventListener("timeupdate", onTime);
       a.removeEventListener("loadedmetadata", onLoaded);
       a.removeEventListener("ended", onEnd);
+      a.removeEventListener("play", onPlay);
+      a.removeEventListener("pause", onPause);
     };
-  }, []);
+  }, [nextId]);
 
   const toggle = () => {
     const a = audioRef.current;
@@ -144,7 +158,7 @@ const VoiceBubble = ({
           <Mic className="w-3 h-3 text-[#00a3ff] -mt-1 bg-white rounded-full" />
         </div>
 
-        <audio ref={audioRef} src={src} preload="metadata" />
+        <audio ref={audioRef} id={id} src={src} preload="metadata" />
       </div>
     </div>
   );
@@ -226,8 +240,8 @@ const VoiceSection = () => (
                   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='%23d9d2c8' fill-opacity='0.5'><circle cx='10' cy='10' r='1.5'/><circle cx='40' cy='25' r='1.5'/><circle cx='20' cy='45' r='1.5'/><circle cx='50' cy='50' r='1.5'/></g></svg>\")",
               }}
             >
-              <VoiceBubble src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
-              <VoiceBubble src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
+              <VoiceBubble id="voice-prospect" nextId="voice-wafy" src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
+              <VoiceBubble id="voice-wafy" src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
             </div>
           </div>
         </motion.div>
