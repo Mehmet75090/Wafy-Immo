@@ -158,7 +158,7 @@ const VoiceBubble = ({
           <Mic className="w-3 h-3 text-[#00a3ff] -mt-1 bg-white rounded-full" />
         </div>
 
-        <audio ref={audioRef} src={src} preload="metadata" />
+        <audio ref={audioRef} id={id} src={src} preload="metadata" />
       </div>
     </div>
   );
