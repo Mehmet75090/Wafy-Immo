@@ -240,8 +240,8 @@ const VoiceSection = () => (
                   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='%23d9d2c8' fill-opacity='0.5'><circle cx='10' cy='10' r='1.5'/><circle cx='40' cy='25' r='1.5'/><circle cx='20' cy='45' r='1.5'/><circle cx='50' cy='50' r='1.5'/></g></svg>\")",
               }}
             >
-              <VoiceBubble src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
-              <VoiceBubble src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
+              <VoiceBubble id="voice-prospect" nextId="voice-wafy" src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
+              <VoiceBubble id="voice-wafy" src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
             </div>
           </div>
         </motion.div>
