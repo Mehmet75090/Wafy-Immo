@@ -248,6 +248,19 @@ const VoiceSection = () => (
             >
               <VoiceBubble id="voice-prospect" nextId="voice-wafy" src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
               <VoiceBubble id="voice-wafy" src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
+              <div className="flex justify-end mb-3">
+                <div className="relative max-w-[85%] rounded-xl rounded-tr-sm px-3 py-2 pr-12 shadow-sm bg-[#dcf8c6]">
+                  <p className="text-sm text-[#111b21] leading-snug">
+                    Ah mezyan, fo9ach n9der nji nchouf l-appart témoin, SVP ?
+                  </p>
+                  <div className="flex justify-end mt-1">
+                    <span className="text-[10px] text-[#667781]">14:22</span>
+                  </div>
+                  <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-[#25d366] flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow">
+                    S
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
