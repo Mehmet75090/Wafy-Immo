@@ -81,37 +81,76 @@ const VoiceBubble = ({
 
   const isRight = side === "right";
 
+  // Pseudo-random but stable waveform heights
+  const bars = Array.from({ length: 38 }, (_, i) => {
+    const seed = (i * 9301 + (isRight ? 49297 : 12345)) % 233280;
+    const r = seed / 233280;
+    return 25 + r * 75; // 25% - 100%
+  });
+
+  const avatarBg = isRight ? "bg-[#25d366]" : "bg-primary";
+  const initial = isRight ? "S" : "W";
+
   return (
-    <div className={`flex ${isRight ? "justify-end" : "justify-start"} mb-2`}>
+    <div className={`flex ${isRight ? "justify-end" : "justify-start"} mb-3`}>
       <div
-        className={`max-w-[85%] rounded-2xl px-3 py-2 shadow-sm ${
-          isRight
-            ? "bg-[#dcf8c6] text-[#111b21] rounded-tr-sm"
-            : "bg-white text-[#111b21] rounded-tl-sm"
+        className={`relative max-w-[95%] rounded-xl pl-2 pr-12 py-2 shadow-sm ${
+          isRight ? "bg-[#dcf8c6] rounded-tr-sm" : "bg-white rounded-tl-sm"
         }`}
       >
-        <div className="text-[10px] font-semibold mb-1 opacity-70">{label}</div>
-        <div className="flex items-center gap-2 min-w-[200px]">
+        <div className="flex items-center gap-2 min-w-[240px]">
           <button
             onClick={toggle}
             aria-label={playing ? "Pause" : "Lire"}
-            className="w-9 h-9 rounded-full bg-[#00a884] text-white flex items-center justify-center shrink-0 hover:opacity-90 transition"
+            className="shrink-0 text-[#54656f] hover:text-[#111b21] transition"
           >
-            {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
+            {playing ? (
+              <Pause className="w-5 h-5 fill-current" />
+            ) : (
+              <Play className="w-5 h-5 fill-current" />
+            )}
           </button>
-          <div className="flex-1">
-            <div className="h-1 bg-black/15 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-[#00a884] transition-all"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <div className="text-[10px] mt-1 opacity-70 tabular-nums">
-              {fmt(playing || current ? current : duration)}
-            </div>
+
+          {/* Waveform */}
+          <div className="relative flex-1 h-7 flex items-center gap-[2px]">
+            {bars.map((h, i) => {
+              const barProgress = (i / bars.length) * 100;
+              const played = barProgress <= progress;
+              return (
+                <div
+                  key={i}
+                  className={`w-[2px] rounded-full ${
+                    played ? "bg-[#54656f]" : "bg-[#a0a8ac]"
+                  }`}
+                  style={{ height: `${h}%` }}
+                />
+              );
+            })}
+            {/* Progress dot */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#00a3ff] shadow-md pointer-events-none transition-all"
+              style={{ left: `calc(${progress}% - 6px)` }}
+            />
           </div>
         </div>
-        <div className="text-[10px] text-right opacity-60 mt-1">{time}</div>
+
+        <div className="flex items-center justify-between mt-1 pr-1">
+          <span className="text-[11px] text-[#667781] tabular-nums">
+            {fmt(playing || current ? current : duration)}
+          </span>
+          <span className="text-[10px] text-[#667781]">{time}</span>
+        </div>
+
+        {/* Avatar on right with mic icon */}
+        <div className="absolute -right-1 top-1/2 -translate-y-1/2 flex flex-col items-center">
+          <div
+            className={`w-9 h-9 rounded-full ${avatarBg} flex items-center justify-center text-white text-xs font-bold ring-2 ring-white shadow`}
+          >
+            {initial}
+          </div>
+          <Mic className="w-3 h-3 text-[#00a3ff] -mt-1 bg-white rounded-full" />
+        </div>
+
         <audio ref={audioRef} src={src} preload="metadata" />
       </div>
     </div>
