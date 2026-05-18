@@ -55,18 +55,24 @@ const VoiceBubble = ({
       setCurrent(0);
       if (nextId) {
         const next = document.getElementById(nextId) as HTMLAudioElement | null;
-        next?.dispatchEvent(new CustomEvent("chain-play"));
+        next?.play().catch(() => {});
       }
     };
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
     a.addEventListener("timeupdate", onTime);
     a.addEventListener("loadedmetadata", onLoaded);
     a.addEventListener("ended", onEnd);
+    a.addEventListener("play", onPlay);
+    a.addEventListener("pause", onPause);
     return () => {
       a.removeEventListener("timeupdate", onTime);
       a.removeEventListener("loadedmetadata", onLoaded);
       a.removeEventListener("ended", onEnd);
+      a.removeEventListener("play", onPlay);
+      a.removeEventListener("pause", onPause);
     };
-  }, []);
+  }, [nextId]);
 
   const toggle = () => {
     const a = audioRef.current;
