@@ -53,6 +53,10 @@ const VoiceBubble = ({
       setPlaying(false);
       setProgress(0);
       setCurrent(0);
+      if (nextId) {
+        const next = document.getElementById(nextId) as HTMLAudioElement | null;
+        next?.dispatchEvent(new CustomEvent("chain-play"));
+      }
     };
     a.addEventListener("timeupdate", onTime);
     a.addEventListener("loadedmetadata", onLoaded);
