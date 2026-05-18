@@ -111,21 +111,14 @@ const VoiceBubble = ({
             )}
           </button>
 
-          {/* Waveform */}
-          <div className="relative flex-1 h-7 flex items-center gap-[2px]">
-            {bars.map((h, i) => {
-              const barProgress = (i / bars.length) * 100;
-              const played = barProgress <= progress;
-              return (
-                <div
-                  key={i}
-                  className={`w-[2px] rounded-full ${
-                    played ? "bg-[#54656f]" : "bg-[#a0a8ac]"
-                  }`}
-                  style={{ height: `${h}%` }}
-                />
-              );
-            })}
+          {/* Progress line */}
+          <div className="relative flex-1 h-7 flex items-center">
+            <div className="relative w-full h-[3px] rounded-full bg-[#a0a8ac] overflow-hidden">
+              <div
+                className="absolute inset-y-0 left-0 bg-[#54656f] transition-all"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
             {/* Progress dot */}
             <div
               className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-[#00a3ff] shadow-md pointer-events-none transition-all"
