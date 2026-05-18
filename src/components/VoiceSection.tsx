@@ -25,11 +25,15 @@ const VoiceBubble = ({
   side,
   label,
   time,
+  id,
+  nextId,
 }: {
   src: string;
   side: "left" | "right";
   label: string;
   time: string;
+  id?: string;
+  nextId?: string;
 }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
