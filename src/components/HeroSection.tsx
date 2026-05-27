@@ -31,7 +31,7 @@ const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
           >
             Wafy Immo{" "}
             <span className="text-gradient">WhatsApp</span> qui{" "}
-            qualifie vos leads immobiliers 24h/24
+            qualifie vos leads promoteur 24h/24
           </motion.h1>
 
           <motion.p

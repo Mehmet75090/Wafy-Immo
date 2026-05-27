@@ -5,7 +5,7 @@ const features = [
   {
     icon: MessageCircle,
     title: "WhatsApp natif",
-    desc: "Wafy Immo converse directement avec vos leads sur WhatsApp — le canal préféré de vos prospects immobiliers.",
+    desc: "Wafy Immo converse directement avec vos leads sur WhatsApp — le canal préféré de vos prospects promoteur.",
   },
   {
     icon: Bot,

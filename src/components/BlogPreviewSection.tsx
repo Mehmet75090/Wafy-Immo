@@ -15,7 +15,7 @@ const BlogPreviewSection = () => {
             Blog
           </p>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            Insights <span className="text-gradient">IA & Immobilier</span>
+            Insights <span className="text-gradient">IA & promoteur</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Décryptages, méthodes et retours d'expérience pour transformer vos prospects en
