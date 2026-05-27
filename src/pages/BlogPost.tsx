@@ -129,9 +129,9 @@ const BlogPost = () => {
           <div className="prose prose-lg max-w-none text-foreground/90 space-y-6 leading-relaxed">
             {post.slug === "agent-ia-commercial-qualification-leads" && <AgentIABody />}
             {post.slug === "ia-forces-de-vente-etude-de-cas" && <ForcesVenteBody />}
-            {post.slug === "immobilier-2026-agent-sans-ia" && <Immo2026Body />}
-            {post.slug === "ia-immobilier-humain-pilier-confiance" && <HumainPilierBody />}
-            {post.slug === "ia-immobilier-copilote-agence" && <CopiloteAgenceBody />}
+            {post.slug === "promoteur-2026-agent-sans-ia" && <Immo2026Body />}
+            {post.slug === "ia-promoteur-humain-pilier-confiance" && <HumainPilierBody />}
+            {post.slug === "ia-promoteur-copilote-agence" && <CopiloteAgenceBody />}
           </div>
 
           <aside className="mt-16 rounded-2xl border border-primary/30 bg-accent/40 p-8 text-center">
