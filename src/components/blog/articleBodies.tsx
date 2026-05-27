@@ -310,7 +310,7 @@ export const Immo2026Body = () => (
     <p>
       En 2026, la question n'est plus de savoir s'il faut utiliser l'intelligence
       artificielle, mais si l'on peut encore se permettre de <strong>s'en passer</strong>.
-      Dans un marché immobilier où la réactivité et la précision sont devenues des exigences
+      Dans un marché promoteur où la réactivité et la précision sont devenues des exigences
       absolues, l'agent qui travaille exclusivement « à l'ancienne » prend un risque
       majeur : celui de devenir invisible et moins compétitif.
     </p>
@@ -379,7 +379,7 @@ export const Immo2026Body = () => (
       Un nouveau rôle pour l'humain
     </h2>
     <p>
-      L'IA ne remplace pas l'agent immobilier, elle le <strong>repositionne</strong>. En
+      L'IA ne remplace pas l'agent promoteur, elle le <strong>repositionne</strong>. En
       automatisant les tâches répétitives et chronophages, elle lui permet de se concentrer
       sur sa véritable valeur ajoutée :
     </p>
@@ -422,7 +422,7 @@ export const Immo2026Body = () => (
 export const HumainPilierBody = () => (
   <>
     <p>
-      Si l'intelligence artificielle s'installe durablement dans le paysage immobilier, son
+      Si l'intelligence artificielle s'installe durablement dans le paysage promoteur, son
       adoption par le grand public révèle un paradoxe fascinant. Entre promesses d'efficacité
       et besoin viscéral de contact humain, le secteur cherche encore son point d'équilibre.
       Une enquête récente menée par <strong>Immonot</strong> apporte un éclairage précieux
@@ -433,7 +433,7 @@ export const HumainPilierBody = () => (
     <p>
       Malgré la multiplication des outils (estimations automatisées, visites virtuelles,
       algorithmes de recherche), <strong>65 % des Français</strong> déclarent n'avoir jamais
-      utilisé l'IA pour leur projet immobilier. Lorsqu'ils franchissent le pas, les usages
+      utilisé l'IA pour leur projet promoteur. Lorsqu'ils franchissent le pas, les usages
       restent ciblés :
     </p>
     <ul className="list-disc pl-6 space-y-2">
@@ -500,7 +500,7 @@ export const HumainPilierBody = () => (
       L'enjeu de demain n'est pas la <strong>substitution</strong> de l'humain par la
       machine, mais l'organisation de leur <strong>complémentarité</strong>. En confiant le
       traitement des données et les tâches administratives à l'IA, les professionnels de
-      l'immobilier et du notariat se redonnent les moyens d'exercer leur cœur de métier : le
+      l'promoteur et du notariat se redonnent les moyens d'exercer leur cœur de métier : le
       conseil, l'arbitrage et l'accompagnement humain.
     </p>
     <p>
