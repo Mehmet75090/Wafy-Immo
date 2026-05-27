@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
-import { MessageCircle, Zap, ArrowRight } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenForm?: () => void;
@@ -23,16 +23,6 @@ const HeroSection = ({ onOpenForm }: HeroSectionProps) => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-24">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/20 backdrop-blur-sm border border-primary-foreground/30 px-5 py-2 text-sm font-semibold text-primary-foreground mb-6">
-              <MessageCircle className="w-4 h-4 text-primary" /> Wafy Immo sur WhatsApp · 24/7
-            </span>
-          </motion.div>
-
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-primary-foreground"
             initial={{ opacity: 0, y: 30 }}
