@@ -86,7 +86,7 @@ const MentionsLegales = () => {
           <Link to="/" className="flex flex-col items-center">
             <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
             <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">
-              Immobilier
+              promoteur
             </span>
           </Link>
           <Link

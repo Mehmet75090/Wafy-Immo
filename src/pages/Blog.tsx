@@ -7,9 +7,9 @@ import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   useEffect(() => {
-    const title = "Blog Wafy Immo — Insights IA, vente & immobilier";
+    const title = "Blog Wafy Immo — Insights IA, vente & promoteur";
     const desc =
-      "Articles, guides et analyses sur l'IA commerciale, la qualification de leads et l'automatisation pour les promoteurs immobiliers.";
+      "Articles, guides et analyses sur l'IA commerciale, la qualification de leads et l'automatisation pour les promoteurs.";
     const url = `${window.location.origin}/blog`;
     document.title = title;
 
@@ -70,9 +70,9 @@ const Blog = () => {
             <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
               Blog
             </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Insights <span className="text-gradient">IA & Vente</span>
-            </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Insights <span className="text-gradient">IA & Vente</span>
+          </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Décryptages, méthodes et retours d'expérience pour transformer vos prospects en
               opportunités qualifiées.

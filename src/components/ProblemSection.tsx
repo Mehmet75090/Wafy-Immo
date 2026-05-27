@@ -32,7 +32,7 @@ const ProblemSection = () => (
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Le problème dans <span className="text-gradient">l'immobilier</span>
+          Le problème dans <span className="text-gradient">le promoteur</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Vos commerciaux perdent du temps, vos leads s'évaporent. Wafy Immo change la donne.
