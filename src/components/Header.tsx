@@ -12,7 +12,7 @@ const Header = ({ onOpenForm }: HeaderProps) => (
     <nav className="flex items-center justify-between px-6 md:px-12 py-4">
       <Link to="/" className="flex flex-col items-center">
         <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
-        <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">Immobilier</span>
+        <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">promoteur</span>
       </Link>
       <div className="flex items-center gap-6">
         <Link
