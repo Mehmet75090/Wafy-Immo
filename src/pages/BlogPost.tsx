@@ -12,6 +12,7 @@ import {
   Immo2026Body,
   HumainPilierBody,
   CopiloteAgenceBody,
+  LeadsCallCenterBody,
 } from "@/components/blog/articleBodies";
 
 const BlogPost = () => {
