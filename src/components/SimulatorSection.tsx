@@ -10,10 +10,10 @@ const wafyPlans = [
   { name: "Premium", price: 7500, isPerLead: false, maxConv: 5000 },
 ];
 
-// Capacité d'un agent en qualitatif : jusqu'à ~2 500 leads/mois
-// soit ~114 leads/jour ouvré (22 j/mois)
-const LEADS_PER_AGENT = 2500;
-const LEADS_PER_DAY_PER_AGENT = 114;
+// Capacité d'un agent en qualitatif : 2 000 leads/mois est le point de rupture
+// soit ~91 leads/jour ouvré (22 j/mois)
+const LEADS_PER_AGENT = 2000;
+const LEADS_PER_DAY_PER_AGENT = 91;
 const LEAD_STEPS = [600, 1500, 2500, 3500, 4500, 5000];
 
 function getBestPlan(leads: number) {
