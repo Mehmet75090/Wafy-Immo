@@ -6,6 +6,7 @@ import imgManagerCoach from "@/assets/blog-manager-coach.jpg";
 import coverImmo2026 from "@/assets/blog-immobilier-2026.jpg";
 import coverHumain from "@/assets/blog-ia-humain-immobilier.jpg";
 import coverCopilote from "@/assets/blog-ia-copilote-agence.jpg";
+import coverLeadsCallCenter from "@/assets/blog-leads-call-center.jpg";
 import portraitClemenceGrille from "@/assets/clemence-grille.png";
 
 export interface BlogPost {
