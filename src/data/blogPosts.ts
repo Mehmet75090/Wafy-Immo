@@ -22,6 +22,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "leads-agent-immobilier-call-center-par-jour",
+    title: "Combien de leads peut réellement traiter un agent immobilier en call center par jour ?",
+    description:
+      "Temps productif réel, taux de décroché, fatigue décisionnelle : combien de leads un agent immobilier peut vraiment traiter par jour, et comment maximiser le nombre de RDV qualifiés.",
+    date: "2026-06-10",
+    readingMinutes: 7,
+    cover: coverLeadsCallCenter,
+    coverAlt:
+      "Agent immobilier en call center avec casque devant un CRM affichant des leads",
+    keywords: [
+      "leads par jour agent immobilier",
+      "call center immobilier",
+      "qualification de leads",
+      "taux de décroché",
+      "fatigue décisionnelle",
+      "performance commerciale",
+      "RDV qualifiés",
+    ],
+  },
+  {
     slug: "ia-promoteur-copilote-agence",
     title: "L'IA en promoteur : Votre nouveau copilote pour booster votre agence",
     description:
