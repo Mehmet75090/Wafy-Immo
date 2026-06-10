@@ -10,9 +10,10 @@ const wafyPlans = [
   { name: "Premium", price: 9900, isPerLead: false, maxConv: 5000 },
 ];
 
-// Capacité d'un agent : ~10 min / appel (incl. hors scope), 8h/j, 5j/semaine
-// = 48 appels/jour × ~22 jours ouvrés ≈ 1 056 leads/mois
-const LEADS_PER_AGENT = 1056;
+// Capacité d'un agent en qualitatif : jusqu'à ~2 500 leads/mois
+// soit ~114 leads/jour ouvré (22 j/mois)
+const LEADS_PER_AGENT = 2500;
+const LEADS_PER_DAY_PER_AGENT = 114;
 const LEAD_STEPS = [600, 1500, 2500, 3500, 4500, 5000];
 
 function getBestPlan(leads: number) {
