@@ -97,19 +97,19 @@ const faqs = [
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Essentiel</td>
                 <td className="px-3 py-2">≤ 300 conv./mois</td>
-                <td className="px-3 py-2">5 500 MAD</td>
+                <td className="px-3 py-2">4 900 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">3 500 MAD</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Business</td>
                 <td className="px-3 py-2">≤ 1 500 conv./mois</td>
-                <td className="px-3 py-2">10 500 MAD</td>
+                <td className="px-3 py-2">9 900 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">5 500 MAD</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
                 <td className="px-3 py-2">≤ 3 000 conv./mois</td>
-                <td className="px-3 py-2">15 000 MAD</td>
+                <td className="px-3 py-2">14 900 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">7 500 MAD</td>
               </tr>
             </tbody>

@@ -25,8 +25,8 @@ const formatPrice = (madAmount: number, currency: Currency) => {
 const plans = [
   {
     name: "ESSENTIEL",
-    price: 5500,
-    annualDiscount: 1 - 3500 / 5500,
+    price: 4900,
+    annualDiscount: 1 - 3500 / 4900,
     conv: "Jusqu'à 600 conversations / mois",
     estimation: {
       leads: "Estimation : 90 leads qualifiés",
@@ -43,8 +43,8 @@ const plans = [
   },
   {
     name: "BUSINESS",
-    price: 10500,
-    annualDiscount: 1 - 5500 / 10500,
+    price: 9900,
+    annualDiscount: 1 - 5500 / 9900,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
       leads: "Estimation : 300 leads qualifiés",
@@ -62,8 +62,8 @@ const plans = [
   },
   {
     name: "PREMIUM",
-    price: 15000,
-    annualDiscount: 1 - 7500 / 15000,
+    price: 14900,
+    annualDiscount: 1 - 7500 / 14900,
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
       leads: "Estimation : 750 leads qualifiés",
