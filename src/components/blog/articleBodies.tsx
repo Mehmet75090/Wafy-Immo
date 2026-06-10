@@ -612,3 +612,237 @@ export const CopiloteAgenceBody = () => (
     </p>
   </>
 );
+
+export const LeadsCallCenterBody = () => (
+  <>
+    <p className="text-xs uppercase tracking-widest text-muted-foreground">
+      Performance commerciale · Immobilier
+    </p>
+
+    <p className="border-l-4 border-primary/40 pl-4 italic text-foreground/80">
+      La question paraît simple. La réponse, elle, est souvent confondue avec le mauvais
+      indicateur : le volume d'appels passés. Ce qui compte, c'est le nombre de leads traités
+      avec une qualité suffisante pour générer un rendez-vous.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le calcul de base : le temps productif réel
+    </h2>
+    <p>
+      Un agent commence à 9h30 et finit à 18h30, soit 9 heures sur papier. Mais une fois
+      déduits la pause déjeuner, les micro-pauses, la saisie dans le CRM et la gestion
+      administrative, le temps effectivement consacré aux appels se réduit considérablement.
+    </p>
+
+    <div className="grid sm:grid-cols-3 gap-4 my-8">
+      <div className="rounded-xl border border-border p-5">
+        <div className="text-xs text-muted-foreground mb-1">Plage horaire brute</div>
+        <div className="text-2xl font-bold">9h</div>
+        <div className="text-xs text-muted-foreground mt-1">9h30 → 18h30</div>
+      </div>
+      <div className="rounded-xl border border-border p-5">
+        <div className="text-xs text-muted-foreground mb-1">Pertes incompressibles</div>
+        <div className="text-2xl font-bold">~2h</div>
+        <div className="text-xs text-muted-foreground mt-1">Pause + admin + CRM</div>
+      </div>
+      <div className="rounded-xl border border-border p-5">
+        <div className="text-xs text-muted-foreground mb-1">Temps productif réel</div>
+        <div className="text-2xl font-bold">~7h</div>
+        <div className="text-xs text-muted-foreground mt-1">420 minutes effectives</div>
+      </div>
+    </div>
+
+    <p>
+      C'est sur ces 7 heures que tout se joue. Et dans ces 7 heures, chaque minute mal utilisée
+      est une minute définitivement perdue.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le taux de décroché : la variable qu'on sous-estime
+    </h2>
+    <p>
+      Avant même d'aborder la fatigue, il y a un filtre brutal : le taux de décroché. Sur une
+      liste de contacts froide — prospects issus de portails immobiliers, scraping, ou
+      campagnes Meta — il oscille généralement entre 30 % et 45 %.
+    </p>
+
+    <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 my-6">
+      <div className="text-sm font-semibold mb-1">Ce que ça signifie concrètement</div>
+      <p className="text-sm text-foreground/80 m-0">
+        Sur 100 appels tentés, 55 à 70 ne débouchent sur rien : messagerie, numéro non
+        attribué, absence. L'agent passe pourtant du temps sur chacun d'eux. Ce temps ne se
+        récupère pas.
+      </p>
+    </div>
+
+    <p>
+      Sur des listes plus qualifiées — formulaires web remplis volontairement, leads ayant
+      déjà interagi avec un outil digital — ce taux monte à 50–65 %. La qualité de la source
+      de leads impacte directement le nombre de leads utiles traités dans la journée.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Capacité journalière selon le type de leads
+    </h2>
+    <p>
+      La durée moyenne d'un appel varie fortement selon la température du lead et l'étape de
+      qualification.
+    </p>
+
+    <div className="overflow-x-auto my-6">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="border-b border-border">
+            <th className="text-left py-3 pr-4 font-semibold">Type de liste</th>
+            <th className="text-left py-3 pr-4 font-semibold">Appels tentés</th>
+            <th className="text-left py-3 pr-4 font-semibold">Leads qualifiés</th>
+            <th className="text-left py-3 font-semibold">Durée moy. / appel</th>
+          </tr>
+        </thead>
+        <tbody className="text-foreground/80">
+          <tr className="border-b border-border/50">
+            <td className="py-3 pr-4">Froide (portails, scraping)</td>
+            <td className="py-3 pr-4">80–120</td>
+            <td className="py-3 pr-4">25–40</td>
+            <td className="py-3">3–5 min</td>
+          </tr>
+          <tr className="border-b border-border/50">
+            <td className="py-3 pr-4">Entrante (formulaires web)</td>
+            <td className="py-3 pr-4">40–60</td>
+            <td className="py-3 pr-4">30–50</td>
+            <td className="py-3">6–10 min</td>
+          </tr>
+          <tr>
+            <td className="py-3 pr-4">Chaude (relances, visites)</td>
+            <td className="py-3 pr-4">20–35</td>
+            <td className="py-3 pr-4">15–25</td>
+            <td className="py-3">10–20 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Un agent qui traite 80 appels froids par jour et un agent qui traite 30 leads chauds
+      sont dans deux réalités différentes. Comparer leurs « volumes » n'a aucun sens.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      La fatigue décisionnelle : le plafond invisible
+    </h2>
+    <p>
+      C'est le facteur le plus documenté, et le plus ignoré dans les objectifs commerciaux
+      immobiliers. Après un certain nombre d'appels, la capacité d'un agent à écouter
+      activement, à reformuler un besoin et à argumenter se dégrade — même si l'agent
+      lui-même ne le perçoit pas.
+    </p>
+    <p>Voici une estimation de la dégradation de la qualité d'écoute et de conversion selon l'avancement de la journée :</p>
+
+    <div className="space-y-3 my-6">
+      {[
+        { range: "9h30–11h", value: 95, color: "bg-emerald-500" },
+        { range: "11h–13h", value: 85, color: "bg-emerald-500" },
+        { range: "14h–16h", value: 70, color: "bg-amber-500" },
+        { range: "16h–18h30", value: 50, color: "bg-rose-500" },
+      ].map((row) => (
+        <div key={row.range} className="flex items-center gap-3">
+          <div className="w-24 text-sm text-muted-foreground">{row.range}</div>
+          <div className="flex-1 h-3 rounded-full bg-muted overflow-hidden">
+            <div className={`h-full ${row.color}`} style={{ width: `${row.value}%` }} />
+          </div>
+          <div className="w-12 text-right text-sm font-semibold">{row.value}%</div>
+        </div>
+      ))}
+    </div>
+
+    <p>
+      Résultat : un lead chaud appelé à 17h30 a deux fois moins de chances d'aboutir à un
+      rendez-vous que le même lead appelé à 10h00. Non pas parce que le lead est moins
+      qualifié — mais parce que l'agent n'est plus au même niveau de performance.
+    </p>
+
+    <div className="rounded-xl border border-primary/30 bg-accent/40 p-5 my-6">
+      <div className="text-sm font-semibold mb-1">Implication directe pour les managers</div>
+      <p className="text-sm text-foreground/80 m-0">
+        Placer les leads les plus qualifiés en début de journée et en début d'après-midi
+        (14h–15h) permet d'augmenter le taux de transformation sans ajouter un seul appel
+        supplémentaire.
+      </p>
+    </div>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le vrai indicateur : le coût par rendez-vous posé
+    </h2>
+    <p>
+      Le volume journalier n'est pas un objectif — c'est une contrainte. L'objectif, c'est le
+      nombre de rendez-vous qualifiés générés par agent par jour. Et ce chiffre a une limite
+      naturelle, quelle que soit la pression exercée sur les équipes.
+    </p>
+
+    <div className="overflow-x-auto my-6">
+      <table className="w-full text-sm border-collapse">
+        <thead>
+          <tr className="border-b border-border">
+            <th className="text-left py-3 pr-4 font-semibold">Volume / agent / jour</th>
+            <th className="text-left py-3 pr-4 font-semibold">RDV estimés/jour</th>
+            <th className="text-left py-3 font-semibold">Qualité de conversion</th>
+          </tr>
+        </thead>
+        <tbody className="text-foreground/80">
+          <tr className="border-b border-border/50">
+            <td className="py-3 pr-4">20–30 leads qualifiés</td>
+            <td className="py-3 pr-4">4–7 RDV</td>
+            <td className="py-3"><span className="px-2 py-0.5 rounded-full text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">Élevée</span></td>
+          </tr>
+          <tr className="border-b border-border/50">
+            <td className="py-3 pr-4">30–50 leads qualifiés</td>
+            <td className="py-3 pr-4">5–8 RDV</td>
+            <td className="py-3"><span className="px-2 py-0.5 rounded-full text-xs bg-amber-500/15 text-amber-700 dark:text-amber-400">Correcte</span></td>
+          </tr>
+          <tr>
+            <td className="py-3 pr-4">50–80 leads qualifiés</td>
+            <td className="py-3 pr-4">4–6 RDV</td>
+            <td className="py-3"><span className="px-2 py-0.5 rounded-full text-xs bg-rose-500/15 text-rose-700 dark:text-rose-400">Dégradée</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Au-delà d'un certain seuil, pousser plus de leads dans le pipeline d'un agent ne génère
+      pas plus de rendez-vous — cela génère plus d'appels bâclés, plus de prospects froissés,
+      et une liste « brûlée » qui ne pourra plus être retravaillée.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Ce que ça change dans l'organisation
+    </h2>
+    <p>
+      Une équipe de 3 agents bien calibrés — avec des leads pré-qualifiés, un ordre de
+      traitement intelligent et des créneaux protégés en début de journée — surpassera
+      systématiquement une équipe de 5 agents en mode volume pur.
+    </p>
+    <p>
+      La pré-qualification devient alors le levier principal. Lorsqu'un prospect a déjà
+      exprimé son intérêt via un premier canal — formulaire, messagerie, interaction digitale
+      — l'agent arrive dans la conversation avec un contexte, pas dans l'inconnu. La durée
+      utile de l'appel diminue, la qualité de la conversation augmente, et le taux de
+      transformation s'améliore mécaniquement.
+    </p>
+    <p>
+      C'est précisément ce que permettent les agents conversationnels de pré-qualification :
+      absorber la partie froide et répétitive du traitement, pour ne laisser à l'humain que
+      les conversations à réelle valeur ajoutée.
+    </p>
+
+    <div className="rounded-2xl border border-border bg-muted/40 p-6 my-10 text-center">
+      <p className="m-0 italic text-foreground/80">
+        Un bon call center immobilier ne se mesure pas au nombre d'appels passés. Il se mesure
+        au ratio rendez-vous / temps d'agent utilisé. Optimiser ce ratio passe par trois
+        leviers : la qualité de la source de leads, l'ordre de traitement dans la journée, et
+        la réduction du temps passé sur des prospects non qualifiés.
+      </p>
+      <p className="mt-3 mb-0 text-sm font-semibold">Le reste, c'est de la mécanique.</p>
+    </div>
+  </>
+);
