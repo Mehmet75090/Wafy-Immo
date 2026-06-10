@@ -5,9 +5,9 @@ import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
 
 const wafyPlans = [
   { name: "Pilote", price: 0, perLeadTiede: 150, perLeadChaud: 350, isPerLead: true, maxConv: 400 },
-  { name: "Essentiel", price: 3600, isPerLead: false, maxConv: 600 },
-  { name: "Business", price: 6750, isPerLead: false, maxConv: 2000 },
-  { name: "Premium", price: 9900, isPerLead: false, maxConv: 5000 },
+  { name: "Essentiel", price: 3500, isPerLead: false, maxConv: 600 },
+  { name: "Business", price: 5500, isPerLead: false, maxConv: 2000 },
+  { name: "Premium", price: 7500, isPerLead: false, maxConv: 5000 },
 ];
 
 // Capacité d'un agent en qualitatif : jusqu'à ~2 500 leads/mois
