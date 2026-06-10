@@ -26,7 +26,7 @@ const plans = [
   {
     name: "ESSENTIEL",
     price: 5500,
-    annualDiscount: 1 - 3900 / 5500,
+    annualDiscount: 1 - 3500 / 5500,
     conv: "Jusqu'à 600 conversations / mois",
     estimation: {
       leads: "Estimation : 90 leads qualifiés",
@@ -44,7 +44,7 @@ const plans = [
   {
     name: "BUSINESS",
     price: 10500,
-    annualDiscount: 1 - 6900 / 10500,
+    annualDiscount: 1 - 5500 / 10500,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
       leads: "Estimation : 300 leads qualifiés",
@@ -54,6 +54,7 @@ const plans = [
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
       { text: "Relances WhatsApp auto", included: true },
+      { text: "5 000 relances / mois", included: true },
       { text: "Prise de RDV auto", included: true },
       { text: "Reporting détaillé", included: true },
     ],
@@ -62,7 +63,7 @@ const plans = [
   {
     name: "PREMIUM",
     price: 15000,
-    annualDiscount: 1 - 9900 / 15000,
+    annualDiscount: 1 - 7500 / 15000,
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
       leads: "Estimation : 750 leads qualifiés",
@@ -72,6 +73,7 @@ const plans = [
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
       { text: "Relances WhatsApp auto", included: true },
+      { text: "10 000 relances / mois", included: true },
       { text: "Prise de RDV auto", included: true },
       { text: "Reporting détaillé + recommandations", included: true },
     ],
