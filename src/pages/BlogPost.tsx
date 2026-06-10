@@ -133,6 +133,7 @@ const BlogPost = () => {
             {post.slug === "promoteur-2026-agent-sans-ia" && <Immo2026Body />}
             {post.slug === "ia-promoteur-humain-pilier-confiance" && <HumainPilierBody />}
             {post.slug === "ia-promoteur-copilote-agence" && <CopiloteAgenceBody />}
+            {post.slug === "leads-agent-immobilier-call-center-par-jour" && <LeadsCallCenterBody />}
           </div>
 
           <aside className="mt-16 rounded-2xl border border-primary/30 bg-accent/40 p-8 text-center">
