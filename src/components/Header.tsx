@@ -32,21 +32,6 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           >
             Tarifs
           </a>
-          <Button
-            variant="hero"
-            size="sm"
-            className="hidden md:inline-flex"
-            onClick={(e) => {
-              if (location.pathname === "/") {
-                e.preventDefault();
-                document.getElementById("simulator")?.scrollIntoView({ behavior: "smooth" });
-              } else {
-                window.location.href = "/#simulator";
-              }
-            }}
-          >
-            Obtenir mon essai gratuit
-          </Button>
           <Link
             to="/blog"
             className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
