@@ -63,7 +63,7 @@ const faqs = [
           le numéro WhatsApp — vous n'avez rien à créer ni à configurer de votre côté.
         </p>
         <p>
-          Toutes les conversations passent par notre infrastructure, mais l'assistant répond
+          Toutes les conversations avec vos leads passent par notre infrastructure, mais l'assistant répond
           entièrement <span className="font-semibold text-foreground">sous votre marque</span> :
           votre nom d'agence, votre logo, votre ton. Pour votre prospect, il parle à votre
           agence — pas à Wafy Immo.
@@ -80,7 +80,7 @@ const faqs = [
     a: (
       <div className="space-y-4">
         <p>
-          Le bon plan dépend du volume de conversations entrantes que vous gérez chaque mois
+          Le bon plan dépend du volume de leads entrants que vous gérez chaque mois
           (formulaires, WhatsApp, Messenger, etc.).
         </p>
         <div className="overflow-hidden rounded-lg border border-border">
@@ -96,19 +96,19 @@ const faqs = [
             <tbody className="divide-y divide-border">
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Pilote</td>
-                <td className="px-3 py-2">≤ 2 000 conv./mois</td>
+                <td className="px-3 py-2">≤ 2 000 leads/mois</td>
                 <td className="px-3 py-2">2 800 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Business</td>
-                <td className="px-3 py-2">≤ 2 000 conv. + 5 000 relances</td>
+                <td className="px-3 py-2">≤ 2 000 leads + 5 000 relances</td>
                 <td className="px-3 py-2">5 500 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
-                <td className="px-3 py-2">≤ 5 000 conv. + 12 500 relances</td>
+                <td className="px-3 py-2">≤ 5 000 leads + 12 500 relances</td>
                 <td className="px-3 py-2">7 500 MAD</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
@@ -168,9 +168,9 @@ const faqs = [
                 <td className="px-3 py-2">520 MAD</td>
               </tr>
               <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Pack Conversations</td>
-                <td className="px-3 py-2">+1 000 conversations</td>
-                <td className="px-3 py-2">1,40 MAD / conversation</td>
+                <td className="px-3 py-2 font-semibold text-foreground">Pack Leads</td>
+                <td className="px-3 py-2">+1 000 leads</td>
+                <td className="px-3 py-2">1,40 MAD / lead</td>
                 <td className="px-3 py-2">1 400 MAD</td>
               </tr>
             </tbody>
@@ -190,7 +190,7 @@ const faqs = [
       <div className="space-y-3">
         <p>
           <span className="font-semibold text-foreground">Non.</span> Les packs
-          Conversations et Relances sont réservés aux plans{" "}
+          Leads et Relances sont réservés aux plans{" "}
           <span className="font-semibold text-foreground">Business</span> et{" "}
           <span className="font-semibold text-foreground">Premium</span>, qui sont
           conçus pour absorber des volumes élevés et inclure les fonctionnalités
@@ -198,15 +198,15 @@ const faqs = [
         </p>
         <p>
           Si vous êtes sur le plan Pilote et que vous approchez régulièrement
-          votre quota de 2 000 conversations/mois, c'est généralement le signe
+          votre quota de 2 000 leads/mois, c'est généralement le signe
           qu'il est temps de passer au plan Business — vous y gagnerez en
-          fonctionnalités (relances + RDV auto) et en coût par conversation.
+          fonctionnalités (relances + RDV auto) et en coût par lead.
         </p>
       </div>
     ),
   },
   {
-    q: "C'est quoi la différence entre une « conversation » et une « relance » ?",
+    q: "C'est quoi la différence entre un « lead » et une « relance » ?",
     a: (
       <div className="space-y-3">
         <p>
@@ -215,8 +215,8 @@ const faqs = [
           techniques.
         </p>
         <p>
-          <span className="font-semibold text-foreground">🗣️ Une conversation</span>, c'est un
-          échange ouvert avec un prospect entrant : il vous écrit, Wafy Immo comprend sa
+          <span className="font-semibold text-foreground">🗣️ Un lead</span>, c'est un
+          prospect entrant qui engage la conversation : il vous écrit, Wafy Immo comprend sa
           demande, le qualifie, répond à ses questions, propose un RDV. Le nombre de messages
           échangés est illimité tant que la discussion est active. C'est ce qui coûte le plus
           cher car ça mobilise de l'intelligence artificielle en temps réel (LLM).
@@ -228,11 +228,11 @@ const faqs = [
           « Souhaitez-vous qu'on programme une visite ? », J+7 « Dernière proposition avant
           clôture du dossier ». Ce sont des messages basés sur des templates WhatsApp
           pré-validés par Meta — d'où un coût beaucoup plus faible (environ 3× moins cher
-          qu'une conversation).
+          qu'un lead traité).
         </p>
         <p className="font-semibold text-foreground">
-          En clair : les conversations transforment les leads chauds, les relances réveillent
-          les leads tièdes.
+          En clair : les leads transforment les prospects chauds, les relances réveillent
+          les prospects tièdes.
         </p>
       </div>
     ),
