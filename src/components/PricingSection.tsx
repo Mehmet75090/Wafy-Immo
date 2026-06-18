@@ -160,7 +160,9 @@ const PricingSection = () => {
 
 
                 <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
-                <p className="text-xs text-muted-foreground mb-4">{plan.conv}</p>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-secondary/15 text-secondary px-3 py-1 text-sm font-semibold mb-4">
+                  {plan.conv}
+                </div>
 
                 <div className="mb-5">
                   <div className="flex items-baseline gap-1 flex-wrap">
