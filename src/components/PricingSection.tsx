@@ -78,7 +78,7 @@ const plans: {
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
       { text: "Relances WhatsApp auto", included: true },
-      { text: "12 500 relances / mois", included: true },
+      { text: "10 000 relances / mois", included: true },
       { text: "Prise de RDV auto", included: true },
       { text: "Reporting détaillé + recommandations", included: true },
     ],
