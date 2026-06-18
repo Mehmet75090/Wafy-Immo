@@ -233,7 +233,7 @@ const PricingSection = () => {
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
-          {isAnnual && " Annuel : 2 mois offerts, facturation annuelle."}
+          {" "}En cas d'offre engagement annuel, 2 mois sont offerts.
         </p>
       </div>
     </section>
