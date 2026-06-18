@@ -157,15 +157,16 @@ const PricingSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                {/* Annual offer ribbon on every card */}
-                <div className="absolute top-0 right-0">
-                  <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-bl-xl">
-                    2 mois offerts en annuel
+                {plan.badge && (
+                  <div className="absolute top-0 left-0">
+                    <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-br-xl">
+                      {plan.badge} en annuel
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {plan.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap z-10">
                     Recommandé
                   </div>
                 )}
