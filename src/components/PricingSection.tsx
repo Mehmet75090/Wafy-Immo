@@ -70,7 +70,7 @@ const plans: {
   },
   {
     name: "PREMIUM",
-    price: 7500,
+    price: 8500,
     annualDiscount: 1 - ANNUAL_FACTOR,
     conv: "Jusqu'à 5 000 leads / mois",
     features: [
