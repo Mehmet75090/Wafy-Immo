@@ -87,9 +87,7 @@ const plans = [
 
 
 const PricingSection = () => {
-  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
   const currency: Currency = "MAD";
-  const isAnnual = billing === "annual";
 
   return (
     <section className="section-padding" id="pricing">
@@ -104,47 +102,34 @@ const PricingSection = () => {
             Grille <span className="text-gradient">tarifaire</span>
           </h2>
           <p className="text-muted-foreground">
-            Choisissez votre rythme — jusqu'à{" "}
-            <span className="font-bold text-primary">-35%</span> en annuel
+            Tarifs mensuels HT — sans engagement
           </p>
         </motion.div>
 
-        {/* Billing toggle */}
-        <div className="flex justify-center items-center mb-12">
-          <div className="relative inline-flex items-center p-1 rounded-full bg-muted border border-border">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={`relative z-10 px-5 py-2 text-sm font-semibold rounded-full transition-colors ${
-                !isAnnual ? "text-primary-foreground" : "text-muted-foreground"
-              }`}
-            >
-              Mensuel
-            </button>
-            <button
-              onClick={() => setBilling("annual")}
-              className={`relative z-10 px-5 py-2 text-sm font-semibold rounded-full transition-colors ${
-                isAnnual ? "text-primary-foreground" : "text-muted-foreground"
-              }`}
-            >
-              Annuel
-            </button>
-            <div
-              className={`absolute top-1 bottom-1 rounded-full bg-wafy-gradient transition-all duration-300 ${
-                isAnnual ? "left-[calc(50%+2px)] right-1" : "left-1 right-[calc(50%+2px)]"
-              }`}
-            />
+        {/* Annual offer banner */}
+        <motion.div
+          className="relative mx-auto mb-12 max-w-2xl overflow-hidden rounded-2xl border border-secondary/40 bg-gradient-to-r from-secondary/10 via-secondary/5 to-primary/10 p-4 sm:p-5"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+            <div className="text-left">
+              <div className="text-xs font-bold uppercase tracking-wider text-secondary">
+                Offre engagement annuel
+              </div>
+              <p className="text-sm sm:text-base font-semibold text-foreground leading-snug">
+                2 mois offerts sur tous les plans
+              </p>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {plans.map((plan, i) => {
-            const monthlyPrice = plan.price;
-            const planDiscount = plan.annualDiscount;
-            const discountPercent = Math.round(planDiscount * 100);
-            const discountedMonthly = Math.round(plan.price * (1 - planDiscount));
-            const annualSavings = (monthlyPrice - discountedMonthly) * 12;
-            const displayPrice = isAnnual ? discountedMonthly : monthlyPrice;
-
             return (
               <motion.div
                 key={plan.name}
@@ -164,42 +149,23 @@ const PricingSection = () => {
                   </div>
                 )}
 
-                {isAnnual && (
-                  <div className="absolute -top-3 right-4 flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-extrabold shadow-md">
-                    <Sparkles className="w-3 h-3" />
-                    -{discountPercent}%
-                  </div>
-                )}
-
                 <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
                 <p className="text-xs text-muted-foreground mb-4">{plan.conv}</p>
 
-                <div className="mb-4 min-h-[80px]">
-                  {isAnnual && (
-                    <div className="text-sm text-muted-foreground line-through mb-1">
-                      {formatPrice(monthlyPrice, currency)}
-                    </div>
-                  )}
+                <div className="mb-4">
                   <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-3xl sm:text-4xl font-extrabold ${
-                        plan.highlight || isAnnual ? "text-primary" : ""
+                        plan.highlight ? "text-primary" : ""
                       }`}
                     >
-                      {formatPrice(displayPrice, currency)}
+                      {formatPrice(plan.price, currency)}
                     </span>
-                    <span className="text-muted-foreground text-sm">/mois</span>
+                    <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
-                  {isAnnual && (
-                    <div className="text-xs font-semibold text-secondary mt-1">
-                      Économisez {formatPrice(annualSavings, currency)} / an
-                    </div>
-                  )}
-                  {!isAnnual && (
-                    <div className="text-xs text-muted-foreground mt-1">
-                      Facturation mensuelle
-                    </div>
-                  )}
+                  <div className="text-xs text-muted-foreground mt-1">
+                    Sans engagement · 2 mois offerts en annuel
+                  </div>
                 </div>
 
                 {/* Estimation block */}
