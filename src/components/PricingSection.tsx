@@ -32,7 +32,6 @@ const plans: {
   price: number;
   annualDiscount: number;
   conv: string;
-  estimation: { leads: string };
   features: { text: string; included: boolean }[];
   highlight: boolean;
   badge?: string;
@@ -41,10 +40,7 @@ const plans: {
     name: "PILOTE",
     price: 2800,
     annualDiscount: 0,
-    conv: "Jusqu'à 2 000 conversations / mois",
-    estimation: {
-      leads: "Estimation : 200 leads qualifiés",
-    },
+    conv: "Jusqu'à 2 000 leads / mois",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -59,10 +55,7 @@ const plans: {
     name: "BUSINESS",
     price: 5500,
     annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Jusqu'à 2 000 conversations / mois",
-    estimation: {
-      leads: "Estimation : 350 leads qualifiés",
-    },
+    conv: "Jusqu'à 2 000 leads / mois",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -79,10 +72,7 @@ const plans: {
     name: "PREMIUM",
     price: 7500,
     annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Jusqu'à 5 000 conversations / mois",
-    estimation: {
-      leads: "Estimation : 800 leads qualifiés",
-    },
+    conv: "Jusqu'à 5 000 leads / mois",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -195,10 +185,6 @@ const PricingSection = () => {
                   )}
                 </div>
 
-                {/* Estimation block */}
-                <div className="rounded-lg border border-accent-foreground/20 bg-accent p-3 mb-6 text-[13px] space-y-1">
-                  <p className="font-semibold text-accent-foreground">{plan.estimation.leads}</p>
-                </div>
 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((f) => (
@@ -259,8 +245,7 @@ const PricingSection = () => {
 
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
-          * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
-          {" "}L'offre Pilote est sans engagement (1 mois). En cas d'engagement annuel sur Business ou Premium, 2 mois sont offerts.
+          L'offre Pilote est sans engagement (1 mois). En cas d'engagement annuel sur Business ou Premium, 2 mois sont offerts.
         </p>
       </div>
     </section>

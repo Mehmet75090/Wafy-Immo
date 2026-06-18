@@ -43,7 +43,7 @@ const conversionTrend = [
 
 /* ── KPI cards ── */
 const kpis = [
-  { icon: MessageCircle, label: "Conversations", value: "1 240", change: "+18%", up: true },
+  { icon: MessageCircle, label: "Leads", value: "1 240", change: "+18%", up: true },
   { icon: Users, label: "Leads qualifiés", value: "890", change: "+24%", up: true },
   { icon: CalendarCheck, label: "RDV confirmés", value: "185", change: "+31%", up: true },
   { icon: Zap, label: "Temps de réponse", value: "< 30s", change: "-85%", up: true },
@@ -64,7 +64,7 @@ const DashboardSection = () => (
           Dashboard <span className="text-gradient">KPI's</span>
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Suivez vos performances en temps réel : conversations, qualification, conversion, et ROI.
+          Suivez vos performances en temps réel : leads, qualification, conversion, et ROI.
         </p>
       </motion.div>
 
