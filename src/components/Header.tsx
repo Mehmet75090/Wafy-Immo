@@ -16,6 +16,12 @@ const Header = ({ onOpenForm }: HeaderProps) => (
       </Link>
       <div className="flex items-center gap-6">
         <Link
+          to="/#pricing"
+          className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
+        >
+          Tarifs
+        </Link>
+        <Link
           to="/blog"
           className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
         >
