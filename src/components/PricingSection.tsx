@@ -22,14 +22,17 @@ const formatPrice = (madAmount: number, currency: Currency) => {
   return position === "before" ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
 };
 
+// Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
+const ANNUAL_FACTOR = 10 / 12;
+
 const plans = [
   {
-    name: "ESSENTIEL",
-    price: 4900,
-    annualDiscount: 1 - 3500 / 4900,
-    conv: "Jusqu'à 600 conversations / mois",
+    name: "PILOTE",
+    price: 2800,
+    annualDiscount: 1 - ANNUAL_FACTOR,
+    conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
-      leads: "Estimation : 90 leads qualifiés",
+      leads: "Estimation : 200 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -43,11 +46,11 @@ const plans = [
   },
   {
     name: "BUSINESS",
-    price: 9900,
-    annualDiscount: 1 - 5500 / 9900,
+    price: 5500,
+    annualDiscount: 1 - ANNUAL_FACTOR,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
-      leads: "Estimation : 300 leads qualifiés",
+      leads: "Estimation : 350 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
@@ -62,18 +65,18 @@ const plans = [
   },
   {
     name: "PREMIUM",
-    price: 14900,
-    annualDiscount: 1 - 7500 / 14900,
+    price: 7500,
+    annualDiscount: 1 - ANNUAL_FACTOR,
     conv: "Jusqu'à 5 000 conversations / mois",
     estimation: {
-      leads: "Estimation : 750 leads qualifiés",
+      leads: "Estimation : 800 leads qualifiés",
     },
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
       { text: "Relances WhatsApp auto", included: true },
-      { text: "10 000 relances / mois", included: true },
+      { text: "12 500 relances / mois", included: true },
       { text: "Prise de RDV auto", included: true },
       { text: "Reporting détaillé + recommandations", included: true },
     ],
@@ -230,10 +233,41 @@ const PricingSection = () => {
           })}
         </div>
 
+        {/* Setup & add-ons */}
+        <div className="grid md:grid-cols-2 gap-4 mt-10">
+          <div className="rounded-xl border border-border bg-card p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">
+                Setup inclus
+              </span>
+              <span className="text-sm font-semibold">10 000 MAD HT</span>
+            </div>
+            <p className="text-xs text-muted-foreground mb-3">Inclus dans tous les packs (one-shot)</p>
+            <ul className="space-y-1.5 text-sm">
+              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Conception du funnel de qualification sur-mesure</li>
+              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Paramétrage de l'agent : prompting, itérations, RAG</li>
+              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Dashboard & KPIs en temps réel</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary text-xs font-bold">
+                Add-on
+              </span>
+              <span className="text-sm font-semibold">Connecteur CRM client</span>
+            </div>
+            <p className="text-xs text-muted-foreground mb-3">À partir du plan Business — one-shot</p>
+            <div className="text-2xl font-extrabold text-primary">5 000 MAD HT</div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Intégration sur-mesure à votre CRM (HubSpot, Salesforce, Navision, Cegid…).
+            </p>
+          </div>
+        </div>
+
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
-          {isAnnual && " Tarifs annuels affichés en équivalent mensuel, facturés annuellement."}
+          {isAnnual && " Annuel : 2 mois offerts, facturation annuelle."}
         </p>
       </div>
     </section>
