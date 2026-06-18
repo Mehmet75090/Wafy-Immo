@@ -135,7 +135,7 @@ const PricingSection = () => {
                 Offre engagement annuel
               </div>
               <p className="text-base sm:text-lg font-semibold text-foreground leading-snug">
-                2 mois offerts sur tous les plans
+                2 mois offerts sur les plans Business et Premium
               </p>
             </div>
           </div>
