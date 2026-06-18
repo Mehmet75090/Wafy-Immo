@@ -32,6 +32,14 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           >
             Tarifs
           </a>
+          <a
+            href="https://immo.wafypro.ma"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+          >
+            J'achète
+          </a>
           <Link
             to="/blog"
             className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
