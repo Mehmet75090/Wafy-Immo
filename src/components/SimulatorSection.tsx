@@ -32,8 +32,6 @@ const SimulatorSection = () => {
 
   const results = useMemo(() => {
     const plan = wafyPlans[selectedPlan];
-    const hotLeads = Math.round((totalLeads * hotPercent) / 100);
-    const warmLeads = totalLeads - hotLeads;
 
     // Human cost
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
@@ -42,12 +40,7 @@ const SimulatorSection = () => {
     const humanLeadsPerDay = agentsNeeded * LEADS_PER_DAY_PER_AGENT;
 
     // WAFY cost
-    let wafyCost: number;
-    if (plan.isPerLead) {
-      wafyCost = warmLeads * (plan as typeof wafyPlans[0]).perLeadTiede + hotLeads * (plan as typeof wafyPlans[0]).perLeadChaud;
-    } else {
-      wafyCost = plan.price;
-    }
+    const wafyCost = plan.price;
     const wafyCostPerLead = totalLeads > 0 ? Math.round(wafyCost / totalLeads) : 0;
 
     const savings = humanCost - wafyCost;
@@ -64,7 +57,7 @@ const SimulatorSection = () => {
       savingsPercent,
       planName: plan.name,
     };
-  }, [totalLeads, selectedPlan, hotPercent, agentSalary]);
+  }, [totalLeads, selectedPlan, agentSalary]);
 
   const comparisonRows = [
     {
@@ -152,22 +145,6 @@ const SimulatorSection = () => {
               />
             </div>
 
-            {wafyPlans[selectedPlan].isPerLead && (
-              <div>
-                <div className="flex justify-between mb-3">
-                  <span className="text-sm font-medium">% leads chauds (avec RDV)</span>
-                  <span className="text-sm font-bold text-primary">{hotPercent}%</span>
-                </div>
-                <Slider
-                  value={[hotPercent]}
-                  onValueChange={([v]) => setHotPercent(v)}
-                  min={0}
-                  max={100}
-                  step={5}
-                  className="[&_[role=slider]]:bg-primary [&_[role=slider]]:border-primary [&_.relative>div]:bg-primary"
-                />
-              </div>
-            )}
 
             {/* Auto-selected plan + agents info */}
             <div className="flex flex-col sm:flex-row gap-3">
