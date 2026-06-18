@@ -165,11 +165,6 @@ const PricingSection = () => {
                   </div>
                 )}
 
-                {plan.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap z-10">
-                    Recommandé
-                  </div>
-                )}
 
                 <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
                 <p className="text-xs text-muted-foreground mb-4">{plan.conv}</p>
