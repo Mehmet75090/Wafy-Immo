@@ -43,6 +43,7 @@ const plans = [
       { text: "Prise de RDV auto", included: false },
     ],
     highlight: false,
+    badge: "2 mois offerts",
   },
   {
     name: "BUSINESS",
@@ -62,6 +63,7 @@ const plans = [
       { text: "Reporting détaillé", included: true },
     ],
     highlight: true,
+    badge: "2 mois offerts",
   },
   {
     name: "PREMIUM",
@@ -81,6 +83,7 @@ const plans = [
       { text: "Reporting détaillé + recommandations", included: true },
     ],
     highlight: false,
+    badge: "2 mois offerts",
   },
 ];
 
