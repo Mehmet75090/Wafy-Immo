@@ -25,11 +25,22 @@ const formatPrice = (madAmount: number, currency: Currency) => {
 // Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
 const ANNUAL_FACTOR = 10 / 12;
 
-const plans = [
+type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
+
+const plans: {
+  name: PlanName;
+  price: number;
+  annualDiscount: number;
+  conv: string;
+  estimation: { leads: string };
+  features: { text: string; included: boolean }[];
+  highlight: boolean;
+  badge?: string;
+}[] = [
   {
     name: "PILOTE",
     price: 2800,
-    annualDiscount: 1 - ANNUAL_FACTOR,
+    annualDiscount: 0,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
       leads: "Estimation : 200 leads qualifiés",
@@ -43,7 +54,6 @@ const plans = [
       { text: "Prise de RDV auto", included: false },
     ],
     highlight: false,
-    badge: "2 mois offerts",
   },
   {
     name: "BUSINESS",
