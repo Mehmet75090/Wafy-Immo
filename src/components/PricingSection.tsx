@@ -111,20 +111,20 @@ const PricingSection = () => {
 
         {/* Annual offer banner */}
         <motion.div
-          className="relative mx-auto mb-12 max-w-2xl overflow-hidden rounded-2xl border border-secondary/40 bg-gradient-to-r from-secondary/10 via-secondary/5 to-primary/10 p-4 sm:p-5"
+          className="relative mx-auto mb-12 max-w-3xl overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 p-5 sm:p-6"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-3 sm:gap-4">
-            <div className="shrink-0 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
+          <div className="flex items-center gap-4">
+            <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+              <Sparkles className="w-6 h-6" />
             </div>
             <div className="text-left">
-              <div className="text-xs font-bold uppercase tracking-wider text-secondary">
+              <div className="text-sm font-bold uppercase tracking-wider text-primary">
                 Offre engagement annuel
               </div>
-              <p className="text-sm sm:text-base font-semibold text-foreground leading-snug">
+              <p className="text-base sm:text-lg font-semibold text-foreground leading-snug">
                 2 mois offerts sur tous les plans
               </p>
             </div>
@@ -133,10 +133,11 @@ const PricingSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {plans.map((plan, i) => {
+            const annualPrice = Math.round(plan.price * ANNUAL_FACTOR);
             return (
               <motion.div
                 key={plan.name}
-                className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 ${
+                className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 overflow-hidden ${
                   plan.highlight
                     ? "border-primary border-2 shadow-xl bg-card md:scale-[1.03]"
                     : "border-border bg-card hover:border-primary/30"
@@ -146,6 +147,13 @@ const PricingSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
+                {/* Annual offer ribbon on every card */}
+                <div className="absolute top-0 right-0">
+                  <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-bl-xl">
+                    2 mois offerts en annuel
+                  </div>
+                </div>
+
                 {plan.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap">
                     Recommandé
@@ -155,7 +163,7 @@ const PricingSection = () => {
                 <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
                 <p className="text-xs text-muted-foreground mb-4">{plan.conv}</p>
 
-                <div className="mb-4">
+                <div className="mb-5">
                   <div className="flex items-baseline gap-1 flex-wrap">
                     <span
                       className={`text-3xl sm:text-4xl font-extrabold ${
@@ -166,8 +174,12 @@ const PricingSection = () => {
                     </span>
                     <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Sans engagement · 2 mois offerts en annuel
+                  {/* Annual equivalent */}
+                  <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
+                    <span className="text-sm font-semibold text-primary">
+                      Soit {formatPrice(annualPrice, currency)}/mois
+                    </span>
+                    <span className="text-xs text-primary/80">en annuel</span>
                   </div>
                 </div>
 
