@@ -39,13 +39,21 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           >
             Tarifs
           </a>
-          <a
-            href="/#simulator"
-            onClick={handleSimulatorClick}
-            className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
+          <Button
+            variant="hero"
+            size="sm"
+            className="hidden md:inline-flex"
+            onClick={(e) => {
+              if (location.pathname === "/") {
+                e.preventDefault();
+                document.getElementById("simulator")?.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "/#simulator";
+              }
+            }}
           >
-            Essai gratuit
-          </a>
+            Obtenir mon essai gratuit
+          </Button>
           <Link
             to="/blog"
             className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
