@@ -38,7 +38,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
             rel="noopener noreferrer"
             className="hidden md:inline text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
           >
-            J'achète
+            Wafy Audio
           </a>
           <Link
             to="/blog"
