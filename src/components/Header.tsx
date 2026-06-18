@@ -17,6 +17,13 @@ const Header = ({ onOpenForm }: HeaderProps) => {
     }
   };
 
+  const handleSimulatorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      document.getElementById("simulator")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <nav className="flex items-center justify-between px-6 md:px-12 py-4">
