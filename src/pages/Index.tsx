@@ -23,10 +23,10 @@ const Index = () => {
       <Header onOpenForm={() => setFormOpen(true)} />
       <HeroSection onOpenForm={() => setFormOpen(true)} />
       <ProblemSection />
+      <ComparisonSection />
       <FeaturesSection />
       <HowItWorksSection />
       <VoiceSection />
-      <ComparisonSection />
       <DashboardSection />
       <SimulatorSection />
       <PricingSection />
