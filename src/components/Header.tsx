@@ -39,6 +39,13 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           >
             Tarifs
           </a>
+          <a
+            href="/#simulator"
+            onClick={handleSimulatorClick}
+            className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
+          >
+            Essai gratuit
+          </a>
           <Link
             to="/blog"
             className="hidden md:inline text-sm font-semibold text-foreground hover:text-primary transition-colors"
