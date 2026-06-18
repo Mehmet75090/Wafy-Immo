@@ -25,11 +25,22 @@ const formatPrice = (madAmount: number, currency: Currency) => {
 // Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
 const ANNUAL_FACTOR = 10 / 12;
 
-const plans = [
+type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
+
+const plans: {
+  name: PlanName;
+  price: number;
+  annualDiscount: number;
+  conv: string;
+  estimation: { leads: string };
+  features: { text: string; included: boolean }[];
+  highlight: boolean;
+  badge?: string;
+}[] = [
   {
     name: "PILOTE",
     price: 2800,
-    annualDiscount: 1 - ANNUAL_FACTOR,
+    annualDiscount: 0,
     conv: "Jusqu'à 2 000 conversations / mois",
     estimation: {
       leads: "Estimation : 200 leads qualifiés",
@@ -43,7 +54,6 @@ const plans = [
       { text: "Prise de RDV auto", included: false },
     ],
     highlight: false,
-    badge: "2 mois offerts",
   },
   {
     name: "BUSINESS",
@@ -125,7 +135,7 @@ const PricingSection = () => {
                 Offre engagement annuel
               </div>
               <p className="text-base sm:text-lg font-semibold text-foreground leading-snug">
-                2 mois offerts sur tous les plans
+                2 mois offerts sur les plans Business et Premium
               </p>
             </div>
           </div>
@@ -147,15 +157,16 @@ const PricingSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                {/* Annual offer ribbon on every card */}
-                <div className="absolute top-0 right-0">
-                  <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-bl-xl">
-                    2 mois offerts en annuel
+                {plan.badge && (
+                  <div className="absolute top-0 left-0">
+                    <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-br-xl">
+                      {plan.badge} en annuel
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {plan.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-wafy-gradient text-primary-foreground text-xs font-bold whitespace-nowrap z-10">
                     Recommandé
                   </div>
                 )}
@@ -175,12 +186,18 @@ const PricingSection = () => {
                     <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
                   {/* Annual equivalent */}
-                  <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
-                    <span className="text-sm font-semibold text-primary">
-                      Soit {formatPrice(annualPrice, currency)}/mois
-                    </span>
-                    <span className="text-xs text-primary/80">en annuel</span>
-                  </div>
+                  {plan.name !== "PILOTE" ? (
+                    <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
+                      <span className="text-sm font-semibold text-primary">
+                        Soit {formatPrice(annualPrice, currency)}/mois
+                      </span>
+                      <span className="text-xs text-primary/80">en annuel</span>
+                    </div>
+                  ) : (
+                    <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5">
+                      <span className="text-xs text-muted-foreground">Offre découverte sans engagement · 1 mois</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Estimation block */}
@@ -248,7 +265,7 @@ const PricingSection = () => {
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           * Estimations basées sur des taux de conversion moyens constatés. Les résultats varient selon le programme, le ciblage et le marché.
-          {" "}En cas d'offre engagement annuel, 2 mois sont offerts.
+          {" "}L'offre Pilote est sans engagement (1 mois). En cas d'engagement annuel sur Business ou Premium, 2 mois sont offerts.
         </p>
       </div>
     </section>
