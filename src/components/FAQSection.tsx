@@ -95,30 +95,30 @@ const faqs = [
             </thead>
             <tbody className="divide-y divide-border">
               <tr>
-                <td className="px-3 py-2 font-semibold text-foreground">Essentiel</td>
-                <td className="px-3 py-2">≤ 300 conv./mois</td>
-                <td className="px-3 py-2">4 900 MAD</td>
-                <td className="px-3 py-2 text-primary font-semibold">3 500 MAD</td>
+                <td className="px-3 py-2 font-semibold text-foreground">Pilote</td>
+                <td className="px-3 py-2">≤ 2 000 conv./mois</td>
+                <td className="px-3 py-2">2 800 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Business</td>
-                <td className="px-3 py-2">≤ 1 500 conv./mois</td>
-                <td className="px-3 py-2">9 900 MAD</td>
-                <td className="px-3 py-2 text-primary font-semibold">5 500 MAD</td>
+                <td className="px-3 py-2">≤ 2 000 conv. + 5 000 relances</td>
+                <td className="px-3 py-2">5 500 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
-                <td className="px-3 py-2">≤ 3 000 conv./mois</td>
-                <td className="px-3 py-2">14 900 MAD</td>
-                <td className="px-3 py-2 text-primary font-semibold">7 500 MAD</td>
+                <td className="px-3 py-2">≤ 5 000 conv. + 12 500 relances</td>
+                <td className="px-3 py-2">7 500 MAD</td>
+                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
             </tbody>
           </table>
         </div>
         <ul className="space-y-1.5 text-sm">
           <li>
-            👉 <span className="font-semibold text-foreground">Essentiel</span> — campagne sur
-            1 petit projet immo en démarrage ou petit volume de leads.
+            👉 <span className="font-semibold text-foreground">Pilote</span> — qualification IA
+            seule, pour démarrer ou tester sur un petit projet.
           </li>
           <li>
             👉 <span className="font-semibold text-foreground">Business</span> — choix le plus
@@ -129,6 +129,13 @@ const faqs = [
             multi-programmes, reporting avancé avec recommandations.
           </li>
         </ul>
+        <p className="text-sm">
+          💡 <span className="font-semibold text-foreground">Setup inclus :</span> 10 000 MAD HT
+          one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
+          <br />
+          🔌 <span className="font-semibold text-foreground">Connecteur CRM client</span> :
+          5 000 MAD HT one-shot, à partir du plan Business.
+        </p>
         <p className="text-sm italic">
           Pas sûr ? Notre équipe vous aide à dimensionner en 15 minutes — sans engagement.
         </p>
@@ -190,10 +197,10 @@ const faqs = [
           de relance automatique.
         </p>
         <p>
-          Si vous êtes sur le plan Essentiel et que vous approchez régulièrement
-          votre quota de 300 conversations/mois, c'est généralement le signe
-          qu'il est temps de passer au plan Business — vous y gagnerez en volume,
-          en fonctionnalités (relances + RDV auto), et en coût par conversation.
+          Si vous êtes sur le plan Pilote et que vous approchez régulièrement
+          votre quota de 2 000 conversations/mois, c'est généralement le signe
+          qu'il est temps de passer au plan Business — vous y gagnerez en
+          fonctionnalités (relances + RDV auto) et en coût par conversation.
         </p>
       </div>
     ),
@@ -242,16 +249,16 @@ const faqs = [
         </p>
         <ul className="space-y-2">
           <li>
-            <span className="font-semibold text-foreground">Essentiel → Business :</span>{" "}
-            différence de 3 150 MAD/mois, proratisée sur les mois restants.
+            <span className="font-semibold text-foreground">Pilote → Business :</span>{" "}
+            différence de 2 700 MAD/mois, proratisée sur les mois restants.
           </li>
           <li>
             <span className="font-semibold text-foreground">Business → Premium :</span>{" "}
-            différence de 3 150 MAD/mois, proratisée sur les mois restants.
+            différence de 2 000 MAD/mois, proratisée sur les mois restants.
           </li>
           <li>
-            <span className="font-semibold text-foreground">Essentiel → Premium :</span>{" "}
-            différence de 6 300 MAD/mois, proratisée sur les mois restants.
+            <span className="font-semibold text-foreground">Pilote → Premium :</span>{" "}
+            différence de 4 700 MAD/mois, proratisée sur les mois restants.
           </li>
         </ul>
         <p className="text-sm italic">

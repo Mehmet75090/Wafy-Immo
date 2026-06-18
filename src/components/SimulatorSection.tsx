@@ -4,8 +4,7 @@ import { Slider } from "@/components/ui/slider";
 import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
 
 const wafyPlans = [
-  { name: "Pilote", price: 0, perLeadTiede: 150, perLeadChaud: 350, isPerLead: true, maxConv: 400 },
-  { name: "Essentiel", price: 3500, isPerLead: false, maxConv: 600 },
+  { name: "Pilote", price: 2800, isPerLead: false, maxConv: 2000 },
   { name: "Business", price: 5500, isPerLead: false, maxConv: 2000 },
   { name: "Premium", price: 7500, isPerLead: false, maxConv: 5000 },
 ];
