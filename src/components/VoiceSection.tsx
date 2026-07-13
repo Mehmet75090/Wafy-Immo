@@ -261,8 +261,8 @@ const VoiceSection = () => {
                   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='%23d9d2c8' fill-opacity='0.5'><circle cx='10' cy='10' r='1.5'/><circle cx='40' cy='25' r='1.5'/><circle cx='20' cy='45' r='1.5'/><circle cx='50' cy='50' r='1.5'/></g></svg>\")",
               }}
             >
-              <VoiceBubble id="voice-prospect" nextId="voice-wafy" src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
-              <VoiceBubble id="voice-wafy" src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
+              <VoiceBubble key={`c-${code}`} id="voice-prospect" nextId="voice-wafy" src={clientSrc} side="right" label="Sara" time="14:21" />
+              <VoiceBubble key={`w-${code}`} id="voice-wafy" src={wafySrc} side="left" label="Wafy Immo" time="14:21" />
               <div className="flex justify-end mb-3">
                 <div className="relative max-w-[85%] rounded-xl rounded-tr-sm px-3 py-2 pr-12 shadow-sm bg-[#dcf8c6]">
                   <p className="text-sm text-[#111b21] leading-snug">
