@@ -32,10 +32,10 @@ const ProblemSection = () => (
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-          Le problème du <span className="text-gradient">promoteur</span>
+          Combien de ventes dorment dans vos leads <span className="text-gradient">"injoignables"</span> ?
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Vos commerciaux perdent du temps, vos leads s'évaporent. Wafy Immo change la donne.
+          Wafy Immo les relance sur WhatsApp, requalifie leur projet et remonte les acheteurs encore chauds. Pendant ce temps, il qualifie aussi chaque nouveau lead, en temps réel.
         </p>
       </motion.div>
 
