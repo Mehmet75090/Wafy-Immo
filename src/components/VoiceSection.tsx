@@ -306,6 +306,7 @@ const VoiceSection = () => {
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default VoiceSection;
