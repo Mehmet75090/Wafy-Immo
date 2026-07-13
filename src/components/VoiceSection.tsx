@@ -178,7 +178,14 @@ const VoiceBubble = ({
   );
 };
 
-const VoiceSection = () => (
+const VoiceSection = () => {
+  const { country } = useCountry();
+  const prep = COUNTRY_PREPOSITION[country.code] ?? "Au Maroc";
+  const code = country.code.toLowerCase();
+  const clientSrc = `/audio/message-client-${code}.mp3`;
+  const wafySrc = `/audio/message-wafy-${code}.mp3`;
+
+  return (
   <section className="section-padding bg-muted/30">
     <div className="container mx-auto max-w-6xl">
       <motion.div
@@ -191,7 +198,7 @@ const VoiceSection = () => (
           Wafy Immo parle aussi <span className="text-gradient">la langue de vos prospects</span>
         </h2>
         <p className="text-muted-foreground text-lg">
-          Au Maroc, vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
+          {prep}, vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
         </p>
       </motion.div>
 
