@@ -209,7 +209,7 @@ const PricingSection = () => {
               <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">
                 Setup inclus
               </span>
-              <span className="text-sm font-semibold">10 000 MAD HT</span>
+              <span className="text-sm font-semibold">{formatPrice(10000)} HT</span>
             </div>
             <p className="text-xs text-muted-foreground mb-3">Inclus dans tous les packs (one-shot)</p>
             <ul className="space-y-1.5 text-sm">
@@ -226,7 +226,7 @@ const PricingSection = () => {
               <span className="text-sm font-semibold">Connecteur CRM client</span>
             </div>
             <p className="text-xs text-muted-foreground mb-3">À partir du plan Business — one-shot</p>
-            <div className="text-2xl font-extrabold text-primary">5 000 MAD HT</div>
+            <div className="text-2xl font-extrabold text-primary">{formatPrice(5000)} HT</div>
             <p className="text-xs text-muted-foreground mt-2">
               Intégration sur-mesure à votre CRM (HubSpot, Salesforce, Navision, Cegid…).
             </p>
