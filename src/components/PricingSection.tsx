@@ -72,7 +72,10 @@ const plans: {
 
 
 const PricingSection = () => {
-  const currency: Currency = "MAD";
+  const { country } = useCountry();
+  const formatPrice = (mad: number) => formatPriceForCountry(mad, country);
+
+
 
   return (
     <section className="section-padding" id="pricing">
@@ -153,7 +156,7 @@ const PricingSection = () => {
                         plan.highlight ? "text-primary" : ""
                       }`}
                     >
-                      {formatPrice(plan.price, currency)}
+                      {formatPrice(plan.price)}
                     </span>
                     <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
@@ -161,7 +164,7 @@ const PricingSection = () => {
                   {plan.name !== "PILOTE" ? (
                     <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
                       <span className="text-sm font-semibold text-primary">
-                        {formatPrice(plan.price * 2, currency)} offerts
+                        {formatPrice(plan.price * 2)} offerts
                       </span>
                       <span className="text-xs text-primary/80">en engagement annuel</span>
                     </div>
