@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { Mic, Languages, Heart, Play, Pause } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { useCountry } from "@/contexts/CountryContext";
+
+const COUNTRY_PREPOSITION: Record<string, string> = {
+  MA: "Au Maroc",
+  TN: "En Tunisie",
+  CI: "En Côte d'Ivoire",
+  SN: "Au Sénégal",
+};
 
 const args = [
   {
