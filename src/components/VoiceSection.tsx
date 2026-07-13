@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { Mic, Languages, Heart, Play, Pause } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { useCountry } from "@/contexts/CountryContext";
+
+const COUNTRY_PREPOSITION: Record<string, string> = {
+  MA: "Au Maroc",
+  TN: "En Tunisie",
+  CI: "En Côte d'Ivoire",
+  SN: "Au Sénégal",
+};
 
 const args = [
   {
@@ -170,7 +178,14 @@ const VoiceBubble = ({
   );
 };
 
-const VoiceSection = () => (
+const VoiceSection = () => {
+  const { country } = useCountry();
+  const prep = COUNTRY_PREPOSITION[country.code] ?? "Au Maroc";
+  const code = country.code.toLowerCase();
+  const clientSrc = `/audio/message-client-${code}.mp3`;
+  const wafySrc = `/audio/message-wafy-${code}.mp3`;
+
+  return (
   <section className="section-padding bg-muted/30">
     <div className="container mx-auto max-w-6xl">
       <motion.div
@@ -183,7 +198,7 @@ const VoiceSection = () => (
           Wafy Immo parle aussi <span className="text-gradient">la langue de vos prospects</span>
         </h2>
         <p className="text-muted-foreground text-lg">
-          Au Maroc, vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
+          {prep}, vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
         </p>
       </motion.div>
 
@@ -246,8 +261,8 @@ const VoiceSection = () => (
                   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='%23d9d2c8' fill-opacity='0.5'><circle cx='10' cy='10' r='1.5'/><circle cx='40' cy='25' r='1.5'/><circle cx='20' cy='45' r='1.5'/><circle cx='50' cy='50' r='1.5'/></g></svg>\")",
               }}
             >
-              <VoiceBubble id="voice-prospect" nextId="voice-wafy" src="/audio/message-client.ogg" side="right" label="Sara" time="14:21" />
-              <VoiceBubble id="voice-wafy" src="/audio/message-wafy-bot.ogg" side="left" label="Wafy Immo" time="14:21" />
+              <VoiceBubble key={`c-${code}`} id="voice-prospect" nextId="voice-wafy" src={clientSrc} side="right" label="Sara" time="14:21" />
+              <VoiceBubble key={`w-${code}`} id="voice-wafy" src={wafySrc} side="left" label="Wafy Immo" time="14:21" />
               <div className="flex justify-end mb-3">
                 <div className="relative max-w-[85%] rounded-xl rounded-tr-sm px-3 py-2 pr-12 shadow-sm bg-[#dcf8c6]">
                   <p className="text-sm text-[#111b21] leading-snug">
@@ -291,6 +306,7 @@ const VoiceSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default VoiceSection;
