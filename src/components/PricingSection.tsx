@@ -1,26 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
 
-const DEFAULT_ANNUAL_DISCOUNT = 0.55;
-
-type Currency = "MAD" | "EUR" | "USD";
-
-const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after"; flag: string; label: string }> = {
-  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after", flag: "🇲🇦", label: "Maroc" },
-  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after", flag: "🇪🇺", label: "Euro" },
-  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before", flag: "🇺🇸", label: "Dollar" },
-};
-
-const formatPrice = (madAmount: number, currency: Currency) => {
-  const { rate, symbol, locale, position } = CURRENCIES[currency];
-  const converted = madAmount * rate;
-  // Round MAD to nearest unit, EUR/USD to nearest 10 for cleaner display
-  const rounded = currency === "MAD" ? Math.round(converted) : Math.round(converted / 10) * 10;
-  const formatted = rounded.toLocaleString(locale);
-  return position === "before" ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
-};
 
 // Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
 const ANNUAL_FACTOR = 10 / 12;
@@ -90,7 +72,10 @@ const plans: {
 
 
 const PricingSection = () => {
-  const currency: Currency = "MAD";
+  const { country } = useCountry();
+  const formatPrice = (mad: number) => formatPriceForCountry(mad, country);
+
+
 
   return (
     <section className="section-padding" id="pricing">
@@ -171,7 +156,7 @@ const PricingSection = () => {
                         plan.highlight ? "text-primary" : ""
                       }`}
                     >
-                      {formatPrice(plan.price, currency)}
+                      {formatPrice(plan.price)}
                     </span>
                     <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
@@ -179,7 +164,7 @@ const PricingSection = () => {
                   {plan.name !== "PILOTE" ? (
                     <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
                       <span className="text-sm font-semibold text-primary">
-                        {formatPrice(plan.price * 2, currency)} offerts
+                        {formatPrice(plan.price * 2)} offerts
                       </span>
                       <span className="text-xs text-primary/80">en engagement annuel</span>
                     </div>
@@ -224,7 +209,7 @@ const PricingSection = () => {
               <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">
                 Setup inclus
               </span>
-              <span className="text-sm font-semibold">10 000 MAD HT</span>
+              <span className="text-sm font-semibold">{formatPrice(10000)} HT</span>
             </div>
             <p className="text-xs text-muted-foreground mb-3">Inclus dans tous les packs (one-shot)</p>
             <ul className="space-y-1.5 text-sm">
@@ -241,7 +226,7 @@ const PricingSection = () => {
               <span className="text-sm font-semibold">Connecteur CRM client</span>
             </div>
             <p className="text-xs text-muted-foreground mb-3">À partir du plan Business — one-shot</p>
-            <div className="text-2xl font-extrabold text-primary">5 000 MAD HT</div>
+            <div className="text-2xl font-extrabold text-primary">{formatPrice(5000)} HT</div>
             <p className="text-xs text-muted-foreground mt-2">
               Intégration sur-mesure à votre CRM (HubSpot, Salesforce, Navision, Cegid…).
             </p>
