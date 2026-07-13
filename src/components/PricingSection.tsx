@@ -1,26 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
 
-const DEFAULT_ANNUAL_DISCOUNT = 0.55;
-
-type Currency = "MAD" | "EUR" | "USD";
-
-const CURRENCIES: Record<Currency, { rate: number; symbol: string; locale: string; position: "before" | "after"; flag: string; label: string }> = {
-  MAD: { rate: 1, symbol: "MAD", locale: "fr-FR", position: "after", flag: "🇲🇦", label: "Maroc" },
-  EUR: { rate: 0.092, symbol: "€", locale: "fr-FR", position: "after", flag: "🇪🇺", label: "Euro" },
-  USD: { rate: 0.10, symbol: "$", locale: "en-US", position: "before", flag: "🇺🇸", label: "Dollar" },
-};
-
-const formatPrice = (madAmount: number, currency: Currency) => {
-  const { rate, symbol, locale, position } = CURRENCIES[currency];
-  const converted = madAmount * rate;
-  // Round MAD to nearest unit, EUR/USD to nearest 10 for cleaner display
-  const rounded = currency === "MAD" ? Math.round(converted) : Math.round(converted / 10) * 10;
-  const formatted = rounded.toLocaleString(locale);
-  return position === "before" ? `${symbol}${formatted}` : `${formatted} ${symbol}`;
-};
 
 // Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
 const ANNUAL_FACTOR = 10 / 12;
