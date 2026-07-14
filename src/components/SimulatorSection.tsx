@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
+import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
 
 const wafyPlans = [
   { name: "Pilote", price: 2800, isPerLead: false, maxConv: 2000 },
@@ -24,10 +25,23 @@ function getBestPlan(leads: number) {
 }
 
 const SimulatorSection = () => {
+  const { country } = useCountry();
   const [totalLeads, setTotalLeads] = useState(600);
   const [agentSalary, setAgentSalary] = useState(6000);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
+
+  const fmt = (madAmount: number) => formatPriceForCountry(madAmount, country);
+  const fmtPerLead = (madAmount: number) => {
+    // per-lead: convert then round to nearest sensible unit (roundTo/10 min 1)
+    const converted = madAmount * country.rate;
+    const unit = Math.max(1, Math.round(country.roundTo / 10));
+    const rounded = Math.round(converted / unit) * unit;
+    const formatted = rounded.toLocaleString(country.locale);
+    return country.symbolPosition === "before"
+      ? `${country.currency} ${formatted}`
+      : `${formatted} ${country.currency}`;
+  };
 
   const results = useMemo(() => {
     const plan = wafyPlans[selectedPlan];
@@ -35,12 +49,12 @@ const SimulatorSection = () => {
     // Human cost
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
     const humanCost = agentsNeeded * agentSalary;
-    const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
+    const humanCostPerLead = totalLeads > 0 ? humanCost / totalLeads : 0;
     const humanLeadsPerDay = agentsNeeded * LEADS_PER_DAY_PER_AGENT;
 
     // WAFY cost
     const wafyCost = plan.price;
-    const wafyCostPerLead = totalLeads > 0 ? Math.round(wafyCost / totalLeads) : 0;
+    const wafyCostPerLead = totalLeads > 0 ? wafyCost / totalLeads : 0;
 
     const savings = humanCost - wafyCost;
     const savingsPercent = humanCost > 0 ? Math.round((savings / humanCost) * 100) : 0;
@@ -61,13 +75,13 @@ const SimulatorSection = () => {
   const comparisonRows = [
     {
       label: "Coût mensuel",
-      human: `${results.humanCost.toLocaleString("fr-FR")} MAD`,
-      wafy: `${results.wafyCost.toLocaleString("fr-FR")} MAD`,
+      human: fmt(results.humanCost),
+      wafy: fmt(results.wafyCost),
     },
     {
       label: "Coût / lead",
-      human: `${results.humanCostPerLead} MAD`,
-      wafy: `${results.wafyCostPerLead} MAD`,
+      human: fmtPerLead(results.humanCostPerLead),
+      wafy: fmtPerLead(results.wafyCostPerLead),
     },
     {
       label: "Leads traités / jour",
@@ -132,7 +146,7 @@ const SimulatorSection = () => {
             <div>
               <div className="flex justify-between mb-3">
                 <span className="text-sm font-medium">Coût employeur d'un agent humain recruté (brut chargé)</span>
-                <span className="text-sm font-bold text-primary">{agentSalary.toLocaleString("fr-FR")} MAD</span>
+                <span className="text-sm font-bold text-primary">{fmt(agentSalary)}</span>
               </div>
               <Slider
                 value={[agentSalary]}
@@ -187,7 +201,7 @@ const SimulatorSection = () => {
             <div className="p-5 rounded-xl border-2 border-secondary bg-secondary/5 text-center">
               <div className="text-sm text-muted-foreground mb-1">Économie avec Wafy Immo</div>
               <div className="text-3xl sm:text-4xl font-extrabold text-secondary">
-                {results.savings.toLocaleString("fr-FR")} MAD<span className="text-lg font-bold"> / mois</span>
+                {fmt(results.savings)}<span className="text-lg font-bold"> / mois</span>
               </div>
               <div className="text-sm font-semibold text-secondary mt-1">
                 soit -{results.savingsPercent}%
