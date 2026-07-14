@@ -25,10 +25,23 @@ function getBestPlan(leads: number) {
 }
 
 const SimulatorSection = () => {
+  const { country } = useCountry();
   const [totalLeads, setTotalLeads] = useState(600);
   const [agentSalary, setAgentSalary] = useState(6000);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
+
+  const fmt = (madAmount: number) => formatPriceForCountry(madAmount, country);
+  const fmtPerLead = (madAmount: number) => {
+    // per-lead: convert then round to nearest sensible unit (roundTo/10 min 1)
+    const converted = madAmount * country.rate;
+    const unit = Math.max(1, Math.round(country.roundTo / 10));
+    const rounded = Math.round(converted / unit) * unit;
+    const formatted = rounded.toLocaleString(country.locale);
+    return country.symbolPosition === "before"
+      ? `${country.currency} ${formatted}`
+      : `${formatted} ${country.currency}`;
+  };
 
   const results = useMemo(() => {
     const plan = wafyPlans[selectedPlan];
@@ -36,12 +49,12 @@ const SimulatorSection = () => {
     // Human cost
     const agentsNeeded = Math.max(1, Math.ceil(totalLeads / LEADS_PER_AGENT));
     const humanCost = agentsNeeded * agentSalary;
-    const humanCostPerLead = totalLeads > 0 ? Math.round(humanCost / totalLeads) : 0;
+    const humanCostPerLead = totalLeads > 0 ? humanCost / totalLeads : 0;
     const humanLeadsPerDay = agentsNeeded * LEADS_PER_DAY_PER_AGENT;
 
     // WAFY cost
     const wafyCost = plan.price;
-    const wafyCostPerLead = totalLeads > 0 ? Math.round(wafyCost / totalLeads) : 0;
+    const wafyCostPerLead = totalLeads > 0 ? wafyCost / totalLeads : 0;
 
     const savings = humanCost - wafyCost;
     const savingsPercent = humanCost > 0 ? Math.round((savings / humanCost) * 100) : 0;
@@ -62,13 +75,13 @@ const SimulatorSection = () => {
   const comparisonRows = [
     {
       label: "Coût mensuel",
-      human: `${results.humanCost.toLocaleString("fr-FR")} MAD`,
-      wafy: `${results.wafyCost.toLocaleString("fr-FR")} MAD`,
+      human: fmt(results.humanCost),
+      wafy: fmt(results.wafyCost),
     },
     {
       label: "Coût / lead",
-      human: `${results.humanCostPerLead} MAD`,
-      wafy: `${results.wafyCostPerLead} MAD`,
+      human: fmtPerLead(results.humanCostPerLead),
+      wafy: fmtPerLead(results.wafyCostPerLead),
     },
     {
       label: "Leads traités / jour",
