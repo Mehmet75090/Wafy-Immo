@@ -25,6 +25,9 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">promoteur</span>
         </Link>
         <div className="flex items-center gap-3">
+          <Button variant="outline" size="lg" asChild className="hidden sm:inline-flex">
+            <a href="#pricing">Tarifs</a>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button

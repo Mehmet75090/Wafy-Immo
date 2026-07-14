@@ -28,8 +28,8 @@ const Index = () => {
       <HowItWorksSection />
       <VoiceSection />
       <DashboardSection />
-      <SimulatorSection />
       <PricingSection />
+      <SimulatorSection />
       <BlogPreviewSection />
       <FAQSection />
       <CTASection onOpenForm={() => setFormOpen(true)} />
