@@ -201,7 +201,7 @@ const SimulatorSection = () => {
             <div className="p-5 rounded-xl border-2 border-secondary bg-secondary/5 text-center">
               <div className="text-sm text-muted-foreground mb-1">Économie avec Wafy Immo</div>
               <div className="text-3xl sm:text-4xl font-extrabold text-secondary">
-                {results.savings.toLocaleString("fr-FR")} MAD<span className="text-lg font-bold"> / mois</span>
+                {fmt(results.savings)}<span className="text-lg font-bold"> / mois</span>
               </div>
               <div className="text-sm font-semibold text-secondary mt-1">
                 soit -{results.savingsPercent}%
