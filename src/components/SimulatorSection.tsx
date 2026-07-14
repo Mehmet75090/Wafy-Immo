@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
+import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
 
 const wafyPlans = [
   { name: "Pilote", price: 2800, isPerLead: false, maxConv: 2000 },
