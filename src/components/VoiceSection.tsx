@@ -18,8 +18,8 @@ const args = [
   },
   {
     icon: Languages,
-    title: "Darija, français, arabe — et plus",
-    text: "Vos prospects choisissent la langue, Wafy Immo s'adapte. Des packs additionnels (anglais, espagnol, MRE) sont disponibles à la carte.",
+    title: "Darija, français, wolof — et plus",
+    text: "Vos prospects choisissent la langue, Wafy Immo s'adapte. Des packs additionnels (anglais, espagnol ...) sont disponibles à la carte.",
   },
   {
     icon: Heart,
