@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -13,9 +13,31 @@ interface ContactFormDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const COUNTRIES = [
+  "Maroc",
+  "Tunisie",
+  "Côte d'Ivoire",
+  "Sénégal",
+  "Algérie",
+  "France",
+  "Autre",
+];
+
+const OBJECTIVES = [
+  "Qualifier mes leads entrants plus vite",
+  "Relancer mes leads dormants / injoignables",
+  "Automatiser la prise de RDV visite",
+  "Augmenter mon taux de conversion",
+  "Réduire le coût de mon call center",
+  "Tester Wafy Immo sur un projet pilote",
+  "Autre",
+];
+
 const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [country, setCountry] = useState("");
+  const [objective, setObjective] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,9 +49,8 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
     const email = (formData.get("email") as string).trim();
     const company = (formData.get("company") as string).trim();
     const phone = (formData.get("phone") as string).trim();
-    const message = (formData.get("message") as string).trim();
 
-    if (!name || !company || !email || !phone) {
+    if (!name || !company || !email || !phone || !country || !objective) {
       toast({ title: "Veuillez remplir tous les champs obligatoires.", variant: "destructive" });
       setIsSubmitting(false);
       return;
@@ -37,7 +58,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
 
     try {
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: { name, company, email, phone, message },
+        body: { name, company, email, phone, country, objective, message: objective },
       });
 
       if (error) throw error;
@@ -46,6 +67,8 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
       toast({ title: "Demande envoyée !", description: "Nous vous recontactons sous 24h." });
       onOpenChange(false);
       form.reset();
+      setCountry("");
+      setObjective("");
     } catch (err) {
       console.error("Email send error:", err);
       toast({ title: "Erreur lors de l'envoi", description: "Veuillez réessayer ou nous contacter directement.", variant: "destructive" });
@@ -89,8 +112,31 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message">Message (optionnel)</Label>
-            <Textarea id="message" name="message" placeholder="Décrivez brièvement votre besoin…" maxLength={1000} rows={3} />
+            <Label htmlFor="country">Pays *</Label>
+            <Select value={country} onValueChange={setCountry}>
+              <SelectTrigger id="country">
+                <SelectValue placeholder="Sélectionnez votre pays" />
+              </SelectTrigger>
+              <SelectContent>
+                {COUNTRIES.map((c) => (
+                  <SelectItem key={c} value={c}>{c}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="objective">Objectif recherché *</Label>
+            <Select value={objective} onValueChange={setObjective}>
+              <SelectTrigger id="objective">
+                <SelectValue placeholder="Que souhaitez-vous atteindre avec Wafy Immo ?" />
+              </SelectTrigger>
+              <SelectContent>
+                {OBJECTIVES.map((o) => (
+                  <SelectItem key={o} value={o}>{o}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
