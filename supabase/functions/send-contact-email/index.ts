@@ -11,6 +11,8 @@ const BodySchema = z.object({
   company: z.string().min(1).max(100),
   email: z.string().email().max(255),
   phone: z.string().min(1).max(20),
+  country: z.string().min(1).max(100),
+  objective: z.string().min(1).max(200),
   message: z.string().max(1000).optional().default(''),
 })
 
