@@ -36,7 +36,7 @@ Deno.serve(async (req) => {
       })
     }
 
-    const { name, company, email, phone, message } = parsed.data
+    const { name, company, email, phone, country, objective, message } = parsed.data
 
     const htmlBody = `
       <h2>Nouvelle demande pilote WAFY</h2>
@@ -45,6 +45,8 @@ Deno.serve(async (req) => {
         <tr><td style="padding:8px;font-weight:bold">Promoteur</td><td style="padding:8px">${escapeHtml(company)}</td></tr>
         <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
         <tr><td style="padding:8px;font-weight:bold">Téléphone</td><td style="padding:8px">${escapeHtml(phone)}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Pays</td><td style="padding:8px">${escapeHtml(country)}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Objectif</td><td style="padding:8px">${escapeHtml(objective)}</td></tr>
         <tr><td style="padding:8px;font-weight:bold">Message</td><td style="padding:8px">${escapeHtml(message || '—')}</td></tr>
       </table>
     `
@@ -58,7 +60,7 @@ Deno.serve(async (req) => {
           text_mm37st80: name,
           numeric_mm3762q1: phoneDigits,
           text_mm37ctzv: email,
-          text_mm37gq6m: message || '',
+          text_mm37gq6m: `[${country}] ${objective}${message ? ` — ${message}` : ''}`,
         }
         const mondayQuery = `mutation ($board: ID!, $item: String!, $cols: JSON!) { create_item(board_id: $board, item_name: $item, column_values: $cols) { id } }`
         const mondayRes = await fetch('https://api.monday.com/v2', {
