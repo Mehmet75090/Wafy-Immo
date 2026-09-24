@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
@@ -374,6 +375,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
         </section>
       )}
 
+      <BlogPreviewSection />
       <FooterSection />
       <ContactFormDialog open={formOpen} onOpenChange={setFormOpen} />
     </main>
