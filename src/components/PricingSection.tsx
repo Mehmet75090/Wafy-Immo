@@ -162,19 +162,6 @@ const PricingSection = () => {
                     </span>
                     <span className="text-muted-foreground text-sm">/mois HT</span>
                   </div>
-                  {/* Annual offer */}
-                  {plan.name !== "PILOTE" ? (
-                    <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5">
-                      <span className="text-sm font-semibold text-primary">
-                        {formatPrice(plan.price * 2)} offerts
-                      </span>
-                      <span className="text-xs text-primary/80">en engagement annuel</span>
-                    </div>
-                  ) : (
-                    <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5">
-                      <span className="text-xs text-muted-foreground">Offre découverte sans engagement · 1 mois</span>
-                    </div>
-                  )}
                 </div>
 
 
