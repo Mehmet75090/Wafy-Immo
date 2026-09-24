@@ -1,0 +1,3 @@
+- [ ] Ajouter le menu Métiers et le sous-titre du logo selon la page.
+- [ ] Créer les pages Agent immobilier et Assureur, avec l'accueil dédié aux promoteurs.
+- [ ] Vérifier la navigation et l'affichage sur ordinateur et mobile.
