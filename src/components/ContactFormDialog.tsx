@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MessageCircle, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLocation } from "react-router-dom";
 
 interface ContactFormDialogProps {
   open: boolean;
@@ -35,6 +36,7 @@ const OBJECTIVES = [
 
 const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
   const { toast } = useToast();
+  const { pathname } = useLocation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [country, setCountry] = useState("");
   const [objective, setObjective] = useState("");
@@ -97,7 +99,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="company">Nom du promoteur *</Label>
+            <Label htmlFor="company">{pathname === "/agent-immobilier" || pathname === "/assureur" ? "Nom de votre entreprise *" : "Nom du promoteur *"}</Label>
             <Input id="company" name="company" required maxLength={100} />
           </div>
 

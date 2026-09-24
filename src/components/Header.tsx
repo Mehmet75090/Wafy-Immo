@@ -28,7 +28,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <nav className="flex items-center justify-between gap-2 px-3 sm:px-6 md:px-12 py-3 sm:py-4">
         <Link to={pathname === "/agent-immobilier" || pathname === "/assureur" ? pathname : "/"} className="flex flex-col items-center shrink-0">
-          <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
+          <img src={logo} alt="Wafy Immo" className="h-8 sm:h-10 md:h-12" />
           <span className="text-[9px] sm:text-[10px] font-semibold text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
         <div className="flex items-center gap-1.5 sm:gap-3">
@@ -80,10 +80,9 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           </DropdownMenu>
 
           {onOpenForm && (
-            <Button variant="hero" size="lg" className="px-3 sm:px-8" onClick={onOpenForm}>
+            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-11 sm:w-auto sm:px-8" onClick={onOpenForm} aria-label="Demander une démo">
               <span className="hidden sm:inline">Demander une démo</span>
-              <span className="sm:hidden">Démo</span>
-              <ArrowRight className="ml-1" />
+              <ArrowRight className="sm:ml-1" />
             </Button>
           )}
         </div>
