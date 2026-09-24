@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
 import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
-import problemRepondImg from "@/assets/problem-repond.jpg";
+import problemRepondImg from "@/assets/problem-repond-agent.png.asset.json";
 import problemLeadsImg from "@/assets/problem-leads.jpg";
 import problemBienImg from "@/assets/problem-bien.jpg";
 import problemSeulImg from "@/assets/problem-seul.jpg";
