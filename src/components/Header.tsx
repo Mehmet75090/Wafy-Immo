@@ -32,22 +32,6 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
         <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Choisir un métier">
-                Métiers <ChevronDown className="h-4 w-4 text-muted-foreground" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-[220px]">
-              {professions.map(({ label, path }) => (
-                <DropdownMenuItem key={path} asChild className="cursor-pointer">
-                  <Link to={path} className="flex items-center justify-between gap-3">
-                    {label}{profession === label && <Check className="h-4 w-4 text-primary" />}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
           {[
             { label: "Le problème", href: "#problem" },
             { label: "Comment ça marche", href: "#how-it-works" },
