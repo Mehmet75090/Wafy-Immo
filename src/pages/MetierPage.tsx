@@ -292,7 +292,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   </p>
                 </div>
                 <img
-                  src={wafyAssistPhone}
+                  src={wafyAssistPhone.url}
                   alt="Conversation WhatsApp avec Wafy Assist : visites de demain et leads à relancer"
                   className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
                   loading="lazy"
