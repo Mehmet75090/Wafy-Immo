@@ -10,14 +10,14 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import { CountryProvider } from "./contexts/CountryContext";
+import { CurrencyProvider } from "./contexts/CurrencyContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <CountryProvider>
+      <CurrencyProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
@@ -33,7 +33,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </CountryProvider>
+      </CurrencyProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

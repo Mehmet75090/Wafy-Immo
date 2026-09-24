@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCurrency, formatPrice } from "@/contexts/CurrencyContext";
 
 interface PricingSectionProps {
   onOpenForm?: () => void;
@@ -15,7 +16,10 @@ const features = [
   "Mise en place en 48h",
 ];
 
-const PricingSection = ({ onOpenForm }: PricingSectionProps) => (
+const PricingSection = ({ onOpenForm }: PricingSectionProps) => {
+  const { currency } = useCurrency();
+  const fmt = (mad: number) => formatPrice(mad, currency);
+  return (
   <section className="section-padding bg-muted/30">
     <div className="container mx-auto max-w-4xl">
       <motion.div
@@ -50,11 +54,11 @@ const PricingSection = ({ onOpenForm }: PricingSectionProps) => (
           <h3 className="font-bold text-2xl mb-2">Pilote</h3>
           <p className="text-sm text-muted-foreground mb-4">1 mois · Sans engagement · Annulable à tout moment</p>
           <div className="flex items-baseline justify-center gap-2">
-            <span className="text-5xl sm:text-6xl font-extrabold text-primary">2 800</span>
-            <span className="text-muted-foreground text-lg">MAD / mois HT</span>
+            <span className="text-5xl sm:text-6xl font-extrabold text-primary">{fmt(2800)}</span>
+            <span className="text-muted-foreground text-lg">/ mois HT</span>
           </div>
           <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2">
-            <span className="text-sm font-semibold text-primary">Setup inclus : 10 000 MAD HT</span>
+            <span className="text-sm font-semibold text-primary">Setup inclus : {fmt(10000)} HT</span>
           </div>
         </div>
 
@@ -76,6 +80,8 @@ const PricingSection = ({ onOpenForm }: PricingSectionProps) => (
         </p>
       </motion.div>
 
+      {currency === "EUR" && <p className="text-center text-xs text-muted-foreground mt-4">Montants en EUR indicatifs, convertis depuis les prix en MAD.</p>}
+
       {/* Trust badges */}
       <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
@@ -93,6 +99,7 @@ const PricingSection = ({ onOpenForm }: PricingSectionProps) => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default PricingSection;

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useCurrency, formatPrice } from "@/contexts/CurrencyContext";
 import {
   Accordion,
   AccordionContent,
@@ -6,10 +7,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+const getFaqs = (fmt: (mad: number) => string) => [
   {
     q: "Qu'est-ce que le Pack Découverte ?",
-    a: "Le Pack Découverte est une offre d'essai d'un mois sans engagement. Vous accédez à toutes les fonctionnalités du plan Pilote (qualification IA, scoring, dashboard) pour 2 800 MAD HT. C'est l'occasion de tester Wafy Immo sur vos propres leads sans risque.",
+    a: `Le Pack Découverte est une offre d'essai d'un mois sans engagement. Vous accédez à toutes les fonctionnalités du plan Pilote (qualification IA, scoring, dashboard) pour ${fmt(2800)} HT. C'est l'occasion de tester Wafy Immo sur vos propres leads sans risque.`,
   },
   {
     q: "Puis-je annuler à tout moment ?",
@@ -25,7 +26,7 @@ const faqs = [
   },
   {
     q: "Que se passe-t-il après le mois d'essai ?",
-    a: "À la fin du mois, vous recevez un rapport complet de performance. Vous pouvez alors choisir de continuer avec le plan Pilote (2 800 MAD/mois), passer au Business (5 500 MAD/mois) avec relances et RDV auto, ou au Premium (7 500 MAD/mois) pour les gros volumes. Aucune obligation.",
+    a: `À la fin du mois, vous recevez un rapport complet de performance. Vous pouvez alors choisir de continuer avec le plan Pilote (${fmt(2800)}/mois), passer au Business (${fmt(5500)}/mois) avec relances et RDV auto, ou au Premium (${fmt(8500)}/mois) pour les gros volumes. Aucune obligation.`,
   },
   {
     q: "Quels outils s'intègrent avec Wafy Immo ?",
@@ -33,7 +34,10 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => (
+const FAQSection = () => {
+  const { currency } = useCurrency();
+  const faqs = getFaqs((mad) => formatPrice(mad, currency));
+  return (
   <section className="section-padding bg-card">
     <div className="container mx-auto max-w-3xl">
       <motion.div
@@ -72,6 +76,7 @@ const FAQSection = () => (
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default FAQSection;

@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { User, Bot, Clock, Zap, FileCheck, TrendingDown } from "lucide-react";
-import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
+import { useCurrency, formatPrice } from "@/contexts/CurrencyContext";
 
 const wafyPlans = [
   { name: "Pilote", price: 2800, isPerLead: false, maxConv: 2000 },
@@ -25,23 +25,14 @@ function getBestPlan(leads: number) {
 }
 
 const SimulatorSection = () => {
-  const { country } = useCountry();
+  const { currency } = useCurrency();
   const [totalLeads, setTotalLeads] = useState(600);
   const [agentSalary, setAgentSalary] = useState(6000);
 
   const selectedPlan = useMemo(() => getBestPlan(totalLeads), [totalLeads]);
 
-  const fmt = (madAmount: number) => formatPriceForCountry(madAmount, country);
-  const fmtPerLead = (madAmount: number) => {
-    // per-lead: convert then round to nearest sensible unit (roundTo/10 min 1)
-    const converted = madAmount * country.rate;
-    const unit = Math.max(1, Math.round(country.roundTo / 10));
-    const rounded = Math.round(converted / unit) * unit;
-    const formatted = rounded.toLocaleString(country.locale);
-    return country.symbolPosition === "before"
-      ? `${country.currency} ${formatted}`
-      : `${formatted} ${country.currency}`;
-  };
+  const fmt = (madAmount: number) => formatPrice(madAmount, currency);
+  const fmtPerLead = (madAmount: number) => formatPrice(madAmount, currency, 2);
 
   const results = useMemo(() => {
     const plan = wafyPlans[selectedPlan];

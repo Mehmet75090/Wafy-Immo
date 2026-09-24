@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 import { Mic, Languages, Heart } from "lucide-react";
-import { useCountry } from "@/contexts/CountryContext";
 import whatsappAgentImg from "@/assets/wafy-whatsapp-agent.png.asset.json";
-
-const COUNTRY_PREPOSITION: Record<string, string> = {
-  MA: "Au Maroc",
-  TN: "En Tunisie",
-  CI: "En Côte d'Ivoire",
-  SN: "Au Sénégal",
-};
 
 const args = [
   {
@@ -29,9 +21,6 @@ const args = [
 ];
 
 const VoiceSection = () => {
-  const { country } = useCountry();
-  const prep = COUNTRY_PREPOSITION[country.code] ?? "Au Maroc";
-
   return (
     <section className="section-padding bg-muted/30">
       <div className="container mx-auto max-w-6xl">
@@ -45,7 +34,7 @@ const VoiceSection = () => {
             Wafy Immo parle aussi <span className="text-gradient">la langue de vos prospects</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            {prep}, vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
+            Vos prospects ne tapent pas toujours — ils parlent aussi. Wafy Immo leur répond en vocal, dans leur langue.
           </p>
         </motion.div>
 

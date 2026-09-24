@@ -8,14 +8,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { COUNTRIES, useCountry, CountryCode } from "@/contexts/CountryContext";
+import { useCurrency, type CurrencyCode } from "@/contexts/CurrencyContext";
 
 interface HeaderProps {
   onOpenForm?: () => void;
 }
 
 const Header = ({ onOpenForm }: HeaderProps) => {
-  const { country, setCountryCode } = useCountry();
+  const { currency, setCurrency } = useCurrency();
   const { pathname } = useLocation();
   const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : pathname === "/assureur" ? "Assureur" : "Promoteur immobilier";
   const professions = [
@@ -55,23 +55,21 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           )}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="gap-1 px-2 sm:px-3" aria-label="Choisir le pays">
-                <span className="text-lg leading-none">{country.flag}</span>
-                <span className="hidden sm:inline">{country.name}</span>
+              <Button variant="outline" size="sm" className="gap-1 px-2 sm:px-3" aria-label="Choisir la devise">
+                <span>{currency}</span>
+                <ChevronDown className="hidden sm:block h-3.5 w-3.5" />
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-[180px]">
-              {(Object.keys(COUNTRIES) as CountryCode[]).map((code) => {
-                const c = COUNTRIES[code];
-                const active = c.code === country.code;
+            <DropdownMenuContent align="end" className="min-w-[120px]">
+              {(["MAD", "EUR"] as CurrencyCode[]).map((code) => {
+                const active = code === currency;
                 return (
                   <DropdownMenuItem
                     key={code}
-                    onSelect={() => setCountryCode(code)}
+                    onSelect={() => setCurrency(code)}
                     className="flex items-center gap-2 cursor-pointer"
                   >
-                    <span className="text-lg leading-none">{c.flag}</span>
-                    <span className="flex-1">{c.name}</span>
+                    <span className="flex-1">{code}</span>
                     {active && <Check className="w-4 h-4 text-primary" />}
                   </DropdownMenuItem>
                 );
