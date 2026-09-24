@@ -99,7 +99,7 @@ const ContactFormDialog = ({ open, onOpenChange }: ContactFormDialogProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="company">{pathname === "/agent-immobilier" || pathname === "/assureur" ? "Nom de votre entreprise *" : "Nom du promoteur *"}</Label>
+            <Label htmlFor="company">{pathname === "/agent-immobilier" ? "Nom de votre entreprise *" : "Nom du promoteur *"}</Label>
             <Input id="company" name="company" required maxLength={100} />
           </div>
 
