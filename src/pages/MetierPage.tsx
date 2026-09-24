@@ -235,6 +235,8 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             </div>
           </section>
 
+          <IntegrationsSection />
+
           <section className="section-padding bg-card" id="features">
             <div className="container mx-auto max-w-6xl">
               <motion.div className="text-center max-w-3xl mx-auto mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -342,8 +344,6 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
             </div>
           </section>
-
-          <IntegrationsSection />
 
           <section id="pricing" className="section-padding bg-background">
             <div className="container mx-auto max-w-3xl text-center">

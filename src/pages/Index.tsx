@@ -26,9 +26,9 @@ const Index = () => {
       <ComparisonSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <IntegrationsSection />
       <VoiceSection />
       <DashboardSection />
-      <IntegrationsSection />
       <PricingSection />
       <BlogPreviewSection />
       <FAQSection />
