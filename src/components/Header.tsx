@@ -48,12 +48,21 @@ const Header = ({ onOpenForm }: HeaderProps) => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {pathname === "/" && (
-            <a href="#pricing" className="hidden sm:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
-              Tarifs
+          {[
+            { label: "Le problème", href: "#problem" },
+            { label: "Comment ça marche", href: "#how-it-works" },
+            { label: "Fonctionnalités", href: "#features" },
+            { label: "Tarifs", href: "#pricing" },
+          ].map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className="hidden md:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+            >
+              {label}
             </a>
-          )}
-          <div className="hidden sm:block h-4 w-px bg-border" aria-hidden="true" />
+          ))}
+          <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-1 px-1 sm:px-2 font-semibold text-foreground/70 hover:text-foreground hover:bg-transparent" aria-label="Choisir la devise">
