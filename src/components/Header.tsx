@@ -25,17 +25,17 @@ const Header = ({ onOpenForm }: HeaderProps) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-      <nav className="flex items-center justify-between gap-2 px-3 sm:px-6 md:px-12 py-3 sm:py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between gap-2 px-3 sm:px-6 md:px-8 py-3 sm:py-4">
         <Link to={pathname === "/agent-immobilier" || pathname === "/assureur" ? pathname : "/"} className="flex flex-col items-center shrink-0">
-          <img src={logo} alt="Wafy Immo" className="h-8 sm:h-10 md:h-12" />
-          <span className="text-[9px] sm:text-[10px] font-semibold text-muted-foreground uppercase -mt-1">{profession}</span>
+          <img src={logo} alt="Wafy Immo" className="h-8 sm:h-10 md:h-11" />
+          <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
-        <div className="flex items-center gap-1.5 sm:gap-3">
+        <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="px-2 sm:px-4" aria-label="Choisir un métier">
-                Métiers <ChevronDown className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Choisir un métier">
+                Métiers <ChevronDown className="h-4 w-4 text-muted-foreground" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-[220px]">
@@ -49,15 +49,16 @@ const Header = ({ onOpenForm }: HeaderProps) => {
             </DropdownMenuContent>
           </DropdownMenu>
           {pathname === "/" && (
-            <Button variant="outline" size="lg" asChild className="hidden sm:inline-flex">
-              <a href="#pricing">Tarifs</a>
-            </Button>
+            <a href="#pricing" className="hidden sm:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+              Tarifs
+            </a>
           )}
+          <div className="hidden sm:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="gap-1 px-2 sm:px-3" aria-label="Choisir la devise">
+              <Button variant="ghost" size="sm" className="gap-1 px-1 sm:px-2 font-semibold text-foreground/70 hover:text-foreground hover:bg-transparent" aria-label="Choisir la devise">
                 <span>{currency}</span>
-                <ChevronDown className="hidden sm:block h-3.5 w-3.5" />
+                <ChevronDown className="hidden sm:block h-3 w-3 text-muted-foreground" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-[120px]">
@@ -78,7 +79,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           </DropdownMenu>
 
           {onOpenForm && (
-            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-11 sm:w-auto sm:px-8" onClick={onOpenForm} aria-label="Demander une démo">
+            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
               <span className="hidden sm:inline">Demander une démo</span>
               <ArrowRight className="sm:ml-1" />
             </Button>
