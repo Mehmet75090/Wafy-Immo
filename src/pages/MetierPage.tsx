@@ -20,6 +20,10 @@ import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
 import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
+import problemRepondImg from "@/assets/problem-repond.jpg";
+import problemLeadsImg from "@/assets/problem-leads.jpg";
+import problemBienImg from "@/assets/problem-bien.jpg";
+import problemSeulImg from "@/assets/problem-seul.jpg";
 
 const agentFeatures = [
   {
@@ -77,18 +81,26 @@ const agentProblems = [
   {
     title: "Le premier qui répond remporte l'affaire",
     text: "Pendant que vous êtes en visite ou au téléphone, les messages s'accumulent. L'acheteur passe à une autre agence, et le propriétaire confie son mandat à celui qui l'a rappelé le premier.",
+    image: problemRepondImg,
+    alt: "Agent immobilier débordé face à une pile de messages clients",
   },
   {
     title: "Des leads qui s'éteignent sans bruit",
     text: "Pas de relance après une visite, pas de suivi quand un prospect ne vient pas au rendez-vous. Vos meilleures opportunités refroidissent sans que vous le voyiez.",
+    image: problemLeadsImg,
+    alt: "Smartphone avec de nombreux messages et appels sans réponse",
   },
   {
     title: "Pas le bon bien ? Pas de vente.",
     text: "Le prospect veut un 3 pièces à Maârif et vous n'en avez aucun en portefeuille. Sans réseau d'agents pour partager vos biens, vous perdez le lead, et c'est un confrère qui conclut la vente.",
+    image: problemBienImg,
+    alt: "Client et agent cherchent ensemble le bien correspondant",
   },
   {
     title: "Seul à bord, jamais vraiment en pause",
     text: "Recruter un assistant coûte cher, et sans relais personne ne gère les demandes le soir, le week-end ou pendant vos vacances. Avec Wafy, vous avez un assistant qui répond, qualifie et planifie vos visites 24h/24.",
+    image: problemSeulImg,
+    alt: "Bureau d'agence vide le soir, personne pour répondre",
   },
 ];
 
