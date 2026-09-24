@@ -72,7 +72,7 @@ const agentSteps = [
     text: "Wafy recherche dans votre catalogue les biens qui correspondent au besoin et les présente au prospect.",
   },
   {
-    title: "Il planifie la visite et vous briefe",
+    title: "Wafy planifie la visite et vous briefe",
     text: "Créneaux proposés, visites planifiées, synchronisation Google Calendar — et le résumé de chaque échange dans votre dashboard.",
   },
 ];
