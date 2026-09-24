@@ -7,12 +7,15 @@ import {
   CalendarCheck,
   CheckCircle2,
   Clock,
+  Download,
   FileCheck,
   Home,
   MessageCircle,
+  Mic,
   PenLine,
   ScanSearch,
   Target,
+  Zap,
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
