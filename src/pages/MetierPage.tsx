@@ -287,7 +287,7 @@ Demandez à Wafy.</h3>
                     {[
                       { icon: Download, label: "Rien à installer", text: "aucune application ni aucun logiciel à apprendre." },
                       { icon: MessageCircle, label: "Tout depuis WhatsApp", text: "vous pilotez votre activité là où vous êtes déjà." },
-                      { icon: Mic, label: "À l'écrit ou en vocal", text: "posez votre question à Sawel Wafy comme à un assistant." },
+                      { icon: Mic, label: "À l'écrit ou en vocal", text: 'posez votre question à "Sawel Wafy" comme à un assistant.' },
                       { icon: Zap, label: "Des réponses immédiates", text: "vos visites, vos leads et vos relances arrivent directement dans WhatsApp." },
                     ].map((item) => (
                       <li key={item.label} className="flex items-start gap-3">
