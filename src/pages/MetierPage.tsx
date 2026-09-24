@@ -60,7 +60,7 @@ const agentFeatures = [
 
 const agentSteps = [
   {
-    title: "Connectez votre WhatsApp à Wafy",
+    title: "Connectez Wafy à vos canaux. On s’occupe du reste.",
     text: "Sur WhatsApp, Messenger et Instagram, par écrit comme en vocal, en français, darija, arabe ou anglais — même quand l'agence est fermée.",
   },
   {
