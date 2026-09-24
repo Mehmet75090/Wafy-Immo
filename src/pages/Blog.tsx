@@ -7,9 +7,9 @@ import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
   useEffect(() => {
-    const title = "Blog Wafy Immo — Insights IA, vente & promoteur";
+    const title = "Blog Wafy Immo — Insights IA pour promoteurs et agents immobiliers";
     const desc =
-      "Articles, guides et analyses sur l'IA commerciale, la qualification de leads et l'automatisation pour les promoteurs.";
+      "Articles, guides et analyses sur l'IA commerciale, la qualification de leads et l'automatisation pour les promoteurs et agents immobiliers.";
     const url = `${window.location.origin}/blog`;
     document.title = title;
 
