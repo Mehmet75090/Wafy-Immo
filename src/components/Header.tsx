@@ -17,11 +17,10 @@ interface HeaderProps {
 const Header = ({ onOpenForm }: HeaderProps) => {
   const { currency, setCurrency } = useCurrency();
   const { pathname } = useLocation();
-  const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : pathname === "/assureur" ? "Assureur" : "Promoteur immobilier";
+  const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : "Promoteur immobilier";
   const professions = [
     { label: "Promoteur immobilier", path: "/" },
     { label: "Agent immobilier", path: "/agent-immobilier" },
-    { label: "Assureur", path: "/assureur" },
   ];
 
   return (

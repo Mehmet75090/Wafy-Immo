@@ -117,21 +117,6 @@ const content = {
     nextCopy: "",
     points: [],
   },
-  insurer: {
-    name: "Assureur",
-    image: insurerImage,
-    headline: "Wafy Immo pour les assureurs",
-    description:
-      "Une demande de devis ne devrait pas rester sans suite. Wafy Immo échange avec vos prospects sur WhatsApp, recueille leurs besoins et transmet les demandes à votre équipe.",
-    nextTitle: "Ne laissez plus les demandes en attente",
-    nextCopy:
-      "Vos conseillers peuvent se concentrer sur l'accompagnement et la souscription pendant que Wafy Immo assure un premier échange avec chaque prospect.",
-    points: [
-      "Accueillir les demandes à toute heure",
-      "Identifier le besoin de couverture et les coordonnées",
-      "Orienter les prospects vers un conseiller",
-    ],
-  },
 } as const;
 
 interface MetierPageProps {
