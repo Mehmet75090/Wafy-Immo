@@ -27,6 +27,7 @@ const SimpleHeader = ({ onOpenForm }: SimpleHeaderProps) => {
       <nav className="flex items-center justify-between px-6 md:px-12 py-4 max-w-7xl mx-auto">
         <a href="#" className="flex flex-col items-center">
           <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
+          <span className="text-[10px] font-semibold text-muted-foreground uppercase -mt-1">Promoteur immobilier</span>
         </a>
         {onOpenForm && (
           <Button variant="hero" size="lg" className="hidden md:inline-flex" onClick={onOpenForm}>

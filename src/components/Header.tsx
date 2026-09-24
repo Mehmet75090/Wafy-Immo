@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,27 +16,49 @@ interface HeaderProps {
 
 const Header = ({ onOpenForm }: HeaderProps) => {
   const { country, setCountryCode } = useCountry();
+  const { pathname } = useLocation();
+  const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : pathname === "/assureur" ? "Assureur" : "Promoteur immobilier";
+  const professions = [
+    { label: "Promoteur immobilier", path: "/" },
+    { label: "Agent immobilier", path: "/agent-immobilier" },
+    { label: "Assureur", path: "/assureur" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
-      <nav className="flex items-center justify-between px-6 md:px-12 py-4">
-        <Link to="/" className="flex flex-col items-center">
+      <nav className="flex items-center justify-between gap-2 px-3 sm:px-6 md:px-12 py-3 sm:py-4">
+        <Link to={pathname === "/agent-immobilier" || pathname === "/assureur" ? pathname : "/"} className="flex flex-col items-center shrink-0">
           <img src={logo} alt="Wafy Immo" className="h-10 md:h-12" />
-          <span className="text-[10px] font-semibold tracking-widest text-muted-foreground uppercase -mt-1">promoteur</span>
+          <span className="text-[9px] sm:text-[10px] font-semibold text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <Button variant="outline" size="lg" asChild className="hidden sm:inline-flex">
-            <a href="#pricing">Tarifs</a>
-          </Button>
+        <div className="flex items-center gap-1.5 sm:gap-3">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-sm font-semibold hover:border-primary/40 transition-colors"
-                aria-label="Choisir le pays"
-              >
+              <Button variant="ghost" size="sm" className="px-2 sm:px-4" aria-label="Choisir un métier">
+                Métiers <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[220px]">
+              {professions.map(({ label, path }) => (
+                <DropdownMenuItem key={path} asChild className="cursor-pointer">
+                  <Link to={path} className="flex items-center justify-between gap-3">
+                    {label}{profession === label && <Check className="h-4 w-4 text-primary" />}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          {pathname === "/" && (
+            <Button variant="outline" size="lg" asChild className="hidden sm:inline-flex">
+              <a href="#pricing">Tarifs</a>
+            </Button>
+          )}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="gap-1 px-2 sm:px-3" aria-label="Choisir le pays">
                 <span className="text-lg leading-none">{country.flag}</span>
                 <span className="hidden sm:inline">{country.name}</span>
-              </button>
+              </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-[180px]">
               {(Object.keys(COUNTRIES) as CountryCode[]).map((code) => {
@@ -58,7 +80,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           </DropdownMenu>
 
           {onOpenForm && (
-            <Button variant="hero" size="lg" onClick={onOpenForm}>
+            <Button variant="hero" size="lg" className="px-3 sm:px-8" onClick={onOpenForm}>
               <span className="hidden sm:inline">Demander une démo</span>
               <span className="sm:hidden">Démo</span>
               <ArrowRight className="ml-1" />
