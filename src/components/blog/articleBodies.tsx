@@ -846,3 +846,321 @@ export const LeadsCallCenterBody = () => (
     </div>
   </>
 );
+
+export const CopiloteAgentBody = () => (
+  <>
+    <p className="lead">
+      <strong>
+        Qualification des prospects, recherche de biens, organisation des visites, relances,
+        suivi client… L'intelligence artificielle transforme progressivement le quotidien des
+        professionnels de l'immobilier. Avec Wafy Immo, l'objectif n'est pas de remplacer
+        l'agent immobilier, mais de lui donner un véritable copilote capable de l'accompagner
+        tout au long de sa journée.
+      </strong>
+    </p>
+
+    <p>L'intelligence artificielle va-t-elle remplacer les agents immobiliers ?</p>
+
+    <p>La question revient régulièrement. Pourtant, elle passe probablement à côté du véritable sujet.</p>
+
+    <p>
+      Le cœur du métier immobilier reste profondément humain : comprendre un projet de vie,
+      connaître un quartier, négocier, rassurer un vendeur, accompagner un acquéreur et créer
+      une relation de confiance.
+    </p>
+
+    <p>
+      En revanche, une grande partie du quotidien d'un agent est aujourd'hui absorbée par des
+      tâches répétitives : répondre aux demandes, qualifier les prospects, rechercher des biens,
+      organiser les visites, relancer les clients ou mettre à jour les informations dans ses
+      outils.
+    </p>
+
+    <p>C'est précisément là que l'intelligence artificielle peut changer les règles du jeu.</p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      L'IA ne remplace pas l'agent immobilier : elle lui fait gagner du temps
+    </h2>
+    <p>
+      Un prospect qui recherche un appartement ne veut plus attendre plusieurs heures avant
+      d'obtenir une première réponse.
+    </p>
+    <p>
+      Il veut savoir rapidement si l'agence possède un bien correspondant à son budget, dans
+      les quartiers recherchés et avec les caractéristiques souhaitées.
+    </p>
+    <p>
+      Et lorsqu'il contacte une agence le soir ou le week-end, ses attentes restent les mêmes.
+    </p>
+    <p>
+      Pour l'agent immobilier, répondre rapidement à toutes ces sollicitations tout en assurant
+      les visites, les rendez-vous vendeurs, la prospection et le suivi administratif devient
+      difficile.
+    </p>
+    <p>
+      C'est dans ce contexte que Wafy Immo intervient comme un{" "}
+      <strong>copilote IA spécialisé dans l'immobilier</strong>.
+    </p>
+    <p>
+      L'agent reste au centre de la relation et de la décision. L'IA prend en charge une partie
+      du travail répétitif autour de lui.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Un prospect arrive ? Wafy Immo commence par le qualifier
+    </h2>
+    <p>Tout commence généralement par une demande.</p>
+    <p>
+      Un prospect écrit sur WhatsApp après avoir vu une annonce ou une campagne publicitaire.
+    </p>
+    <p>
+      Plutôt que d'échanger simplement quelques messages, Wafy Immo peut engager la conversation
+      et recueillir progressivement les informations nécessaires pour comprendre son projet :
+    </p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>achat ou location ;</li>
+      <li>type de bien recherché ;</li>
+      <li>budget ;</li>
+      <li>quartiers souhaités ;</li>
+      <li>surface ;</li>
+      <li>nombre de chambres ;</li>
+      <li>critères indispensables ;</li>
+      <li>délai du projet ;</li>
+      <li>disponibilité pour effectuer des visites.</li>
+    </ul>
+    <p>
+      Le résultat : lorsque l'agent reprend la main, il ne découvre plus un simple numéro de
+      téléphone accompagné d'un message du type <em>« Bonjour, c'est toujours disponible ? »</em>.
+    </p>
+    <p>
+      Il dispose déjà d'un prospect structuré et d'une vision beaucoup plus claire de son besoin.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le véritable enjeu : connecter les prospects aux bons biens
+    </h2>
+    <p>Qualifier un prospect n'est qu'une première étape.</p>
+    <p>
+      La valeur se crée lorsque l'on est capable de croiser automatiquement son besoin avec le
+      portefeuille de biens disponibles.
+    </p>
+    <p>
+      Un client recherche par exemple un appartement trois chambres à Maârif avec un budget
+      déterminé.
+    </p>
+    <p>
+      Wafy Immo peut exploiter les critères collectés pendant la conversation pour identifier
+      les biens susceptibles de correspondre à sa recherche et aider l'agent à lui proposer les
+      options les plus pertinentes.
+    </p>
+    <p>L'IA devient alors davantage qu'un simple chatbot.</p>
+    <p>Elle comprend à la fois <strong>le prospect et le portefeuille immobilier</strong>.</p>
+    <p>
+      Et lorsqu'aucun bien ne correspond exactement aux critères recherchés, cette information
+      devient elle aussi précieuse : elle permet à l'agent d'adapter sa recherche, de solliciter
+      son réseau ou de proposer des alternatives pertinentes plutôt que de laisser le prospect
+      disparaître.
+    </p>
+
+    <figure className="my-10 rounded-2xl overflow-hidden border border-border">
+      <img
+        src={blogAssets.funnel}
+        alt="Du premier message au rendez-vous : qualification du prospect"
+        width={1024}
+        height={576}
+        loading="lazy"
+        className="w-full h-auto"
+      />
+    </figure>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">De la conversation à la visite</h2>
+    <p>Dans l'immobilier, l'objectif d'une qualification n'est pas de remplir un CRM.</p>
+    <p>L'objectif est de provoquer une rencontre.</p>
+    <p>
+      Lorsqu'un prospect montre un intérêt réel pour un bien, Wafy Immo peut l'accompagner
+      jusqu'à la prise de rendez-vous.
+    </p>
+    <p>
+      La visite est planifiée, le conseiller concerné est identifié et le rendez-vous apparaît
+      dans l'agenda.
+    </p>
+    <p>L'agent retrouve ainsi une vision simple de son planning :</p>
+    <div className="rounded-2xl border border-border bg-muted/40 p-6 my-8">
+      <p className="m-0 font-semibold">10h00 — Maârif — visite avec Mme Bennis</p>
+      <p className="m-0 font-semibold">12h30 — Ain Diab — visite avec M. Benchekroun</p>
+      <p className="m-0 font-semibold">16h00 — Racine — rendez-vous avec un confrère</p>
+    </div>
+    <p>L'IA peut également devenir l'interface naturelle entre l'agent et son activité.</p>
+    <p>Plutôt que d'ouvrir plusieurs écrans, l'agent peut simplement demander :</p>
+    <p><em>« Quel est mon planning demain ? »</em></p>
+    <p>
+      Son copilote lui restitue les rendez-vous importants et peut l'aider à préparer les
+      actions suivantes.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Le suivi ne doit plus dépendre de la mémoire de l'agent
+    </h2>
+    <p>
+      Une grande partie des opportunités immobilières ne se perdent pas parce que le prospect
+      n'était pas intéressé.
+    </p>
+    <p>Elles se perdent parce que personne ne l'a relancé au bon moment.</p>
+    <p>
+      Après une première conversation, une visite ou l'envoi d'un bien, les journées passent
+      rapidement.
+    </p>
+    <p>Le prospect qui devait être rappelé « demain » finit parfois par être oublié.</p>
+    <p>Wafy Immo permet de structurer ce suivi.</p>
+    <p>
+      L'agent peut savoir quels prospects doivent être relancés, quelles visites ont eu lieu et
+      quels dossiers nécessitent une nouvelle action.
+    </p>
+    <p>
+      L'IA peut également aider à préparer ou déclencher certaines relances selon le contexte
+      du prospect.
+    </p>
+    <p>Le CRM cesse alors d'être uniquement une base de données.</p>
+    <p>Il devient un véritable outil d'action.</p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Dans une agence, un prospect peut visiter plusieurs biens
+    </h2>
+    <p>Le fonctionnement d'une agence immobilière est particulier.</p>
+    <p>
+      Contrairement à un promoteur qui cherche généralement à vendre un programme déterminé,
+      une agence accompagne souvent un même prospect sur plusieurs biens.
+    </p>
+    <p>
+      Un client peut visiter un premier appartement, puis un deuxième, puis un troisième avant
+      de prendre une décision.
+    </p>
+    <p>Wafy Immo permet de conserver cette continuité.</p>
+    <p>
+      Chaque prospect peut être suivi à travers ses différentes visites : bien présenté, date,
+      conseiller, résultat de la visite et prochaine étape.
+    </p>
+    <p>
+      Cela permet notamment de comprendre combien de visites sont nécessaires avant qu'un client
+      trouve le bon bien et d'améliorer progressivement la pertinence des propositions.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      La donnée devient la mémoire commerciale de l'agence
+    </h2>
+    <p>
+      Pendant des années, une partie de la connaissance des agences immobilières est restée
+      dispersée.
+    </p>
+    <p>Dans les téléphones.</p>
+    <p>Dans les conversations WhatsApp.</p>
+    <p>Dans les notes personnelles.</p>
+    <p>Dans la mémoire des commerciaux.</p>
+    <p>Ou dans un CRM rarement mis à jour.</p>
+    <p>Avec l'intelligence artificielle, cette donnée peut devenir beaucoup plus utile.</p>
+    <p>Chaque interaction permet progressivement de mieux comprendre :</p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>ce que recherchent les prospects ;</li>
+      <li>les quartiers les plus demandés ;</li>
+      <li>les niveaux de budget ;</li>
+      <li>les caractéristiques qui déclenchent une visite ;</li>
+      <li>les biens qui intéressent le plus ;</li>
+      <li>les prospects qui doivent être relancés.</li>
+    </ul>
+    <p>
+      Cette connaissance permet ensuite à l'agence de mieux organiser son activité commerciale
+      et de mieux exploiter son portefeuille.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      L'agent immobilier devient plus disponible pour ce qui compte vraiment
+    </h2>
+    <p>
+      Le paradoxe de l'intelligence artificielle est finalement assez simple.
+    </p>
+    <p>
+      Plus l'agent utilise la technologie, plus il peut consacrer du temps à ce qui reste
+      profondément humain.
+    </p>
+    <ul className="list-disc pl-6 space-y-2">
+      <li>Visiter un bien.</li>
+      <li>Comprendre les motivations d'un vendeur.</li>
+      <li>Conseiller un acquéreur.</li>
+      <li>Négocier une offre.</li>
+      <li>Développer son réseau.</li>
+      <li>Créer de nouvelles relations.</li>
+      <li>Obtenir de nouveaux mandats.</li>
+    </ul>
+    <p>
+      L'objectif de Wafy Immo n'est donc pas de transformer l'agent immobilier en technicien de
+      l'intelligence artificielle.
+    </p>
+    <p>Au contraire.</p>
+    <p><strong>La technologie doit devenir presque invisible.</strong></p>
+    <p>
+      L'agent échange avec son copilote, et Wafy Immo l'aide à organiser et exploiter tout ce
+      qui se passe autour de son activité.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      Du CRM au véritable copilote immobilier
+    </h2>
+    <p>
+      Pendant longtemps, les logiciels immobiliers ont essentiellement servi à stocker des
+      informations.
+    </p>
+    <p>L'intelligence artificielle permet aujourd'hui d'aller plus loin.</p>
+    <p>
+      Un outil peut comprendre une conversation, identifier un besoin, rechercher une
+      information, proposer une action, organiser une visite ou rappeler qu'un prospect doit
+      être relancé.
+    </p>
+    <p>C'est cette évolution que porte Wafy Immo.</p>
+    <p>
+      Passer d'un logiciel que l'agent doit constamment alimenter à un{" "}
+      <strong>copilote qui travaille avec lui tout au long de la journée</strong>.
+    </p>
+    <p>Le matin, il peut lui demander son planning.</p>
+    <p>Après une visite, il peut mettre à jour le résultat.</p>
+    <p>Lorsqu'un nouveau prospect arrive, Wafy commence à le qualifier.</p>
+    <p>
+      Lorsqu'un client recherche un bien, il peut l'aider à identifier les meilleures
+      correspondances.
+    </p>
+    <p>
+      Et lorsqu'une opportunité commence à refroidir, il peut aider l'agent à ne pas la laisser
+      disparaître.
+    </p>
+
+    <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">
+      L'IA ne vendra pas un appartement à votre place
+    </h2>
+    <p>Une transaction immobilière reste une décision importante.</p>
+    <p>
+      Elle implique de la confiance, de l'émotion, de la négociation et une connaissance du
+      terrain qu'aucune automatisation ne remplace totalement.
+    </p>
+    <p>
+      Mais entre le premier message d'un prospect et la signature, des dizaines de petites
+      tâches doivent être réalisées.
+    </p>
+    <p>
+      C'est précisément sur ces tâches que l'intelligence artificielle peut avoir le plus
+      d'impact.
+    </p>
+    <p>
+      <strong>
+        Moins d'administratif. Moins de prospects oubliés. Des réponses plus rapides. Des
+        visites mieux organisées. Une donnée mieux exploitée. Et davantage de temps consacré à
+        la vente.
+      </strong>
+    </p>
+    <p>
+      C'est toute la philosophie de{" "}
+      <strong>
+        Wafy Immo : faire de l'intelligence artificielle le copilote quotidien de l'agent
+        immobilier, sans jamais chercher à remplacer l'agent lui-même.
+      </strong>
+    </p>
+  </>
+);
