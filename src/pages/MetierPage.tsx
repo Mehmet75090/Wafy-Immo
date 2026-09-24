@@ -64,7 +64,7 @@ const agentSteps = [
     text: "Sur WhatsApp, Messenger et Instagram, par écrit comme en vocal, en français, darija, arabe ou anglais — même quand l'agence est fermée.",
   },
   {
-    title: "Il qualifie et score chaque lead",
+    title: "Wafy qualifie et score chaque lead",
     text: "Budget, secteur, critères du bien : Wafy collecte les critères du projet et classe les leads par priorité.",
   },
   {
