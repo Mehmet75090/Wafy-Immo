@@ -63,6 +63,16 @@ const features = [
     title: "Dashboard & Analytics",
     desc: "Suivi des performances, taux de conversion et ROI en temps réel.",
   },
+  {
+    icon: Send,
+    title: "Wafy Sender : réactivez vos leads dormants",
+    desc: "Relancez et requalifiez vos leads dormants : contacts issus de vos JPO, salons ou événements jamais convertis. Wafy Sender les réactive sur WhatsApp, identifie les projets toujours chauds et remonte les acheteurs prêts à visiter.",
+    badges: (
+      <div className="mt-3 flex flex-wrap gap-2">
+        <ChannelBadge name="WhatsApp" color={whatsappColor} />
+      </div>
+    ),
+  },
 ];
 
 const FeaturesSection = () => (
