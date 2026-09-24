@@ -20,7 +20,8 @@ import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
 import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
-import problemRepondImg from "@/assets/problem-repond.jpg";
+import problemRepondAsset from "@/assets/problem-repond-agent.png.asset.json";
+const problemRepondImg = problemRepondAsset.url;
 import problemLeadsImg from "@/assets/problem-leads.jpg";
 import problemBienImg from "@/assets/problem-bien.jpg";
 import problemSeulImg from "@/assets/problem-seul.jpg";
@@ -82,7 +83,7 @@ const agentProblems = [
     title: "Le premier qui répond remporte l'affaire",
     text: "Pendant que vous êtes en visite ou au téléphone, les messages s'accumulent. L'acheteur passe à une autre agence, et le propriétaire confie son mandat à celui qui l'a rappelé le premier.",
     image: problemRepondImg,
-    alt: "Agent immobilier débordé face à une pile de messages clients",
+    alt: "Visite en cours alors que le téléphone sonne sans réponse sur le comptoir",
   },
   {
     title: "Des leads qui s'éteignent sans bruit",
