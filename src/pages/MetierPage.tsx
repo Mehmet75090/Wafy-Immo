@@ -17,6 +17,7 @@ import {
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
@@ -341,6 +342,8 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
             </div>
           </section>
+
+          <IntegrationsSection />
 
           <section id="pricing" className="section-padding bg-background">
             <div className="container mx-auto max-w-3xl text-center">
