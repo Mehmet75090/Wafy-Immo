@@ -296,7 +296,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Wafy Sender · Réactivation</p>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">Vos anciens contacts valent de l'or. Réveillez-les.</h3>
                 <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">
-                  Des centaines de prospects dorment dans votre WhatsApp : ceux qui n'ont pas donné suite, ceux qui ont déjà acheté ou loué, ceux qui cherchaient un bien que vous venez de rentrer. Wafy Sender les recontacte à votre place.
+                  Importez votre fichier Excel de contacts. Wafy Sender recontacte vos prospects dormants, vos anciens clients et ceux qui cherchaient un bien que vous venez de rentrer.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
