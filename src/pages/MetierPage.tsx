@@ -158,11 +158,11 @@ const MetierPage = ({ metier }: MetierPageProps) => {
         <>
           <section className="section-padding bg-card" id="problem">
             <div className="container mx-auto max-w-6xl">
-              <motion.div className="text-center max-w-3xl mx-auto mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <motion.div className="max-w-3xl mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
                   Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl mt-5">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                 </p>
               </motion.div>
@@ -170,13 +170,17 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 {agentProblems.map((problem, i) => (
                   <motion.div
                     key={problem.title}
-                    className="rounded-xl border border-border bg-background p-6"
+                    className="group relative rounded-2xl border border-border/70 bg-background p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <h3 className="text-lg font-bold mb-2">{problem.title}</h3>
+                    <div className="mb-5 flex items-center gap-3">
+                      <span className="text-xs font-bold tracking-[0.2em] text-primary">0{i + 1}</span>
+                      <span className="h-px flex-1 bg-border transition-colors group-hover:bg-primary/40" />
+                    </div>
+                    <h3 className="text-xl font-bold leading-snug mb-3">{problem.title}</h3>
                     <p className="text-muted-foreground leading-relaxed">{problem.text}</p>
                   </motion.div>
                 ))}
