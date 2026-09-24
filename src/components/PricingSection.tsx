@@ -22,7 +22,7 @@ const plans: {
     name: "PILOTE",
     price: 2800,
     annualDiscount: 0,
-    conv: "Jusqu'à 2 000 leads / mois",
+    conv: "Jusqu'à 2 000 leads ",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
