@@ -19,7 +19,7 @@ import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
-import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
+import wafyAssistPhone from "@/assets/wafy-assist-phone.png.asset.json";
 import problemRepondAsset from "@/assets/problem-repond-agent.png.asset.json";
 const problemRepondImg = problemRepondAsset.url;
 import problemLeadsImg from "@/assets/problem-leads.jpg";
@@ -292,7 +292,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   </p>
                 </div>
                 <img
-                  src={wafyAssistPhone}
+                  src={wafyAssistPhone.url}
                   alt="Conversation WhatsApp avec Wafy Assist : visites de demain et leads à relancer"
                   className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
                   loading="lazy"
