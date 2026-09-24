@@ -18,7 +18,6 @@ import PricingSection from "@/components/PricingSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
-import insurerImage from "@/assets/hero-assureur.jpg";
 import wafyAssistPhone from "@/assets/wafy-assist-phone.png.asset.json";
 import problemRepondAsset from "@/assets/problem-repond-agent.png.asset.json";
 const problemRepondImg = problemRepondAsset.url;
