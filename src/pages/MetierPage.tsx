@@ -82,7 +82,7 @@ const agentProblems = [
     title: "Le premier qui répond remporte l'affaire",
     text: "Pendant que vous êtes en visite ou au téléphone, les messages s'accumulent. L'acheteur passe à une autre agence, et le propriétaire confie son mandat à celui qui l'a rappelé le premier.",
     image: problemRepondImg,
-    alt: "Agent immobilier débordé face à une pile de messages clients",
+    alt: "Visite en cours alors que le téléphone sonne sans réponse sur le comptoir",
   },
   {
     title: "Des leads qui s'éteignent sans bruit",
