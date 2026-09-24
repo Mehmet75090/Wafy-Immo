@@ -109,7 +109,7 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
-                <td className="px-3 py-2">≤ 5 000 leads + 10 000 relances</td>
+                <td className="px-3 py-2">Leads illimités + 10 000 relances</td>
                 <td className="px-3 py-2">{fmt(8500)}</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
@@ -126,8 +126,9 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
             courant : qualification + relances WhatsApp + RDV automatique.
           </li>
           <li>
-            👉 <span className="font-semibold text-foreground">Premium</span> — gros volume,
-            multi-programmes, reporting avancé avec recommandations.
+            👉 <span className="font-semibold text-foreground">Premium</span> — leads et
+            projets immobiliers illimités (autant de programmes que vous voulez, même compte),
+            reporting avancé avec recommandations.
           </li>
         </ul>
         <p className="text-sm">
@@ -181,6 +182,8 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           💡 <span className="font-semibold text-foreground">Bon à savoir :</span> si vous
           dépassez régulièrement vos quotas, l'upgrade vers le plan supérieur est
           souvent plus économique. Notre équipe vous préviendra avant que vous surpayiez.
+          Sur le plan Premium, les leads sont illimités — les packs concernent uniquement
+          Pilote et Business.
         </p>
       </div>
     ),
