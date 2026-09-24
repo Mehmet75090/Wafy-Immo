@@ -68,7 +68,7 @@ const agentSteps = [
     text: "Budget, secteur, critères du bien : Wafy collecte les critères du projet et classe les leads par priorité.",
   },
   {
-    title: "Il matche le lead avec le bon bien",
+    title: "Wafy matche le lead avec le bon bien",
     text: "Wafy recherche dans votre catalogue les biens qui correspondent au besoin et les présente au prospect.",
   },
   {
