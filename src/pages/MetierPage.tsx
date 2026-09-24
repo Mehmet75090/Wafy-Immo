@@ -19,6 +19,7 @@ import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
+import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
 
 const agentFeatures = [
   {
