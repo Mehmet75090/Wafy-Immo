@@ -307,7 +307,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                     },
                     {
                       icon: PenLine,
-                      title: "Un message personnalisé pour chacun",
+                       title: "Un message personnalisé",
                       text: "Wafy reprend le projet et les critères de chaque contact. Rien à voir avec un envoi en masse générique.",
                     },
                     {
