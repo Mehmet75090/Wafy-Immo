@@ -165,7 +165,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
                 <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
-                <p className="text-muted-foreground max-w-2xl mt-6">
+                <p className="text-muted-foreground max-w-2xl mt-6 mx-auto">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                 </p>
               </motion.div>
