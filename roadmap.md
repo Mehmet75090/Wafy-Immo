@@ -1,3 +1,3 @@
-- [ ] Remplacer le sélecteur de pays par MAD / EUR et conserver le choix.
-- [ ] Adapter les prix et montants affichés à la devise choisie.
-- [ ] Retirer les formulations dépendantes du pays et vérifier les vues.
+- [x] Remplacer le sélecteur de pays par MAD / EUR et conserver le choix.
+- [x] Adapter les prix et montants affichés à la devise choisie.
+- [x] Retirer les formulations dépendantes du pays et vérifier les vues.
