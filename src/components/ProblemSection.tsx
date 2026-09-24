@@ -23,7 +23,7 @@ const stats = [
 ];
 
 const ProblemSection = () => (
-  <section className="section-padding bg-card">
+  <section className="section-padding bg-card" id="problem">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         className="text-center mb-16"

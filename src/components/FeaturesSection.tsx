@@ -76,7 +76,7 @@ const features = [
 ];
 
 const FeaturesSection = () => (
-  <section className="section-padding">
+  <section className="section-padding" id="features">
     <div className="container mx-auto max-w-6xl">
       <motion.div
         className="text-center mb-16"
