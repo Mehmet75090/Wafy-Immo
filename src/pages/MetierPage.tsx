@@ -374,11 +374,6 @@ const MetierPage = ({ metier }: MetierPageProps) => {
         </section>
       )}
 
-      <section className="section-padding bg-card border-t border-border text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-5">Parlons de vos besoins</h2>
-        <p className="text-muted-foreground text-lg mb-8">Découvrez comment Wafy Immo peut accompagner votre équipe.</p>
-        <Button variant="hero" size="lg" onClick={() => setFormOpen(true)}>Demander une démo <ArrowRight className="ml-1" /></Button>
-      </section>
       <FooterSection />
       <ContactFormDialog open={formOpen} onOpenChange={setFormOpen} />
     </main>
