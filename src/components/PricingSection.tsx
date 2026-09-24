@@ -27,7 +27,7 @@ const plans: {
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
-      { text: "Reporting basique", included: true },
+      { text: "Reporting détaillé", included: true },
       { text: "Relances WhatsApp auto", included: false },
       { text: "Prise de RDV auto", included: false },
     ],
