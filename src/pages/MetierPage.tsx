@@ -280,9 +280,24 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 <div>
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">SAWEL WAFY · 100 % WHATSAPP</p>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Fini les tableaux de bord. Demandez à Wafy.</h3>
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                    {"Rien à installer : aucune application ni aucun logiciel à apprendre.\nTout depuis WhatsApp : vous pilotez votre activité là où vous êtes déjà.\nÀ l'écrit ou en vocal : posez votre question à Sawel Wafy comme à un assistant.\nDes réponses immédiates : vos visites, vos leads et vos relances arrivent directement dans WhatsApp."}
-                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      { icon: Download, label: "Rien à installer", text: "aucune application ni aucun logiciel à apprendre." },
+                      { icon: MessageCircle, label: "Tout depuis WhatsApp", text: "vous pilotez votre activité là où vous êtes déjà." },
+                      { icon: Mic, label: "À l'écrit ou en vocal", text: "posez votre question à Sawel Wafy comme à un assistant." },
+                      { icon: Zap, label: "Des réponses immédiates", text: "vos visites, vos leads et vos relances arrivent directement dans WhatsApp." },
+                    ].map((item) => (
+                      <li key={item.label} className="flex items-start gap-3">
+                        <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
+                          <item.icon className="h-4 w-4" />
+                        </span>
+                        <p className="text-sm leading-relaxed text-muted-foreground">
+                          <span className="font-semibold text-foreground">{item.label}&nbsp;:</span>{" "}
+                          {item.text}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <img
                   src={wafyAssistPhone.url}
