@@ -98,7 +98,7 @@ const agentProblems = [
   },
   {
     title: "Seul à bord, jamais vraiment en pause",
-    text: "Recruter un assistant coûte cher, et sans relais personne ne gère les demandes le soir, le week-end ou pendant vos vacances. Avec Wafy, vous avez un assistant qui répond, qualifie et planifie vos visites 24h/24.",
+    text: "Le soir, le week-end ou en vacances, personne ne répond à vos prospects. Wafy devient l'assistant que vous n'avez pas eu à recruter : il répond, qualifie et planifie vos visites, 24h/24.",
     image: problemSeulImg,
     alt: "Bureau d'agence vide le soir, personne pour répondre",
   },
