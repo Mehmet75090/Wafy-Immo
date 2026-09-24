@@ -164,7 +164,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <div className="container mx-auto max-w-6xl">
               <motion.div className="text-center max-w-3xl mx-auto mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-                  Combien de ventes s'arrêtent faute de <span className="text-gradient">suivi</span> ?
+                  Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
