@@ -84,7 +84,7 @@ const agentProblems = [
   },
   {
     title: "Pas le bon bien ? Pas de vente.",
-    text: "Le prospect décrit ce qu'il cherche, et vous devez fouiller vos annonces de mémoire. Du coup, vous proposez souvent le mauvais bien à la mauvaise personne.",
+    text: "Le prospect veut un 3 pièces à Maârif et vous n'en avez aucun en portefeuille. Sans réseau d'agents pour partager vos biens, vous perdez le lead, et c'est un confrère qui conclut la vente.",
   },
   {
     title: "Seul à bord, jamais vraiment en pause",
