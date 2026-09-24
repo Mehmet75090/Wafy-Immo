@@ -11,7 +11,6 @@ import {
   Home,
   MessageCircle,
   ScanSearch,
-  Star,
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
@@ -351,7 +350,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <ul className="space-y-6 md:pt-2">
               {page.points.map((point) => (
                 <li key={point} className="flex gap-4 text-lg font-medium border-b border-border pb-5">
-                  <Star className="h-6 w-6 text-secondary shrink-0" />{point}
+                  <CheckCircle2 className="h-6 w-6 text-secondary shrink-0" />{point}
                 </li>
               ))}
             </ul>
