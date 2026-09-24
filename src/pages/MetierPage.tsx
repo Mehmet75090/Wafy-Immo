@@ -314,30 +314,6 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 </div>
               </motion.div>
 
-              <motion.div className="mt-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
-                  Et pour aller plus loin : <span className="text-gradient">les outils Wafy</span>
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {wafyTools.map((tool, i) => (
-                    <motion.div
-                      key={tool.name}
-                      className="rounded-xl border border-border bg-background p-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.06 }}
-                    >
-                      <h4 className="text-lg font-bold mb-1">{tool.name}</h4>
-                      <p className="text-sm font-semibold text-primary mb-2">{tool.tagline}</p>
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-3">{tool.text}</p>
-                      <p className="text-sm font-medium flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />{tool.outcome}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </section>
 
