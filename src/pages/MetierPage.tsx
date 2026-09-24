@@ -39,7 +39,7 @@ const agentFeatures = [
   {
     icon: Home,
     title: "Matching lead → bien",
-    text: "Recherche dans votre catalogue les biens qui correspondent au besoin et les présente au prospect.",
+    text: "Trouve les biens qui correspondent au besoin dans votre catalogue et, s'il n'y en a pas, chez les agences partenaires du réseau Wafy, puis les présente au prospect.",
   },
   {
     icon: CalendarCheck,
