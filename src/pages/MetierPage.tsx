@@ -22,7 +22,8 @@ import wafyAssistPhone from "@/assets/wafy-assist-phone.png.asset.json";
 import problemRepondAsset from "@/assets/problem-repond-agent.png.asset.json";
 const problemRepondImg = problemRepondAsset.url;
 import problemLeadsImg from "@/assets/problem-leads.jpg";
-import problemBienImg from "@/assets/problem-bien.jpg";
+import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
+const problemBienImg = problemBienAsset.url;
 import problemSeulImg from "@/assets/problem-seul.jpg";
 
 const agentFeatures = [
