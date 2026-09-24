@@ -54,7 +54,7 @@ const plans: {
     name: "PREMIUM",
     price: 8500,
     annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Leads illimités / mois",
+    conv: "Leads illimités",
     features: [
       { text: "Leads traités illimités", included: true },
       { text: "Projets immobiliers illimités", included: true },
