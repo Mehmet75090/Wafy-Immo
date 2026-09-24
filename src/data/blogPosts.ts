@@ -8,6 +8,7 @@ import coverHumain from "@/assets/blog-ia-humain-immobilier.jpg";
 import coverCopilote from "@/assets/blog-ia-copilote-agence.jpg";
 import coverLeadsCallCenter from "@/assets/blog-leads-call-center.jpg";
 import portraitClemenceGrille from "@/assets/clemence-grille.png";
+import coverCopiloteAgent from "@/assets/blog-ia-copilote-agent.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -21,6 +22,26 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ia-nouveau-copilote-agent-immobilier",
+    title: "L'IA, le nouveau copilote de l'agent immobilier",
+    description:
+      "Qualification des prospects, recherche de biens, organisation des visites, relances, suivi client… Avec Wafy Immo, l'IA devient le copilote quotidien de l'agent immobilier, sans jamais le remplacer.",
+    date: "2026-09-24",
+    readingMinutes: 9,
+    cover: coverCopiloteAgent,
+    coverAlt:
+      "Agent immobilier présentant un smartphone avec un assistant IA immobilier dans une agence moderne",
+    keywords: [
+      "IA agent immobilier",
+      "copilote IA immobilier",
+      "qualification des prospects",
+      "assistant IA immobilier",
+      "relance de prospects",
+      "CRM immobilier",
+      "Wafy Immo",
+    ],
+  },
   {
     slug: "leads-agent-immobilier-call-center-par-jour",
     title: "Combien de leads peut réellement traiter un agent immobilier en call center par jour ?",
