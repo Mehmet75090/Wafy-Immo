@@ -10,7 +10,9 @@ import {
   FileCheck,
   Home,
   MessageCircle,
+  PenLine,
   ScanSearch,
+  Target,
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
