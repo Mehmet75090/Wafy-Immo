@@ -137,6 +137,9 @@ const content = {
     headline: "Wafy Immo, le copilote IA des agents immobiliers",
     description:
       "Wafy Immo répond à vos prospects sur WhatsApp, Messenger et Instagram, en français, darija, arabe ou anglais, par écrit comme en vocal. Il les qualifie, leur propose les bons biens et planifie les visites. Et vos conseillers pilotent tout depuis WhatsApp.",
+    nextTitle: "",
+    nextCopy: "",
+    points: [],
   },
   insurer: {
     name: "Assureur",
