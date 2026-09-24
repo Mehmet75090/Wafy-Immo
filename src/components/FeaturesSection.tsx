@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bot, Plug, Workflow, BarChart3, MessageCircle } from "lucide-react";
+import { Bot, Plug, Workflow, BarChart3, MessageCircle, Send } from "lucide-react";
 import { WhatsAppIcon, MessengerIcon, InstagramIcon, GoogleCalendarIcon } from "./BrandIcons";
 
 const whatsappColor = "#25D366";
