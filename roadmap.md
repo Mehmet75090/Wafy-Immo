@@ -2,4 +2,4 @@
 - [x] Adapter les prix et montants affichés à la devise choisie.
 - [x] Retirer les formulations dépendantes du pays et vérifier les vues.
 - [x] Simplifier le formulaire de demande et optimiser son affichage mobile.
-- [ ] Ajouter une section « Intégrations » (WhatsApp Business, Messenger, Instagram DM, Gmail, Google Calendar, Google Drive).
+- [x] Ajouter une section « Intégrations » (WhatsApp Business, Messenger, Instagram DM, Gmail, Google Calendar, Google Drive).
