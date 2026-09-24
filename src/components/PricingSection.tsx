@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCountry, formatPriceForCountry } from "@/contexts/CountryContext";
+import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
 
 // Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
@@ -72,8 +72,8 @@ const plans: {
 
 
 const PricingSection = () => {
-  const { country } = useCountry();
-  const formatPrice = (mad: number) => formatPriceForCountry(mad, country);
+  const { currency } = useCurrency();
+  const formatPrice = (mad: number) => formatCurrencyPrice(mad, currency);
 
 
 
@@ -235,6 +235,7 @@ const PricingSection = () => {
 
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
+          {currency === "EUR" && <>Montants en EUR indicatifs, convertis depuis les prix en MAD.<br /></>}
           L'offre Pilote est sans engagement (1 mois). En cas d'engagement annuel sur Business ou Premium, 2 mois sont offerts.
         </p>
       </div>
