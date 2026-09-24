@@ -242,31 +242,36 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
     ),
   },
   {
-    q: "Puis-je changer de plan en cours d'année ?",
+    q: "Puis-je changer de pack en cours de route ?",
     a: (
       <div className="space-y-3">
         <p>
           <span className="font-semibold text-foreground">
-            Vous pouvez upgrader à tout moment.
+            Oui, à tout moment — et sans engagement.
           </span>{" "}
-          Voici ce que ça coûte selon votre plan actuel :
+          Tous nos packs sont <span className="font-semibold text-foreground">prépayés</span> :
+          vous achetez votre pack (Pilote, Business ou Premium), et à la fin de la période vous
+          renouvelez celui que vous voulez.
         </p>
         <ul className="space-y-2">
           <li>
-            <span className="font-semibold text-foreground">Pilote → Business :</span>{" "}
-            différence de {fmt(2700)} HT, proratisée sur la période restante.
+            <span className="font-semibold text-foreground"> Monter en gamme :</span>{" "}
+            passez au pack supérieur dès le renouvellement suivant (ou tout de suite si vous
+            le souhaitez) — vous récupérez au prorata la part non consommée de votre pack en cours.
           </li>
           <li>
-            <span className="font-semibold text-foreground">Business → Premium :</span>{" "}
-            différence de {fmt(3000)} HT, proratisée sur la période restante.
+            <span className="font-semibold text-foreground"> Descendre en gamme :</span>{" "}
+            libre à vous aussi, au moment du renouvellement de votre pack. Aucun frais, aucune
+            justification.
           </li>
           <li>
-            <span className="font-semibold text-foreground">Pilote → Premium :</span>{" "}
-            différence de {fmt(5700)} HT, proratisée sur la période restante.
+            <span className="font-semibold text-foreground"> Arrêter :</span> vous ne renouvelez
+            pas, il n'y a rien à résilier — pas de préavis, pas d'engagement de durée.
           </li>
         </ul>
         <p className="text-sm italic">
-          Le downgrade s'applique uniquement au renouvellement annuel.
+          Vous gardez le contrôle : chaque pack est acheté à l'unité, et vous décidez du suivant
+          en fonction de vos résultats.
         </p>
       </div>
     ),
