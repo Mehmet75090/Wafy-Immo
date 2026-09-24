@@ -92,7 +92,7 @@ const PricingSection = () => {
             Grille <span className="text-gradient">tarifaire</span>
           </h2>
           <p className="text-muted-foreground">
-            Packs prépayés HT — le pack Pilote est valable 1 mois, sans engagement
+            Packs prépayés HT - sans engagement
           </p>
           <p className="text-sm text-muted-foreground/80 max-w-2xl mx-auto mt-3 leading-relaxed">
             Lancez votre projet avec le <strong>pack Pilote</strong> : 1 mois pour tester l'IA conversationnelle, qualifier vos leads et mesurer les résultats en conditions réelles. Sans engagement, vous gardez le contrôle. Une solution idéale pour les promoteurs qui veulent évaluer le potentiel de l'IA avant de s'engager sur le long terme.
