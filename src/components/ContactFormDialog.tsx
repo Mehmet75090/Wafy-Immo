@@ -14,16 +14,6 @@ interface ContactFormDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const COUNTRIES = [
-  "Maroc",
-  "Tunisie",
-  "Côte d'Ivoire",
-  "Sénégal",
-  "Algérie",
-  "France",
-  "Autre",
-];
-
 const OBJECTIVES = [
   "Qualifier mes leads entrants plus vite",
   "Relancer mes leads dormants / injoignables",
