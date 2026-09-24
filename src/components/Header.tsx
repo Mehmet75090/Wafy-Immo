@@ -26,7 +26,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <nav className="max-w-7xl mx-auto flex items-center justify-between gap-2 px-3 sm:px-6 md:px-8 py-3 sm:py-4">
-        <Link to={pathname === "/agent-immobilier" || pathname === "/assureur" ? pathname : "/"} className="flex flex-col items-center shrink-0">
+        <Link to={pathname === "/agent-immobilier" ? pathname : "/"} className="flex flex-col items-center shrink-0">
           <img src={logo} alt="Wafy Immo" className="h-8 sm:h-10 md:h-11" />
           <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
