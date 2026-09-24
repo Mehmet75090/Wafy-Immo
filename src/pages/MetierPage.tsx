@@ -20,6 +20,10 @@ import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
 import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
+import problemRepondImg from "@/assets/problem-repond.jpg";
+import problemLeadsImg from "@/assets/problem-leads.jpg";
+import problemBienImg from "@/assets/problem-bien.jpg";
+import problemSeulImg from "@/assets/problem-seul.jpg";
 
 const agentFeatures = [
   {
@@ -77,18 +81,26 @@ const agentProblems = [
   {
     title: "Le premier qui répond remporte l'affaire",
     text: "Pendant que vous êtes en visite ou au téléphone, les messages s'accumulent. L'acheteur passe à une autre agence, et le propriétaire confie son mandat à celui qui l'a rappelé le premier.",
+    image: problemRepondImg,
+    alt: "Agent immobilier débordé face à une pile de messages clients",
   },
   {
     title: "Des leads qui s'éteignent sans bruit",
     text: "Pas de relance après une visite, pas de suivi quand un prospect ne vient pas au rendez-vous. Vos meilleures opportunités refroidissent sans que vous le voyiez.",
+    image: problemLeadsImg,
+    alt: "Smartphone avec de nombreux messages et appels sans réponse",
   },
   {
     title: "Pas le bon bien ? Pas de vente.",
     text: "Le prospect veut un 3 pièces à Maârif et vous n'en avez aucun en portefeuille. Sans réseau d'agents pour partager vos biens, vous perdez le lead, et c'est un confrère qui conclut la vente.",
+    image: problemBienImg,
+    alt: "Client et agent cherchent ensemble le bien correspondant",
   },
   {
     title: "Seul à bord, jamais vraiment en pause",
     text: "Recruter un assistant coûte cher, et sans relais personne ne gère les demandes le soir, le week-end ou pendant vos vacances. Avec Wafy, vous avez un assistant qui répond, qualifie et planifie vos visites 24h/24.",
+    image: problemSeulImg,
+    alt: "Bureau d'agence vide le soir, personne pour répondre",
   },
 ];
 
@@ -158,29 +170,46 @@ const MetierPage = ({ metier }: MetierPageProps) => {
         <>
           <section className="section-padding bg-card" id="problem">
             <div className="container mx-auto max-w-6xl">
-              <motion.div className="max-w-3xl mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+              <motion.div
+                className="text-center max-w-4xl mx-auto mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
                   Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mt-5">
+                <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
+                <p className="text-muted-foreground max-w-2xl mt-6">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                 </p>
               </motion.div>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {agentProblems.map((problem, i) => (
                   <motion.div
                     key={problem.title}
-                    className="group relative rounded-2xl border border-border/70 bg-background p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                    className="flex flex-col group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <div className="mb-5 flex items-center gap-3">
-                      <span className="text-xs font-bold tracking-[0.2em] text-primary">0{i + 1}</span>
-                      <span className="h-px flex-1 bg-border transition-colors group-hover:bg-primary/40" />
+                    <div className="relative mb-6 rounded-2xl overflow-hidden shadow-sm border border-border/70">
+                      <img
+                        src={problem.image}
+                        alt={problem.alt}
+                        loading="lazy"
+                        width={912}
+                        height={736}
+                        className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                        0{i + 1}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold leading-snug mb-3">{problem.title}</h3>
+                    <h3 className="text-xl font-bold leading-snug mb-3 transition-colors group-hover:text-primary">
+                      {problem.title}
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">{problem.text}</p>
                   </motion.div>
                 ))}
