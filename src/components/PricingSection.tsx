@@ -37,7 +37,7 @@ const plans: {
     name: "BUSINESS",
     price: 5500,
     annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Jusqu'à 2 000 leads / mois",
+    conv: "Jusqu'à 2 000 leads",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
