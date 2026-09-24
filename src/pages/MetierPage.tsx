@@ -75,20 +75,20 @@ const agentSteps = [
 
 const agentProblems = [
   {
-    title: "Des prospects sans réponse",
-    text: "Entre les visites, les appels et les dossiers, chaque demande qui attend est un client parti chez une autre agence.",
+    title: "Le premier qui répond remporte l'affaire",
+    text: "Pendant que vous êtes en visite ou au téléphone, les messages s'accumulent. L'acheteur passe à une autre agence, et le propriétaire confie son mandat à celui qui l'a rappelé le premier.",
   },
   {
-    title: "Des leads qui refroidissent",
-    text: "Sans relance après visite ni suivi des no-show, vos meilleures opportunités s'éteignent en silence.",
+    title: "Des leads qui s'éteignent sans bruit",
+    text: "Pas de relance après une visite, pas de suivi quand un prospect ne vient pas au rendez-vous. Vos meilleures opportunités refroidissent sans que vous le voyiez.",
   },
   {
-    title: "Le mauvais bien au mauvais prospect",
-    text: "Difficile de retrouver dans votre catalogue le bien qui correspond vraiment à la demande du prospect.",
+    title: "Le bon bien, perdu dans votre catalogue",
+    text: "Le prospect décrit ce qu'il cherche, et vous devez fouiller vos annonces de mémoire. Du coup, vous proposez souvent le mauvais bien à la mauvaise personne.",
   },
   {
-    title: "Un agent seul, jamais en repos",
-    text: "Travailler seul, c'est ne jamais pouvoir partir : en vacances, personne pour traiter les leads et les RDV, et le business s'évapore. Avec Wafy, c'est comme recruter un assistant qui gère vos RDV et vos prospects à votre place, 24h/24.",
+    title: "Seul à bord, jamais vraiment en pause",
+    text: "Recruter un assistant coûte cher, et sans relais personne ne gère les demandes le soir, le week-end ou pendant vos vacances. Avec Wafy, vous avez un assistant qui répond, qualifie et planifie vos visites 24h/24.",
   },
 ];
 
