@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Bot, Plug, Workflow, BarChart3, MessageCircle } from "lucide-react";
+import { Bot, Plug, Workflow, BarChart3, MessageCircle, Send } from "lucide-react";
 import { WhatsAppIcon, MessengerIcon, InstagramIcon, GoogleCalendarIcon } from "./BrandIcons";
 
 const whatsappColor = "#25D366";
@@ -62,6 +62,16 @@ const features = [
     icon: BarChart3,
     title: "Dashboard & Analytics",
     desc: "Suivi des performances, taux de conversion et ROI en temps réel.",
+  },
+  {
+    icon: Send,
+    title: "Wafy Sender : réactivez vos leads dormants",
+    desc: "Relancez et requalifiez vos leads dormants : contacts issus de vos JPO, salons ou événements jamais convertis. Wafy Sender les réactive sur WhatsApp, identifie les projets toujours chauds et remonte les acheteurs prêts à visiter.",
+    badges: (
+      <div className="mt-3 flex flex-wrap gap-2">
+        <ChannelBadge name="WhatsApp" color={whatsappColor} />
+      </div>
+    ),
   },
 ];
 
