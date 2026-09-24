@@ -281,7 +281,8 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
                     SAWEL WAFY · VOTRE ASSISTANT SUR WHATSAPP
                   </p>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Fini les tableaux de bord. Demandez à Wafy.</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Votre assistant personnel, sur WhatsApp.  
+Demandez à Wafy.</h3>
                   <ul className="space-y-4">
                     {[
                       { icon: Download, label: "Rien à installer", text: "aucune application ni aucun logiciel à apprendre." },
