@@ -19,6 +19,7 @@ import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
 import insurerImage from "@/assets/hero-assureur.jpg";
+import wafyAssistPhone from "@/assets/wafy-assist-phone.png";
 
 const agentFeatures = [
   {
@@ -256,24 +257,14 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                     Aucune application à installer, aucun logiciel à apprendre. L'agent pilote toute son activité depuis WhatsApp : il pose sa question à Wafy Assist, par écrit ou en vocal, et reçoit la réponse sur WhatsApp.
                   </p>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-                  <div className="max-w-[80%] ml-auto rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-4 py-2.5 text-sm font-medium">
-                    Mes visites de demain ?
-                    <span className="block text-[10px] opacity-70 text-right">18:42</span>
-                  </div>
-                  <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-muted px-4 py-2.5 text-sm">
-                    3 visites : 10h Maarif, 12h30 Gauthier, 16h Racine.
-                    <span className="block text-[10px] text-muted-foreground">18:42</span>
-                  </div>
-                  <div className="max-w-[80%] ml-auto rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-4 py-2.5 text-sm font-medium">
-                    Quels leads relancer ?
-                    <span className="block text-[10px] opacity-70 text-right">18:43</span>
-                  </div>
-                  <div className="max-w-[85%] rounded-2xl rounded-bl-sm bg-muted px-4 py-2.5 text-sm">
-                    4 leads chauds sans réponse depuis 48 h. Je les relance ?
-                    <span className="block text-[10px] text-muted-foreground">18:43</span>
-                  </div>
-                </div>
+                <img
+                  src={wafyAssistPhone}
+                  alt="Conversation WhatsApp avec Wafy Assist : visites de demain et leads à relancer"
+                  className="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                />
               </motion.div>
 
             </div>
