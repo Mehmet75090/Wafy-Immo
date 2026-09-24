@@ -345,8 +345,6 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             </div>
           </section>
 
-          <IntegrationsSection />
-
           <section id="pricing" className="section-padding bg-background">
             <div className="container mx-auto max-w-3xl text-center">
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Tarifs</p>
