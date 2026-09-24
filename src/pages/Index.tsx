@@ -7,7 +7,6 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import VoiceSection from "@/components/VoiceSection";
 import DashboardSection from "@/components/DashboardSection";
-import SimulatorSection from "@/components/SimulatorSection";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
@@ -29,7 +28,6 @@ const Index = () => {
       <VoiceSection />
       <DashboardSection />
       <PricingSection />
-      <SimulatorSection />
       <BlogPreviewSection />
       <FAQSection />
       <CTASection onOpenForm={() => setFormOpen(true)} />
