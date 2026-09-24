@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, X, Sparkles } from "lucide-react";
+import { Check, X, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
