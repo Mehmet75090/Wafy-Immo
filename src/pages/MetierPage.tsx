@@ -22,7 +22,8 @@ import wafyAssistPhone from "@/assets/wafy-assist-phone.png.asset.json";
 import problemRepondAsset from "@/assets/problem-repond-agent.png.asset.json";
 const problemRepondImg = problemRepondAsset.url;
 import problemLeadsImg from "@/assets/problem-leads.jpg";
-import problemBienImg from "@/assets/problem-bien.jpg";
+import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
+const problemBienImg = problemBienAsset.url;
 import problemSeulImg from "@/assets/problem-seul.jpg";
 
 const agentFeatures = [
@@ -94,7 +95,7 @@ const agentProblems = [
     title: "Pas le bon bien ? Pas de vente.",
     text: "Le prospect veut un 3 pièces à Maârif et vous n'en avez aucun en portefeuille. Sans réseau d'agents pour partager vos biens, vous perdez le lead, et c'est un confrère qui conclut la vente.",
     image: problemBienImg,
-    alt: "Client et agent cherchent ensemble le bien correspondant",
+    alt: "Agent montrant un catalogue de biens sur tablette à une cliente dubitative",
   },
   {
     title: "Seul à bord, jamais vraiment en pause",
