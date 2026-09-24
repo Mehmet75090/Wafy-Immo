@@ -90,8 +90,8 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
               <tr className="text-left text-foreground">
                 <th className="px-3 py-2 font-semibold">Plan</th>
                 <th className="px-3 py-2 font-semibold">Volume</th>
-                <th className="px-3 py-2 font-semibold">Mensuel</th>
-                <th className="px-3 py-2 font-semibold">Annuel /mois</th>
+                <th className="px-3 py-2 font-semibold">Pack prépayé</th>
+                <th className="px-3 py-2 font-semibold">Engagement</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -254,15 +254,15 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
         <ul className="space-y-2">
           <li>
             <span className="font-semibold text-foreground">Pilote → Business :</span>{" "}
-            différence de {fmt(2700)}/mois, proratisée sur les mois restants.
+            différence de {fmt(2700)} HT, proratisée sur la période restante.
           </li>
           <li>
             <span className="font-semibold text-foreground">Business → Premium :</span>{" "}
-            différence de {fmt(3000)}/mois, proratisée sur les mois restants.
+            différence de {fmt(3000)} HT, proratisée sur la période restante.
           </li>
           <li>
             <span className="font-semibold text-foreground">Pilote → Premium :</span>{" "}
-            différence de {fmt(5700)}/mois, proratisée sur les mois restants.
+            différence de {fmt(5700)} HT, proratisée sur la période restante.
           </li>
         </ul>
         <p className="text-sm italic">
