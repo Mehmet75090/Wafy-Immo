@@ -32,6 +32,21 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
         <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
+          {[
+            { label: "Le problème", href: "#problem" },
+            { label: "Comment ça marche", href: "#how-it-works" },
+            { label: "Fonctionnalités", href: "#features" },
+            { label: "Tarifs", href: "#pricing" },
+          ].map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              className="hidden md:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+            >
+              {label}
+            </a>
+          ))}
+          <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Choisir un métier">
@@ -48,21 +63,6 @@ const Header = ({ onOpenForm }: HeaderProps) => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {[
-            { label: "Le problème", href: "#problem" },
-            { label: "Comment ça marche", href: "#how-it-works" },
-            { label: "Fonctionnalités", href: "#features" },
-            { label: "Tarifs", href: "#pricing" },
-          ].map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
-              className="hidden md:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
-            >
-              {label}
-            </a>
-          ))}
-          <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-1 px-1 sm:px-2 font-semibold text-foreground/70 hover:text-foreground hover:bg-transparent" aria-label="Choisir la devise">
