@@ -277,8 +277,8 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 <div>
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">SAWEL WAFY · 100 % WHATSAPP</p>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Fini les tableaux de bord. Demandez à Wafy.</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Aucune application à installer, aucun logiciel à apprendre. Vous pilotez toute votre activité depuis WhatsApp : posez votre question à Wafy Assist, par écrit ou en vocal, et recevez la réponse sur WhatsApp.
+                  <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {"Rien à installer : aucune application ni aucun logiciel à apprendre.\nTout depuis WhatsApp : vous pilotez votre activité là où vous êtes déjà.\nÀ l'écrit ou en vocal : posez votre question à Sawel Wafy comme à un assistant.\nDes réponses immédiates : vos visites, vos leads et vos relances arrivent directement dans WhatsApp."}
                   </p>
                 </div>
                 <img
