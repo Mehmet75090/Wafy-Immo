@@ -14,7 +14,6 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
-import PricingSection from "@/components/PricingSection";
 import ContactFormDialog from "@/components/ContactFormDialog";
 import { Button } from "@/components/ui/button";
 import agentImage from "@/assets/hero-agent-immobilier.jpg";
@@ -289,7 +288,20 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             </div>
           </section>
 
-          <PricingSection />
+          <section id="pricing" className="section-padding bg-background">
+            <div className="container mx-auto max-w-3xl text-center">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Tarifs</p>
+              <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
+                Une offre adaptée à votre <span className="text-gradient">activité</span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                Nos tarifs dépendent de votre volume de leads et de vos besoins. Demandez une démo : nous vous présentons Wafy Immo et vous remettons une offre sur mesure.
+              </p>
+              <Button variant="hero" size="lg" onClick={() => setFormOpen(true)}>
+                Contactez-nous pour une démo <ArrowRight className="ml-1" />
+              </Button>
+            </div>
+          </section>
         </>
       ) : (
         <section className="section-padding bg-background">
