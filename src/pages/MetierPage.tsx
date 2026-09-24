@@ -278,11 +278,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 viewport={{ once: true }}
               >
                 <div>
-                  <p className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 ring-1 ring-primary/20">
-                      <Mic className="h-3.5 w-3.5" aria-hidden="true" />
-                      <Zap className="h-3.5 w-3.5" aria-hidden="true" />
-                    </span>
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
                     Sawel Wafy · 100 % WhatsApp
                   </p>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Fini les tableaux de bord. Demandez à Wafy.</h3>
