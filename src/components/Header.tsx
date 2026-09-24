@@ -32,7 +32,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
         </Link>
         <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
           {[
-            { label: "Le problème", href: "#problem" },
+            { label: "Votre quotidien", href: "#problem" },
             { label: "Comment ça marche", href: "#how-it-works" },
             { label: "Fonctionnalités", href: "#features" },
             { label: "Tarifs", href: "#pricing" },
