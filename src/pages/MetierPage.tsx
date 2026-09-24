@@ -83,7 +83,7 @@ const agentProblems = [
     text: "Pas de relance après une visite, pas de suivi quand un prospect ne vient pas au rendez-vous. Vos meilleures opportunités refroidissent sans que vous le voyiez.",
   },
   {
-    title: "Le bon bien, perdu dans votre catalogue",
+    title: "Pas le bon bien ? Pas de vente.",
     text: "Le prospect décrit ce qu'il cherche, et vous devez fouiller vos annonces de mémoire. Du coup, vous proposez souvent le mauvais bien à la mauvaise personne.",
   },
   {
