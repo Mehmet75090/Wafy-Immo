@@ -9,11 +9,8 @@ const GATEWAY_URL = 'https://connector-gateway.lovable.dev/resend'
 const BodySchema = z.object({
   name: z.string().min(1).max(100),
   company: z.string().min(1).max(100),
-  email: z.string().email().max(255),
   phone: z.string().min(1).max(20),
-  country: z.string().min(1).max(100),
   objective: z.string().min(1).max(200),
-  message: z.string().max(1000).optional().default(''),
 })
 
 Deno.serve(async (req) => {
@@ -36,18 +33,15 @@ Deno.serve(async (req) => {
       })
     }
 
-    const { name, company, email, phone, country, objective, message } = parsed.data
+    const { name, company, phone, objective } = parsed.data
 
     const htmlBody = `
       <h2>Nouvelle demande pilote WAFY</h2>
       <table style="border-collapse:collapse;width:100%">
         <tr><td style="padding:8px;font-weight:bold">Nom</td><td style="padding:8px">${escapeHtml(name)}</td></tr>
         <tr><td style="padding:8px;font-weight:bold">Promoteur</td><td style="padding:8px">${escapeHtml(company)}</td></tr>
-        <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
         <tr><td style="padding:8px;font-weight:bold">Téléphone</td><td style="padding:8px">${escapeHtml(phone)}</td></tr>
-        <tr><td style="padding:8px;font-weight:bold">Pays</td><td style="padding:8px">${escapeHtml(country)}</td></tr>
         <tr><td style="padding:8px;font-weight:bold">Objectif</td><td style="padding:8px">${escapeHtml(objective)}</td></tr>
-        <tr><td style="padding:8px;font-weight:bold">Message</td><td style="padding:8px">${escapeHtml(message || '—')}</td></tr>
       </table>
     `
 
@@ -59,8 +53,8 @@ Deno.serve(async (req) => {
         const columnValues = {
           text_mm37st80: name,
           numeric_mm3762q1: phoneDigits,
-          text_mm37ctzv: email,
-          text_mm37gq6m: `[${country}] ${objective}${message ? ` — ${message}` : ''}`,
+          text_mm37ctzv: '',
+          text_mm37gq6m: objective,
         }
         const mondayQuery = `mutation ($board: ID!, $item: String!, $cols: JSON!) { create_item(board_id: $board, item_name: $item, column_values: $cols) { id } }`
         const mondayRes = await fetch('https://api.monday.com/v2', {
@@ -90,7 +84,6 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: 'WAFY PRO <hello@wafypro.ma>',
         to: ['hello@wafypro.ma'],
-        reply_to: email,
         subject: `Nouvelle demande pilote – ${company}`,
         html: htmlBody,
       }),
