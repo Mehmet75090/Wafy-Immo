@@ -168,7 +168,7 @@ const PricingSection = () => {
                       {formatPrice(plan.price)}
                     </span>
                     <span className="text-muted-foreground text-sm">
-                      HT{plan.name === "PILOTE" ? "" : " · pack prépayé"}
+                      HT
                     </span>
                   </div>
                 </div>
