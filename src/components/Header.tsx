@@ -49,6 +49,22 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Choisir un métier">
+                Métiers <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="min-w-[220px]">
+              {professions.map(({ label, path }) => (
+                <DropdownMenuItem key={path} asChild className="cursor-pointer">
+                  <Link to={path} className="flex items-center justify-between gap-3">
+                    {label}{profession === label && <Check className="h-4 w-4 text-primary" />}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="gap-1 px-1 sm:px-2 font-semibold text-foreground/70 hover:text-foreground hover:bg-transparent" aria-label="Choisir la devise">
                 <span>{currency}</span>
                 <ChevronDown className="hidden sm:block h-3 w-3 text-muted-foreground" />
