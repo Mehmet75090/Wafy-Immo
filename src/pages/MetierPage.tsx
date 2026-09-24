@@ -275,7 +275,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 viewport={{ once: true }}
               >
                 <div>
-                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Wafy Assist · 100 % WhatsApp</p>
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">SAWEL WAFY · 100 % WHATSAPP</p>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4">Fini les tableaux de bord. Demandez à Wafy.</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Aucune application à installer, aucun logiciel à apprendre. Vous pilotez toute votre activité depuis WhatsApp : posez votre question à Wafy Assist, par écrit ou en vocal, et recevez la réponse sur WhatsApp.
