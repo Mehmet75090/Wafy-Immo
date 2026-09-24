@@ -14,7 +14,7 @@ const getFaqs = (fmt: (mad: number) => string) => [
   },
   {
     q: "Puis-je annuler à tout moment ?",
-    a: "Absolument. Le Pack Découverte est sans engagement. Vous pouvez arrêter à tout moment sans frais supplémentaires. Si vous souhaitez continuer, nous basculons automatiquement sur un plan mensuel ou annuel selon votre préférence.",
+    a: "Absolument. Le Pack Découverte est sans engagement. Vous pouvez arrêter à tout moment sans frais supplémentaires. Si vous souhaitez continuer, nous basculons automatiquement sur le pack de votre choix (Pilote, Business ou Premium), avec ou sans engagement annuel.",
   },
   {
     q: "Combien de temps pour la mise en place ?",
@@ -26,7 +26,7 @@ const getFaqs = (fmt: (mad: number) => string) => [
   },
   {
     q: "Que se passe-t-il après le mois d'essai ?",
-    a: `À la fin du mois, vous recevez un rapport complet de performance. Vous pouvez alors choisir de continuer avec le plan Pilote (${fmt(2800)}/mois), passer au Business (${fmt(5500)}/mois) avec relances et RDV auto, ou au Premium (${fmt(8500)}/mois) pour les gros volumes. Aucune obligation.`,
+    a: `À la fin du mois, vous recevez un rapport complet de performance. Vous pouvez alors choisir de continuer avec le pack Pilote (${fmt(2800)} HT), passer au pack Business (${fmt(5500)} HT) avec relances et RDV auto, ou au pack Premium (${fmt(8500)} HT) pour les gros volumes. Aucune obligation.`,
   },
   {
     q: "Quels outils s'intègrent avec Wafy Immo ?",

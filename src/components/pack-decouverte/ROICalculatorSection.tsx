@@ -143,7 +143,7 @@ const ROICalculatorSection = () => {
               <div className="p-5 rounded-xl bg-wafy-gradient text-primary-foreground text-center">
                 <div className="text-sm font-medium opacity-90 mb-1">Revenus additionnels / mois</div>
                 <div className="text-3xl font-extrabold">{fmt(results.additionalRevenue)}</div>
-                <div className="text-sm mt-1 opacity-90">Pour un investissement de {fmt(2800)}/mois</div>
+                <div className="text-sm mt-1 opacity-90">Pour un investissement de {fmt(2800)} HT</div>
               </div>
 
               <div className="flex items-center justify-center gap-2 text-sm font-semibold text-primary">
