@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useCurrency, formatPrice } from "@/contexts/CurrencyContext";
 import {
   Accordion,
   AccordionContent,
@@ -6,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
   {
     q: "Est-ce que je dois utiliser mon propre Business Manager Facebook ?",
     a: (
@@ -97,19 +98,19 @@ const faqs = [
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Pilote</td>
                 <td className="px-3 py-2">≤ 2 000 leads/mois</td>
-                <td className="px-3 py-2">2 800 MAD</td>
-                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
+                <td className="px-3 py-2">{fmt(2800)}</td>
+                <td className="px-3 py-2 text-primary font-semibold">1 mois uniquement</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Business</td>
                 <td className="px-3 py-2">≤ 2 000 leads + 5 000 relances</td>
-                <td className="px-3 py-2">5 500 MAD</td>
+                <td className="px-3 py-2">{fmt(5500)}</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
-                <td className="px-3 py-2">≤ 5 000 leads + 12 500 relances</td>
-                <td className="px-3 py-2">7 500 MAD</td>
+                <td className="px-3 py-2">≤ 5 000 leads + 10 000 relances</td>
+                <td className="px-3 py-2">{fmt(8500)}</td>
                 <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
             </tbody>
@@ -130,11 +131,11 @@ const faqs = [
           </li>
         </ul>
         <p className="text-sm">
-          💡 <span className="font-semibold text-foreground">Setup inclus :</span> 10 000 MAD HT
+          💡 <span className="font-semibold text-foreground">Setup inclus :</span> {fmt(10000)} HT
           one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
           <br />
           🔌 <span className="font-semibold text-foreground">Connecteur CRM client</span> :
-          5 000 MAD HT one-shot, à partir du plan Business.
+          {fmt(5000)} HT one-shot, à partir du plan Business.
         </p>
         <p className="text-sm italic">
           Pas sûr ? Notre équipe vous aide à dimensionner en 15 minutes — sans engagement.
@@ -164,14 +165,14 @@ const faqs = [
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Pack Relances</td>
                 <td className="px-3 py-2">+1 000 relances</td>
-                <td className="px-3 py-2">0,52 MAD / relance</td>
-                <td className="px-3 py-2">520 MAD</td>
+                <td className="px-3 py-2">{fmt(0.52, 2)} / relance</td>
+                <td className="px-3 py-2">{fmt(520)}</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Pack Leads</td>
                 <td className="px-3 py-2">+1 000 leads</td>
-                <td className="px-3 py-2">1,40 MAD / lead</td>
-                <td className="px-3 py-2">1 400 MAD</td>
+                <td className="px-3 py-2">{fmt(1.4, 2)} / lead</td>
+                <td className="px-3 py-2">{fmt(1400)}</td>
               </tr>
             </tbody>
           </table>
@@ -250,15 +251,15 @@ const faqs = [
         <ul className="space-y-2">
           <li>
             <span className="font-semibold text-foreground">Pilote → Business :</span>{" "}
-            différence de 2 700 MAD/mois, proratisée sur les mois restants.
+            différence de {fmt(2700)}/mois, proratisée sur les mois restants.
           </li>
           <li>
             <span className="font-semibold text-foreground">Business → Premium :</span>{" "}
-            différence de 2 000 MAD/mois, proratisée sur les mois restants.
+            différence de {fmt(3000)}/mois, proratisée sur les mois restants.
           </li>
           <li>
             <span className="font-semibold text-foreground">Pilote → Premium :</span>{" "}
-            différence de 4 700 MAD/mois, proratisée sur les mois restants.
+            différence de {fmt(5700)}/mois, proratisée sur les mois restants.
           </li>
         </ul>
         <p className="text-sm italic">
@@ -270,6 +271,8 @@ const faqs = [
 ];
 
 const FAQSection = () => {
+  const { currency } = useCurrency();
+  const faqs = getFaqs((mad, digits) => formatPrice(mad, currency, digits));
   return (
     <section className="section-padding bg-muted/30" id="faq">
       <div className="container mx-auto max-w-3xl">

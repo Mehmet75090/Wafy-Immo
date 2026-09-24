@@ -2,8 +2,10 @@ import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { TrendingUp, Calculator } from "lucide-react";
+import { useCurrency, formatPrice } from "@/contexts/CurrencyContext";
 
 const ROICalculatorSection = () => {
+  const { currency } = useCurrency();
   const [leadsPerMonth, setLeadsPerMonth] = useState(200);
   const [conversionRate, setConversionRate] = useState(3);
   const [avgPropertyValue, setAvgPropertyValue] = useState(1200000);
@@ -30,10 +32,7 @@ const ROICalculatorSection = () => {
     };
   }, [leadsPerMonth, conversionRate, avgPropertyValue, commissionRate]);
 
-  const formatMAD = (n: number) =>
-    n >= 1000000
-      ? `${(n / 1000000).toFixed(1)}M MAD`
-      : `${Math.round(n).toLocaleString("fr-FR")} MAD`;
+  const fmt = (n: number) => formatPrice(n, currency);
 
   return (
     <section className="section-padding bg-card">
@@ -98,7 +97,7 @@ const ROICalculatorSection = () => {
               <div>
                 <div className="flex justify-between mb-3">
                   <span className="text-sm font-medium">Prix moyen du bien</span>
-                  <span className="text-sm font-bold text-primary">{formatMAD(avgPropertyValue)}</span>
+                  <span className="text-sm font-bold text-primary">{fmt(avgPropertyValue)}</span>
                 </div>
                 <Slider
                   value={[avgPropertyValue]}
@@ -131,20 +130,20 @@ const ROICalculatorSection = () => {
               <div className="p-5 rounded-xl border border-border bg-muted/50">
                 <div className="text-xs text-muted-foreground mb-1">Conversions actuelles / mois</div>
                 <div className="text-2xl font-extrabold text-foreground">{results.currentConversions} ventes</div>
-                <div className="text-sm text-muted-foreground mt-1">Chiffre : {formatMAD(results.currentRevenue)}</div>
+                <div className="text-sm text-muted-foreground mt-1">Chiffre : {fmt(results.currentRevenue)}</div>
               </div>
 
               <div className="p-5 rounded-xl border-2 border-secondary bg-secondary/5">
                 <div className="text-xs text-secondary font-semibold mb-1">Avec Wafy Immo (+30% de conversion)</div>
                 <div className="text-2xl font-extrabold text-secondary">{results.wafyConversions} ventes</div>
-                <div className="text-sm text-muted-foreground mt-1">Chiffre : {formatMAD(results.wafyRevenue)}</div>
+                <div className="text-sm text-muted-foreground mt-1">Chiffre : {fmt(results.wafyRevenue)}</div>
                 <div className="text-xs text-secondary font-medium mt-1">Taux de conversion : {results.wafyConversionRate}%</div>
               </div>
 
               <div className="p-5 rounded-xl bg-wafy-gradient text-primary-foreground text-center">
                 <div className="text-sm font-medium opacity-90 mb-1">Revenus additionnels / mois</div>
-                <div className="text-3xl font-extrabold">{formatMAD(results.additionalRevenue)}</div>
-                <div className="text-sm mt-1 opacity-90">Pour un investissement de 2 800 MAD/mois</div>
+                <div className="text-3xl font-extrabold">{fmt(results.additionalRevenue)}</div>
+                <div className="text-sm mt-1 opacity-90">Pour un investissement de {fmt(2800)}/mois</div>
               </div>
 
               <div className="flex items-center justify-center gap-2 text-sm font-semibold text-primary">
