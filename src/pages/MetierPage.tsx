@@ -90,6 +90,10 @@ const agentProblems = [
     title: "Des dossiers qui s'enlisent",
     text: "Pour une location, les pièces justificatives manquantes bloquent la signature pendant des jours.",
   },
+  {
+    title: "Un agent seul, jamais en repos",
+    text: "Travailler seul, c'est ne jamais pouvoir partir : en vacances, personne pour traiter les leads et les RDV, et le business s'évapore. Avec Wafy, c'est comme recruter un assistant qui gère vos RDV et vos prospects à votre place, 24h/24.",
+  },
 ];
 
 
