@@ -44,7 +44,7 @@ const agentFeatures = [
   {
     icon: CalendarCheck,
     title: "Agenda & visites",
-    text: "Propose des créneaux, planifie les visites et se synchronise avec Google Calendar.",
+    text: "Propose des créneaux, planifie les visites et se synchronise avec votre Google Calendar.",
   },
   {
     icon: BellRing,
