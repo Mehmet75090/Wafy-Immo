@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, X, Sparkles } from "lucide-react";
+import { Check, X, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
@@ -146,8 +146,15 @@ const PricingSection = () => {
                 )}
 
 
-                <h3 className="font-bold text-lg mb-1">{plan.name}</h3>
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-secondary/15 text-secondary px-3 py-1 text-sm font-semibold mb-4">
+                <h3 className="font-bold text-lg mb-3">{plan.name}</h3>
+                <div
+                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-base font-extrabold mb-5 shadow-sm ${
+                    plan.highlight
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary text-secondary-foreground"
+                  }`}
+                >
+                  <Zap className="w-4 h-4 shrink-0" />
                   {plan.conv}
                 </div>
 
