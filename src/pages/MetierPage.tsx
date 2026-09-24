@@ -87,10 +87,6 @@ const agentProblems = [
     text: "Difficile de retrouver dans votre catalogue le bien qui correspond vraiment à la demande du prospect.",
   },
   {
-    title: "Des dossiers qui s'enlisent",
-    text: "Pour une location, les pièces justificatives manquantes bloquent la signature pendant des jours.",
-  },
-  {
     title: "Un agent seul, jamais en repos",
     text: "Travailler seul, c'est ne jamais pouvoir partir : en vacances, personne pour traiter les leads et les RDV, et le business s'évapore. Avec Wafy, c'est comme recruter un assistant qui gère vos RDV et vos prospects à votre place, 24h/24.",
   },
@@ -164,7 +160,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <div className="container mx-auto max-w-6xl">
               <motion.div className="text-center max-w-3xl mx-auto mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-                  Combien de ventes s'arrêtent faute de <span className="text-gradient">suivi</span> ?
+                  Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
