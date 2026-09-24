@@ -170,29 +170,46 @@ const MetierPage = ({ metier }: MetierPageProps) => {
         <>
           <section className="section-padding bg-card" id="problem">
             <div className="container mx-auto max-w-6xl">
-              <motion.div className="max-w-3xl mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+              <motion.div
+                className="text-center max-w-4xl mx-auto mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
                   Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mt-5">
+                <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
+                <p className="text-muted-foreground max-w-2xl mt-6">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                 </p>
               </motion.div>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {agentProblems.map((problem, i) => (
                   <motion.div
                     key={problem.title}
-                    className="group relative rounded-2xl border border-border/70 bg-background p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+                    className="flex flex-col group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <div className="mb-5 flex items-center gap-3">
-                      <span className="text-xs font-bold tracking-[0.2em] text-primary">0{i + 1}</span>
-                      <span className="h-px flex-1 bg-border transition-colors group-hover:bg-primary/40" />
+                    <div className="relative mb-6 rounded-2xl overflow-hidden shadow-sm border border-border/70">
+                      <img
+                        src={problem.image}
+                        alt={problem.alt}
+                        loading="lazy"
+                        width={912}
+                        height={736}
+                        className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                        0{i + 1}
+                      </span>
                     </div>
-                    <h3 className="text-xl font-bold leading-snug mb-3">{problem.title}</h3>
+                    <h3 className="text-xl font-bold leading-snug mb-3 transition-colors group-hover:text-primary">
+                      {problem.title}
+                    </h3>
                     <p className="text-muted-foreground leading-relaxed">{problem.text}</p>
                   </motion.div>
                 ))}
