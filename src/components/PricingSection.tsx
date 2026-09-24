@@ -54,8 +54,10 @@ const plans: {
     name: "PREMIUM",
     price: 8500,
     annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Jusqu'à 5 000 leads / mois",
+    conv: "Leads illimités / mois",
     features: [
+      { text: "Leads traités illimités", included: true },
+      { text: "Projets immobiliers illimités", included: true },
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
