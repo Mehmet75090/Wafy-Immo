@@ -10,7 +10,9 @@ import {
   FileCheck,
   Home,
   MessageCircle,
+  PenLine,
   ScanSearch,
+  Target,
 } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
@@ -283,6 +285,57 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   width={1024}
                   height={1024}
                 />
+              </motion.div>
+
+              <motion.div
+                className="mt-12 rounded-2xl border border-border bg-background p-8 md:p-10"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Wafy Sender · Réactivation</p>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">Vos anciens contacts valent de l'or. Réveillez-les.</h3>
+                <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">
+                  Des centaines de prospects dorment dans votre WhatsApp : ceux qui n'ont pas donné suite, ceux qui ont déjà acheté ou loué, ceux qui cherchaient un bien que vous venez de rentrer. Wafy Sender les recontacte à votre place.
+                </p>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    {
+                      icon: Target,
+                      title: "Des campagnes ciblées",
+                      text: "Leads dormants, anciens clients, contacts qui correspondent à un nouveau bien : chaque message part vers la bonne personne.",
+                    },
+                    {
+                      icon: PenLine,
+                      title: "Un message personnalisé pour chacun",
+                      text: "Wafy reprend le projet et les critères de chaque contact. Rien à voir avec un envoi en masse générique.",
+                    },
+                    {
+                      icon: CalendarCheck,
+                      title: "Les réponses traitées jusqu'à la visite",
+                      text: "Dès qu'un contact répond, l'agent IA prend le relais : il qualifie, propose les biens et planifie la visite.",
+                    },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={item.title}
+                      className="rounded-xl border border-border bg-card p-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.08 }}
+                    >
+                      <span className="inline-flex items-center justify-center h-10 w-10 rounded-lg bg-primary/10 text-primary mb-4">
+                        <item.icon className="h-5 w-5" />
+                      </span>
+                      <h4 className="text-lg font-bold mb-2">{item.title}</h4>
+                      <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                    </motion.div>
+                  ))}
+                </div>
+                <p className="mt-8 text-lg font-semibold flex items-center gap-2">
+                  <ArrowRight className="h-5 w-5 text-primary shrink-0" />
+                  Votre base de contacts redevient une source de visites.
+                </p>
               </motion.div>
 
             </div>
