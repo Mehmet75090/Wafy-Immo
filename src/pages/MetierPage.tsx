@@ -41,7 +41,7 @@ const agentFeatures = [
   {
     icon: Home,
     title: "Matching lead → bien",
-    text: "Trouve les biens qui correspondent au besoin dans votre catalogue et, s'il n'y en a pas, chez les agences partenaires du réseau Wafy, puis les présente au prospect.",
+    text: "Trouve les biens qui correspondent au besoin dans votre catalogue et les présente au prospect. S'il n'y en a pas, Wafy cherche parmi les biens que les agences partenaires ont choisi de partager sur le réseau, et vous met en relation avec l'agence concernée pour collaborer.",
   },
   {
     icon: CalendarCheck,
