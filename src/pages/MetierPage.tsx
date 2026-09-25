@@ -163,46 +163,48 @@ const MetierPage = ({ metier }: MetierPageProps) => {
           <section className="section-padding bg-card" id="problem">
             <div className="container mx-auto max-w-6xl">
               <motion.div
-                className="text-center max-w-4xl mx-auto mb-16"
+                className="text-center max-w-4xl mx-auto mb-9 md:mb-16"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+                <h2 className="text-2xl md:text-5xl font-extrabold leading-tight">
                   Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
                 </h2>
-                <div className="mt-6 w-24 h-1 bg-primary mx-auto rounded-full" />
-                <p className="text-muted-foreground max-w-2xl mt-6 mx-auto">
+                <div className="mt-4 md:mt-6 w-16 md:w-24 h-1 bg-primary mx-auto rounded-full" />
+                <p className="text-sm md:text-base text-muted-foreground max-w-2xl mt-4 md:mt-6 mx-auto leading-relaxed">
                   Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                 </p>
               </motion.div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
                 {agentProblems.map((problem, i) => (
                   <motion.div
                     key={problem.title}
-                    className="flex flex-col group"
+                    className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-border/70 bg-background shadow-sm group md:overflow-visible md:rounded-none md:border-0 md:bg-transparent md:shadow-none"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <div className="relative mb-6 rounded-2xl overflow-hidden shadow-sm border border-border/70">
+                    <div className="relative overflow-hidden md:mb-6 md:rounded-lg md:shadow-sm md:border md:border-border/70">
                       <img
                         src={problem.image}
                         alt={problem.alt}
                         loading="lazy"
                         width={912}
                         height={736}
-                        className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full aspect-[5/3] md:aspect-[4/3] bg-muted object-cover text-transparent transition-transform duration-500 group-hover:scale-105"
                       />
-                      <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                      <span className="absolute top-2 left-2 md:top-4 md:left-4 bg-primary text-primary-foreground text-[10px] md:text-xs font-bold px-2 py-1 md:px-3 rounded-full">
                         0{i + 1}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold leading-snug mb-3 transition-colors group-hover:text-primary">
-                      {problem.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">{problem.text}</p>
+                    <div className="flex flex-1 flex-col p-3 md:p-0">
+                      <h3 className="text-sm md:text-xl font-bold leading-snug mb-1.5 md:mb-3 transition-colors group-hover:text-primary">
+                        {problem.title}
+                      </h3>
+                      <p className="line-clamp-5 text-xs text-muted-foreground leading-relaxed md:line-clamp-none md:text-base">{problem.text}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -223,15 +225,15 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 {agentSteps.map((step, i) => (
                   <motion.div
                     key={step.title}
-                    className="rounded-xl border border-border bg-card p-6"
+                    className="rounded-lg border border-border bg-card p-4 md:p-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <span className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4">{i + 1}</span>
-                    <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{step.text}</p>
+                    <span className="inline-flex items-center justify-center h-8 w-8 md:h-9 md:w-9 rounded-full bg-primary/10 text-primary font-bold text-sm mb-3 md:mb-4">{i + 1}</span>
+                    <h3 className="text-base md:text-lg font-bold mb-2">{step.title}</h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{step.text}</p>
                   </motion.div>
                 ))}
               </div>
@@ -254,25 +256,25 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                 {agentFeatures.map((feature, i) => (
                   <motion.div
                     key={feature.title}
-                    className="rounded-xl border border-border bg-background p-6 flex gap-4"
+                    className="rounded-lg border border-border bg-background p-4 md:p-6 flex gap-3 md:gap-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.06 }}
                   >
-                    <span className="inline-flex items-center justify-center h-11 w-11 rounded-lg bg-primary/10 text-primary shrink-0">
+                    <span className="inline-flex items-center justify-center h-9 w-9 md:h-11 md:w-11 rounded-lg bg-primary/10 text-primary shrink-0">
                       <feature.icon className="h-5 w-5" />
                     </span>
                     <div>
-                      <h3 className="text-lg font-bold mb-1.5">{feature.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{feature.text}</p>
+                      <h3 className="text-base md:text-lg font-bold mb-1.5">{feature.title}</h3>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{feature.text}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
               <motion.div
-                className="mt-12 rounded-2xl border border-border bg-background p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center"
+                className="mt-8 md:mt-12 rounded-lg border border-border bg-background p-5 md:p-10 grid md:grid-cols-2 gap-6 md:gap-8 items-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -313,7 +315,7 @@ Demandez à Wafy.</h3>
               </motion.div>
 
               <motion.div
-                className="mt-12 rounded-2xl border border-border bg-background p-8 md:p-10"
+                className="mt-8 md:mt-12 rounded-lg border border-border bg-background p-5 md:p-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -343,7 +345,7 @@ Demandez à Wafy.</h3>
                   ].map((item, i) => (
                     <motion.div
                       key={item.title}
-                      className="rounded-xl border border-border bg-card p-6"
+                      className="rounded-lg border border-border bg-card p-4 md:p-6"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -353,7 +355,7 @@ Demandez à Wafy.</h3>
                         <item.icon className="h-5 w-5" />
                       </span>
                       <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-                      <p className="text-muted-foreground leading-relaxed">{item.text}</p>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.text}</p>
                     </motion.div>
                   ))}
                 </div>
