@@ -193,7 +193,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                         loading="lazy"
                         width={912}
                         height={736}
-                        className="w-full aspect-[5/3] md:aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full aspect-[5/3] md:aspect-[4/3] bg-muted object-cover text-transparent transition-transform duration-500 group-hover:scale-105"
                       />
                       <span className="absolute top-2 left-2 md:top-4 md:left-4 bg-primary text-primary-foreground text-[10px] md:text-xs font-bold px-2 py-1 md:px-3 rounded-full">
                         0{i + 1}
@@ -203,7 +203,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                       <h3 className="text-sm md:text-xl font-bold leading-snug mb-1.5 md:mb-3 transition-colors group-hover:text-primary">
                         {problem.title}
                       </h3>
-                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{problem.text}</p>
+                      <p className="line-clamp-5 text-xs text-muted-foreground leading-relaxed md:line-clamp-none md:text-base">{problem.text}</p>
                     </div>
                   </motion.div>
                 ))}
