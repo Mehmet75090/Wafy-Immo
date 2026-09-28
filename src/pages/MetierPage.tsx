@@ -163,49 +163,68 @@ const MetierPage = ({ metier }: MetierPageProps) => {
           <section className="section-padding bg-card" id="problem">
             <div className="container mx-auto max-w-6xl">
               <motion.div
-                className="text-center max-w-4xl mx-auto mb-9 md:mb-16"
+                className="grid gap-5 mb-9 md:mb-14 lg:grid-cols-12 lg:items-end lg:gap-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-2xl md:text-5xl font-extrabold leading-tight">
-                  Vous ne pouvez pas tout gérer. Et chaque pause coûte des <span className="text-gradient">ventes</span>.
-                </h2>
-                <div className="mt-4 md:mt-6 w-16 md:w-24 h-1 bg-primary mx-auto rounded-full" />
-                <p className="text-sm md:text-base text-muted-foreground max-w-2xl mt-4 md:mt-6 mx-auto leading-relaxed">
-                  Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
-                </p>
+                <div className="lg:col-span-7">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-primary md:mb-4 md:text-xs">
+                    Votre quotidien
+                  </p>
+                  <h2 className="text-2xl font-extrabold leading-[1.12] tracking-tight md:text-5xl">
+                    Vous ne pouvez pas tout gérer.{" "}
+                    <span className="text-muted-foreground">Et chaque pause coûte des </span>
+                    <span className="text-gradient">ventes</span>
+                    <span className="text-muted-foreground">.</span>
+                  </h2>
+                </div>
+                <div className="lg:col-span-5 lg:pb-1">
+                  <div className="mb-4 hidden h-px w-10 bg-primary lg:block" />
+                  <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+                    Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
+                  </p>
+                </div>
               </motion.div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+
+              <div className="grid grid-cols-2 gap-3 md:gap-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-12">
                 {agentProblems.map((problem, i) => (
-                  <motion.div
+                  <motion.article
                     key={problem.title}
-                    className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-border/70 bg-background shadow-sm group md:overflow-visible md:rounded-none md:border-0 md:bg-transparent md:shadow-none"
+                    className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-border/70 bg-background shadow-sm transition-shadow duration-300 hover:shadow-md lg:flex-row lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:hover:shadow-none"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <div className="relative overflow-hidden md:mb-6 md:rounded-lg md:shadow-sm md:border md:border-border/70">
+                    <div className="relative shrink-0 overflow-hidden lg:w-[44%]">
                       <img
                         src={problem.image}
                         alt={problem.alt}
                         loading="lazy"
                         width={912}
                         height={736}
-                        className="w-full aspect-[5/3] md:aspect-[4/3] bg-muted object-cover text-transparent transition-transform duration-500 group-hover:scale-105"
+                        className="aspect-[5/3] w-full bg-muted object-cover text-transparent transition-transform duration-700 ease-out group-hover:scale-[1.04] lg:aspect-[4/3] lg:rounded-xl"
                       />
-                      <span className="absolute top-2 left-2 md:top-4 md:left-4 bg-primary text-primary-foreground text-[10px] md:text-xs font-bold px-2 py-1 md:px-3 rounded-full">
-                        0{i + 1}
-                      </span>
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent lg:rounded-xl" />
                     </div>
-                    <div className="flex flex-1 flex-col p-3 md:p-0">
-                      <h3 className="text-sm md:text-xl font-bold leading-snug mb-1.5 md:mb-3 transition-colors group-hover:text-primary">
+                    <div className="relative flex flex-1 flex-col p-3 lg:border-l lg:border-border/70 lg:py-0.5 lg:pl-6 xl:pl-8">
+                      <div className="mb-2 flex items-center gap-2.5 lg:mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary tabular-nums lg:text-xs">
+                          0{i + 1}
+                        </span>
+                        <span className="relative h-px flex-1 bg-border">
+                          <span className="absolute inset-0 origin-left scale-x-0 bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                        </span>
+                      </div>
+                      <h3 className="mb-1.5 text-sm font-bold leading-snug transition-colors group-hover:text-primary lg:mb-2.5 lg:text-xl">
                         {problem.title}
                       </h3>
-                      <p className="line-clamp-5 text-xs text-muted-foreground leading-relaxed md:line-clamp-none md:text-base">{problem.text}</p>
+                      <p className="line-clamp-5 text-xs leading-relaxed text-muted-foreground md:line-clamp-none md:text-sm lg:text-base">
+                        {problem.text}
+                      </p>
                     </div>
-                  </motion.div>
+                  </motion.article>
                 ))}
               </div>
             </div>
