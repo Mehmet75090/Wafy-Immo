@@ -173,7 +173,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                     Votre quotidien
                   </p>
                   <h2 className="text-2xl font-extrabold leading-[1.12] tracking-tight md:text-5xl">
-                    Vous ne pouvez pas tout gérer.{" "}
+                    <span className="block">Vous ne pouvez pas tout gérer.</span>
                     <span className="text-muted-foreground">Et chaque pause coûte des </span>
                     <span className="text-gradient">ventes</span>
                     <span className="text-muted-foreground">.</span>
