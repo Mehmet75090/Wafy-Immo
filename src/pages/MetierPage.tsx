@@ -160,7 +160,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
       {isAgent ? (
         <>
-          <section className="section-padding bg-card" id="problem">
+          <section className="section-padding scroll-mt-24 bg-card md:scroll-mt-28" id="problem">
             <div className="container mx-auto max-w-6xl">
               <motion.div
                 className="grid gap-5 mb-9 md:mb-14 lg:grid-cols-12 lg:items-end lg:gap-10"
@@ -180,35 +180,34 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                   </h2>
                 </div>
                 <div className="lg:col-span-5 lg:pb-1">
-                  <div className="mb-4 hidden h-px w-10 bg-primary lg:block" />
                   <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
                     Votre valeur, c'est le mandat et la signature. Wafy Immo s'occupe de tout le reste : la réponse aux prospects, la qualification, le bon bien et la visite planifiée.
                   </p>
                 </div>
               </motion.div>
 
-              <div className="grid grid-cols-2 gap-3 md:gap-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-12">
+              <div className="flex flex-col gap-3 md:gap-6 lg:grid lg:grid-cols-2 lg:gap-x-12 lg:gap-y-11">
                 {agentProblems.map((problem, i) => (
                   <motion.article
                     key={problem.title}
-                    className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-border/70 bg-background shadow-sm transition-shadow duration-300 hover:shadow-md lg:flex-row lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none lg:hover:shadow-none"
+                    className="group flex min-w-0 items-stretch gap-3 overflow-hidden rounded-xl border border-border/70 bg-background p-2 shadow-sm transition-shadow duration-300 hover:shadow-md lg:gap-6 lg:overflow-visible lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:hover:shadow-none"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.08 }}
                   >
-                    <div className="relative shrink-0 overflow-hidden lg:w-[44%]">
+                    <div className="relative w-[38%] shrink-0 overflow-hidden rounded-lg lg:w-[46%] lg:rounded-xl">
                       <img
                         src={problem.image}
                         alt={problem.alt}
                         loading="lazy"
                         width={912}
                         height={736}
-                        className="aspect-[5/3] w-full bg-muted object-cover text-transparent transition-transform duration-700 ease-out group-hover:scale-[1.04] lg:aspect-[4/3] lg:rounded-xl"
+                        className="h-full min-h-[88px] w-full bg-muted object-cover text-transparent transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent lg:rounded-xl" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-foreground/10 to-transparent" />
                     </div>
-                    <div className="relative flex flex-1 flex-col p-3 lg:border-l lg:border-border/70 lg:py-0.5 lg:pl-6 xl:pl-8">
+                    <div className="relative flex min-w-0 flex-1 flex-col py-0.5 pr-1 lg:border-l lg:border-border/70 lg:py-1 lg:pl-6 xl:pl-8">
                       <div className="mb-2 flex items-center gap-2.5 lg:mb-3">
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary tabular-nums lg:text-xs">
                           0{i + 1}
@@ -217,10 +216,10 @@ const MetierPage = ({ metier }: MetierPageProps) => {
                           <span className="absolute inset-0 origin-left scale-x-0 bg-primary transition-transform duration-500 ease-out group-hover:scale-x-100" />
                         </span>
                       </div>
-                      <h3 className="mb-1.5 text-sm font-bold leading-snug transition-colors group-hover:text-primary lg:mb-2.5 lg:text-xl">
+                      <h3 className="mb-2 text-sm font-bold leading-snug transition-colors group-hover:text-primary lg:mb-3 lg:text-xl">
                         {problem.title}
                       </h3>
-                      <p className="line-clamp-5 text-xs leading-relaxed text-muted-foreground md:line-clamp-none md:text-sm lg:text-base">
+                      <p className="text-[11px] leading-relaxed text-muted-foreground md:text-sm lg:text-base">
                         {problem.text}
                       </p>
                     </div>
