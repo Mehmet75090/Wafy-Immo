@@ -1,28 +1,21 @@
 import { motion } from "framer-motion";
-import { Check, X, Sparkles, Zap } from "lucide-react";
+import { Check, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
-
-
-// Annuel : 2 mois offerts => équivalent mensuel = prix × 10 / 12
-const ANNUAL_FACTOR = 10 / 12;
 
 type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
 
 const plans: {
   name: PlanName;
   price: number;
-  annualDiscount: number;
   conv: string;
   features: { text: string; included: boolean }[];
   highlight: boolean;
-  badge?: string;
 }[] = [
   {
     name: "PILOTE",
     price: 2800,
-    annualDiscount: 0,
-    conv: "Jusqu'à 2 000 leads ",
+    conv: "Jusqu'à 2 000 leads",
     features: [
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -36,7 +29,6 @@ const plans: {
   {
     name: "BUSINESS",
     price: 5500,
-    annualDiscount: 1 - ANNUAL_FACTOR,
     conv: "Jusqu'à 2 000 leads",
     features: [
       { text: "Qualification IA", included: true },
@@ -48,15 +40,13 @@ const plans: {
       { text: "Reporting détaillé", included: true },
     ],
     highlight: true,
-    badge: "2 mois offerts",
   },
   {
     name: "PREMIUM",
     price: 8500,
-    annualDiscount: 1 - ANNUAL_FACTOR,
-    conv: "Leads illimités",
+    conv: "Jusqu'à 5 000 leads",
     features: [
-      { text: "Leads traités illimités", included: true },
+      { text: "Jusqu'à 5 000 leads / mois", included: true },
       { text: "Projets immobiliers illimités", included: true },
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
@@ -67,17 +57,12 @@ const plans: {
       { text: "Reporting détaillé + recommandations", included: true },
     ],
     highlight: false,
-    badge: "2 mois offerts",
   },
 ];
-
-
 
 const PricingSection = () => {
   const { currency } = useCurrency();
   const formatPrice = (mad: number) => formatCurrencyPrice(mad, currency);
-
-
 
   return (
     <section className="section-padding" id="pricing">
@@ -99,105 +84,70 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        {/* Annual offer banner */}
-        <motion.div
-          className="relative mx-auto mb-12 max-w-3xl overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 p-5 sm:p-6"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center gap-4">
-            <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <div className="text-left">
-              <div className="text-sm font-bold uppercase tracking-wider text-primary">
-                Offre engagement annuel
-              </div>
-              <p className="text-base sm:text-lg font-semibold text-foreground leading-snug">
-                2 mois offerts sur les plans Business et Premium
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
         <div className="grid md:grid-cols-3 gap-6 items-start">
-          {plans.map((plan, i) => {
-            const annualPrice = Math.round(plan.price * ANNUAL_FACTOR);
-            return (
-              <motion.div
-                key={plan.name}
-                className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 overflow-hidden ${
+          {plans.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 overflow-hidden ${
+                plan.highlight
+                  ? "border-primary border-2 shadow-xl bg-card md:scale-[1.03]"
+                  : "border-border bg-card hover:border-primary/30"
+              }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <h3 className="font-bold text-lg mb-3">{plan.name}</h3>
+              <div
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-base font-extrabold mb-5 shadow-sm ${
                   plan.highlight
-                    ? "border-primary border-2 shadow-xl bg-card md:scale-[1.03]"
-                    : "border-border bg-card hover:border-primary/30"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground"
                 }`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
               >
-                {plan.badge && (
-                  <div className="absolute top-0 left-0">
-                    <div className="bg-primary text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-br-xl">
-                      {plan.badge} en annuel
-                    </div>
-                  </div>
-                )}
+                <Zap className="w-4 h-4 shrink-0" />
+                {plan.conv}
+              </div>
 
-
-                <h3 className="font-bold text-lg mb-3">{plan.name}</h3>
-                <div
-                  className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-base font-extrabold mb-5 shadow-sm ${
-                    plan.highlight
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary text-secondary-foreground"
-                  }`}
-                >
-                  <Zap className="w-4 h-4 shrink-0" />
-                  {plan.conv}
+              <div className="mb-5">
+                <div className="flex items-baseline gap-1 flex-wrap">
+                  <span
+                    className={`text-3xl sm:text-4xl font-extrabold ${
+                      plan.highlight ? "text-primary" : ""
+                    }`}
+                  >
+                    {formatPrice(plan.price)}
+                  </span>
+                  <span className="text-muted-foreground text-sm">
+                    HT
+                  </span>
                 </div>
+              </div>
 
-                <div className="mb-5">
-                  <div className="flex items-baseline gap-1 flex-wrap">
-                    <span
-                      className={`text-3xl sm:text-4xl font-extrabold ${
-                        plan.highlight ? "text-primary" : ""
-                      }`}
-                    >
-                      {formatPrice(plan.price)}
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((f) => (
+                  <li key={f.text} className="flex items-center gap-2 text-sm">
+                    {f.included ? (
+                      <Check className="w-4 h-4 text-secondary" />
+                    ) : (
+                      <X className="w-4 h-4 text-muted-foreground" />
+                    )}
+                    <span className={f.included ? "" : "text-muted-foreground line-through"}>
+                      {f.text}
                     </span>
-                    <span className="text-muted-foreground text-sm">
-                      HT
-                    </span>
-                  </div>
-                </div>
-
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((f) => (
-                    <li key={f.text} className="flex items-center gap-2 text-sm">
-                      {f.included ? (
-                        <Check className="w-4 h-4 text-secondary" />
-                      ) : (
-                        <X className="w-4 h-4 text-muted-foreground" />
-                      )}
-                      <span className={f.included ? "" : "text-muted-foreground line-through"}>
-                        {f.text}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  variant={plan.highlight ? "hero" : "outline"}
-                  className="w-full"
-                  asChild
-                >
-                  <a href="#cta">Commencer</a>
-                </Button>
-              </motion.div>
-            );
-          })}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                variant={plan.highlight ? "hero" : "outline"}
+                className="w-full"
+                asChild
+              >
+                <a href="#cta">Commencer</a>
+              </Button>
+            </motion.div>
+          ))}
         </div>
 
         {/* Setup & add-ons */}
@@ -234,7 +184,7 @@ const PricingSection = () => {
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           {currency === "EUR" && <>Montants en EUR indicatifs, convertis depuis les prix en MAD.<br /></>}
-          L'offre Pilote est sans engagement (1 mois). En cas d'engagement annuel sur Business ou Premium, 2 mois sont offerts.
+          L'offre Pilote est sans engagement (1 mois). Les packs Business et Premium sont prépayés et renouvelés quand vous le souhaitez.
         </p>
       </div>
     </section>

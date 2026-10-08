@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, CheckCircle2 } from "lucide-react";
 
 const benefits = [
-  "Aucun abonnement, payez uniquement au résultat",
+  "Packs prépayés, vous payez uniquement au résultat",
   "Frais de setup offerts",
   "Mise en place rapide, sans engagement",
 ];
@@ -30,7 +30,7 @@ const CTASection = ({ onOpenForm }: CTASectionProps) => (
         </h2>
 
         <p className="text-primary-foreground/70 text-lg mb-8 max-w-2xl mx-auto">
-          Démarrez avec l'offre Pilote : zéro abonnement, vous ne payez que lorsque Wafy Immo vous livre un lead qualifié.
+          Démarrez avec l'offre Pilote : un pack prépayé, vous ne payez que lorsque Wafy Immo vous livre un lead qualifié.
         </p>
 
         <ul className="space-y-3 mb-10 inline-block text-left">
