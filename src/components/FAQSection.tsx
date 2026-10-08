@@ -128,7 +128,7 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           </li>
         </ul>
         <p className="text-sm">
-          💡 <span className="font-semibold text-foreground">Setup inclus :</span> {fmt(10000)} HT
+          💡 <span className="font-semibold text-foreground">Frais de setup :</span> {fmt(10000)} HT
           one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
           <br />
           🔌 <span className="font-semibold text-foreground">Connecteur CRM client</span> :
