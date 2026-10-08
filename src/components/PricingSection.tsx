@@ -50,7 +50,7 @@ const plans: {
   {
     name: "PREMIUM",
     price: 8500,
-    conv: "Jusqu'à 4 000 leads",
+    conv: "Jusqu'à 5 000 leads",
     features: [
       { text: "Jusqu'à 5 projets immobiliers", included: true },
       { text: "Qualification IA", included: true },
