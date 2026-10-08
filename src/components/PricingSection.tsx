@@ -63,29 +63,6 @@ const plans: {
     ],
     highlight: false,
   },
-  {
-    name: "GROUPE",
-    price: 8500,
-    conv: "Leads & projets illimités",
-    tag: "Abonnement annuel",
-    priceSuffix: "HT / mois",
-    priceNote: "Engagement 12 mois · 2 mois offerts",
-    cta: "Nous contacter",
-    footnote: "*Dans le cadre d'un usage raisonnable",
-    dark: true,
-    features: [
-      { text: "Projets immobiliers illimités (multi-programmes)", included: true },
-      { text: "Leads traités illimités*", included: true },
-      { text: "Qualification IA", included: true },
-      { text: "Scoring automatique", included: true },
-      { text: "Fiche lead enrichie CRM", included: true },
-      { text: "10 000 relances WhatsApp / mois", included: true },
-      { text: "Prise de RDV auto", included: true },
-      { text: "Reporting consolidé groupe + recommandations", included: true },
-      { text: "Interlocuteur dédié", included: true },
-    ],
-    highlight: false,
-  },
 ];
 
 const PricingSection = () => {
@@ -112,7 +89,7 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
