@@ -3,7 +3,7 @@ import { Check, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
-type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
+type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM" | "GROUPE";
 
 const plans: {
   name: PlanName;
@@ -11,6 +11,12 @@ const plans: {
   conv: string;
   features: { text: string; included: boolean }[];
   highlight: boolean;
+  dark?: boolean;
+  tag?: string;
+  priceSuffix?: string;
+  priceNote?: string;
+  cta?: string;
+  footnote?: string;
 }[] = [
   {
     name: "PILOTE",
@@ -44,10 +50,9 @@ const plans: {
   {
     name: "PREMIUM",
     price: 8500,
-    conv: "Jusqu'à 5 000 leads",
+    conv: "Jusqu'à 4 000 leads",
     features: [
-      { text: "Jusqu'à 5 000 leads / mois", included: true },
-      { text: "Projets immobiliers illimités", included: true },
+      { text: "Jusqu'à 5 projets immobiliers", included: true },
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
@@ -55,6 +60,29 @@ const plans: {
       { text: "10 000 relances / mois", included: true },
       { text: "Prise de RDV auto", included: true },
       { text: "Reporting détaillé + recommandations", included: true },
+    ],
+    highlight: false,
+  },
+  {
+    name: "GROUPE",
+    price: 8500,
+    conv: "Leads & projets illimités",
+    tag: "Abonnement annuel",
+    priceSuffix: "HT / mois",
+    priceNote: "Engagement 12 mois · 2 mois offerts",
+    cta: "Nous contacter",
+    footnote: "*Dans le cadre d'un usage raisonnable",
+    dark: true,
+    features: [
+      { text: "Projets immobiliers illimités (multi-programmes)", included: true },
+      { text: "Leads traités illimités*", included: true },
+      { text: "Qualification IA", included: true },
+      { text: "Scoring automatique", included: true },
+      { text: "Fiche lead enrichie CRM", included: true },
+      { text: "10 000 relances WhatsApp / mois", included: true },
+      { text: "Prise de RDV auto", included: true },
+      { text: "Reporting consolidé groupe + recommandations", included: true },
+      { text: "Interlocuteur dédié", included: true },
     ],
     highlight: false,
   },
@@ -66,7 +94,7 @@ const PricingSection = () => {
 
   return (
     <section className="section-padding" id="pricing">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
           className="text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
@@ -84,13 +112,13 @@ const PricingSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
-              className={`relative rounded-2xl p-6 sm:p-8 border transition-all duration-300 overflow-hidden ${
+              className={`relative flex flex-col rounded-2xl p-6 sm:p-7 lg:p-6 border transition-all duration-300 overflow-hidden ${
                 plan.highlight
-                  ? "border-primary border-2 shadow-xl bg-card md:scale-[1.03]"
+                  ? "border-primary border-2 shadow-xl bg-card"
                   : "border-border bg-card hover:border-primary/30"
               }`}
               initial={{ opacity: 0, y: 30 }}
@@ -98,11 +126,18 @@ const PricingSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
+              {plan.tag && (
+                <span className="self-start mb-3 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                  {plan.tag}
+                </span>
+              )}
               <h3 className="font-bold text-lg mb-3">{plan.name}</h3>
               <div
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-base font-extrabold mb-5 shadow-sm ${
+                className={`self-start inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm lg:text-base font-extrabold mb-5 shadow-sm ${
                   plan.highlight
                     ? "bg-primary text-primary-foreground"
+                    : plan.dark
+                    ? "bg-foreground text-background"
                     : "bg-secondary text-secondary-foreground"
                 }`}
               >
@@ -120,18 +155,21 @@ const PricingSection = () => {
                     {formatPrice(plan.price)}
                   </span>
                   <span className="text-muted-foreground text-sm">
-                    HT
+                    {plan.priceSuffix ?? "HT"}
                   </span>
                 </div>
+                {plan.priceNote && (
+                  <p className="text-xs text-muted-foreground mt-1">{plan.priceNote}</p>
+                )}
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((f) => (
-                  <li key={f.text} className="flex items-center gap-2 text-sm">
+                  <li key={f.text} className="flex items-start gap-2 text-sm">
                     {f.included ? (
-                      <Check className="w-4 h-4 text-secondary" />
+                      <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
                     ) : (
-                      <X className="w-4 h-4 text-muted-foreground" />
+                      <X className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
                     )}
                     <span className={f.included ? "" : "text-muted-foreground line-through"}>
                       {f.text}
@@ -139,13 +177,18 @@ const PricingSection = () => {
                   </li>
                 ))}
               </ul>
-              <Button
-                variant={plan.highlight ? "hero" : "outline"}
-                className="w-full"
-                asChild
-              >
-                <a href="#cta">Commencer</a>
-              </Button>
+              <div className="mt-auto">
+                <Button
+                  variant={plan.highlight ? "hero" : plan.dark ? "default" : "outline"}
+                  className={`w-full ${plan.dark ? "bg-foreground text-background hover:bg-foreground/90" : ""}`}
+                  asChild
+                >
+                  <a href="#cta">{plan.cta ?? "Commencer"}</a>
+                </Button>
+                {plan.footnote && (
+                  <p className="text-[11px] text-muted-foreground text-center mt-2">{plan.footnote}</p>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
