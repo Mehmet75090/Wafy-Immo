@@ -3,7 +3,7 @@ import { Check, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
-type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM" | "GROUPE";
+type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
 
 const plans: {
   name: PlanName;
