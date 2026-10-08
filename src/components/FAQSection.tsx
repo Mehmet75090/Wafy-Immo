@@ -123,14 +123,11 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           </li>
           <li>
             👉 <span className="font-semibold text-foreground">Premium</span> — jusqu'à
-            5 000 leads par mois,
+            5 000 leads par mois, projets immobiliers illimités (autant de programmes que vous voulez, même compte),
             reporting avancé avec recommandations.
           </li>
         </ul>
         <p className="text-sm">
-          🏢 <span className="font-semibold text-foreground">Multi-projets :</span> les 3 packs couvrent
-          autant de programmes immobiliers que vous voulez, et chaque pack est valable 1 an.
-          <br />
           💡 <span className="font-semibold text-foreground">Frais de setup :</span> {fmt(10000)} HT
           one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
           <br />

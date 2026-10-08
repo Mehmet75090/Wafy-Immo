@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, X, Zap, Building2, CalendarClock } from "lucide-react";
+import { Check, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
@@ -47,6 +47,7 @@ const plans: {
     conv: "Jusqu'à 5 000 leads",
     features: [
       { text: "Jusqu'à 5 000 leads / mois", included: true },
+      { text: "Projets immobiliers illimités", included: true },
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
@@ -81,43 +82,6 @@ const PricingSection = () => {
           <p className="text-sm text-muted-foreground/80 max-w-2xl mx-auto mt-3 leading-relaxed">
              Lancez votre projet avec le <strong>pack Pilote</strong> : pour tester l'IA conversationnelle, qualifier vos leads et mesurer les résultats en conditions réelles. Sans engagement, vous gardez le contrôle. Une solution idéale pour les promoteurs qui veulent évaluer le potentiel de l'IA avant de s'engager sur le long terme.
           </p>
-        </motion.div>
-
-        {/* Promesse commune aux 3 packs : multi-projets + validité */}
-        <motion.div
-          className="mb-8 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
-            <div className="flex items-start gap-4 p-5 sm:p-6">
-              <div className="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <Building2 className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold leading-tight">
-                  Multi-projets
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Sur les 3 packs : autant de programmes immobiliers que vous voulez.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-5 sm:p-6">
-              <div className="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
-                <CalendarClock className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xl sm:text-2xl font-extrabold leading-tight">
-                  Pack valable 1 an
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Chaque pack est utilisable pendant 12 mois.
-                </p>
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
@@ -220,8 +184,7 @@ const PricingSection = () => {
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           {currency === "EUR" && <>Montants en EUR indicatifs, convertis depuis les prix en MAD.<br /></>}
-          Les 3 packs couvrent autant de projets immobiliers que vous voulez et sont valables 1 an.
-          L'offre Pilote est sans engagement.
+          L'offre Pilote est sans engagement (1 mois). Les packs Business et Premium sont prépayés et renouvelés quand vous le souhaitez.
         </p>
       </div>
     </section>
