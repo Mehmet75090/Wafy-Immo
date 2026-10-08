@@ -30,7 +30,7 @@ const getFaqs = (fmt: (mad: number) => string) => [
   },
   {
     q: "Quels outils s'intègrent avec Wafy Immo ?",
-    a: "Wafy Immo s'intègre à tous les CRM disposant d'une API ouverte : HubSpot, Salesforce, NetSuite, et bien d'autres. Pour les CRM propriétaires (Navision, Cegid, Gecimmo…), notre équipe réalise une intégration sur mesure incluse dans le setup.",
+    a: "Wafy Immo s'intègre à tous les CRM disposant d'une API ouverte : HubSpot, Salesforce, NetSuite, et bien d'autres. Pour les CRM propriétaires (Navision, Cegid, Gecimmo…), notre équipe réalise l'intégration sur mesure.",
   },
 ];
 

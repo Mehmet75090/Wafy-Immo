@@ -57,9 +57,6 @@ const PricingSection = ({ onOpenForm }: PricingSectionProps) => {
             <span className="text-5xl sm:text-6xl font-extrabold text-primary">{fmt(2800)}</span>
             <span className="text-muted-foreground text-lg">/ mois HT</span>
           </div>
-          <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2">
-            <span className="text-sm font-semibold text-primary">Frais de setup : {fmt(10000)} HT</span>
-          </div>
         </div>
 
         <ul className="space-y-3 mb-8">

@@ -193,23 +193,9 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* Setup & add-ons */}
+        {/* Add-ons */}
         <div className="grid md:grid-cols-2 gap-4 mt-10">
-          <div className="rounded-xl border border-border bg-card p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">
-                Frais de setup
-              </span>
-              <span className="text-sm font-semibold">{formatPrice(10000)} HT</span>
-            </div>
-            <p className="text-xs text-muted-foreground mb-3">Inclus dans tous les packs (one-shot)</p>
-            <ul className="space-y-1.5 text-sm">
-              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Conception du funnel de qualification sur-mesure</li>
-              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Paramétrage de l'agent : prompting, itérations, RAG</li>
-              <li className="flex gap-2"><Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" /> Dashboard & KPIs en temps réel</li>
-            </ul>
-          </div>
-          <div className="rounded-xl border border-border bg-card p-5">
+          <div className="rounded-xl border border-border bg-card p-5 md:col-span-2">
             <div className="flex items-center gap-2 mb-2">
               <span className="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary text-xs font-bold">
                 Add-on
