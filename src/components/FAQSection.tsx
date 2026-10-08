@@ -132,7 +132,7 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
           <br />
           🔌 <span className="font-semibold text-foreground">Connecteur CRM client</span> :
-          {fmt(5000)} HT one-shot, à partir du plan Business.
+          sur devis, one-shot, à partir du plan Business.
         </p>
         <p className="text-sm italic">
           Pas sûr ? Notre équipe vous aide à dimensionner en 15 minutes — sans engagement.
