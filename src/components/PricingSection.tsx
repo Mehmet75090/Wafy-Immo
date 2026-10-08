@@ -174,7 +174,7 @@ const PricingSection = () => {
               <span className="text-sm font-semibold">Connecteur CRM client</span>
             </div>
             <p className="text-xs text-muted-foreground mb-3">À partir du plan Business — one-shot</p>
-            <div className="text-2xl font-extrabold text-primary">{formatPrice(5000)} HT</div>
+            <div className="text-2xl font-extrabold text-primary">Devis</div>
             <p className="text-xs text-muted-foreground mt-2">
               Intégration sur-mesure à votre CRM (HubSpot, Salesforce, Navision, Cegid…).
             </p>
