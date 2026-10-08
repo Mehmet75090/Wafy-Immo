@@ -14,7 +14,7 @@ const getFaqs = (fmt: (mad: number) => string) => [
   },
   {
     q: "Puis-je annuler à tout moment ?",
-    a: "Absolument. Le Pack Découverte est sans engagement. Vous pouvez arrêter à tout moment sans frais supplémentaires. Si vous souhaitez continuer, nous basculons automatiquement sur le pack de votre choix (Pilote, Business ou Premium), avec ou sans engagement annuel.",
+    a: "Absolument. Le Pack Découverte est sans engagement. Vous pouvez arrêter à tout moment sans frais supplémentaires. Si vous souhaitez continuer, nous basculons sur le pack de votre choix (Pilote, Business ou Premium).",
   },
   {
     q: "Combien de temps pour la mise en place ?",

@@ -8,7 +8,7 @@ interface PricingSectionProps {
 }
 
 const features = [
-  "Qualification IA illimitée (2 000 conv./mois)",
+  "Qualification IA jusqu'à 2 000 leads/mois",
   "Scoring automatique des leads",
   "Fiche lead enrichie",
   "Dashboard & KPIs en temps réel",
