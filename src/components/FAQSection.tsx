@@ -42,11 +42,12 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           </span>
         </p>
         <p>
-          Wafy Immo s'intègre aux CRMs disposant d'une API ouverte. Les CRMs avec{" "}
-          <span className="font-semibold text-foreground">serveur MCP natif</span> (HubSpot,
-          Salesforce, NetSuite…) sont connectés en quelques heures. Pour les autres (Navision,
-          Cegid, Gecimmo…), notre équipe réalise l'intégration sur mesure —{" "}
-          <span className="font-semibold text-foreground">incluse dans le setup</span>.
+          Wafy Immo s'intègre aux CRMs disposant d'une{" "}
+          <span className="font-semibold text-foreground">API ouverte</span> (HubSpot,
+          Salesforce, NetSuite…) ou d'un{" "}
+          <span className="font-semibold text-foreground">serveur MCP natif</span>. Pour les
+          autres (Navision, Cegid, Gecimmo…), notre équipe réalise l'intégration sur mesure —{" "}
+          <span className="font-semibold text-foreground">sur devis</span>.
         </p>
         <p className="text-sm">
           💡 Vous n'avez pas encore de CRM ou vous voulez vérifier la compatibilité du vôtre ?
@@ -128,9 +129,6 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           </li>
         </ul>
         <p className="text-sm">
-          💡 <span className="font-semibold text-foreground">Frais de setup :</span> {fmt(10000)} HT
-          one-shot dans tous les packs (funnel, paramétrage agent, dashboard).
-          <br />
           🔌 <span className="font-semibold text-foreground">Connecteur CRM client</span> :
           sur devis, one-shot, à partir du plan Business.
         </p>

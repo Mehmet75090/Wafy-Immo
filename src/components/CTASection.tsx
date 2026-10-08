@@ -4,7 +4,6 @@ import { MessageCircle, CheckCircle2 } from "lucide-react";
 
 const benefits = [
   "Packs prépayés, vous payez uniquement au résultat",
-  "Frais de setup offerts",
   "Mise en place rapide, sans engagement",
 ];
 
