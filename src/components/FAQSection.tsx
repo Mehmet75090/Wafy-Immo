@@ -91,7 +91,6 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
                 <th className="px-3 py-2 font-semibold">Plan</th>
                 <th className="px-3 py-2 font-semibold">Volume</th>
                 <th className="px-3 py-2 font-semibold">Pack prépayé</th>
-                <th className="px-3 py-2 font-semibold">Engagement</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -99,19 +98,16 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
                 <td className="px-3 py-2 font-semibold text-foreground">Pilote</td>
                 <td className="px-3 py-2">≤ 2 000 leads/mois</td>
                 <td className="px-3 py-2">{fmt(2800)}</td>
-                <td className="px-3 py-2 text-primary font-semibold">1 mois uniquement</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Business</td>
                 <td className="px-3 py-2">≤ 2 000 leads + 5 000 relances</td>
                 <td className="px-3 py-2">{fmt(5500)}</td>
-                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
               <tr>
                 <td className="px-3 py-2 font-semibold text-foreground">Premium</td>
-                <td className="px-3 py-2">Leads illimités + 10 000 relances</td>
+                <td className="px-3 py-2">≤ 5 000 leads + 10 000 relances</td>
                 <td className="px-3 py-2">{fmt(8500)}</td>
-                <td className="px-3 py-2 text-primary font-semibold">2 mois offerts</td>
               </tr>
             </tbody>
           </table>
@@ -126,8 +122,8 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
             courant : qualification + relances WhatsApp + RDV automatique.
           </li>
           <li>
-            👉 <span className="font-semibold text-foreground">Premium</span> — leads et
-            projets immobiliers illimités (autant de programmes que vous voulez, même compte),
+            👉 <span className="font-semibold text-foreground">Premium</span> — jusqu'à
+            5 000 leads par mois, projets immobiliers illimités (autant de programmes que vous voulez, même compte),
             reporting avancé avec recommandations.
           </li>
         </ul>
@@ -182,8 +178,8 @@ const getFaqs = (fmt: (mad: number, digits?: number) => string) => [
           💡 <span className="font-semibold text-foreground">Bon à savoir :</span> si vous
           dépassez régulièrement vos quotas, l'upgrade vers le plan supérieur est
           souvent plus économique. Notre équipe vous préviendra avant que vous surpayiez.
-          Sur le plan Premium, les leads sont illimités — les packs concernent uniquement
-          Pilote et Business.
+          Sur le plan Premium, le volume est plafonné à 5 000 leads/mois : au-delà, un pack
+          Leads supplémentaire s'applique.
         </p>
       </div>
     ),
