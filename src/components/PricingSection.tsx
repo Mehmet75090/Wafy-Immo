@@ -190,7 +190,7 @@ const PricingSection = () => {
         <p className="text-center text-xs text-muted-foreground mt-8">
           Tous les prix sont indiqués <span className="font-semibold">hors taxes</span>.<br />
           {currency === "EUR" && <>Montants en EUR indicatifs, convertis depuis les prix en MAD.<br /></>}
-          L'offre Pilote est sans engagement (1 mois). Les packs Business et Premium sont prépayés et renouvelés quand vous le souhaitez.
+          Les packs Pilote, Business et Premium sont prépayés et renouvelés quand vous le souhaitez.
         </p>
       </div>
     </section>
