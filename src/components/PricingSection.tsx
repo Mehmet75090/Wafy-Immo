@@ -52,7 +52,7 @@ const plans: {
     price: 8500,
     conv: "Jusqu'à 5 000 leads",
     features: [
-      { text: "Jusqu'à 5 projets immobiliers", included: true },
+      { text: "Jusqu'à 5 projets immobiliers*", included: true },
       { text: "Qualification IA", included: true },
       { text: "Scoring automatique", included: true },
       { text: "Fiche lead enrichie CRM", included: true },
