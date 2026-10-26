@@ -14,7 +14,6 @@ interface HeaderProps {
 }
 
 const Header = ({ onOpenForm }: HeaderProps) => {
-  const { currency, setCurrency } = useCurrency();
   const { pathname } = useLocation();
   const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : "Promoteur immobilier";
   const professions = [
@@ -61,30 +60,6 @@ const Header = ({ onOpenForm }: HeaderProps) => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="gap-1 px-1 sm:px-2 font-semibold text-foreground/70 hover:text-foreground hover:bg-transparent" aria-label="Choisir la devise">
-                <span>{currency}</span>
-                <ChevronDown className="hidden sm:block h-3 w-3 text-muted-foreground" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-[120px]">
-              {(["MAD", "EUR"] as CurrencyCode[]).map((code) => {
-                const active = code === currency;
-                return (
-                  <DropdownMenuItem
-                    key={code}
-                    onSelect={() => setCurrency(code)}
-                    className="flex items-center gap-2 cursor-pointer"
-                  >
-                    <span className="flex-1">{code}</span>
-                    {active && <Check className="w-4 h-4 text-primary" />}
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
           {onOpenForm && (
             <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
               <span className="hidden sm:inline">Demander une démo</span>
