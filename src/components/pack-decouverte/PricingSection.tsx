@@ -77,7 +77,6 @@ const PricingSection = ({ onOpenForm }: PricingSectionProps) => {
         </p>
       </motion.div>
 
-      {currency === "EUR" && <p className="text-center text-xs text-muted-foreground mt-4">Montants en EUR indicatifs, convertis depuis les prix en MAD.</p>}
 
       {/* Trust badges */}
       <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-muted-foreground">
