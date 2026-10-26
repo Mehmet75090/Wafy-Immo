@@ -8,7 +8,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useCurrency, type CurrencyCode } from "@/contexts/CurrencyContext";
 
 interface HeaderProps {
   onOpenForm?: () => void;
