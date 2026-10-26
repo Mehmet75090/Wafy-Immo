@@ -153,9 +153,9 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <p className="font-semibold text-primary-foreground/80 mb-4">{page.name}</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-primary-foreground mb-6">{page.headline}</h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">{page.description}</p>
-            <Button variant="hero" size="lg" asChild className="w-full px-5 text-sm sm:w-auto sm:px-8 sm:text-base">
+            <Button variant="hero" size="lg" asChild>
               <a href={AGENT_ACCOUNT_URL}>
-                <MessageCircle className="mr-2" /> Créer votre compte gratuitement <ArrowRight className="ml-1" />
+                <MessageCircle className="mr-2" /> Essai gratuit <ArrowRight className="ml-1" />
               </a>
             </Button>
           </motion.div>
