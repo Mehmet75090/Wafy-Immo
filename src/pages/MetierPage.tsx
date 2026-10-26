@@ -32,6 +32,8 @@ import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
 const problemBienImg = problemBienAsset.url;
 import problemSeulImg from "@/assets/problem-seul.jpg";
 
+const AGENT_ACCOUNT_URL = "https://admin.wafypro.ma/wafy-agent-immo";
+
 const agentFeatures = [
   {
     icon: Clock,
@@ -142,7 +144,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
   return (
     <main>
-      <Header onOpenForm={() => setFormOpen(true)} />
+      <Header accountUrl={AGENT_ACCOUNT_URL} onOpenForm={() => setFormOpen(true)} />
       <section className="relative min-h-[min(78vh,760px)] flex items-center overflow-hidden pt-28 pb-20">
         <img src={page.image} alt={`${page.name} en échange avec un client`} className="absolute inset-0 h-full w-full object-cover" width={1600} height={1008} fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-transparent" />
@@ -151,8 +153,10 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <p className="font-semibold text-primary-foreground/80 mb-4">{page.name}</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-primary-foreground mb-6">{page.headline}</h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">{page.description}</p>
-            <Button variant="hero" size="lg" onClick={() => setFormOpen(true)}>
-              <MessageCircle className="mr-2" /> Demander une démo <ArrowRight className="ml-1" />
+            <Button variant="hero" size="lg" asChild>
+              <a href={AGENT_ACCOUNT_URL}>
+                <MessageCircle className="mr-2" /> Créer votre compte gratuitement <ArrowRight className="ml-1" />
+              </a>
             </Button>
           </motion.div>
         </div>

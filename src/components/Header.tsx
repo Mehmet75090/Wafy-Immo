@@ -11,9 +11,10 @@ import {
 
 interface HeaderProps {
   onOpenForm?: () => void;
+  accountUrl?: string;
 }
 
-const Header = ({ onOpenForm }: HeaderProps) => {
+const Header = ({ onOpenForm, accountUrl }: HeaderProps) => {
   const { pathname } = useLocation();
   const profession = pathname === "/agent-immobilier" ? "Agent immobilier" : "Promoteur immobilier";
   const professions = [
@@ -60,12 +61,19 @@ const Header = ({ onOpenForm }: HeaderProps) => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          {onOpenForm && (
+          {accountUrl ? (
+            <Button variant="hero" size="lg" asChild className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25">
+              <a href={accountUrl} aria-label="Créer votre compte gratuitement">
+                <span className="hidden sm:inline">Créer votre compte gratuitement</span>
+                <ArrowRight className="sm:ml-1" />
+              </a>
+            </Button>
+          ) : onOpenForm ? (
             <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
               <span className="hidden sm:inline">Demander une démo</span>
               <ArrowRight className="sm:ml-1" />
             </Button>
-          )}
+          ) : null}
         </div>
       </nav>
     </header>
