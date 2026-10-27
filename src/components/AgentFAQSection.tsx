@@ -16,8 +16,8 @@ const faqs = [
     a: "L’accès à votre espace nécessite une authentification. Les mesures de sécurité mises en place visent à protéger vos données et à limiter les accès aux personnes autorisées. Veillez également à choisir un mot de passe unique et à ne pas partager vos identifiants.",
   },
   {
-    q: "L’agent IA répond-il uniquement à mes prospects immobiliers ou aussi à mes conversations personnelles ?",
-    a: "Pour séparer vos échanges professionnels et personnels, nous vous recommandons de connecter un numéro dédié à votre activité immobilière. Vous pouvez également ajouter des numéros à votre liste d’exclusion pour que l’agent ne leur réponde pas.",
+    q: "Puis-je utiliser mon numéro WhatsApp habituel, même pour mes conversations personnelles ?",
+    a: "Oui, vous pouvez utiliser le même numéro pour vos échanges professionnels et personnels. Il suffit d’indiquer à l’agent qu’une conversation est personnelle pour qu’il cesse d’y répondre. Nous vous recommandons également d’ajouter vos contacts personnels à la liste d’exclusion depuis la plateforme.",
   },
   {
     q: "Puis-je désactiver l’agent à tout moment et reprendre moi-même une conversation ?",
@@ -61,7 +61,7 @@ const AgentFAQSection = () => (
               value={`item-${idx}`}
               className="rounded-xl border border-border bg-card px-4 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-md sm:px-5"
             >
-              <AccordionTrigger className="py-5 text-left text-base font-semibold hover:no-underline">
+              <AccordionTrigger className="text-pretty py-5 text-left text-base font-semibold hover:no-underline">
                 {item.q}
               </AccordionTrigger>
               <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:text-base">
