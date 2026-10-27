@@ -31,6 +31,7 @@ import problemLeadsImg from "@/assets/problem-leads.jpg";
 import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
 const problemBienImg = problemBienAsset.url;
 import problemSeulImg from "@/assets/problem-seul.jpg";
+import AgentFAQSection from "@/components/AgentFAQSection";
 
 const AGENT_ACCOUNT_URL = "https://admin.wafypro.ma/wafy-agent-immo";
 
@@ -404,6 +405,8 @@ Demandez à Wafy.</h3>
               </Button>
             </div>
           </section>
+
+          <AgentFAQSection />
         </>
       ) : (
         <section className="section-padding bg-background">
