@@ -156,7 +156,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
             <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">{page.description}</p>
             <Button variant="hero" size="lg" asChild>
               <a href={AGENT_ACCOUNT_URL}>
-                <MessageCircle className="mr-2" /> Activer mon agent IA <ArrowRight className="ml-1" />
+                Activer mon agent IA
               </a>
             </Button>
           </motion.div>
