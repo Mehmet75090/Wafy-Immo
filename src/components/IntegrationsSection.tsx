@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import metaTechProvider from "@/assets/meta-tech-provider.png.asset.json";
 import {
   GmailIcon,
   GoogleCalendarIcon,
@@ -85,6 +86,14 @@ const IntegrationsSection = () => (
             <h3 className="text-xl md:text-2xl font-bold">Votre numéro, votre WhatsApp</h3>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               WhatsApp Business compatible
+            </span>
+            <span className="inline-flex items-center rounded-full bg-white border border-border px-3 py-1.5">
+              <img
+                src={metaTechProvider.url}
+                alt="Meta Tech Provider"
+                className="h-4 sm:h-5"
+                loading="lazy"
+              />
             </span>
           </div>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
