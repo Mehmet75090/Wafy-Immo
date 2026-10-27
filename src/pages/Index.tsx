@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
@@ -17,6 +17,12 @@ import ContactFormDialog from "@/components/ContactFormDialog";
 
 const Index = () => {
   const [formOpen, setFormOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = "Wafy Immo — Co-pilote IA pour promoteurs";
+    window.scrollTo(0, 0);
+    return () => { document.title = "Wafy Immo — Copilote IA des agents immobiliers"; };
+  }, []);
 
   return (
     <main>
