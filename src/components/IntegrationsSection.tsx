@@ -87,6 +87,14 @@ const IntegrationsSection = () => (
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
               WhatsApp Business compatible
             </span>
+            <span className="inline-flex items-center rounded-full bg-white border border-border px-3 py-1.5">
+              <img
+                src={metaTechProvider.url}
+                alt="Meta Tech Provider"
+                className="h-4 sm:h-5"
+                loading="lazy"
+              />
+            </span>
           </div>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
             Connectez votre numéro WhatsApp Business existant en scannant un QR code. Wafy répond à vos prospects depuis ce numéro, et vous gardez votre application et vos discussions.
