@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import metaTechProvider from "@/assets/meta-tech-provider.png.asset.json";
 import {
   GmailIcon,
   GoogleCalendarIcon,
