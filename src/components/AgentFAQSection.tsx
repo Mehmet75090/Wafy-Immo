@@ -61,7 +61,7 @@ const AgentFAQSection = () => (
               value={`item-${idx}`}
               className="rounded-xl border border-border bg-card px-4 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-md sm:px-5"
             >
-              <AccordionTrigger className="py-5 text-left text-base font-semibold hover:no-underline">
+              <AccordionTrigger className="text-pretty py-5 text-left text-base font-semibold hover:no-underline">
                 {item.q}
               </AccordionTrigger>
               <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:text-base">
