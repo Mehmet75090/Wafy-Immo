@@ -139,7 +139,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
   useEffect(() => {
     document.title = `${page.headline} — Wafy Immo`;
     window.scrollTo(0, 0);
-    return () => { document.title = "Wafy Immo — Co-pilote IA pour promoteurs"; };
+    return () => { document.title = "Wafy Immo — Copilote IA des agents immobiliers"; };
   }, [page]);
 
   return (
