@@ -145,7 +145,7 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
   return (
     <main>
-      <Header accountUrl={AGENT_ACCOUNT_URL} onOpenForm={() => setFormOpen(true)} />
+      <Header onOpenForm={() => setFormOpen(true)} />
       <section className="relative min-h-[min(78vh,760px)] flex items-center overflow-hidden pt-28 pb-20">
         <img src={page.image} alt={`${page.name} en échange avec un client`} className="absolute inset-0 h-full w-full object-cover" width={1600} height={1008} fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/60 to-transparent" />
