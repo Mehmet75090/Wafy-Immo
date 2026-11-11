@@ -48,8 +48,8 @@ const Header = ({ onOpenForm, accountUrl }: HeaderProps) => {
           <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Choisir un métier">
-                Métiers <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Je suis un ...">
+                Je suis un ... <ChevronDown className="h-4 w-4 text-muted-foreground" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="min-w-[220px]">
