@@ -6,10 +6,9 @@ import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   onOpenForm?: () => void;
-  accountUrl?: string;
 }
 
-const Header = ({ onOpenForm, accountUrl }: HeaderProps) => {
+const Header = ({ onOpenForm }: HeaderProps) => {
   const { pathname } = useLocation();
   const isPromoteur = pathname === "/promoteur-immobilier";
   const profession = isPromoteur ? "Promoteur immobilier" : "Agent immobilier";
