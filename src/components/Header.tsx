@@ -1,13 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   onOpenForm?: () => void;
@@ -46,22 +41,28 @@ const Header = ({ onOpenForm, accountUrl }: HeaderProps) => {
             </a>
           ))}
           <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="px-1 sm:px-2 font-medium text-foreground/70 hover:text-foreground hover:bg-transparent gap-1" aria-label="Je suis un ...">
-                Je suis un ... <ChevronDown className="h-4 w-4 text-muted-foreground" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="min-w-[220px]">
-              {professions.map(({ label, path }) => (
-                <DropdownMenuItem key={path} asChild className="cursor-pointer">
-                  <Link to={path} className="flex items-center justify-between gap-3">
-                    {label}{profession === label && <Check className="h-4 w-4 text-primary" />}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex items-center rounded-full border border-border bg-muted/60 p-0.5 sm:p-1" role="group" aria-label="Choisir votre profil">
+            {professions.map(({ label, path }) => {
+              const active = profession === label;
+              const short = label === "Agent immobilier" ? "Agent" : "Promoteur";
+              return (
+                <Link
+                  key={path}
+                  to={path}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "rounded-full px-2.5 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap",
+                    active
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  <span className="sm:hidden">{short}</span>
+                  <span className="hidden sm:inline">{label}</span>
+                </Link>
+              );
+            })}
+          </div>
           {accountUrl ? (
             <Button variant="hero" size="lg" asChild className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25">
               <a href={accountUrl} aria-label="Essai gratuit">
