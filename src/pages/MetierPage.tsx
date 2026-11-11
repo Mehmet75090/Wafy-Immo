@@ -265,6 +265,12 @@ const MetierPage = ({ metier }: MetierPageProps) => {
 
           <IntegrationsSection />
 
+          <div className="bg-background border-b border-border -mt-px pb-12 sm:pb-16 flex justify-center px-4">
+            <Button variant="hero" size="lg" asChild>
+              <a href={AGENT_ACCOUNT_URL}>Je veux tester</a>
+            </Button>
+          </div>
+
           <section className="section-padding bg-card" id="features">
             <div className="container mx-auto max-w-6xl">
               <motion.div className="text-center max-w-3xl mx-auto mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -326,6 +332,9 @@ Demandez à Wafy.</h3>
                       </li>
                     ))}
                   </ul>
+                  <Button variant="hero" size="lg" asChild className="mt-6">
+                    <a href={AGENT_ACCOUNT_URL}>Je veux tester</a>
+                  </Button>
                 </div>
                 <img
                   src={wafyAssistPhone.url}
