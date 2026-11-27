@@ -14,4 +14,8 @@ describe("pages SEO", () => {
     const slugs = new Set(SEO_PAGES.map((p) => p.slug));
     SEO_PAGES.forEach((p) => p.related.forEach((r) => expect(slugs.has(r)).toBe(true)));
   });
+  it("ne laissent aucune page sans lien entrant", () => {
+    const inbound = new Set(SEO_PAGES.flatMap((p) => p.related));
+    SEO_PAGES.forEach((p) => expect(inbound.has(p.slug), `page orpheline: ${p.slug}`).toBe(true));
+  });
 });
