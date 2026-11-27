@@ -468,9 +468,6 @@ Demandez à Wafy.</h3>
                   <Button variant="outline" size="lg" className="mt-8 w-full" onClick={() => setFormOpen(true)}>
                     Réserver une démo personnalisée
                   </Button>
-                  <p className="mt-4 text-center text-xs sm:text-sm font-medium text-secondary">
-                    Économisez {AGENT_PRICING.subscription.annualDiscountPercent} % avec l’abonnement annuel.
-                  </p>
                 </article>
               </div>
 

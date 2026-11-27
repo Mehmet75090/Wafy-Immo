@@ -19,7 +19,4 @@ describe("Tarifs de la page Agent", () => {
     expect(AGENT_PRICING.subscription.monthlyProspectLimit).toBe(100);
   });
 
-  it("accorde 20 % d’économie avec l’abonnement annuel", () => {
-    expect(AGENT_PRICING.subscription.annualDiscountPercent).toBe(20);
-  });
 });

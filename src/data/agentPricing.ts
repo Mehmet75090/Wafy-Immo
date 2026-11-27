@@ -8,6 +8,5 @@ export const AGENT_PRICING = {
   subscription: {
     startingPriceMad: 250,
     monthlyProspectLimit: 100,
-    annualDiscountPercent: 20,
   },
 } as const;
