@@ -30,7 +30,7 @@ const problemRepondImg = problemRepondAsset.url;
 import problemLeadsImg from "@/assets/problem-leads.jpg";
 import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
 const problemBienImg = problemBienAsset.url;
-import problemSeulImg from "@/assets/problem-seul.jpg";
+import problemCentralImg from "@/assets/problem-central.jpg";
 import AgentFAQSection from "@/components/AgentFAQSection";
 
 const AGENT_ACCOUNT_URL = "https://admin.wafypro.ma/wafy-agent-immo";
@@ -107,10 +107,10 @@ const agentProblems = [
     alt: "Agent montrant un catalogue de biens sur tablette à une cliente dubitative",
   },
   {
-    title: "Seul à bord, jamais vraiment en pause",
-    text: "Le soir, le week-end ou en vacances, personne ne répond à vos prospects. Wafy devient l'assistant que vous n'avez pas eu à recruter : il répond, qualifie et planifie vos visites, 24h/24.",
-    image: problemSeulImg,
-    alt: "Bureau d'agence vide le soir, personne pour répondre",
+    title: "Un dossier, cinq endroits différents",
+    text: "WhatsApp ici, les appels là, les visites sur un carnet, les relances de mémoire. Wafy Immo centralise tout dans un même endroit : un CRM avec un assistant IA embarqué qui automatise chaque tâche sans oubli ni erreur — planning des visites, rappels, relances et suivi des dossiers.",
+    image: problemCentralImg,
+    alt: "Agent immobilier consultant un tableau de bord unique réunissant visites, rappels et dossiers",
   },
 ];
 
