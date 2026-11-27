@@ -7,6 +7,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import VoiceSection from "@/components/VoiceSection";
 import DashboardSection from "@/components/DashboardSection";
+import JpoCampaignSection from "@/components/JpoCampaignSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
@@ -35,6 +36,7 @@ const Index = () => {
       <IntegrationsSection />
       <VoiceSection />
       <DashboardSection />
+      <JpoCampaignSection />
       <PricingSection />
       <BlogPreviewSection />
       <FAQSection />
