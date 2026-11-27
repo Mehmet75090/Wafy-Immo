@@ -32,6 +32,7 @@ import problemBienAsset from "@/assets/problem-bien-agent.png.asset.json";
 const problemBienImg = problemBienAsset.url;
 import problemCentralImg from "@/assets/problem-central.jpg";
 import AgentFAQSection from "@/components/AgentFAQSection";
+import { AGENT_PRICING } from "@/data/agentPricing";
 
 const AGENT_ACCOUNT_URL = "https://admin.wafypro.ma/wafy-agent-immo";
 
@@ -401,17 +402,81 @@ Demandez à Wafy.</h3>
           </section>
 
           <section id="pricing" className="section-padding bg-background">
-            <div className="container mx-auto max-w-3xl text-center">
-              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Tarifs</p>
-              <h2 className="text-3xl md:text-5xl font-extrabold leading-tight mb-6">
-                Une offre adaptée à votre <span className="text-gradient">activité</span>
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Nos tarifs dépendent de votre volume de leads et de vos besoins. Demandez une démo : nous vous présentons Wafy Immo et vous remettons une offre sur mesure.
+            <div className="container mx-auto max-w-5xl">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">Nos tarifs</p>
+                <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance">
+                  Une IA puissante. Un tarif accessible.
+                </h2>
+                <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Que vous soyez agent indépendant, agence immobilière ou promoteur, Wafy Immo s’adapte à votre activité et à votre croissance.
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:grid-cols-2 md:gap-6">
+                <article className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                  <h3 className="text-lg font-bold">Découvrez Wafy Immo</h3>
+                  <p className="mt-5 flex flex-wrap items-baseline gap-x-2">
+                    <span className="text-3xl font-extrabold">{AGENT_PRICING.trial.priceMad} DH</span>
+                    <span className="text-sm text-muted-foreground">/ {AGENT_PRICING.trial.durationDays} jours</span>
+                  </p>
+                  <p className="mt-5 text-sm sm:text-base">Testez Wafy Immo en conditions réelles.</p>
+                  <ul className="mt-6 flex-1 space-y-4 border-t border-border pt-6 text-sm sm:text-base">
+                    {[
+                      "CRM immobilier",
+                      "Agent IA WhatsApp 24h/24",
+                      "Qualification des prospects",
+                      "Recommandation de biens",
+                      "Planification des visites",
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="hero" size="lg" asChild className="mt-8 w-full">
+                    <a href={AGENT_ACCOUNT_URL}>Démarrer mon essai gratuit</a>
+                  </Button>
+                  <p className="mt-4 text-center text-xs sm:text-sm text-muted-foreground">
+                    {AGENT_PRICING.trial.durationDays} jours ou {AGENT_PRICING.trial.prospectLimit} prospects, jusqu’à {AGENT_PRICING.trial.propertyLimit} biens.
+                  </p>
+                </article>
+
+                <article className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+                  <h3 className="text-lg font-bold">Poursuivez l’expérience</h3>
+                  <p className="mt-5 text-sm text-muted-foreground">À partir de</p>
+                  <p className="mt-1 flex flex-wrap items-baseline gap-x-2">
+                    <span className="text-3xl font-extrabold">{AGENT_PRICING.subscription.startingPriceMad} DH</span>
+                    <span className="text-sm text-muted-foreground">HT/mois</span>
+                  </p>
+                  <p className="mt-5 text-sm sm:text-base">Un abonnement qui évolue avec votre activité.</p>
+                  <ul className="mt-6 flex-1 space-y-4 border-t border-border pt-6 text-sm sm:text-base">
+                    {[
+                      `${AGENT_PRICING.subscription.monthlyProspectLimit} prospects par mois dès l’offre d’entrée`,
+                      "Catalogue de biens illimité",
+                      "Gestion des collaborateurs",
+                      "Rapports de performance",
+                      "Offres adaptées à vos besoins",
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" aria-hidden="true" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="outline" size="lg" className="mt-8 w-full" onClick={() => setFormOpen(true)}>
+                    Réserver une démo personnalisée
+                  </Button>
+                  <p className="mt-4 text-center text-xs sm:text-sm font-medium text-secondary">
+                    Économisez {AGENT_PRICING.subscription.annualDiscountPercent} % avec l’abonnement annuel.
+                  </p>
+                </article>
+              </div>
+
+              <p className="mt-8 text-center text-base sm:text-lg font-bold">
+                Moins de tâches. Plus de visites. Plus d’opportunités.
               </p>
-              <Button variant="hero" size="lg" onClick={() => setFormOpen(true)}>
-                Contactez-nous pour une démo <ArrowRight className="ml-1" />
-              </Button>
             </div>
           </section>
 
