@@ -109,7 +109,7 @@ const agentProblems = [
   },
   {
     title: "Un dossier, cinq endroits différents",
-    text: "WhatsApp ici, les appels là, les visites sur un carnet, les relances de mémoire. Wafy Immo centralise tout dans un même endroit : un CRM avec un assistant IA embarqué qui automatise chaque tâche sans oubli ni erreur — planning des visites, rappels, relances et suivi des dossiers.",
+    text: "Fini les informations dispersées entre WhatsApp, les appels et les carnets de notes. Avec Wafy Immo, tout est centralisé dans un seul CRM. Votre assistant IA gère vos prospects, planifie vos visites, automatise vos relances et assure votre suivi commercial.",
     image: problemCentralImg,
     alt: "Agent immobilier consultant un tableau de bord unique réunissant visites, rappels et dossiers",
   },
