@@ -1,14 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
-import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface HeaderProps {
-  onOpenForm?: () => void;
-}
-
-const Header = ({ onOpenForm }: HeaderProps) => {
+const Header = () => {
   const { pathname } = useLocation();
   const isPromoteur = pathname === "/promoteur-immobilier";
   const anchorPrefix = pathname === "/" || isPromoteur ? "" : "/";
@@ -65,12 +59,6 @@ const Header = ({ onOpenForm }: HeaderProps) => {
               );
             })}
           </div>
-          {onOpenForm ? (
-            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-4 xl:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
-              <span className="hidden sm:inline">Demander une démo</span>
-              <ArrowRight className="sm:ml-1" />
-            </Button>
-          ) : null}
         </div>
       </nav>
     </header>

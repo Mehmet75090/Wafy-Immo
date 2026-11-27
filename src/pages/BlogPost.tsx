@@ -87,7 +87,7 @@ const BlogPost = () => {
 
   return (
     <>
-      <Header onOpenForm={() => setFormOpen(true)} />
+      <Header />
       <main className="pt-28 pb-20 px-6 bg-background">
         <article className="container mx-auto max-w-3xl">
           <Link

@@ -27,7 +27,7 @@ const Index = () => {
 
   return (
     <main>
-      <Header onOpenForm={() => setFormOpen(true)} />
+      <Header />
       <HeroSection onOpenForm={() => setFormOpen(true)} />
       <ProblemSection />
       <ComparisonSection />
