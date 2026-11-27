@@ -11,6 +11,7 @@ interface HeaderProps {
 const Header = ({ onOpenForm }: HeaderProps) => {
   const { pathname } = useLocation();
   const isPromoteur = pathname === "/promoteur-immobilier";
+  const anchorPrefix = pathname === "/" || isPromoteur ? "" : "/";
   const profession = isPromoteur ? "Promoteur immobilier" : "Agent immobilier";
   const professions = [
     { label: "Agent immobilier", path: "/" },
@@ -33,7 +34,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           ].map(({ label, href }) => (
             <a
               key={href}
-              href={href}
+              href={`${anchorPrefix}${href}`}
               className="hidden md:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
             >
               {label}

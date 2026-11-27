@@ -9,6 +9,8 @@ import PackDecouverte from "./pages/PackDecouverte.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+import SeoLandingPage from "./pages/SeoLandingPage.tsx";
+import { SEO_PAGES } from "./data/seoPages";
 import NotFound from "./pages/NotFound.tsx";
 import { CurrencyProvider } from "./contexts/CurrencyContext";
 
@@ -29,6 +31,9 @@ const App = () => (
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            {SEO_PAGES.map((p) => (
+              <Route key={p.slug} path={`/${p.slug}`} element={<SeoLandingPage page={p} />} />
+            ))}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
