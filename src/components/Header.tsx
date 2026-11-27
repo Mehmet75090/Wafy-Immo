@@ -25,7 +25,7 @@ const Header = ({ onOpenForm }: HeaderProps) => {
           <img src={logo} alt="Wafy Immo" className="h-8 sm:h-10 md:h-11" />
           <span className="text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] text-muted-foreground uppercase -mt-1">{profession}</span>
         </Link>
-        <div className="flex items-center gap-4 sm:gap-7 md:gap-9">
+        <div className="flex items-center gap-3 sm:gap-5 xl:gap-8">
           {[
             { label: "Votre quotidien", href: "#problem" },
             { label: "Comment ça marche", href: "#how-it-works" },
@@ -35,12 +35,15 @@ const Header = ({ onOpenForm }: HeaderProps) => {
             <a
               key={href}
               href={`${anchorPrefix}${href}`}
-              className="hidden md:inline-block text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap"
+              className={cn(
+                "text-sm font-medium text-foreground/70 hover:text-foreground transition-colors whitespace-nowrap",
+                label === "Comment ça marche" ? "hidden xl:inline-block" : "hidden lg:inline-block",
+              )}
             >
               {label}
             </a>
           ))}
-          <div className="hidden md:block h-4 w-px bg-border" aria-hidden="true" />
+          <div className="hidden lg:block h-4 w-px bg-border" aria-hidden="true" />
           <div className="flex items-center rounded-full border border-border bg-muted/60 p-0.5 sm:p-1" role="group" aria-label="Choisir votre profil">
             {professions.map(({ label, path }) => {
               const active = profession === label;
@@ -57,14 +60,13 @@ const Header = ({ onOpenForm }: HeaderProps) => {
                       : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  <span className="sm:hidden">{short}</span>
-                  <span className="hidden sm:inline">{label}</span>
+                  <span>{short}</span>
                 </Link>
               );
             })}
           </div>
           {onOpenForm ? (
-            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
+            <Button variant="hero" size="lg" className="h-9 w-9 px-0 sm:h-10 sm:w-auto sm:px-4 xl:px-6 text-sm font-semibold shadow-md shadow-primary/25" onClick={onOpenForm} aria-label="Demander une démo">
               <span className="hidden sm:inline">Demander une démo</span>
               <ArrowRight className="sm:ml-1" />
             </Button>

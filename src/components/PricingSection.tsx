@@ -3,67 +3,7 @@ import { Check, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCurrency, formatPrice as formatCurrencyPrice } from "@/contexts/CurrencyContext";
 
-type PlanName = "PILOTE" | "BUSINESS" | "PREMIUM";
-
-const plans: {
-  name: PlanName;
-  price: number;
-  conv: string;
-  features: { text: string; included: boolean }[];
-  highlight: boolean;
-  dark?: boolean;
-  tag?: string;
-  priceSuffix?: string;
-  priceNote?: string;
-  cta?: string;
-  footnote?: string;
-}[] = [
-  {
-    name: "PILOTE",
-    price: 2800,
-    conv: "Jusqu'à 2 000 leads",
-    features: [
-      { text: "Qualification IA", included: true },
-      { text: "Scoring automatique", included: true },
-      { text: "Fiche lead enrichie CRM", included: true },
-      { text: "Reporting détaillé", included: true },
-      { text: "Relances WhatsApp auto", included: false },
-      { text: "Prise de RDV auto", included: false },
-    ],
-    highlight: false,
-  },
-  {
-    name: "BUSINESS",
-    price: 5500,
-    conv: "Jusqu'à 2 000 leads",
-    features: [
-      { text: "Qualification IA", included: true },
-      { text: "Scoring automatique", included: true },
-      { text: "Fiche lead enrichie CRM", included: true },
-      { text: "Relances WhatsApp auto", included: true },
-      { text: "5 000 relances / mois", included: true },
-      { text: "Prise de RDV auto", included: true },
-      { text: "Reporting détaillé", included: true },
-    ],
-    highlight: true,
-  },
-  {
-    name: "PREMIUM",
-    price: 8500,
-    conv: "Jusqu'à 5 000 leads",
-    features: [
-      { text: "Jusqu'à 5 projets immobiliers*", included: true },
-      { text: "Qualification IA", included: true },
-      { text: "Scoring automatique", included: true },
-      { text: "Fiche lead enrichie CRM", included: true },
-      { text: "Relances WhatsApp auto", included: true },
-      { text: "10 000 relances / mois", included: true },
-      { text: "Prise de RDV auto", included: true },
-      { text: "Reporting détaillé + recommandations", included: true },
-    ],
-    highlight: false,
-  },
-];
+import { plans } from "@/data/promoteurPricing";
 
 const PricingSection = () => {
   const { currency } = useCurrency();

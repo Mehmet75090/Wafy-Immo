@@ -17,6 +17,11 @@ const JpoCampaignSection = () => (
           Invitez vos prospects en exclusivité à des JPO via des campagnes WhatsApp avec un taux
           d'ouverture de 90 % et suivez leur retour ou décision.
         </p>
+        <p className="mt-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary">
+            Module Wafy Event inclus dans les packs Business et Premium
+          </span>
+        </p>
       </motion.div>
 
       {/* Wafy Event visual */}
